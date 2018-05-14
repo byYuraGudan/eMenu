@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.146,=C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.979,=C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2018.05.11 20:28:40.087,=C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2018.05.11 20:28:54.171,=C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2018.05.11 20:29:56.976,E:\eMenu\MainForm.h=C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2018.05.11 20:29:56.976,E:\eMenu\MainForm.dfm=C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2018.05.11 20:29:56.976,E:\eMenu\MainForm.cpp=C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2018.05.11 20:30:06.436,E:\eMenu\eMenuPCH1.h=C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2018.05.11 20:30:10.578,E:\eMenu\eMenu.cbproj=C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+    <Transaction>2018.05.11 20:31:36.131,=E:\eMenu\Unit1.cpp</Transaction>
+    <Transaction>2018.05.11 20:32:23.823,E:\eMenu\DataModule.cpp=E:\eMenu\Unit1.cpp</Transaction>
+    <Transaction>2018.05.11 20:32:23.823,E:\eMenu\DataModule.dfm=E:\eMenu\Unit1.dfm</Transaction>
+    <Transaction>2018.05.11 20:32:23.823,E:\eMenu\DataModule.h=E:\eMenu\Unit1.h</Transaction>
+  </Transactions>
+</BorlandProject>

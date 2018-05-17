@@ -1,7 +1,3 @@
-USE aeu
-GO
-DROP DATABASE eMenu
-GO
 CREATE DATABASE eMenu
 GO
 USE eMenu
@@ -14,13 +10,20 @@ CREATE TABLE Personal(id_personal INT PRIMARY KEY IDENTITY(1,1),
 					  access BIT DEFAULT 1)
 GO
 CREATE TABLE OrderMenu(id_order INT PRIMARY KEY IDENTITY(1,1),
-					   date_order DATETIME DEFAULT GETDATE(),
+					   date_open_order DATETIME DEFAULT GETDATE(),
+					   date_close_order DATETIME,
 					   kod_table INT NOT NULL,
-					   order_proccesing BIT DEFAULT 1,
+					   close_order BIT DEFAULT 0,
 					   payment FLOAT DEFAULT 0,
-					   kod_personal INT)
+					   kod_personal INT NOT NULL,
+					   kod_discount INT NOT NULL)
+GO
+CREATE TABLE Discounts(id_discount INT PRIMARY KEY,
+					  pib_client VARCHAR(50),
+					  discount FLOAT NOT NULL DEFAULT 0)
 GO
 CREATE TABLE ListTable(id_table INT PRIMARY KEY IDENTITY(1,1),
+					   name_table VARCHAR(10) NOT NULL,
 					   occupation BIT DEFAULT 1)
 GO
 CREATE TABLE ListOrderMenu(kod_order INT NOT NULL,
@@ -28,7 +31,7 @@ CREATE TABLE ListOrderMenu(kod_order INT NOT NULL,
 						   counts FLOAT DEFAULT 1)
 GO
 CREATE TABLE Category(id_category INT PRIMARY KEY IDENTITY(1,1),
-					  name_categori VARCHAR(100))
+					  name_category VARCHAR(100))
 GO
 CREATE TABLE Food(id_food INT PRIMARY KEY IDENTITY(1,1),
 				  name_food VARCHAR(50),
@@ -53,7 +56,9 @@ ALTER TABLE OrderMenu
 ADD CONSTRAINT FK_OrderMenu_Personal FOREIGN KEY(kod_personal) 
 	REFERENCES Personal (id_personal),
 	CONSTRAINT FK_OrderMenu_ListTable FOREIGN KEY(kod_table)
-	REFERENCES ListTable (id_table)
+	REFERENCES ListTable (id_table),
+	CONSTRAINT FK_OrderMenu_Discounts FOREIGN KEY(kod_discount)
+	REFERENCES Discounts(id_discount)
 GO
 ALTER TABLE ListOrderMenu
 ADD CONSTRAINT FK_ListOrderMenu_OrderMenu FOREIGN KEY (kod_order)

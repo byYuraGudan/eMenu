@@ -1,0 +1,18 @@
+//Copy picture in BitMap
+	Graphics::TBitmap *bmp = new Graphics::TBitmap;
+	bmp->Assign(Image1->Picture->Graphic);
+	Image2->Picture->Bitmap = bmp;
+
+//insert picture in sql server
+
+TMemoryStream *str = new TMemoryStream;
+   Image2->Picture->SaveToStream(str);
+   DM->TSQL->SQL->Clear();
+   DM->TSQL->SQL->Add("INSERT INTO eMenu.dbo.Food(name_food,picture)");
+   DM->TSQL->SQL->Add("VALUES(\'qwe\',:P1)");
+   DM->TSQL->Parameters->ParamByName("P1")->DataType = ftBlob;
+   DM->TSQL->Parameters->ParamByName("P1")->LoadFromStream(str,ftBlob);
+   DM->TSQL->ExecSQL();
+// Create view
+CREATE VIEW SHOWFOOD AS
+	SELECT name_food,name_category FROM Food,Category where Food.kod_category = Category.id_category

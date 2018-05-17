@@ -24,12 +24,6 @@ __fastcall TFAdmin::TFAdmin(TComponent* Owner)
 
 
 
-void __fastcall TFAdmin::FormAfterMonitorDpiChanged(TObject *Sender, int OldDPI, int NewDPI)
-
-{
-    ShowMessage("");
-}
-//---------------------------------------------------------------------------
 
 
 
@@ -39,33 +33,9 @@ void __fastcall TFAdmin::FormAfterMonitorDpiChanged(TObject *Sender, int OldDPI,
 
 
 
-void __fastcall TFAdmin::Button1Click(TObject *Sender)
-{
-   Randomize();
-   TMemoryStream *str = new TMemoryStream;
-   Image1->Picture->SaveToStream(str);
-   DM->TSQL->SQL->Clear();
-   DM->TSQL->SQL->Add("INSERT INTO eMenu.dbo.Food(name_food,picture,kod_category)");
-   DM->TSQL->SQL->Add("VALUES(\'??\',:P1,"+IntToStr(random(7))+")");
-   DM->TSQL->Parameters->ParamByName("P1")->DataType = ftBlob;
-   DM->TSQL->Parameters->ParamByName("P1")->LoadFromStream(str,ftBlob);
-   DM->TSQL->ExecSQL();
-}
-//---------------------------------------------------------------------------
 
 
 
-void __fastcall TFAdmin::Button3Click(TObject *Sender)
-{
-   TMemoryStream *str = new TMemoryStream;
-   Image1->Picture->SaveToStream(str);
-   DM->TSQL->SQL->Clear();
-   DM->TSQL->SQL->Add("UPDATE eMenu.dbo.Food Set picture = :P1");
-   DM->TSQL->Parameters->ParamByName("P1")->DataType = ftBlob;
-   DM->TSQL->Parameters->ParamByName("P1")->LoadFromStream(str,ftBlob);
-   DM->TSQL->ExecSQL();
-}
-//---------------------------------------------------------------------------
 
 
 

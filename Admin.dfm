@@ -7,8 +7,8 @@ object FAdmin: TFAdmin
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'Tahoma'
+  Font.Height = -13
+  Font.Name = 'Courier New'
   Font.Style = []
   Icon.Data = {
     0000010006000000000001002000F28200006600000010100000010020006804
@@ -4176,149 +4176,269 @@ object FAdmin: TFAdmin
     FFFFFFF03FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
   Menu = DM.MMAdmin
   OldCreateOrder = False
-  OnAfterMonitorDpiChanged = FormAfterMonitorDpiChanged
+  Position = poDesktopCenter
   PixelsPerInch = 96
-  TextHeight = 13
-  object CategoryPanelGroup1: TCategoryPanelGroup
+  TextHeight = 16
+  object AdminPanelGroupButton: TCategoryPanelGroup
     Left = 0
     Top = 0
-    Width = 201
+    Width = 202
     Height = 581
     VertScrollBar.Tracking = True
+    BevelInner = bvNone
+    BevelOuter = bvNone
+    ChevronAlignment = taRightJustify
+    Color = clBtnFace
+    GradientDirection = gdHorizontal
     HeaderFont.Charset = DEFAULT_CHARSET
     HeaderFont.Color = clWindowText
     HeaderFont.Height = -11
     HeaderFont.Name = 'Tahoma'
     HeaderFont.Style = []
+    HeaderHeight = 20
     Images = DM.ImageListButton
     TabOrder = 0
-    ExplicitHeight = 600
-    object CategoryPanel1: TCategoryPanel
-      Top = 443
-      Caption = 'CategoryPanel1'
-      TabOrder = 0
-    end
-    object CPFood: TCategoryPanel
-      Top = 373
-      Height = 70
-      Caption = 'CPFood'
-      TabOrder = 1
-    end
+    Touch.ParentTabletOptions = False
+    Touch.TabletOptions = [toPressAndHold]
     object CPDiscounts: TCategoryPanel
-      Top = 296
-      Height = 77
-      Caption = 'CPDiscounts'
-      TabOrder = 2
-    end
-    object CPOrderMenu: TCategoryPanel
-      Top = 215
-      Height = 81
-      Caption = 'CPOrderMenu'
-      TabOrder = 3
-    end
-    object CPPersonal: TCategoryPanel
-      Top = 89
-      Height = 126
-      Caption = 'CPPersonal'
-      TabOrder = 4
-      object Button1: TButton
+      Top = 488
+      Height = 122
+      Caption = #1047#1085#1080#1078#1082#1080
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      object Button2: TButton
+        AlignWithMargins = True
         Left = 0
         Top = 0
-        Width = 180
+        Width = 198
         Height = 25
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
         Align = alTop
-        Caption = 'Button1'
-        HotImageIndex = 0
-        ImageIndex = 0
-        Images = DM.ImageListButton
+        Caption = 'buttonAddDiscount'
         TabOrder = 0
-        OnClick = Button1Click
       end
-      object Button2: TButton
+    end
+    object CPOrderMenu: TCategoryPanel
+      Top = 366
+      Height = 122
+      Caption = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103
+      TabOrder = 1
+      object buttonViewOrderMenu: TButton
+        AlignWithMargins = True
+        Left = 0
+        Top = 0
+        Width = 181
+        Height = 25
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = 'buttonViewOrderMenu'
+        TabOrder = 0
+        ExplicitWidth = 198
+      end
+      object buttonViewListOrderMenu: TButton
+        AlignWithMargins = True
         Left = 0
         Top = 25
-        Width = 180
+        Width = 181
         Height = 25
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
         Align = alTop
-        Caption = 'Button2'
-        DragCursor = crDefault
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ImageIndex = 1
-        Images = DM.ImageListButton
-        ParentFont = False
+        Caption = 'buttonViewListOrderMenu'
         TabOrder = 1
+        ExplicitWidth = 198
       end
-      object Button3: TButton
+    end
+    object CPFood: TCategoryPanel
+      Top = 244
+      Height = 122
+      Caption = #1052#1077#1085#1102
+      TabOrder = 2
+      object buttonViewFood: TButton
+        AlignWithMargins = True
+        Left = 0
+        Top = 25
+        Width = 181
+        Height = 25
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = 'buttonViewFood'
+        TabOrder = 0
+        ExplicitWidth = 198
+      end
+      object Button8: TButton
+        AlignWithMargins = True
         Left = 0
         Top = 50
-        Width = 180
+        Width = 181
         Height = 25
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
         Align = alTop
-        Caption = 'Button3'
-        ImageIndex = 4
-        Images = DM.ImageListButton
-        TabOrder = 2
-        OnClick = Button3Click
+        Caption = 'buttonAddFood'
+        TabOrder = 1
+        ExplicitWidth = 198
       end
-      object Button4: TButton
+      object buttonViewDiscount: TButton
+        AlignWithMargins = True
         Left = 0
-        Top = 75
-        Width = 180
+        Top = 0
+        Width = 181
         Height = 25
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
         Align = alTop
-        Caption = 'Button4'
-        ImageIndex = 3
-        Images = DM.ImageListButton
-        TabOrder = 3
+        Caption = 'buttonViewDiscount'
+        TabOrder = 2
+        ExplicitWidth = 198
       end
     end
     object CPCategory: TCategoryPanel
-      Top = 0
-      Height = 89
-      Caption = 'CPCategory'
-      ExpandedImageIndex = 1
-      TabOrder = 5
-      object Button5: TButton
+      Top = 122
+      Height = 122
+      BiDiMode = bdLeftToRight
+      Caption = #1050#1072#1090#1077#1075#1086#1088#1110#1111' '#1084#1077#1085#1102
+      CollapsedImageIndex = 6
+      ExpandedImageIndex = 6
+      ParentBiDiMode = False
+      ParentBackground = True
+      ParentColor = True
+      TabOrder = 3
+      object buttonViewCategory: TButton
+        AlignWithMargins = True
         Left = 0
         Top = 0
-        Width = 180
+        Width = 181
         Height = 25
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
         Align = alTop
-        Caption = 'Button5'
+        Caption = 'buttonViewCategory'
         TabOrder = 0
-        ExplicitLeft = 32
-        ExplicitTop = 8
-        ExplicitWidth = 75
+        ExplicitWidth = 198
       end
-      object Button6: TButton
+      object buttonAddCategory: TButton
+        AlignWithMargins = True
         Left = 0
         Top = 25
-        Width = 180
+        Width = 181
         Height = 25
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
         Align = alTop
-        Caption = 'Button6'
+        Caption = 'buttonAddCategory'
         TabOrder = 1
-        ExplicitLeft = 32
-        ExplicitTop = 39
-        ExplicitWidth = 75
+        ExplicitWidth = 198
+      end
+    end
+    object CPPersonal: TCategoryPanel
+      Top = 0
+      Height = 122
+      Caption = #1050#1086#1088#1080#1089#1090#1091#1074#1072#1095#1110
+      CollapsedImageIndex = 1
+      ExpandedImageIndex = 1
+      TabOrder = 4
+      object buttonViewPersonal: TButton
+        AlignWithMargins = True
+        Left = 0
+        Top = 0
+        Width = 181
+        Height = 25
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = 'buttonViewPersonal'
+        HotImageIndex = 0
+        ImageIndex = 0
+        TabOrder = 0
+        ExplicitWidth = 198
+      end
+      object buttonAddPersonal: TButton
+        AlignWithMargins = True
+        Left = 0
+        Top = 25
+        Width = 181
+        Height = 25
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = 'buttonAddPersonal'
+        DragCursor = crDefault
+        ImageIndex = 1
+        TabOrder = 1
+        ExplicitWidth = 198
+      end
+      object Button3: TButton
+        AlignWithMargins = True
+        Left = 0
+        Top = 50
+        Width = 181
+        Height = 25
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = 'Button3'
+        ImageIndex = 4
+        TabOrder = 2
+        ExplicitWidth = 198
+      end
+      object Button4: TButton
+        AlignWithMargins = True
+        Left = 0
+        Top = 75
+        Width = 181
+        Height = 25
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = 'Button4'
+        ImageIndex = 3
+        TabOrder = 3
+        ExplicitWidth = 198
       end
     end
   end
   object Panel1: TPanel
-    Left = 201
+    Left = 202
     Top = 0
-    Width = 779
+    Width = 778
     Height = 581
     Align = alClient
     Caption = 'Panel1'
     TabOrder = 1
-    ExplicitLeft = 320
-    ExplicitTop = 90
-    ExplicitWidth = 680
-    ExplicitHeight = 510
+    ExplicitLeft = 203
+    ExplicitTop = -1
   end
 end

@@ -1,0 +1,33 @@
+//---------------------------------------------------------------------------
+
+#ifndef DataModuleMainFormH
+#define DataModuleMainFormH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Data.DB.hpp>
+#include <Data.Win.ADODB.hpp>
+//---------------------------------------------------------------------------
+class TDataModule1 : public TDataModule
+{
+__published:	// IDE-managed Components
+	TDataSource *MDSShowFood;
+	TDataSource *MDSShowCategory;
+	TADOTable *MTShowFood;
+	TADOTable *MTShowCategory;
+	TAutoIncField *MTShowFoodid_food;
+	TStringField *MTShowFoodname_food;
+	TBlobField *MTShowFoodpicture;
+	TIntegerField *MTShowFoodkod_category;
+	TFloatField *MTShowFoodweight_food;
+	TFloatField *MTShowFoodcost_price_food;
+	TFloatField *MTShowFoodmark_up;
+	TFloatField *MTShowFoodprice_food;
+	TMemoField *MTShowFooddata_food;
+private:	// User declarations
+public:		// User declarations
+	__fastcall TDataModule1(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TDataModule1 *DataModule1;
+//---------------------------------------------------------------------------
+#endif

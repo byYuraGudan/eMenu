@@ -1,0 +1,75 @@
+object DMMain: TDMMain
+  OldCreateOrder = False
+  Height = 201
+  Width = 258
+  object MDSShowFood: TDataSource
+    DataSet = MTShowFood
+    Left = 152
+    Top = 16
+  end
+  object MDSShowCategory: TDataSource
+    DataSet = MTShowCategory
+    Left = 152
+    Top = 80
+  end
+  object MTShowFood: TADOTable
+    Active = True
+    Connection = DM.ConnectionToDB
+    CursorType = ctStatic
+    IndexFieldNames = 'kod_category'
+    MasterFields = 'id_category'
+    MasterSource = MDSShowCategory
+    TableName = 'MainShowFood'
+    Left = 48
+    Top = 16
+    object MTShowFoodid_food: TAutoIncField
+      FieldName = 'id_food'
+      ReadOnly = True
+    end
+    object MTShowFoodname_food: TStringField
+      FieldName = 'name_food'
+      Size = 50
+    end
+    object MTShowFoodpicture: TBlobField
+      FieldName = 'picture'
+    end
+    object MTShowFoodkod_category: TIntegerField
+      FieldName = 'kod_category'
+    end
+    object MTShowFoodweight_food: TFloatField
+      FieldName = 'weight_food'
+    end
+    object MTShowFoodcost_price_food: TFloatField
+      FieldName = 'cost_price_food'
+    end
+    object MTShowFoodmark_up: TFloatField
+      FieldName = 'mark_up'
+    end
+    object MTShowFoodprice_food: TFloatField
+      FieldName = 'price_food'
+      DisplayFormat = '#.# '#1075#1088#1085
+    end
+    object MTShowFooddata_food: TMemoField
+      FieldName = 'data_food'
+      BlobType = ftMemo
+    end
+  end
+  object MTShowCategory: TADOTable
+    Active = True
+    Connection = DM.ConnectionToDB
+    CursorType = ctStatic
+    TableName = 'MainShowCategory'
+    Left = 48
+    Top = 80
+  end
+  object MQShowFood: TADOQuery
+    Connection = DM.ConnectionToDB
+    Parameters = <>
+    Left = 48
+    Top = 136
+  end
+  object MDSQShowFood: TDataSource
+    Left = 152
+    Top = 136
+  end
+end

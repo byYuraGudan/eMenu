@@ -38,8 +38,8 @@ void TDM::DoSQL(TADOQuery *Query,AnsiString str){
 	Query->Open();
 }
 void TDM::RefreshADO(TADOTable *Table){
-	Table->Active = false;
-	Table->Active = true;
+	Table->Close();
+	Table->Open();
 }
 void TDM::RefreshADO(TADOQuery *Query){
 	Query->Close();

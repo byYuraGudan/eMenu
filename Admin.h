@@ -35,23 +35,25 @@
 class TFAdmin : public TForm
 {
 __published:	// IDE-managed Components
-	TCategoryPanelGroup *CategoryPanelGroup1;
+	TCategoryPanelGroup *AdminPanelGroupButton;
 	TCategoryPanel *CPOrderMenu;
 	TCategoryPanel *CPCategory;
 	TPanel *Panel1;
 	TCategoryPanel *CPFood;
 	TCategoryPanel *CPPersonal;
 	TCategoryPanel *CPDiscounts;
-	TButton *Button1;
-	TButton *Button2;
+	TButton *buttonViewPersonal;
+	TButton *buttonAddPersonal;
 	TButton *Button3;
 	TButton *Button4;
-	TCategoryPanel *CategoryPanel1;
-	TButton *Button5;
-	TButton *Button6;
-	void __fastcall FormAfterMonitorDpiChanged(TObject *Sender, int OldDPI, int NewDPI);
-	void __fastcall Button1Click(TObject *Sender);
-	void __fastcall Button3Click(TObject *Sender);
+	TButton *buttonViewCategory;
+	TButton *buttonAddCategory;
+	TButton *buttonViewFood;
+	TButton *buttonViewOrderMenu;
+	TButton *buttonViewDiscount;
+	TButton *Button8;
+	TButton *buttonViewListOrderMenu;
+	TButton *Button2;
 
 
 private:	// User declarations

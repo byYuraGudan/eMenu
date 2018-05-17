@@ -1,3 +1,10 @@
+//Color - f99440
+
+//Compile program
+чтобы программа работала на компьютерах, на которых не установлен билдер, нужно провести следующие настройки в опциях проекта:
+- закладка packages: убрать галочку Build with runtimes packages
+- закладка linker: убрать галочку Use dinamyc RTL
+
 //Copy picture in BitMap
 	Graphics::TBitmap *bmp = new Graphics::TBitmap;
 	bmp->Assign(Image1->Picture->Graphic);
@@ -16,3 +23,12 @@ TMemoryStream *str = new TMemoryStream;
 // Create view
 CREATE VIEW SHOWFOOD AS
 	SELECT name_food,name_category FROM Food,Category where Food.kod_category = Category.id_category
+
+// Update picture DB
+   TMemoryStream *str = new TMemoryStream;
+   Image1->Picture->SaveToStream(str);
+   DM->TSQL->SQL->Clear();
+   DM->TSQL->SQL->Add("UPDATE eMenu.dbo.Food Set picture = :P1");
+   DM->TSQL->Parameters->ParamByName("P1")->DataType = ftBlob;
+   DM->TSQL->Parameters->ParamByName("P1")->LoadFromStream(str,ftBlob);
+   DM->TSQL->ExecSQL();

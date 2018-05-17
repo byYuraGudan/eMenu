@@ -78,7 +78,6 @@ ADD CONSTRAINT FK_ListIngredientFood_Food FOREIGN KEY (kod_food)
 GO
 
 
-
 						
 
 

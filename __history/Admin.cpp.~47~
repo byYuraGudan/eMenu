@@ -1,0 +1,108 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Admin.h"
+#include "eMenuPCH1.h"
+#include "DataModule.h"
+#include "MainForm.h"
+#include "DataModuleMainForm.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TFAdmin *FAdmin;
+//---------------------------------------------------------------------------
+__fastcall TFAdmin::TFAdmin(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+
+
+
+
+
+
+void __fastcall TFAdmin::FormAfterMonitorDpiChanged(TObject *Sender, int OldDPI, int NewDPI)
+
+{
+    ShowMessage("");
+}
+//---------------------------------------------------------------------------
+
+
+
+
+void __fastcall TFAdmin::Button4Click(TObject *Sender)
+{
+
+//const Pi=3.14159;
+//Series1->Clear();
+//Series1->Add(A1,"Öåõ 1",clYellow);
+//Series1->Add(A2,"Öåõ 2",clBlue);
+//Series1->Add(A3,"Öåõ 3",clRed);
+//Series1->Add(A4,"Öåõ 4",clPurple);
+//Series2->Clear();
+//Series3->Clear();
+//for (int i = 0; i <= 100; i++)
+//{
+//Series2->AddXY(0.02*Pi*i,sin(0.02*Pi*i),"", clRed);
+//Series3->AddXY(0.02*Pi*i,cos(0.02*Pi*i),"",clBlue);
+//}	DMMain->MTShowFood->MasterFields = "";    DMMain->MTShowFood->Refresh();
+}
+//---------------------------------------------------------------------------
+
+
+
+
+
+void __fastcall TFAdmin::Button1Click(TObject *Sender)
+{
+   Randomize();
+   TMemoryStream *str = new TMemoryStream;
+   Image1->Picture->SaveToStream(str);
+   DM->TSQL->SQL->Clear();
+   DM->TSQL->SQL->Add("INSERT INTO eMenu.dbo.Food(name_food,picture,kod_category)");
+   DM->TSQL->SQL->Add("VALUES(\'??\',:P1,"+IntToStr(random(7))+")");
+   DM->TSQL->Parameters->ParamByName("P1")->DataType = ftBlob;
+   DM->TSQL->Parameters->ParamByName("P1")->LoadFromStream(str,ftBlob);
+   DM->TSQL->ExecSQL();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::Button2Click(TObject *Sender)
+{
+	ShowMessage(IntToStr(random(7)));
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TFAdmin::Button3Click(TObject *Sender)
+{
+   TMemoryStream *str = new TMemoryStream;
+   Image1->Picture->SaveToStream(str);
+   DM->TSQL->SQL->Clear();
+   DM->TSQL->SQL->Add("UPDATE eMenu.dbo.Food Set picture = :P1");
+   DM->TSQL->Parameters->ParamByName("P1")->DataType = ftBlob;
+   DM->TSQL->Parameters->ParamByName("P1")->LoadFromStream(str,ftBlob);
+   DM->TSQL->ExecSQL();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::Button5Click(TObject *Sender)
+{
+	String dir = GetCurrentDir();
+	TIniFile *ini = new TIniFile("eMenuWin32Debugoptions.ini");
+	ini->ReadString("Edits","Edit1","kek");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::Button6Click(TObject *Sender)
+{
+	String dir = GetCurrentDir();
+	TIniFile *ini = new TIniFile("eMenuWin32Debugoptions.ini");
+	ini->WriteString("Edits","Edit1",Edit1->Text);
+}
+//---------------------------------------------------------------------------
+

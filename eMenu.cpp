@@ -4,8 +4,13 @@
 #pragma hdrstop
 #include <tchar.h>
 //---------------------------------------------------------------------------
+#include <Vcl.Styles.hpp>
+#include <Vcl.Themes.hpp>
 USEFORM("MainForm.cpp", FMainForm);
-USEFORM("DataModule.cpp", DataModule1); /* TDataModule: File Type */
+USEFORM("Admin.cpp", FAdmin);
+USEFORM("DataModule.cpp", DM); /* TDataModule: File Type */
+USEFORM("DataModuleMainForm.cpp", DMMain); /* TDataModule: File Type */
+USEFORM("Authorization.cpp", FAuth);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -13,8 +18,12 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 	{
 		Application->Initialize();
 		Application->MainFormOnTaskBar = true;
+		TStyleManager::TrySetStyle("Amethyst Kamri");
 		Application->CreateForm(__classid(TFMainForm), &FMainForm);
-		Application->CreateForm(__classid(TDataModule1), &DataModule1);
+		Application->CreateForm(__classid(TFAdmin), &FAdmin);
+		Application->CreateForm(__classid(TDM), &DM);
+		Application->CreateForm(__classid(TDMMain), &DMMain);
+		Application->CreateForm(__classid(TFAuth), &FAuth);
 		Application->Run();
 	}
 	catch (Exception &exception)

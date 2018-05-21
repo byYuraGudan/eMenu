@@ -13,6 +13,9 @@ GO
 --SELECT count(id_food) AS CountRecord,id_category,name_category FROM Category INNER JOIN Food ON kod_category = id_category 
 --	GROUP BY id_category,name_category
 --GO
-CREATE VIEW MainShowFood AS
-SELECT * FROM Food
+--CREATE VIEW MainShowFood AS
+--SELECT * FROM Food
+--GO
+CREATE VIEW AdminFood AS
+SELECT * FROM Food INNER JOIN  Category ON id_category = kod_category
 GO

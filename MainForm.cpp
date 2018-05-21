@@ -4,7 +4,6 @@
 #pragma hdrstop
 
 #include "MainForm.h"
-#include "DataModuleMainForm.h"
 #include "Admin.h"
 #include "DataModule.h"
 #include "Authorization.h"

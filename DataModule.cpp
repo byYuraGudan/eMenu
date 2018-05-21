@@ -7,7 +7,6 @@
 #include "Admin.h"
 #include "eMenuPCH1.h"
 #include "MainForm.h"
-#include "DataModuleMainForm.h"
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -55,7 +54,7 @@ void TDM::OpenDB(){
 
 void __fastcall TDM::N3Click(TObject *Sender)
 {
-	FAdmin->Close();
+FAdmin->Close();
 }
 //---------------------------------------------------------------------------
 
@@ -65,6 +64,10 @@ void __fastcall TDM::DataModuleDestroy(TObject *Sender)
 		ini->WriteString("SQL Server","ConnectionString",ConnectionToDB->ConnectionString);
 }
 //---------------------------------------------------------------------------
+
+
+
+
 
 
 

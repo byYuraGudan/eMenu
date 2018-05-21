@@ -2,9 +2,11 @@ object FAdmin: TFAdmin
   Left = 0
   Top = 0
   Caption = #1040#1076#1084#1110#1085#1110#1089#1090#1088#1072#1090#1086#1088
-  ClientHeight = 581
-  ClientWidth = 980
+  ClientHeight = 600
+  ClientWidth = 1000
   Color = clBtnFace
+  Constraints.MinHeight = 658
+  Constraints.MinWidth = 1016
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -13
@@ -4174,7 +4176,7 @@ object FAdmin: TFAdmin
     FFFFF800001FFFFFFFFFF800001FFFFFFFFFFC00003FFFFFFFFFFC00007FFFFF
     FFFFFE00007FFFFFFFFFFF0000FFFFFFFFFFFF8007FFFFFFFFFFFFC01FFFFFFF
     FFFFFFF03FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-  Menu = DM.MMAdmin
+  Menu = DM.MMain
   OldCreateOrder = False
   Position = poDesktopCenter
   PixelsPerInch = 96
@@ -4183,7 +4185,7 @@ object FAdmin: TFAdmin
     Left = 0
     Top = 0
     Width = 202
-    Height = 581
+    Height = 600
     VertScrollBar.Tracking = True
     BevelInner = bvNone
     BevelOuter = bvNone
@@ -4201,9 +4203,10 @@ object FAdmin: TFAdmin
     Touch.ParentTabletOptions = False
     Touch.TabletOptions = [toPressAndHold]
     object CPDiscounts: TCategoryPanel
-      Top = 488
-      Height = 122
+      Top = 104
+      Height = 26
       Caption = #1047#1085#1080#1078#1082#1080
+      Collapsed = True
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -4211,26 +4214,47 @@ object FAdmin: TFAdmin
       Font.Style = []
       ParentFont = False
       TabOrder = 0
+      ExpandedHeight = 122
       object Button2: TButton
         AlignWithMargins = True
         Left = 0
-        Top = 0
-        Width = 198
+        Top = 25
+        Width = 181
         Height = 25
         Margins.Left = 0
         Margins.Top = 0
         Margins.Right = 0
         Margins.Bottom = 0
         Align = alTop
-        Caption = 'buttonAddDiscount'
+        Caption = #1044#1086#1076#1072#1090#1080' '#1079#1072#1087#1080#1089
         TabOrder = 0
+      end
+      object buttonViewDiscount: TButton
+        AlignWithMargins = True
+        Left = 0
+        Top = 0
+        Width = 181
+        Height = 25
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = #1055#1077#1088#1077#1075#1083#1103#1076' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1111
+        TabOrder = 1
+        OnClick = buttonViewDiscountClick
       end
     end
     object CPOrderMenu: TCategoryPanel
-      Top = 366
-      Height = 122
+      Top = 78
+      Height = 26
       Caption = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103
+      Collapsed = True
+      CollapsedHotImageIndex = 7
+      CollapsedImageIndex = 7
+      CollapsedPressedImageIndex = 7
       TabOrder = 1
+      ExpandedHeight = 122
       object buttonViewOrderMenu: TButton
         AlignWithMargins = True
         Left = 0
@@ -4242,9 +4266,9 @@ object FAdmin: TFAdmin
         Margins.Right = 0
         Margins.Bottom = 0
         Align = alTop
-        Caption = 'buttonViewOrderMenu'
+        Caption = #1055#1077#1088#1077#1075#1083#1103#1076' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1111
         TabOrder = 0
-        ExplicitWidth = 198
+        OnClick = buttonViewOrderMenuClick
       end
       object buttonViewListOrderMenu: TButton
         AlignWithMargins = True
@@ -4259,45 +4283,19 @@ object FAdmin: TFAdmin
         Align = alTop
         Caption = 'buttonViewListOrderMenu'
         TabOrder = 1
-        ExplicitWidth = 198
       end
     end
     object CPFood: TCategoryPanel
-      Top = 244
-      Height = 122
+      Top = 52
+      Height = 26
       Caption = #1052#1077#1085#1102
+      Collapsed = True
+      CollapsedHotImageIndex = 4
+      CollapsedImageIndex = 4
+      CollapsedPressedImageIndex = 4
       TabOrder = 2
+      ExpandedHeight = 122
       object buttonViewFood: TButton
-        AlignWithMargins = True
-        Left = 0
-        Top = 25
-        Width = 181
-        Height = 25
-        Margins.Left = 0
-        Margins.Top = 0
-        Margins.Right = 0
-        Margins.Bottom = 0
-        Align = alTop
-        Caption = 'buttonViewFood'
-        TabOrder = 0
-        ExplicitWidth = 198
-      end
-      object Button8: TButton
-        AlignWithMargins = True
-        Left = 0
-        Top = 50
-        Width = 181
-        Height = 25
-        Margins.Left = 0
-        Margins.Top = 0
-        Margins.Right = 0
-        Margins.Bottom = 0
-        Align = alTop
-        Caption = 'buttonAddFood'
-        TabOrder = 1
-        ExplicitWidth = 198
-      end
-      object buttonViewDiscount: TButton
         AlignWithMargins = True
         Left = 0
         Top = 0
@@ -4308,22 +4306,39 @@ object FAdmin: TFAdmin
         Margins.Right = 0
         Margins.Bottom = 0
         Align = alTop
-        Caption = 'buttonViewDiscount'
-        TabOrder = 2
-        ExplicitWidth = 198
+        Caption = #1055#1077#1088#1077#1075#1083#1103#1076' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1111
+        TabOrder = 0
+        OnClick = buttonViewFoodClick
+      end
+      object Button8: TButton
+        AlignWithMargins = True
+        Left = 0
+        Top = 25
+        Width = 181
+        Height = 25
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = #1044#1086#1076#1072#1090#1080' '#1079#1072#1087#1080#1089
+        TabOrder = 1
+        OnClick = Button8Click
       end
     end
     object CPCategory: TCategoryPanel
-      Top = 122
-      Height = 122
+      Top = 26
+      Height = 26
       BiDiMode = bdLeftToRight
       Caption = #1050#1072#1090#1077#1075#1086#1088#1110#1111' '#1084#1077#1085#1102
+      Collapsed = True
       CollapsedImageIndex = 6
       ExpandedImageIndex = 6
       ParentBiDiMode = False
       ParentBackground = True
       ParentColor = True
       TabOrder = 3
+      ExpandedHeight = 122
       object buttonViewCategory: TButton
         AlignWithMargins = True
         Left = 0
@@ -4335,9 +4350,9 @@ object FAdmin: TFAdmin
         Margins.Right = 0
         Margins.Bottom = 0
         Align = alTop
-        Caption = 'buttonViewCategory'
+        Caption = #1055#1077#1088#1077#1075#1083#1103#1076' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1111
         TabOrder = 0
-        ExplicitWidth = 198
+        OnClick = buttonViewCategoryClick
       end
       object buttonAddCategory: TButton
         AlignWithMargins = True
@@ -4350,18 +4365,22 @@ object FAdmin: TFAdmin
         Margins.Right = 0
         Margins.Bottom = 0
         Align = alTop
-        Caption = 'buttonAddCategory'
+        Caption = #1044#1086#1076#1072#1090#1080' '#1079#1072#1087#1080#1089
         TabOrder = 1
-        ExplicitWidth = 198
+        OnClick = buttonAddCategoryClick
       end
     end
     object CPPersonal: TCategoryPanel
       Top = 0
-      Height = 122
+      Height = 26
       Caption = #1050#1086#1088#1080#1089#1090#1091#1074#1072#1095#1110
-      CollapsedImageIndex = 1
+      Collapsed = True
+      CollapsedHotImageIndex = 3
+      CollapsedImageIndex = 3
+      CollapsedPressedImageIndex = 3
       ExpandedImageIndex = 1
       TabOrder = 4
+      ExpandedHeight = 122
       object buttonViewPersonal: TButton
         AlignWithMargins = True
         Left = 0
@@ -4373,11 +4392,11 @@ object FAdmin: TFAdmin
         Margins.Right = 0
         Margins.Bottom = 0
         Align = alTop
-        Caption = 'buttonViewPersonal'
+        Caption = #1055#1077#1088#1077#1075#1083#1103#1076' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1111
         HotImageIndex = 0
         ImageIndex = 0
         TabOrder = 0
-        ExplicitWidth = 198
+        OnClick = buttonViewPersonalClick
       end
       object buttonAddPersonal: TButton
         AlignWithMargins = True
@@ -4390,11 +4409,11 @@ object FAdmin: TFAdmin
         Margins.Right = 0
         Margins.Bottom = 0
         Align = alTop
-        Caption = 'buttonAddPersonal'
+        Caption = #1044#1086#1076#1072#1090#1080' '#1079#1072#1087#1080#1089
         DragCursor = crDefault
         ImageIndex = 1
         TabOrder = 1
-        ExplicitWidth = 198
+        OnClick = buttonAddPersonalClick
       end
       object Button3: TButton
         AlignWithMargins = True
@@ -4410,7 +4429,6 @@ object FAdmin: TFAdmin
         Caption = 'Button3'
         ImageIndex = 4
         TabOrder = 2
-        ExplicitWidth = 198
       end
       object Button4: TButton
         AlignWithMargins = True
@@ -4426,19 +4444,362 @@ object FAdmin: TFAdmin
         Caption = 'Button4'
         ImageIndex = 3
         TabOrder = 3
-        ExplicitWidth = 198
       end
     end
   end
-  object Panel1: TPanel
-    Left = 202
-    Top = 0
-    Width = 778
-    Height = 581
-    Align = alClient
-    Caption = 'Panel1'
+  object PanelPersonal: TPanel
+    Left = 209
+    Top = 23
+    Width = 298
+    Height = 147
+    Caption = 'PanelPersonal'
     TabOrder = 1
-    ExplicitLeft = 203
-    ExplicitTop = -1
+    object EditSearchPersonal: TEdit
+      AlignWithMargins = True
+      Left = 4
+      Top = 40
+      Width = 290
+      Height = 24
+      Align = alTop
+      TabOrder = 0
+      Text = 'EditSearchPersonal'
+      ExplicitTop = 4
+    end
+    object DBGridPersonal: TDBGrid
+      AlignWithMargins = True
+      Left = 4
+      Top = 70
+      Width = 290
+      Height = 73
+      Align = alClient
+      DataSource = DM.ADSPersonal
+      TabOrder = 1
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -13
+      TitleFont.Name = 'Courier New'
+      TitleFont.Style = []
+    end
+    object ToolBar4: TToolBar
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 290
+      Height = 30
+      ButtonWidth = 75
+      Caption = 'ToolBar'
+      Images = DM.ImageListButton
+      List = True
+      ShowCaptions = True
+      TabOrder = 2
+      object ToolButton10: TToolButton
+        Left = 0
+        Top = 0
+        Caption = 'Add'
+        ImageIndex = 0
+      end
+      object ToolButton11: TToolButton
+        Left = 75
+        Top = 0
+        Caption = 'Delete'
+        ImageIndex = 1
+      end
+      object ToolButton12: TToolButton
+        Left = 150
+        Top = 0
+        Caption = 'Edit'
+        ImageIndex = 2
+      end
+    end
+  end
+  object PanelCategory: TPanel
+    Left = 208
+    Top = 175
+    Width = 298
+    Height = 155
+    Caption = 'PanelCategory'
+    TabOrder = 2
+    object EditSearchCategory: TEdit
+      AlignWithMargins = True
+      Left = 4
+      Top = 40
+      Width = 290
+      Height = 24
+      Align = alTop
+      TabOrder = 0
+      Text = 'EditSearchCategory'
+      ExplicitTop = 4
+    end
+    object DBGridCategory: TDBGrid
+      AlignWithMargins = True
+      Left = 4
+      Top = 70
+      Width = 290
+      Height = 81
+      Align = alClient
+      DataSource = DM.ADSCategory
+      TabOrder = 1
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -13
+      TitleFont.Name = 'Courier New'
+      TitleFont.Style = []
+    end
+    object ToolBar: TToolBar
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 290
+      Height = 30
+      ButtonWidth = 75
+      Caption = 'ToolBar'
+      Images = DM.ImageListButton
+      List = True
+      ShowCaptions = True
+      TabOrder = 2
+      object Add: TToolButton
+        Left = 0
+        Top = 0
+        Caption = 'Add'
+        ImageIndex = 0
+      end
+      object Delete: TToolButton
+        Left = 75
+        Top = 0
+        Caption = 'Delete'
+        ImageIndex = 1
+      end
+      object Edit: TToolButton
+        Left = 150
+        Top = 0
+        Caption = 'Edit'
+        ImageIndex = 2
+      end
+    end
+  end
+  object PanelFood: TPanel
+    Left = 512
+    Top = 22
+    Width = 273
+    Height = 147
+    Caption = 'PanelFood'
+    TabOrder = 3
+    object EditSearchFood: TEdit
+      AlignWithMargins = True
+      Left = 4
+      Top = 40
+      Width = 265
+      Height = 24
+      Align = alTop
+      TabOrder = 0
+      Text = 'EditSearchFood'
+      ExplicitTop = 4
+    end
+    object DBGridIngredient: TDBGrid
+      AlignWithMargins = True
+      Left = 4
+      Top = -10
+      Width = 265
+      Height = 153
+      Align = alBottom
+      TabOrder = 1
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -13
+      TitleFont.Name = 'Courier New'
+      TitleFont.Style = []
+    end
+    object DBGridFood: TDBGrid
+      AlignWithMargins = True
+      Left = 4
+      Top = 70
+      Width = 265
+      Height = 403
+      Align = alClient
+      DataSource = DM.ADSFood
+      TabOrder = 2
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -13
+      TitleFont.Name = 'Courier New'
+      TitleFont.Style = []
+    end
+    object ToolBar2: TToolBar
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 265
+      Height = 30
+      ButtonWidth = 75
+      Caption = 'ToolBar'
+      Images = DM.ImageListButton
+      List = True
+      ShowCaptions = True
+      TabOrder = 3
+      object ToolButton4: TToolButton
+        Left = 0
+        Top = 0
+        Caption = 'Add'
+        ImageIndex = 0
+      end
+      object ToolButton5: TToolButton
+        Left = 75
+        Top = 0
+        Caption = 'Delete'
+        ImageIndex = 1
+      end
+      object ToolButton6: TToolButton
+        Left = 150
+        Top = 0
+        Caption = 'Edit'
+        ImageIndex = 2
+      end
+    end
+  end
+  object PanelOrderMenu: TPanel
+    Left = 512
+    Top = 175
+    Width = 297
+    Height = 322
+    Caption = 'PanelOrderMenu'
+    TabOrder = 4
+    object EditSearchOrderMenu: TEdit
+      AlignWithMargins = True
+      Left = 4
+      Top = 40
+      Width = 289
+      Height = 24
+      Align = alTop
+      TabOrder = 0
+      Text = 'EditSearchOrderMenu'
+      ExplicitLeft = 1
+      ExplicitTop = 1
+      ExplicitWidth = 271
+    end
+    object DBGridListOrder: TDBGrid
+      AlignWithMargins = True
+      Left = 4
+      Top = 70
+      Width = 289
+      Height = 200
+      Align = alTop
+      TabOrder = 1
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -13
+      TitleFont.Name = 'Courier New'
+      TitleFont.Style = []
+    end
+    object DBGridOrderMenu: TDBGrid
+      AlignWithMargins = True
+      Left = 4
+      Top = 276
+      Width = 289
+      Height = 42
+      Align = alClient
+      TabOrder = 2
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -13
+      TitleFont.Name = 'Courier New'
+      TitleFont.Style = []
+    end
+    object ToolBar3: TToolBar
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 289
+      Height = 30
+      ButtonWidth = 75
+      Caption = 'ToolBar'
+      Images = DM.ImageListButton
+      List = True
+      ShowCaptions = True
+      TabOrder = 3
+      object ToolButton7: TToolButton
+        Left = 0
+        Top = 0
+        Caption = 'Add'
+        ImageIndex = 0
+      end
+      object ToolButton8: TToolButton
+        Left = 75
+        Top = 0
+        Caption = 'Delete'
+        ImageIndex = 1
+      end
+      object ToolButton9: TToolButton
+        Left = 150
+        Top = 0
+        Caption = 'Edit'
+        ImageIndex = 2
+      end
+    end
+  end
+  object PanelDiscount: TPanel
+    Left = 208
+    Top = 336
+    Width = 294
+    Height = 161
+    Caption = 'PanelDiscount'
+    TabOrder = 5
+    object EditSearchDiscount: TEdit
+      AlignWithMargins = True
+      Left = 4
+      Top = 40
+      Width = 286
+      Height = 24
+      Align = alTop
+      TabOrder = 0
+      Text = 'EditSearchDiscount'
+      ExplicitLeft = 1
+      ExplicitTop = 1
+      ExplicitWidth = 292
+    end
+    object DBGridDiscount: TDBGrid
+      AlignWithMargins = True
+      Left = 4
+      Top = 70
+      Width = 286
+      Height = 87
+      Align = alClient
+      TabOrder = 1
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -13
+      TitleFont.Name = 'Courier New'
+      TitleFont.Style = []
+    end
+    object ToolBar1: TToolBar
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 286
+      Height = 30
+      ButtonWidth = 75
+      Caption = 'ToolBar'
+      Images = DM.ImageListButton
+      List = True
+      ShowCaptions = True
+      TabOrder = 2
+      object ToolButton1: TToolButton
+        Left = 0
+        Top = 0
+        Caption = 'Add'
+        ImageIndex = 0
+      end
+      object ToolButton2: TToolButton
+        Left = 75
+        Top = 0
+        Caption = 'Delete'
+        ImageIndex = 1
+      end
+      object ToolButton3: TToolButton
+        Left = 150
+        Top = 0
+        Caption = 'Edit'
+        ImageIndex = 2
+      end
+    end
   end
 end

@@ -1,0 +1,81 @@
+object FEditIngredient: TFEditIngredient
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  Caption = #1044#1086#1076#1072#1090#1080' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1102' '#1087#1088#1086' '#1110#1085#1075#1088#1077#1076#1110#1108#1085#1090
+  ClientHeight = 202
+  ClientWidth = 447
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 319
+    Top = 21
+    Width = 66
+    Height = 13
+    Caption = #1054#1076#1080#1085'. '#1074#1080#1084#1110#1088#1091
+  end
+  object Edit_name_ingredient: TLabeledEdit
+    Left = 24
+    Top = 40
+    Width = 121
+    Height = 21
+    EditLabel.Width = 104
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Edit_name_ingredient'
+    TabOrder = 0
+  end
+  object Edit_count: TLabeledEdit
+    Left = 167
+    Top = 40
+    Width = 121
+    Height = 21
+    EditLabel.Width = 51
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Edit_count'
+    TabOrder = 1
+  end
+  object Edit_price: TLabeledEdit
+    Left = 144
+    Top = 112
+    Width = 121
+    Height = 21
+    EditLabel.Width = 47
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Edit_price'
+    TabOrder = 2
+  end
+  object ButtonAcccept: TButton
+    Left = 184
+    Top = 156
+    Width = 100
+    Height = 30
+    Caption = #1055#1110#1076#1090#1074#1077#1088#1076#1080#1090#1080
+    TabOrder = 3
+  end
+  object ButtonCancel: TButton
+    Left = 319
+    Top = 156
+    Width = 100
+    Height = 30
+    Caption = #1042#1110#1076#1084#1110#1085#1080#1090#1080
+    TabOrder = 4
+  end
+  object CB_unit: TComboBox
+    Left = 319
+    Top = 40
+    Width = 87
+    Height = 21
+    TabOrder = 5
+    Items.Strings = (
+      #1096#1090
+      #1083
+      #1082#1075)
+  end
+end

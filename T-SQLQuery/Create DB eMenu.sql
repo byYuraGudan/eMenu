@@ -34,11 +34,11 @@ CREATE TABLE Category(id_category INT PRIMARY KEY IDENTITY(1,1),
 					  name_category VARCHAR(100))
 GO
 CREATE TABLE Food(id_food INT PRIMARY KEY IDENTITY(1,1),
-				  name_food VARCHAR(50),
+				  name_food VARCHAR(50) NOT NULL,
 				  picture VARBINARY(MAX),
 				  kod_category INT,
 				  weight_food FLOAT,
-				  cost_price_food FLOAT,
+				  cost_price_food FLOAT NOT NULL,
 				  mark_up FLOAT NOT NULL DEFAULT 0.1,
 				  price_food FLOAT,
 				  data_food VARCHAR(MAX))
@@ -48,7 +48,7 @@ CREATE TABLE ListIngredientFood(kod_food INT NOT NULL,
 								counts FLOAT NOT NULL)
 
 CREATE TABLE Ingredient(id_ingredient INT PRIMARY KEY,
-						name_ingredient VARCHAR(50),
+						name_ingredient VARCHAR(50) NOT NULL,
 						unit VARCHAR(10),
 						price FLOAT NOT NULL)
 GO

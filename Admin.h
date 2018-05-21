@@ -31,6 +31,7 @@
 #include <Vcl.TabNotBk.hpp>
 #include <Vcl.Imaging.jpeg.hpp>
 #include <Vcl.Graphics.hpp>
+#include <Vcl.ToolWin.hpp>
 //---------------------------------------------------------------------------
 class TFAdmin : public TForm
 {
@@ -38,7 +39,6 @@ __published:	// IDE-managed Components
 	TCategoryPanelGroup *AdminPanelGroupButton;
 	TCategoryPanel *CPOrderMenu;
 	TCategoryPanel *CPCategory;
-	TPanel *Panel1;
 	TCategoryPanel *CPFood;
 	TCategoryPanel *CPPersonal;
 	TCategoryPanel *CPDiscounts;
@@ -54,6 +54,51 @@ __published:	// IDE-managed Components
 	TButton *Button8;
 	TButton *buttonViewListOrderMenu;
 	TButton *Button2;
+	TPanel *PanelPersonal;
+	TEdit *EditSearchPersonal;
+	TDBGrid *DBGridPersonal;
+	TPanel *PanelCategory;
+	TEdit *EditSearchCategory;
+	TDBGrid *DBGridCategory;
+	TPanel *PanelFood;
+	TEdit *EditSearchFood;
+	TDBGrid *DBGridIngredient;
+	TDBGrid *DBGridFood;
+	TPanel *PanelOrderMenu;
+	TPanel *PanelDiscount;
+	TEdit *EditSearchDiscount;
+	TEdit *EditSearchOrderMenu;
+	TDBGrid *DBGridListOrder;
+	TDBGrid *DBGridOrderMenu;
+	TDBGrid *DBGridDiscount;
+	TToolBar *ToolBar;
+	TToolButton *Add;
+	TToolButton *Delete;
+	TToolButton *Edit;
+	TToolBar *ToolBar1;
+	TToolButton *ToolButton1;
+	TToolButton *ToolButton2;
+	TToolButton *ToolButton3;
+	TToolBar *ToolBar2;
+	TToolButton *ToolButton4;
+	TToolButton *ToolButton5;
+	TToolButton *ToolButton6;
+	TToolBar *ToolBar3;
+	TToolButton *ToolButton7;
+	TToolButton *ToolButton8;
+	TToolButton *ToolButton9;
+	TToolBar *ToolBar4;
+	TToolButton *ToolButton10;
+	TToolButton *ToolButton11;
+	TToolButton *ToolButton12;
+	void __fastcall buttonViewPersonalClick(TObject *Sender);
+	void __fastcall buttonAddPersonalClick(TObject *Sender);
+	void __fastcall buttonAddCategoryClick(TObject *Sender);
+	void __fastcall Button8Click(TObject *Sender);
+	void __fastcall buttonViewCategoryClick(TObject *Sender);
+	void __fastcall buttonViewFoodClick(TObject *Sender);
+	void __fastcall buttonViewOrderMenuClick(TObject *Sender);
+	void __fastcall buttonViewDiscountClick(TObject *Sender);
 
 
 private:	// User declarations

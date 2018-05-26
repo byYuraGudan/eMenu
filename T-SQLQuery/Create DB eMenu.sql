@@ -1,4 +1,12 @@
 CREATE DATABASE eMenu
+ON
+PRIMARY (NAME = eMenu1,
+	FILENAME = 'E:\eMenu\T-SQLQuery\eMenu_archive.mdf'),
+FILEGROUP FileStreamGroup1 CONTAINS FILESTREAM( NAME = Arch3,
+	FILENAME = 'E:\eMenu\T-SQLQuery\eMenu_filestream')
+
+LOG ON ( NAME = eMenuLog,
+	FILENAME = 'E:\eMenu\T-SQLQuery\eMenu_log.ldf')
 GO
 USE eMenu
 GO
@@ -7,7 +15,9 @@ CREATE TABLE Personal(id_personal INT PRIMARY KEY IDENTITY(1,1),
 					  pib_personal VARCHAR(50) NOT NULL,
 					  logins VARCHAR(15),
 					  passwords VARCHAR(15),
-					  access BIT DEFAULT 1)
+					  access BIT DEFAULT 1,
+					  data_of_work DATETIME DEFAULT GETDATE(),
+					  release_date DATETIME)
 GO
 CREATE TABLE OrderMenu(id_order INT PRIMARY KEY IDENTITY(1,1),
 					   date_open_order DATETIME DEFAULT GETDATE(),
@@ -26,7 +36,8 @@ CREATE TABLE ListTable(id_table INT PRIMARY KEY IDENTITY(1,1),
 					   name_table VARCHAR(10) NOT NULL,
 					   occupation BIT DEFAULT 1)
 GO
-CREATE TABLE ListOrderMenu(kod_order INT NOT NULL,
+CREATE TABLE ListOrderMenu(id_listordermenu INT PRIMARY KEY IDENTITY(1,1),
+						   kod_order INT NOT NULL,
 						   kod_food INT NOT NULL,
 						   counts FLOAT DEFAULT 1)
 GO
@@ -43,7 +54,8 @@ CREATE TABLE Food(id_food INT PRIMARY KEY IDENTITY(1,1),
 				  price_food FLOAT,
 				  data_food VARCHAR(MAX))
 GO
-CREATE TABLE ListIngredientFood(kod_food INT NOT NULL,
+CREATE TABLE ListIngredientFood(id_listingrfood INT PRIMARY KEY IDENTITY(1,1),
+								kod_food INT NOT NULL,
 								kod_ingredient INT NOT NULL,
 								counts FLOAT NOT NULL)
 

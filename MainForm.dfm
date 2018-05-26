@@ -16,9 +16,9 @@ object FMainForm: TFMainForm
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
-    Top = 0
+    Top = 25
     Width = 225
-    Height = 600
+    Height = 575
     Align = alLeft
     Alignment = taLeftJustify
     BevelOuter = bvNone
@@ -28,7 +28,7 @@ object FMainForm: TFMainForm
       Left = 0
       Top = 0
       Width = 225
-      Height = 600
+      Height = 575
       Align = alClient
       DataSource = DM.MDSShowCategory
       Font.Charset = RUSSIAN_CHARSET
@@ -37,7 +37,7 @@ object FMainForm: TFMainForm
       Font.Name = 'Courier New'
       Font.Style = []
       PanelBorder = gbNone
-      PanelHeight = 40
+      PanelHeight = 38
       PanelWidth = 208
       ParentFont = False
       TabOrder = 0
@@ -47,7 +47,7 @@ object FMainForm: TFMainForm
         Left = 3
         Top = 3
         Width = 171
-        Height = 34
+        Height = 32
         Align = alClient
         Color = clBtnFace
         DataField = 'name_category'
@@ -67,7 +67,7 @@ object FMainForm: TFMainForm
         Left = 180
         Top = 10
         Width = 25
-        Height = 20
+        Height = 18
         Margins.Top = 10
         Margins.Bottom = 10
         Align = alRight
@@ -84,14 +84,15 @@ object FMainForm: TFMainForm
         ParentFont = False
         WordWrap = True
         ExplicitTop = 2
+        ExplicitHeight = 20
       end
     end
   end
   object Panel2: TPanel
     Left = 225
-    Top = 0
+    Top = 25
     Width = 575
-    Height = 600
+    Height = 575
     Align = alClient
     Caption = 'Panel2'
     TabOrder = 1
@@ -99,12 +100,12 @@ object FMainForm: TFMainForm
       Left = 1
       Top = 25
       Width = 573
-      Height = 574
+      Height = 549
       Align = alClient
       ColCount = 4
       DataSource = DM.MDSShowFood
       PanelBorder = gbNone
-      PanelHeight = 191
+      PanelHeight = 183
       PanelWidth = 139
       TabOrder = 0
       TabStop = False
@@ -113,14 +114,14 @@ object FMainForm: TFMainForm
         Left = 3
         Top = 3
         Width = 133
-        Height = 185
+        Height = 177
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
         object DBText2: TDBText
           AlignWithMargins = True
           Left = 3
-          Top = 167
+          Top = 139
           Width = 127
           Height = 15
           Align = alBottom
@@ -139,7 +140,7 @@ object FMainForm: TFMainForm
         object DBText4: TDBText
           AlignWithMargins = True
           Left = 3
-          Top = 128
+          Top = 100
           Width = 127
           Height = 33
           Align = alBottom
@@ -155,12 +156,33 @@ object FMainForm: TFMainForm
           Left = 3
           Top = 3
           Width = 127
-          Height = 119
+          Height = 91
           Align = alClient
           DataField = 'picture'
           DataSource = DM.MDSShowFood
           Stretch = True
           TabOrder = 0
+        end
+        object Panel3: TPanel
+          Left = 0
+          Top = 157
+          Width = 133
+          Height = 20
+          ParentCustomHint = False
+          Align = alBottom
+          Caption = 'Panel3'
+          Ctl3D = False
+          UseDockManager = False
+          DoubleBuffered = False
+          FullRepaint = False
+          ParentBackground = False
+          ParentCtl3D = False
+          ParentDoubleBuffered = False
+          ParentShowHint = False
+          ShowHint = False
+          TabOrder = 1
+          Visible = False
+          OnClick = Panel3Click
         end
       end
     end
@@ -180,5 +202,17 @@ object FMainForm: TFMainForm
       TextHint = #1055#1086#1096#1091#1082' '#1089#1090#1088#1072#1074#1080' '#1072#1073#1086' '#1085#1072#1087#1086#1102
       OnChange = EditMainSearchFoodChange
     end
+  end
+  object ToolBarMain: TToolBar
+    Left = 0
+    Top = 0
+    Width = 800
+    Height = 25
+    ButtonWidth = 104
+    Images = DM.ImageListButton
+    List = True
+    Menu = DM.MMain
+    ShowCaptions = True
+    TabOrder = 2
   end
 end

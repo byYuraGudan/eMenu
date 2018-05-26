@@ -4,6 +4,7 @@
 #pragma hdrstop
 
 #include "EditPersonal.h"
+#include "DataModule.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"

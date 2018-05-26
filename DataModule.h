@@ -76,8 +76,14 @@ __published:	// IDE-managed Components
 	TMenuItem *N2;
 	TMenuItem *N3;
 	TMenuItem *N4;
+	TMenuItem *N6;
+	TDateTimeField *ATPersonaldata_of_work;
+	TDateTimeField *ATPersonalrelease_date;
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall DataModuleDestroy(TObject *Sender);
+	void __fastcall N2Click(TObject *Sender);
+	void __fastcall N4Click(TObject *Sender);
+	void __fastcall N5Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDM(TComponent* Owner);
@@ -86,6 +92,8 @@ public:		// User declarations
 	void RefreshADO(TADOQuery*);
 	void OpenDB();
 	TIniFile *ini;
+	bool auth;
+    bool admin;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TDM *DM;

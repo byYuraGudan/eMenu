@@ -186,15 +186,15 @@
             <DependentOn>MainForm.h</DependentOn>
             <BuildOrder>2</BuildOrder>
         </CppCompile>
-        <FormResources Include="EditFood.dfm"/>
+        <FormResources Include="EditIngredient.dfm"/>
         <FormResources Include="EditPersonal.dfm"/>
         <FormResources Include="MainForm.dfm"/>
+        <FormResources Include="EditFood.dfm"/>
         <FormResources Include="Admin.dfm"/>
         <FormResources Include="Authorization.dfm"/>
         <FormResources Include="DataModule.dfm"/>
         <FormResources Include="EditCategory.dfm"/>
         <FormResources Include="EditDiscount.dfm"/>
-        <FormResources Include="EditIngredient.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

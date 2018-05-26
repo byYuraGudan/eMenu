@@ -27,6 +27,8 @@
 #include <Vcl.Bind.DBEngExt.hpp>
 #include <Vcl.Bind.Editors.hpp>
 #include <Vcl.Mask.hpp>
+#include <Vcl.ComCtrls.hpp>
+#include <Vcl.ToolWin.hpp>
 //---------------------------------------------------------------------------
 class TFMainForm : public TForm
 {
@@ -42,9 +44,13 @@ __published:	// IDE-managed Components
 	TDBCtrlGrid *DBCtrlGrid1;
 	TDBText *DBText1;
 	TDBText *DBText3;
+	TToolBar *ToolBarMain;
+	TPanel *Panel3;
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall DBImage1Click(TObject *Sender);
 	void __fastcall EditMainSearchFoodChange(TObject *Sender);
+	void __fastcall Panel3Click(TObject *Sender);
+
 
 private:	// User declarations
 	bool authorization;

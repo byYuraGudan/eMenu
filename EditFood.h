@@ -14,6 +14,7 @@
 #include <Data.DB.hpp>
 #include <Vcl.DBGrids.hpp>
 #include <Vcl.Grids.hpp>
+#include <Vcl.Imaging.jpeg.hpp>
 //---------------------------------------------------------------------------
 class TFEditFood : public TForm
 {
@@ -43,6 +44,7 @@ __published:	// IDE-managed Components
 	TButton *ButtonCalculation;
 	TGroupBox *GroupBox2;
 	TDBGrid *DBGrid1;
+	void __fastcall EditImageClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFEditFood(TComponent* Owner);

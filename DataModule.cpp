@@ -7,6 +7,7 @@
 #include "Admin.h"
 #include "eMenuPCH1.h"
 #include "MainForm.h"
+#include "Authorization.h"
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -48,7 +49,10 @@ void TDM::RefreshADO(TADOQuery *Query){
 void TDM::OpenDB(){
 	RefreshADO(MTShowCategory);
 	RefreshADO(MTShowFood);
-
+	RefreshADO(ATPersonal);
+	RefreshADO(ATCategory);
+	RefreshADO(ATFood);
+    RefreshADO(ATDiscount);
 }
 //---------------------------------------------------------------------------
 
@@ -70,4 +74,24 @@ void __fastcall TDM::DataModuleDestroy(TObject *Sender)
 
 
 
+
+
+
+void __fastcall TDM::N2Click(TObject *Sender)
+{
+    DM->OpenDB();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TDM::N4Click(TObject *Sender)
+{
+	FMainForm->Close();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TDM::N5Click(TObject *Sender)
+{
+    FAuth->Show();
+}
+//---------------------------------------------------------------------------
 

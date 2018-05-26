@@ -49,56 +49,76 @@ void __fastcall TFAdmin::buttonAddPersonalClick(TObject *Sender)
 
 void __fastcall TFAdmin::buttonAddCategoryClick(TObject *Sender)
 {
-    FEditCategory->Show();
+	FEditCategory->Show();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TFAdmin::Button8Click(TObject *Sender)
 {
-    FEditFood->Show();
+	FEditFood->Show();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TFAdmin::buttonViewCategoryClick(TObject *Sender)
 {
+	  this->HidePanel(Sender);
 	  PanelCategory->Show();
-	  PanelFood->Hide();
-	  PanelPersonal->Hide();
-	  PanelDiscount->Hide();
-	  PanelOrderMenu->Hide();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TFAdmin::buttonViewFoodClick(TObject *Sender)
 {
+	  this->HidePanel(Sender);
 	  PanelFood->Show();
-	  PanelPersonal->Hide();
-	  PanelCategory->Hide();
-	  PanelDiscount->Hide();
-	  PanelOrderMenu->Hide();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TFAdmin::buttonViewOrderMenuClick(TObject *Sender)
 {
+	  this->HidePanel(Sender);
 	  PanelOrderMenu->Show();
-	  PanelPersonal->Hide();
-	  PanelFood->Hide();
-	  PanelCategory->Hide();
-	  PanelDiscount->Hide();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TFAdmin::buttonViewDiscountClick(TObject *Sender)
 {
+	this->HidePanel(Sender);
 	PanelDiscount->Show();
+}
+//---------------------------------------------------------------------------
+
+void TFAdmin::HidePanel(TObject *Sender){
+    PanelDiscount->Hide();
 	PanelPersonal->Hide();
 	PanelFood->Hide();
 	PanelCategory->Hide();
 	PanelOrderMenu->Hide();
+    DM->auth = false;
 }
+
 //---------------------------------------------------------------------------
 
 
+
+void __fastcall TFAdmin::DeleteCategoryClick(TObject *Sender)
+{
+	TCategory category;
+	category.setId_category(DM->ATCategory->FieldByName("id_category")->AsInteger);
+    category.DeleteDBCategory();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::AddCategoryClick(TObject *Sender)
+{
+    FEditCategory->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::EditCategoryClick(TObject *Sender)
+{
+	FEditCategory->Show();
+	FEditCategory->EditID->Text = DM->ATCategory->FieldByName("id_category")->AsAnsiString;
+	FEditCategory->edit_name_category->Text = DM->ATCategory->FieldByName("name_category")->AsAnsiString;
+}
 //---------------------------------------------------------------------------
 

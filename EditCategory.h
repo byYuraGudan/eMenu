@@ -16,6 +16,8 @@ __published:	// IDE-managed Components
 	TButton *ButtonCancel;
 	TLabeledEdit *edit_name_category;
 	TLabeledEdit *EditID;
+	void __fastcall ButtonAccceptClick(TObject *Sender);
+	void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFEditCategory(TComponent* Owner);

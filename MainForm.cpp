@@ -7,6 +7,12 @@
 #include "Admin.h"
 #include "DataModule.h"
 #include "Authorization.h"
+#include "EditCategory.h"
+#include "EditDiscount.h"
+#include "EditFood.h"
+#include "EditIngredient.h"
+#include "EditPersonal.h"
+#include "eMenuPCH1.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -61,6 +67,19 @@ void __fastcall TFMainForm::EditMainSearchFoodChange(TObject *Sender)
 	DM->MQShowFood->Close();
     }
 
+}
+//---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+void __fastcall TFMainForm::Panel3Click(TObject *Sender)
+{
+	Panel3->Color = cl3DLight;
 }
 //---------------------------------------------------------------------------
 

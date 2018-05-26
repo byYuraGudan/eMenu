@@ -3546,19 +3546,27 @@ object FEditIngredient: TFEditIngredient
     TabOrder = 2
   end
   object ButtonAcccept: TButton
-    Left = 144
-    Top = 107
-    Width = 100
+    Left = 123
+    Top = 108
+    Width = 120
     Height = 30
     Caption = #1055#1110#1076#1090#1074#1077#1088#1076#1080#1090#1080
+    HotImageIndex = 10
+    ImageIndex = 10
+    ImageMargins.Left = 5
+    Images = DM.ImageListButton
     TabOrder = 3
   end
   object ButtonCancel: TButton
-    Left = 279
-    Top = 107
-    Width = 100
+    Left = 258
+    Top = 108
+    Width = 120
     Height = 30
     Caption = #1042#1110#1076#1084#1110#1085#1080#1090#1080
+    HotImageIndex = 1
+    ImageIndex = 1
+    ImageMargins.Left = 5
+    Images = DM.ImageListButton
     TabOrder = 4
   end
   object CB_unit: TComboBox

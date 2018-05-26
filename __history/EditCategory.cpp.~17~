@@ -1,0 +1,63 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "EditCategory.h"
+#include "DataModule.h"
+#include "eMenuPCH1.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TFEditCategory *FEditCategory;
+//---------------------------------------------------------------------------
+__fastcall TFEditCategory::TFEditCategory(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+
+
+void TCategory::setId_category(int a){
+    this->id_category = a;
+}
+void TCategory::setName_category(AnsiString a){
+	this->name_category =a;
+}
+int TCategory::getId_category(){
+	return this->id_category;
+}
+AnsiString TCategory::getName_category(){
+    return this->name_category;
+}
+
+void TCategory::InsertDBCategory(){
+	DM->TSQL->SQL->Clear();
+	DM->TSQL->SQL->Add("INSERT INTO eMenu.dbo.Category(name_category)");
+	DM->TSQL->SQL->Add("VALUES(:P1)");
+	DM->TSQL->Parameters->ParamByName("P1")->Value = this->name_category;
+	DM->TSQL->ExecSQL();
+}
+
+void TCategory::UpdateDBCategory(){
+	DM->TSQL->SQL->Clear();
+	DM->TSQL->SQL->Add("UPDATE eMenu.dbo.Category SET name_category = :P1 WHERE id_category = :id");
+	DM->TSQL->Parameters->ParamByName("P1")->Value = this->name_category;
+	DM->TSQL->Parameters->ParamByName("id")->Value = this->id_category;
+	DM->TSQL->ExecSQL();
+}
+
+void TCategory::DeleteDBCategory(){
+	DM->TSQL->SQL->Clear();
+	DM->TSQL->SQL->Add("DELETE id_category FROM eMenu.dbo.Category");
+	DM->TSQL->SQL->Add("WHERE id_category = :id");
+	DM->TSQL->Parameters->ParamByName("id")->Value = this->id_category;
+	DM->TSQL->ExecSQL();
+
+}
+void __fastcall TFEditCategory::ButtonAccceptClick(TObject *Sender)
+{
+    TCategory category;
+}
+//---------------------------------------------------------------------------
+

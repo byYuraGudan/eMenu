@@ -7,6 +7,9 @@
 #include <Vcl.Controls.hpp>
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
+#include <Vcl.ComCtrls.hpp>
+#include <Vcl.ExtCtrls.hpp>
+#include <Vcl.Imaging.jpeg.hpp>
 //---------------------------------------------------------------------------
 class TFAuth : public TForm
 {
@@ -15,11 +18,16 @@ __published:	// IDE-managed Components
 	TButton *buttonClose;
 	TLabel *Label1;
 	TLabel *Label2;
-	TEdit *Edit1;
-	TEdit *Edit2;
+	TEdit *Login;
+	TEdit *Password;
+	void __fastcall FormShow(TObject *Sender);
+	void __fastcall buttonOpenClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFAuth(TComponent* Owner);
+	void AdminStatus(TObject *Sender);
+	void UserStatus(TObject *Sender);
+    void NotUserStatus(TObject *Sender);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TFAuth *FAuth;

@@ -67,10 +67,17 @@ private:
 protected:
 
 public:
+	TCategory(){
+		this->id_category = 0;
+        this->name_category = "Name_category";
+	}
 	void setId_category(int);
 	void setName_category(AnsiString);
-	int getId_category(int);
-    AnsiString getName_category();
+	int getId_category();
+	AnsiString getName_category();
+	void InsertDBCategory();
+	void UpdateDBCategory();
+    void DeleteDBCategory();
 };
 
 class TFood: public TCategory

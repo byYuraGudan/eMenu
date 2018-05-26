@@ -9,6 +9,11 @@
 
 #include "eMenuPCH1.h"
 #include "MainForm.h"
+#include "EditCategory.h"
+#include "EditDiscount.h"
+#include "EditFood.h"
+#include "EditIngredient.h"
+#include "EditPersonal.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -17,5 +22,42 @@ TFAuth *FAuth;
 __fastcall TFAuth::TFAuth(TComponent* Owner)
 	: TForm(Owner)
 {
+	DM->admin = false;
+	DM->auth = false;
 }
 //---------------------------------------------------------------------------
+
+void TFAuth::AdminStatus(TObject *Sender){
+
+}
+
+void TFAuth::UserStatus(TObject *Sender){
+
+}
+
+void TFAuth::NotUserStatus(TObject *Sender){
+ 	FAdmin->Hide();
+	FEditCategory->Hide();
+	FEditDiscount->Hide();
+	FEditFood->Hide();
+	FEditIngredient->Hide();
+	FEditPersonal->Hide();
+}
+
+void __fastcall TFAuth::FormShow(TObject *Sender)
+{
+//	FAdmin->Hide();	FEditCategory->Hide();
+//	FEditDiscount->Hide();
+//	FEditFood->Hide();
+//	FEditIngredient->Hide();
+//	FEditPersonal->Hide();
+//	DM->admin = false;
+//	DM->auth = false;
+}//---------------------------------------------------------------------------
+
+void __fastcall TFAuth::buttonOpenClick(TObject *Sender)
+{
+	String login = Login->Text, password = Password->Text;
+}
+//---------------------------------------------------------------------------
+

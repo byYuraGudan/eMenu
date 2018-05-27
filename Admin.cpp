@@ -102,9 +102,13 @@ void TFAdmin::HidePanel(TObject *Sender){
 
 void __fastcall TFAdmin::DeleteCategoryClick(TObject *Sender)
 {
-	TCategory category;
-	category.setId_category(DM->ATCategory->FieldByName("id_category")->AsInteger);
-    category.DeleteDBCategory();
+	try {
+		TCategory category;
+		category.setId_category(DM->ATCategory->FieldByName("id_category")->AsInteger);
+		category.DeleteDBCategory(); }
+	catch(...){
+          ShowMessage("Неможна видалити інформація про категорію! Існуються дані пов'язанні з цією категорією");
+	}
 }
 //---------------------------------------------------------------------------
 
@@ -121,4 +125,53 @@ void __fastcall TFAdmin::EditCategoryClick(TObject *Sender)
 	FEditCategory->edit_name_category->Text = DM->ATCategory->FieldByName("name_category")->AsAnsiString;
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::EditSearchCategoryChange(TObject *Sender)
+{
+	AnsiString tmp = EditSearchCategory->Text;
+	DM->ATCategory->Filtered = false;
+	if (tmp.Length()!=0){
+		DM->ATCategory->Filter = "name_category like '%"+tmp+"%'";
+        DM->ATCategory->Filtered = true;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::Button2Click(TObject *Sender)
+{
+	FEditDiscount->Show();
+	FEditDiscount->add = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::AddDiscountClick(TObject *Sender)
+{
+	FEditDiscount->Show();
+	FEditDiscount->add = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::EditDiscountClick(TObject *Sender)
+{
+	FEditDiscount->Show();
+	FEditDiscount->add = false;
+	FEditDiscount->edit_id->Text = DM->ATDiscountid_discount->Value;
+	FEditDiscount->edit_pib_client->Text = DM->ATDiscountpib_client->Value;
+	FEditDiscount->edit_discount->Text = DM->ATDiscountdiscount->Value;
+	FEditDiscount->edit_telefon->Text = DM->ATDiscounttelefon->Value;
+	FEditDiscount->edit_adress->Text = DM->ATDiscountadress->Value;
+	FEditDiscount->edit_birthday->Text = DM->ATDiscount->FieldByName("birthday")->AsString;
+    FEditDiscount->Button1->Hide();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::DeleteDiscountClick(TObject *Sender)
+{
+	TDiscount discount;
+	discount.setId_discount(DM->ATDiscountid_discount->Value);
+    discount.DeleteDBDiscount();
+}
+//---------------------------------------------------------------------------
+
+
 

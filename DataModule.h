@@ -79,6 +79,12 @@ __published:	// IDE-managed Components
 	TMenuItem *N6;
 	TDateTimeField *ATPersonaldata_of_work;
 	TDateTimeField *ATPersonalrelease_date;
+	TIntegerField *ATDiscountid_discount;
+	TStringField *ATDiscountpib_client;
+	TFloatField *ATDiscountdiscount;
+	TWideStringField *ATDiscountbirthday;
+	TStringField *ATDiscountadress;
+	TStringField *ATDiscounttelefon;
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall DataModuleDestroy(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);

@@ -65,6 +65,7 @@ void __fastcall TFEditCategory::ButtonAccceptClick(TObject *Sender)
 		category.setId_category(StrToInt(FEditCategory->EditID->Text));
 		category.UpdateDBCategory();
 	}	else category.InsertDBCategory();
+    DM->OpenDB();
 }
 //---------------------------------------------------------------------------
 

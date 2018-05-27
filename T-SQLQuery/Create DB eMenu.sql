@@ -30,6 +30,9 @@ CREATE TABLE OrderMenu(id_order INT PRIMARY KEY IDENTITY(1,1),
 GO
 CREATE TABLE Discounts(id_discount INT PRIMARY KEY,
 					  pib_client VARCHAR(50),
+					  birthday DATE,
+					  adress VARCHAR(100),
+					  telefon VARCHAR(20), 
 					  discount FLOAT NOT NULL DEFAULT 0)
 GO
 CREATE TABLE ListTable(id_table INT PRIMARY KEY IDENTITY(1,1),

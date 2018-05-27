@@ -41,6 +41,32 @@ public:
 	int getId_table();
 	bool getOccupation(bool);
 };
+
+class TDiscount
+{
+private:
+	int id_discount;
+	float discount;
+	String pib_client,adress,telefon,birthday;
+protected:
+
+public:
+	TDiscount(){
+		this->id_discount = 0;
+		this->discount = 0;
+		this->pib_client = "ПІБ Клієнта";
+		this->adress = "Адрес Клієнта";
+		this->telefon = "Мобільний телефон";
+		this->birthday = "1970-01-01";
+	}
+	void setId_discount(int);
+	void setInfoDiscount(float,String,String,String,String);
+	int getId_discount();
+	void InsertDBDiscount();
+	void UpdateDBDiscount();
+    void DeleteDBDiscount();
+};
+
 class TOrderMenu : public TPersonal,public TListTable
 {
 private:

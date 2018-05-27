@@ -11,7 +11,7 @@ Coordinates=91,540,115,51
 Coordinates=0,0,101,33
 
 []
-Coordinates=606,263,47,33
+Coordinates=440,1,54,51
 Visible=True
 
 [DM.MQShowFood]
@@ -85,12 +85,6 @@ Coordinates=440,71,53,51
 
 [DM.MDSShowCategory]
 Coordinates=440,281,128,33
-
-[PanelPersonal]
-Coordinates=440,1,54,51
-
-[EditSearchPersonal]
-Coordinates=606,193,46,51
 
 [DM.ATFood]
 Coordinates=154,10,85,51

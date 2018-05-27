@@ -3,12 +3,12 @@ object FEditDiscount: TFEditDiscount
   Top = 0
   BorderIcons = [biSystemMenu]
   Caption = #1056#1077#1076#1072#1075#1091#1074#1072#1085#1085#1103' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1111' '#1087#1088#1086' '#1079#1085#1080#1078#1082#1091
-  ClientHeight = 162
+  ClientHeight = 362
   ClientWidth = 380
   Color = clBtnFace
-  Constraints.MaxHeight = 200
+  Constraints.MaxHeight = 400
   Constraints.MaxWidth = 396
-  Constraints.MinHeight = 200
+  Constraints.MinHeight = 400
   Constraints.MinWidth = 396
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -3506,41 +3506,38 @@ object FEditDiscount: TFEditDiscount
     FFFF800000000007FFFF80000000000FFFFFC0000000001FFFFFC0000000003F
     FFFF}
   OldCreateOrder = False
+  Position = poMainFormCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 16
   object edit_id: TLabeledEdit
-    Left = 25
+    Left = 8
     Top = 30
-    Width = 231
+    Width = 233
     Height = 24
-    EditLabel.Width = 96
+    EditLabel.Width = 112
     EditLabel.Height = 16
-    EditLabel.Caption = #1053#1086#1084#1077#1088' '#1082#1072#1088#1090#1082#1080
+    EditLabel.Caption = #1053#1086#1084#1077#1088' '#1082#1072#1088#1090#1082#1080' *'
     TabOrder = 0
-  end
-  object edit_pib_client: TLabeledEdit
-    Left = 25
-    Top = 78
-    Width = 330
-    Height = 24
-    EditLabel.Width = 200
-    EditLabel.Height = 16
-    EditLabel.Caption = #1055#1088#1110#1079#1074#1080#1097#1077' '#1110#1085#1110#1094#1110#1072#1083#1080' '#1082#1083#1110#1108#1085#1090#1072
-    TabOrder = 1
+    TextHint = #1042#1074#1077#1076#1110#1090#1100' '#1085#1086#1084#1077#1088' '#1082#1072#1088#1090#1082#1080
+    OnKeyPress = edit_idKeyPress
   end
   object edit_discount: TLabeledEdit
-    Left = 279
-    Top = 30
-    Width = 76
+    Left = 10
+    Top = 78
+    Width = 91
     Height = 24
-    EditLabel.Width = 48
+    EditLabel.Width = 88
     EditLabel.Height = 16
-    EditLabel.Caption = #1047#1085#1080#1078#1082#1072
-    TabOrder = 2
+    EditLabel.Caption = #1047#1085#1080#1078#1082#1072'(%) *'
+    MaxLength = 3
+    TabOrder = 1
+    OnChange = edit_discountChange
+    OnKeyPress = edit_discountKeyPress
   end
   object ButtonAccept: TButton
-    Left = 92
-    Top = 123
+    Left = 99
+    Top = 320
     Width = 120
     Height = 30
     Caption = #1055#1110#1076#1090#1074#1077#1088#1076#1080#1090#1080
@@ -3548,11 +3545,12 @@ object FEditDiscount: TFEditDiscount
     ImageIndex = 10
     ImageMargins.Left = 5
     Images = DM.ImageListButton
-    TabOrder = 3
+    TabOrder = 2
+    OnClick = ButtonAcceptClick
   end
   object ButtonCancel: TButton
-    Left = 235
-    Top = 123
+    Left = 242
+    Top = 320
     Width = 120
     Height = 30
     Caption = #1042#1110#1076#1084#1110#1085#1080#1090#1080
@@ -3560,6 +3558,75 @@ object FEditDiscount: TFEditDiscount
     ImageIndex = 1
     ImageMargins.Left = 5
     Images = DM.ImageListButton
+    TabOrder = 3
+    OnClick = ButtonCancelClick
+  end
+  object GroupBox1: TGroupBox
+    Left = 8
+    Top = 116
+    Width = 354
+    Height = 189
+    Caption = #1030#1085#1092#1086#1088#1084#1072#1094#1110#1103' '#1087#1088#1086' '#1074#1083#1072#1089#1085#1080#1082#1072' '#1082#1072#1088#1090#1082#1080
     TabOrder = 4
+    object Label1: TLabel
+      Left = 17
+      Top = 78
+      Width = 120
+      Height = 16
+      Caption = #1044#1072#1090#1072' '#1085#1072#1088#1086#1076#1078#1077#1085#1085#1103
+    end
+    object edit_adress: TLabeledEdit
+      Left = 17
+      Top = 145
+      Width = 320
+      Height = 24
+      EditLabel.Width = 136
+      EditLabel.Height = 16
+      EditLabel.Caption = #1040#1076#1088#1077#1089#1072' '#1087#1088#1086#1078#1080#1074#1072#1085#1085#1103
+      TabOrder = 0
+    end
+    object edit_pib_client: TLabeledEdit
+      Left = 17
+      Top = 43
+      Width = 320
+      Height = 24
+      EditLabel.Width = 216
+      EditLabel.Height = 16
+      EditLabel.Caption = #1055#1088#1110#1079#1074#1080#1097#1077' '#1110#1085#1110#1094#1110#1072#1083#1080' '#1082#1083#1110#1108#1085#1090#1072' *'
+      TabOrder = 1
+    end
+    object edit_telefon: TLabeledEdit
+      Left = 209
+      Top = 97
+      Width = 128
+      Height = 24
+      EditLabel.Width = 72
+      EditLabel.Height = 16
+      EditLabel.Caption = #1058#1077#1083#1077#1092#1086#1085' *'
+      TabOrder = 2
+    end
+    object edit_birthday: TMaskEdit
+      Left = 17
+      Top = 97
+      Width = 165
+      Height = 24
+      Hint = #1060#1086#1088#1084#1072#1090': "'#1056#1056#1056#1056'-'#1052#1052'-'#1044#1044'" '#1055#1088#1080#1082#1083#1072#1076': "1970-12-31"'
+      EditMask = '!0000-99-99;1;_'
+      MaxLength = 10
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 3
+      Text = '    -  -  '
+      TextHint = #1060#1086#1088#1084#1072#1090': "'#1056#1056#1056#1056'-'#1052#1052'-'#1044#1044'"'
+    end
+  end
+  object Button1: TButton
+    Left = 272
+    Top = 27
+    Width = 90
+    Height = 30
+    Caption = #1043#1077#1085#1077#1088#1091#1074#1072#1090#1080
+    TabOrder = 5
+    OnClick = Button1Click
   end
 end

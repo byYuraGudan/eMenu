@@ -82,9 +82,13 @@ __published:	// IDE-managed Components
 	TIntegerField *ATDiscountid_discount;
 	TStringField *ATDiscountpib_client;
 	TFloatField *ATDiscountdiscount;
-	TWideStringField *ATDiscountbirthday;
 	TStringField *ATDiscountadress;
 	TStringField *ATDiscounttelefon;
+	TStringField *ATPersonaltelefon;
+	TDateTimeField *ATPersonalbirthday;
+	TBooleanField *ATPersonalactivity;
+	TStringField *ATPersonaladress;
+	TDateTimeField *ATDiscountbirthday;
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall DataModuleDestroy(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);

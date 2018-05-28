@@ -58,14 +58,13 @@ void TCategory::DeleteDBCategory(){
 void __fastcall TFEditCategory::ButtonAccceptClick(TObject *Sender)
 {
 	TCategory category;
-	AnsiString id = EditID->Text;
-
 	category.setName_category(FEditCategory->edit_name_category->Text);
 	if (FEditCategory->EditID->Text.Length() != 0) {
 		category.setId_category(StrToInt(FEditCategory->EditID->Text));
 		category.UpdateDBCategory();
 	}	else category.InsertDBCategory();
-    DM->OpenDB();
+	DM->OpenDB();
+    Hide();
 }
 //---------------------------------------------------------------------------
 
@@ -73,6 +72,12 @@ void __fastcall TFEditCategory::FormShow(TObject *Sender)
 {
 	EditID->Clear();
     edit_name_category->Clear();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFEditCategory::ButtonCancelClick(TObject *Sender)
+{
+    Hide();
 }
 //---------------------------------------------------------------------------
 

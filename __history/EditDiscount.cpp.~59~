@@ -1,0 +1,142 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "EditDiscount.h"
+#include "DataModule.h"
+#include "eMenuPCH1.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TFEditDiscount *FEditDiscount;
+//---------------------------------------------------------------------------
+__fastcall TFEditDiscount::TFEditDiscount(TComponent* Owner)
+	: TForm(Owner)
+{
+    this->add = true;
+}
+		 //-----------------------------------------------------------
+void TDiscount::setId_discount(int a){
+	this->id_discount = a;
+}
+void TDiscount::setInfoDiscount(float disc,String pib,String adres,String telefon,String birth){
+	this->discount = disc;
+	this->pib_client = pib;
+	this->adress = adres;
+	this->telefon = telefon;
+	this->birthday = birth;
+}
+int TDiscount::getId_discount(){
+    return this->id_discount;
+}
+
+void TDiscount::InsertDBDiscount(){
+	DM->TSQL->SQL->Clear();
+	DM->TSQL->SQL->Add("INSERT INTO eMenu.dbo.Discounts(id_discount,pib_client,discount,birthday,adress,telefon)");
+	DM->TSQL->SQL->Add("VALUES(:id,:pib,:disc,:birt,:adre,:telef)");
+	DM->TSQL->Parameters->ParamByName("pib")->Value = this->pib_client;
+	DM->TSQL->Parameters->ParamByName("disc")->Value = this->discount;
+	DM->TSQL->Parameters->ParamByName("birt")->Value =  this->birthday;
+	DM->TSQL->Parameters->ParamByName("adre")->Value =  this->adress;
+	DM->TSQL->Parameters->ParamByName("telef")->Value =  this->telefon;
+	DM->TSQL->Parameters->ParamByName("id")->Value = this->id_discount;
+	DM->TSQL->ExecSQL();
+}
+
+void TDiscount::UpdateDBDiscount(){
+	DM->TSQL->SQL->Clear();
+	DM->TSQL->SQL->Add("UPDATE eMenu.dbo.Discounts SET pib_client = :pib,discount = :disc,birthday = :birt,adress = :adre,telefon = :telef");
+	DM->TSQL->SQL->Add("WHERE id_discount = :id");
+	DM->TSQL->Parameters->ParamByName("pib")->Value = this->pib_client;
+	DM->TSQL->Parameters->ParamByName("disc")->Value = this->discount;
+	DM->TSQL->Parameters->ParamByName("birt")->Value =  this->birthday;
+	DM->TSQL->Parameters->ParamByName("adre")->Value =  this->adress;
+	DM->TSQL->Parameters->ParamByName("telef")->Value =  this->telefon;
+	DM->TSQL->Parameters->ParamByName("id")->Value = this->id_discount;
+	DM->TSQL->ExecSQL();
+
+}
+void TDiscount::DeleteDBDiscount(){
+	DM->TSQL->SQL->Clear();
+	DM->TSQL->SQL->Add("DELETE FROM eMenu.dbo.Discounts");
+	DM->TSQL->SQL->Add("WHERE id_discount = :id");
+	DM->TSQL->Parameters->ParamByName("id")->Value = this->id_discount;
+	DM->TSQL->ExecSQL();
+}
+
+void __fastcall TFEditDiscount::FormShow(TObject *Sender)
+{
+	edit_id->Clear();
+	edit_discount->Text = 0;
+	edit_pib_client->Clear();
+	edit_telefon->Clear();
+	edit_adress->Clear();
+	edit_birthday->Text = "1970-01-01";
+	this->add = true;
+    Button1->Show();
+
+}
+//---------------------------------------------------------------------------
+ //(float disc,String pib,String adres,String telefon,TDate birth)
+void __fastcall TFEditDiscount::ButtonAcceptClick(TObject *Sender)
+{
+	TDiscount discount;
+	discount.setId_discount(StrToInt(edit_id->Text));
+	discount.setInfoDiscount(StrToFloat(edit_discount->Text),edit_pib_client->Text,edit_adress->Text,edit_telefon->Text,edit_birthday->Text);
+	if(add){
+	    discount.InsertDBDiscount();
+	}
+	else {
+        discount.UpdateDBDiscount();
+	}
+	DM->OpenDB();
+    Hide();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFEditDiscount::Button1Click(TObject *Sender)
+{
+	srand(time(NULL));
+	long int rands = random(rand()+999999999999);
+	this->edit_id->Text = rands;
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TFEditDiscount::edit_idKeyPress(TObject *Sender, System::WideChar &Key)
+
+{
+if( Key == VK_BACK )
+		return;
+if( (Key < L'0') || (Key > L'9') ) Key = 0;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFEditDiscount::edit_discountKeyPress(TObject *Sender, System::WideChar &Key)
+
+{
+if( Key == VK_BACK )
+		return;
+if( (Key < L'0') || (Key > L'9') || (Key == ',') ) Key = 0;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFEditDiscount::edit_discountChange(TObject *Sender)
+{
+	if (!edit_discount->Text.IsEmpty())
+	if(StrToInt(edit_discount->Text) > 100)
+	{	ShowMessage("«нижка маЇ бути менше або р≥вна 100");
+		edit_discount->Text = 0;
+	}
+
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TFEditDiscount::ButtonCancelClick(TObject *Sender)
+{
+    Hide();
+}
+//---------------------------------------------------------------------------
+

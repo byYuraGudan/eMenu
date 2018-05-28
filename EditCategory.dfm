@@ -3506,6 +3506,7 @@ object FEditCategory: TFEditCategory
     FFFF800000000007FFFF80000000000FFFFFC0000000001FFFFFC0000000003F
     FFFF}
   OldCreateOrder = False
+  Position = poScreenCenter
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 16
@@ -3531,6 +3532,7 @@ object FEditCategory: TFEditCategory
     ImageMargins.Left = 5
     Images = DM.ImageListButton
     TabOrder = 1
+    OnClick = ButtonCancelClick
   end
   object edit_name_category: TLabeledEdit
     Left = 72

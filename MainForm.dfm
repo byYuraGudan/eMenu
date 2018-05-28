@@ -208,7 +208,7 @@ object FMainForm: TFMainForm
     Top = 0
     Width = 800
     Height = 25
-    ButtonWidth = 104
+    ButtonWidth = 55
     Images = DM.ImageListButton
     List = True
     Menu = DM.MMain

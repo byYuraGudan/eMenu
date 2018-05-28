@@ -6,25 +6,43 @@ class TPersonal
 {
 private:
 	int id_personal;
-	AnsiString login,password,pib_personal;
-	bool access;
+	AnsiString login,password,pib_personal,telefon,adress,date_release;
+	TDateTime date_work,birthday;
+	bool access,activity;
 
 protected:
 
 public:
-    TPersonaL();
+	TPersonaL(){
+		this->id_personal = 0;
+		this->login = "Логін";
+		this->password = "Пароль";
+		this->pib_personal = "Прізвище ініціали";
+		this->telefon = "Телефон";
+		this->adress = "Адрес";
+		this->date_work = Date();
+		this->date_release = "";
+		this->birthday = StrToDate("01.01.1970");
+		this->access = false;
+        this->activity = true;
+	}
 	void setId_personal(int);
-	void setLogin(AnsiString);
-	void setPassword(AnsiString);
-	void setPib_personal(AnsiString);
 	void setAccess(bool);
-	void setInformationPersonal(int,AnsiString,AnsiString,AnsiString,bool);
+	void setActivity(bool);
+	void setLoginPassword(AnsiString,AnsiString);
+	void setInformationPersonal(AnsiString,AnsiString,AnsiString,TDateTime);
+	void setDateWork(TDateTime);
+	void setDateRelease(AnsiString);
 	int getId_personal();
 	AnsiString getLogin();
 	AnsiString getPassword();
-	AnsiString getPib_personal();
+	bool getActivity();
 	bool getAccess();
-    virtual const void InsertDB();
+	void InsertDBPersonal();
+	void UpdateDBPersonal();
+	void UpdateDBPersonalRelease();
+    void DeleteDBPersonal();
+
 };
 
 class TListTable
@@ -47,7 +65,8 @@ class TDiscount
 private:
 	int id_discount;
 	float discount;
-	String pib_client,adress,telefon,birthday;
+	String pib_client,adress,telefon;
+	TDateTime birthday;
 protected:
 
 public:
@@ -57,10 +76,10 @@ public:
 		this->pib_client = "ПІБ Клієнта";
 		this->adress = "Адрес Клієнта";
 		this->telefon = "Мобільний телефон";
-		this->birthday = "1970-01-01";
+		this->birthday = StrToDate("01.01.1970");
 	}
 	void setId_discount(int);
-	void setInfoDiscount(float,String,String,String,String);
+	void setInfoDiscount(float,String,String,String,TDateTime);
 	int getId_discount();
 	void InsertDBDiscount();
 	void UpdateDBDiscount();

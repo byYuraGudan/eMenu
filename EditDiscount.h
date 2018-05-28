@@ -9,6 +9,7 @@
 #include <Vcl.Forms.hpp>
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.Mask.hpp>
+#include <Vcl.ComCtrls.hpp>
 //---------------------------------------------------------------------------
 class TFEditDiscount : public TForm
 {
@@ -20,10 +21,10 @@ __published:	// IDE-managed Components
 	TButton *ButtonCancel;
 	TLabeledEdit *edit_adress;
 	TLabeledEdit *edit_telefon;
-	TGroupBox *GroupBox1;
+	TGroupBox *GroupBox;
 	TButton *Button1;
-	TMaskEdit *edit_birthday;
 	TLabel *Label1;
+	TDateTimePicker *date_birthday;
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall ButtonAcceptClick(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);

@@ -103,11 +103,16 @@ void TFAdmin::HidePanel(TObject *Sender){
 void __fastcall TFAdmin::DeleteCategoryClick(TObject *Sender)
 {
 	try {
+		if (IDYES == MessageBox(NULL, L"Ви впевнені, що хочете видалити ?", L"Підвердження!",  MB_YESNO |MB_ICONQUESTION))
+		{
 		TCategory category;
 		category.setId_category(DM->ATCategory->FieldByName("id_category")->AsInteger);
-		category.DeleteDBCategory(); }
+		category.DeleteDBCategory();
+		DM->OpenDB();
+		}
+	}
 	catch(...){
-          ShowMessage("Неможна видалити інформація про категорію! Існуються дані пов'язанні з цією категорією");
+		MessageBox(NULL, L"Дані, пов'язанні з даною категоріює. Не можливо видалити!", L"Відмова!",  MB_OK |MB_ICONWARNING);
 	}
 }
 //---------------------------------------------------------------------------
@@ -160,18 +165,58 @@ void __fastcall TFAdmin::EditDiscountClick(TObject *Sender)
 	FEditDiscount->edit_discount->Text = DM->ATDiscountdiscount->Value;
 	FEditDiscount->edit_telefon->Text = DM->ATDiscounttelefon->Value;
 	FEditDiscount->edit_adress->Text = DM->ATDiscountadress->Value;
-	FEditDiscount->edit_birthday->Text = DM->ATDiscount->FieldByName("birthday")->AsString;
-    FEditDiscount->Button1->Hide();
+	FEditDiscount->date_birthday->Date = DM->ATDiscount->FieldByName("birthday")->AsDateTime;
+	FEditDiscount->Button1->Hide();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TFAdmin::DeleteDiscountClick(TObject *Sender)
 {
-	TDiscount discount;
-	discount.setId_discount(DM->ATDiscountid_discount->Value);
-    discount.DeleteDBDiscount();
+    try {
+		if (IDYES == MessageBox(NULL, L"Ви впевнені, що хочете видалити ?", L"Підвердження!",  MB_YESNO |MB_ICONQUESTION))
+		{
+			TDiscount discount;
+			discount.setId_discount(DM->ATDiscountid_discount->Value);
+			discount.DeleteDBDiscount();
+            DM->OpenDB();
+		}
+	}
+	catch(...){
+		MessageBox(NULL, L"Дані, пов'язанні з даною категоріює. Не можливо видалити!", L"Відмова!",  MB_OK |MB_ICONWARNING);
+	}
 }
 //---------------------------------------------------------------------------
 
 
+
+
+
+
+
+void __fastcall TFAdmin::EditPersonalClick(TObject *Sender)
+{
+	FEditPersonal->Show();
+	FEditPersonal->add = false;
+	FEditPersonal->ButtonRelease->Show();
+	FEditPersonal->edit_date_release->Show();
+	FEditPersonal->Label3->Show();
+	FEditPersonal->EditID->Text = DM->ATPersonal->FieldByName("id_personal")->AsAnsiString;
+	FEditPersonal->edit_login->Text = DM->ATPersonal->FieldByName("logins")->AsAnsiString;
+	FEditPersonal->edit_password->Text = DM->ATPersonal->FieldByName("passwords")->AsAnsiString;
+	FEditPersonal->edit_pib_personal->Text = DM->ATPersonal->FieldByName("pib_personal")->AsAnsiString;
+	FEditPersonal->edit_telefon->Text = DM->ATPersonal->FieldByName("telefon")->AsAnsiString;
+	FEditPersonal->PersonalAccess->Checked = DM->ATPersonal->FieldByName("access")->AsBoolean;
+	FEditPersonal->PersonalActivity->Checked = DM->ATPersonal->FieldByName("activity")->AsBoolean;
+	FEditPersonal->date_work->Date = DM->ATPersonal->FieldByName("data_of_work")->AsDateTime;
+	FEditPersonal->date_birthday->Date = DM->ATPersonal->FieldByName("birthday")->AsDateTime;
+	FEditPersonal->edit_date_release->Text = DM->ATPersonal->FieldByName("release_date")->AsAnsiString;
+	FEditPersonal->edit_adress->Text = DM->ATPersonal->FieldByName("adress")->AsAnsiString;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::AddPersonaClick(TObject *Sender)
+{
+	FEditPersonal->Show();
+}
+//---------------------------------------------------------------------------
 

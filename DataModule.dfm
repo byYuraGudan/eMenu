@@ -17,7 +17,6 @@ object DM: TDM
     Top = 8
   end
   object ATPersonal: TADOTable
-    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     TableName = 'Personal'
@@ -52,17 +51,35 @@ object DM: TDM
       FieldName = 'access'
       DisplayValues = #1040#1076#1084#1110#1085#1110#1089#1090#1088#1072#1090#1086#1088';'#1050#1086#1088#1080#1089#1090#1091#1074#1072#1095
     end
+    object ATPersonalactivity: TBooleanField
+      DisplayLabel = #1040#1082#1090#1080#1074#1085#1110#1089#1090#1100
+      FieldName = 'activity'
+      DisplayValues = #1040#1082#1090#1080#1074#1085#1080#1081';'#1047#1072#1073#1083#1086#1082#1086#1074#1072#1085#1080#1081
+    end
+    object ATPersonaltelefon: TStringField
+      DisplayLabel = #1058#1077#1083#1077#1092#1086#1085
+      FieldName = 'telefon'
+      Size = 15
+    end
+    object ATPersonalbirthday: TDateTimeField
+      DisplayLabel = #1044#1072#1090#1072' '#1085#1072#1088#1086#1076#1078#1077#1085#1085#1103
+      FieldName = 'birthday'
+    end
     object ATPersonaldata_of_work: TDateTimeField
-      DisplayLabel = #1044#1072#1090#1072' '#1086#1073#1083#1110#1082#1091' '#1085#1072' '#1088#1086#1073#1086#1090#1091
+      DisplayLabel = #1044#1072#1090#1072' '#1086#1073#1083#1110#1082#1091
       FieldName = 'data_of_work'
     end
     object ATPersonalrelease_date: TDateTimeField
       DisplayLabel = #1044#1072#1090#1072' '#1079#1074#1110#1083#1100#1085#1077#1085#1085#1103
       FieldName = 'release_date'
     end
+    object ATPersonaladress: TStringField
+      DisplayLabel = #1040#1076#1088#1077#1089#1072' '#1087#1088#1086#1078#1080#1074#1072#1085#1085#1103
+      FieldName = 'adress'
+      Size = 100
+    end
   end
   object ATCategory: TADOTable
-    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     TableName = 'Category'
@@ -88,7 +105,6 @@ object DM: TDM
     Top = 96
   end
   object ATFood: TADOTable
-    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     IndexFieldNames = 'kod_category'
@@ -192,7 +208,7 @@ object DM: TDM
     Left = 32
     Top = 64
     Bitmap = {
-      494C01010C002800140210001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C0028001C0210001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -738,7 +754,6 @@ object DM: TDM
     Top = 448
   end
   object MTShowFood: TADOTable
-    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     IndexFieldNames = 'kod_category'
@@ -780,7 +795,6 @@ object DM: TDM
     end
   end
   object MTShowCategory: TADOTable
-    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     TableName = 'MainShowCategory'
@@ -788,7 +802,6 @@ object DM: TDM
     Top = 448
   end
   object MQShowFood: TADOQuery
-    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     Parameters = <>
@@ -860,10 +873,9 @@ object DM: TDM
       DisplayLabel = #1047#1085#1080#1078#1082#1072', %'
       FieldName = 'discount'
     end
-    object ATDiscountbirthday: TWideStringField
+    object ATDiscountbirthday: TDateTimeField
       DisplayLabel = #1044#1072#1090#1072' '#1085#1072#1088#1086#1076#1078#1077#1085#1085#1103
       FieldName = 'birthday'
-      Size = 10
     end
     object ATDiscounttelefon: TStringField
       DisplayLabel = #1058#1077#1083#1077#1092#1086#1085

@@ -57,10 +57,6 @@ __published:	// IDE-managed Components
 	TPanel *PanelCategory;
 	TEdit *EditSearchCategory;
 	TDBGrid *DBGridCategory;
-	TPanel *PanelFood;
-	TEdit *EditSearchFood;
-	TDBGrid *DBGridIngredient;
-	TDBGrid *DBGridFood;
 	TPanel *PanelOrderMenu;
 	TPanel *PanelDiscount;
 	TEdit *EditSearchDiscount;
@@ -76,10 +72,6 @@ __published:	// IDE-managed Components
 	TToolButton *AddDiscount;
 	TToolButton *DeleteDiscount;
 	TToolButton *EditDiscount;
-	TToolBar *ToolBar2;
-	TToolButton *AddFood;
-	TToolButton *DeleteFood;
-	TToolButton *EditFood;
 	TToolBar *ToolBar3;
 	TToolButton *AddOrderMenu;
 	TToolButton *DeleteOrderMenu;
@@ -92,6 +84,16 @@ __published:	// IDE-managed Components
 	TToolButton *AddPersona;
 	TToolButton *DeletePersonal;
 	TToolButton *EditPersonal;
+	TPanel *PanelFood;
+	TEdit *EditSearchFood;
+	TDBGrid *DBGridFood;
+	TToolBar *ToolBar2;
+	TToolButton *AddFood;
+	TToolButton *DeleteFood;
+	TToolButton *EditFood;
+	TPanel *PanelFoodIngredient;
+	TDBGrid *DBGridIngredient;
+	TDBImage *FoodImage;
 	void __fastcall buttonViewPersonalClick(TObject *Sender);
 	void __fastcall buttonAddPersonalClick(TObject *Sender);
 	void __fastcall buttonAddCategoryClick(TObject *Sender);
@@ -108,6 +110,8 @@ __published:	// IDE-managed Components
 	void __fastcall AddDiscountClick(TObject *Sender);
 	void __fastcall EditDiscountClick(TObject *Sender);
 	void __fastcall DeleteDiscountClick(TObject *Sender);
+	void __fastcall EditPersonalClick(TObject *Sender);
+	void __fastcall AddPersonaClick(TObject *Sender);
 
 
 private:	// User declarations

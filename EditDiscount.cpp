@@ -20,7 +20,7 @@ __fastcall TFEditDiscount::TFEditDiscount(TComponent* Owner)
 void TDiscount::setId_discount(int a){
 	this->id_discount = a;
 }
-void TDiscount::setInfoDiscount(float disc,String pib,String adres,String telefon,String birth){
+void TDiscount::setInfoDiscount(float disc,String pib,String adres,String telefon,TDateTime birth){
 	this->discount = disc;
 	this->pib_client = pib;
 	this->adress = adres;
@@ -72,9 +72,9 @@ void __fastcall TFEditDiscount::FormShow(TObject *Sender)
 	edit_pib_client->Clear();
 	edit_telefon->Clear();
 	edit_adress->Clear();
-	edit_birthday->Text = "1970-01-01";
+	date_birthday->Date = StrToDate("01.01.1970");
 	this->add = true;
-    Button1->Show();
+	Button1->Show();
 
 }
 //---------------------------------------------------------------------------
@@ -83,14 +83,15 @@ void __fastcall TFEditDiscount::ButtonAcceptClick(TObject *Sender)
 {
 	TDiscount discount;
 	discount.setId_discount(StrToInt(edit_id->Text));
-	discount.setInfoDiscount(StrToFloat(edit_discount->Text),edit_pib_client->Text,edit_adress->Text,edit_telefon->Text,edit_birthday->Text);
+	discount.setInfoDiscount(StrToFloat(edit_discount->Text),edit_pib_client->Text,edit_adress->Text,edit_telefon->Text,date_birthday->Date);
 	if(add){
 	    discount.InsertDBDiscount();
 	}
 	else {
         discount.UpdateDBDiscount();
 	}
-    DM->OpenDB();
+	DM->OpenDB();
+    Hide();
 }
 //---------------------------------------------------------------------------
 
@@ -135,7 +136,7 @@ void __fastcall TFEditDiscount::edit_discountChange(TObject *Sender)
 
 void __fastcall TFEditDiscount::ButtonCancelClick(TObject *Sender)
 {
-    FEditDiscount->Hide();
+    Hide();
 }
 //---------------------------------------------------------------------------
 

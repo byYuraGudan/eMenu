@@ -3506,7 +3506,7 @@ object FEditDiscount: TFEditDiscount
     FFFF800000000007FFFF80000000000FFFFFC0000000001FFFFFC0000000003F
     FFFF}
   OldCreateOrder = False
-  Position = poMainFormCenter
+  Position = poScreenCenter
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 16
@@ -3537,7 +3537,7 @@ object FEditDiscount: TFEditDiscount
   end
   object ButtonAccept: TButton
     Left = 99
-    Top = 320
+    Top = 324
     Width = 120
     Height = 30
     Caption = #1055#1110#1076#1090#1074#1077#1088#1076#1080#1090#1080
@@ -3561,9 +3561,9 @@ object FEditDiscount: TFEditDiscount
     TabOrder = 3
     OnClick = ButtonCancelClick
   end
-  object GroupBox1: TGroupBox
+  object GroupBox: TGroupBox
     Left = 8
-    Top = 116
+    Top = 108
     Width = 354
     Height = 189
     Caption = #1030#1085#1092#1086#1088#1084#1072#1094#1110#1103' '#1087#1088#1086' '#1074#1083#1072#1089#1085#1080#1082#1072' '#1082#1072#1088#1090#1082#1080
@@ -3605,19 +3605,14 @@ object FEditDiscount: TFEditDiscount
       EditLabel.Caption = #1058#1077#1083#1077#1092#1086#1085' *'
       TabOrder = 2
     end
-    object edit_birthday: TMaskEdit
+    object date_birthday: TDateTimePicker
       Left = 17
-      Top = 97
-      Width = 165
+      Top = 96
+      Width = 162
       Height = 24
-      Hint = #1060#1086#1088#1084#1072#1090': "'#1056#1056#1056#1056'-'#1052#1052'-'#1044#1044'" '#1055#1088#1080#1082#1083#1072#1076': "1970-12-31"'
-      EditMask = '!0000-99-99;1;_'
-      MaxLength = 10
-      ParentShowHint = False
-      ShowHint = True
+      Date = 43249.096523391210000000
+      Time = 43249.096523391210000000
       TabOrder = 3
-      Text = '    -  -  '
-      TextHint = #1060#1086#1088#1084#1072#1090': "'#1056#1056#1056#1056'-'#1052#1052'-'#1044#1044'"'
     end
   end
   object Button1: TButton

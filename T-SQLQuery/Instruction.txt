@@ -32,3 +32,18 @@ CREATE VIEW SHOWFOOD AS
    DM->TSQL->Parameters->ParamByName("P1")->DataType = ftBlob;
    DM->TSQL->Parameters->ParamByName("P1")->LoadFromStream(str,ftBlob);
    DM->TSQL->ExecSQL();
+
+//MEssage BOX
+const int result = MessageBox(NULL, L"Test message", L"test title",  MB_YESNO |MB_ICONQUESTION); //MB_ICONWARNING
+switch (result)
+{
+case IDYES:
+    // Do something
+    break;
+case IDNO:
+    // Do something
+    break;
+case IDCANCEL:
+    // Do something
+    break;
+}

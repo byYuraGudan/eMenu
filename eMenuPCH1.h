@@ -129,24 +129,55 @@ class TFood: public TCategory
 {
 private:
 	int id_food;
-	AnsiString name_food,data_food;
+	AnsiString name_food,data_food,unit_food;
 	float weight_food,cost_price_food,mark_up,price_food;
+	TMemoryStream *picture;
 
 protected:
 
 public:
-
+	TFood(){
+	 this->id_food = 0;
+	 this->name_food = "Назва";
+	 this->data_food = "Відомості";
+	 this->unit_food = "Одиниція виміру";
+	 this->weight_food = 0;
+	 this->cost_price_food = 0;
+	 this->mark_up = 0;
+	 this->price_food = 0;
+     this->picture = new TMemoryStream;
+	}
+	void setIdFood(int);
+	void setWeigh_Food(float);
+	void setInfoFood(AnsiString,AnsiString,AnsiString);
+	void setCostFood(float,float,float);
+	void setPicture(TMemoryStream*);
+	int getIdFood();
+	void InsertDBFood();
+	void UpdateDBFood();
+	void UpdateFotoDBFood();
+	void DeleteDBFood();
 };
 
-class TIngredient
+class TIngredient: public TFood
 {
 private:
-	int id_ingredient,id_food;
+	int id_ingredient;
 	AnsiString name_ingredient,unit;
 	float price,count_unit;
 
-protected:
-
 public:
-
+	TIngredient(){
+		this->id_ingredient = 0;
+		this->name_ingredient = "Назва";
+		this->unit = "Од.вим.";
+		this->price = 0;
+        this->count_unit = 0;
+	}
+	void setId_ingredient(int);
+	void setInfoIngredient(AnsiString,AnsiString,float,float);
+	int getId_ingredient();
+	void InsertDBIngredient();
+	void UpdateDBIngredient();
+    void DeleteDBIngredient();
 };

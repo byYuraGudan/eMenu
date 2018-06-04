@@ -56,21 +56,19 @@ CREATE TABLE Food(id_food INT PRIMARY KEY IDENTITY(1,1),
 				  picture VARBINARY(MAX),
 				  kod_category INT,
 				  weight_food FLOAT,
+				  unit_food VARCHAR(10),
 				  cost_price_food FLOAT NOT NULL,
-				  mark_up FLOAT NOT NULL DEFAULT 0.1,
+				  mark_up FLOAT NOT NULL DEFAULT 1,
 				  price_food FLOAT,
 				  data_food VARCHAR(MAX))
 GO
 CREATE TABLE ListIngredientFood(id_listingrfood INT PRIMARY KEY IDENTITY(1,1),
 								kod_food INT NOT NULL,
-								kod_ingredient INT NOT NULL,
-								counts FLOAT NOT NULL)
+								counts FLOAT NOT NULL,
+								name_ingredient VARCHAR(50) NOT NULL,
+								unit VARCHAR(10),
+								price FLOAT NOT NULL)
 
-CREATE TABLE Ingredient(id_ingredient INT PRIMARY KEY,
-						name_ingredient VARCHAR(50) NOT NULL,
-						unit VARCHAR(10),
-						price FLOAT NOT NULL)
-GO
 ALTER TABLE OrderMenu
 ADD CONSTRAINT FK_OrderMenu_Personal FOREIGN KEY(kod_personal) 
 	REFERENCES Personal (id_personal),
@@ -91,32 +89,8 @@ ADD CONSTRAINT FK_Food_Category FOREIGN KEY (kod_category)
 GO
 ALTER TABLE ListIngredientFood
 ADD CONSTRAINT FK_ListIngredientFood_Food FOREIGN KEY (kod_food)
-	REFERENCES Food (id_food),
-	CONSTRAINT FK_ListIngredientFood_Ingredient FOREIGN KEY (kod_ingredient)
-	REFERENCES Ingredient(id_ingredient)
+	REFERENCES Food (id_food)
 GO
-
-CREATE VIEW TableNotOccupation AS
-	SELECT * FROM ListTable WHERE occupation = 0;
-GO
-
-CREATE VIEW OpenOrder AS
-	SELECT * FROM ((OrderMenu INNER JOIN ListOrderMenu ON kod_order = id_order) INNER JOIN Food ON kod_food = id_food) INNER JOIN  Category ON id_category = kod_category 
-	WHERE close_order = 0
-GO
-CREATE VIEW MainShowCategory AS
-SELECT count(id_food) AS CountRecord,id_category,name_category FROM Category INNER JOIN Food ON kod_category = id_category 
-	GROUP BY id_category,name_category
-GO
-CREATE VIEW MainShowFood AS
-SELECT * FROM Food
-GO
-CREATE VIEW AdminFood AS
-SELECT * FROM Food INNER JOIN  Category ON id_category = kod_category
-GO
-						
-
-
 				   						   
 
 

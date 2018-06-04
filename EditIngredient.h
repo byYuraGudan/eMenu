@@ -19,6 +19,9 @@ __published:	// IDE-managed Components
 	TButton *ButtonCancel;
 	TComboBox *CB_unit;
 	TLabel *Label1;
+	void __fastcall ButtonAccceptClick(TObject *Sender);
+	void __fastcall FormShow(TObject *Sender);
+	void __fastcall ButtonCancelClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFEditIngredient(TComponent* Owner);

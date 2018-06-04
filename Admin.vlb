@@ -1,24 +1,6 @@
-﻿[DM.TableOpenOrder]
-Coordinates=154,20,114,51
-
-[DM.TSQL]
-Coordinates=10,540,60,51
-
-[DM.TableOrderMenu]
-Coordinates=91,540,115,51
-
-[DM.DSOpenOrder]
-Coordinates=0,0,101,33
-
-[]
-Coordinates=440,1,54,51
+﻿[]
+Coordinates=440,71,53,51
 Visible=True
-
-[DM.MQShowFood]
-Coordinates=277,80,102,213
-
-[DM.MDSShowFood]
-Coordinates=119,125,108,33
 
 [CPOrderMenu]
 Coordinates=30,232,83,51
@@ -32,9 +14,6 @@ Coordinates=24,627,111,51
 [buttonViewCategory]
 Coordinates=20,376,114,51
 
-[DM.MTShowCategory]
-Coordinates=119,1,120,105
-
 [CPCategory]
 Coordinates=440,211,73,51
 
@@ -47,17 +26,11 @@ Coordinates=440,141,53,51
 [buttonViewPersonal]
 Coordinates=440,615,113,51
 
-[DM.MDSQShowFood]
-Coordinates=139,376,116,33
-
 [buttonViewListOrderMenu]
 Coordinates=606,1,143,51
 
 [buttonViewOrderMenu]
 Coordinates=606,71,124,51
-
-[DM.MTShowFood]
-Coordinates=0,0,100,213
 
 [CPPersonal]
 Coordinates=440,405,72,51
@@ -68,9 +41,6 @@ Coordinates=258,376,95,51
 [buttonAddPersonal]
 Coordinates=321,627,109,51
 
-[Button3]
-Coordinates=143,627,53,51
-
 [Button2]
 Coordinates=440,545,53,51
 
@@ -79,28 +49,4 @@ Coordinates=606,141,137,33
 
 [CPFood]
 Coordinates=277,312,53,51
-
-[Button4]
-Coordinates=440,71,53,51
-
-[DM.MDSShowCategory]
-Coordinates=440,281,128,33
-
-[DM.ATFood]
-Coordinates=154,10,85,51
-
-[DM.ADSFood]
-Coordinates=40,539,72,33
-
-[DM.ADSCategory]
-Coordinates=311,529,92,33
-
-[DM.ADSPersonal]
-Coordinates=311,1,91,33
-
-[DM.ATCategory]
-Coordinates=637,20,104,51
-
-[DM.ATPersonal]
-Coordinates=263,10,103,51
 

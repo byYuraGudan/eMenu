@@ -32,6 +32,7 @@
 #include <Vcl.Imaging.jpeg.hpp>
 #include <Vcl.Graphics.hpp>
 #include <Vcl.ToolWin.hpp>
+#include <Vcl.Menus.hpp>
 //---------------------------------------------------------------------------
 class TFAdmin : public TForm
 {
@@ -44,8 +45,6 @@ __published:	// IDE-managed Components
 	TCategoryPanel *CPDiscounts;
 	TButton *buttonViewPersonal;
 	TButton *buttonAddPersonal;
-	TButton *Button3;
-	TButton *Button4;
 	TButton *buttonViewCategory;
 	TButton *buttonAddCategory;
 	TButton *buttonViewFood;
@@ -94,6 +93,15 @@ __published:	// IDE-managed Components
 	TPanel *PanelFoodIngredient;
 	TDBGrid *DBGridIngredient;
 	TDBImage *FoodImage;
+	TMainMenu *MenuAdministrator;
+	TMenuItem *N1;
+	TMenuItem *N2;
+	TMenuItem *N3;
+	TMenuItem *N4;
+	TMenuItem *N5;
+	TMenuItem *N6;
+	TMenuItem *N7;
+	TPanel *LookPanel;
 	void __fastcall buttonViewPersonalClick(TObject *Sender);
 	void __fastcall buttonAddPersonalClick(TObject *Sender);
 	void __fastcall buttonAddCategoryClick(TObject *Sender);
@@ -112,6 +120,15 @@ __published:	// IDE-managed Components
 	void __fastcall DeleteDiscountClick(TObject *Sender);
 	void __fastcall EditPersonalClick(TObject *Sender);
 	void __fastcall AddPersonaClick(TObject *Sender);
+	void __fastcall EditSearchPersonalChange(TObject *Sender);
+	void __fastcall DeletePersonalClick(TObject *Sender);
+	void __fastcall N4Click(TObject *Sender);
+	void __fastcall N5Click(TObject *Sender);
+	void __fastcall N2Click(TObject *Sender);
+	void __fastcall AddFoodClick(TObject *Sender);
+	void __fastcall EditFoodClick(TObject *Sender);
+	void __fastcall DeleteFoodClick(TObject *Sender);
+	void __fastcall EditSearchFoodChange(TObject *Sender);
 
 
 private:	// User declarations

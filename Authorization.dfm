@@ -2133,7 +2133,7 @@ object FAuth: TFAuth
     FFFFFF800000000001FFFFFFFFFFFFFFFFFFFFF0000000000FFFFFFFFFFFFFFF
     FFFFFFFF00000000FFFFFFFFFFFFFFFFFFFFFFFFF800001FFFFFFFFFFFFF}
   OldCreateOrder = False
-  Position = poMainFormCenter
+  Position = poScreenCenter
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 15
@@ -2179,6 +2179,7 @@ object FAuth: TFAuth
     Height = 30
     Caption = #1042#1110#1076#1084#1110#1085#1080#1090#1080
     TabOrder = 1
+    OnClick = buttonCloseClick
   end
   object Login: TEdit
     Left = 104
@@ -2186,6 +2187,7 @@ object FAuth: TFAuth
     Width = 155
     Height = 23
     TabOrder = 2
+    OnKeyPress = LoginKeyPress
   end
   object Password: TEdit
     Left = 105
@@ -2194,5 +2196,6 @@ object FAuth: TFAuth
     Height = 23
     PasswordChar = '*'
     TabOrder = 3
+    OnKeyPress = PasswordKeyPress
   end
 end

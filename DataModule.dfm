@@ -28,12 +28,6 @@ object DM: TDM
       FieldName = 'id_personal'
       ReadOnly = True
     end
-    object ATPersonalpib_personal: TStringField
-      DisplayLabel = #1055#1088#1110#1079#1074#1080#1097#1077' '#1110#1085#1110#1094#1110#1072#1083#1080
-      DisplayWidth = 35
-      FieldName = 'pib_personal'
-      Size = 50
-    end
     object ATPersonallogins: TStringField
       DisplayLabel = #1051#1086#1075#1110#1085
       DisplayWidth = 17
@@ -55,6 +49,12 @@ object DM: TDM
       DisplayLabel = #1040#1082#1090#1080#1074#1085#1110#1089#1090#1100
       FieldName = 'activity'
       DisplayValues = #1040#1082#1090#1080#1074#1085#1080#1081';'#1047#1072#1073#1083#1086#1082#1086#1074#1072#1085#1080#1081
+    end
+    object ATPersonalpib_personal: TStringField
+      DisplayLabel = #1055#1088#1110#1079#1074#1080#1097#1077' '#1110#1085#1110#1094#1110#1072#1083#1080
+      DisplayWidth = 35
+      FieldName = 'pib_personal'
+      Size = 50
     end
     object ATPersonaltelefon: TStringField
       DisplayLabel = #1058#1077#1083#1077#1092#1086#1085
@@ -107,7 +107,7 @@ object DM: TDM
   object ATFood: TADOTable
     Connection = ConnectionToDB
     CursorType = ctStatic
-    IndexFieldNames = 'kod_category'
+    Filtered = True
     TableName = 'AdminFood'
     Left = 576
     Top = 128
@@ -134,25 +134,32 @@ object DM: TDM
       DisplayLabel = #1042#1072#1075#1072
       DisplayWidth = 10
       FieldName = 'weight_food'
-      DisplayFormat = '#.# '#1082#1075
+      Visible = False
+      DisplayFormat = '#.# '
+    end
+    object ATFoodweight_unit: TStringField
+      DisplayLabel = #1042#1072#1075#1072
+      DisplayWidth = 10
+      FieldName = 'weight_unit'
+      ReadOnly = True
+      Size = 35
+    end
+    object ATFoodunit_food: TStringField
+      FieldName = 'unit_food'
+      Visible = False
+      Size = 10
     end
     object ATFoodcost_price_food: TFloatField
       DisplayLabel = #1057#1086#1073#1110#1074#1072#1088#1090#1110#1089#1090#1100
       DisplayWidth = 12
       FieldName = 'cost_price_food'
-      DisplayFormat = '#.# '#1075#1088#1085
+      DisplayFormat = '0.00 '#1075#1088#1085
     end
     object ATFoodmark_up: TFloatField
       DisplayLabel = #1053#1072#1094#1110#1085#1082#1072
       DisplayWidth = 10
       FieldName = 'mark_up'
-      DisplayFormat = '#.##'
-    end
-    object ATFoodprice_food: TFloatField
-      DisplayLabel = #1062#1110#1085#1072
-      DisplayWidth = 10
-      FieldName = 'price_food'
-      DisplayFormat = '#.## '#1075#1088#1085
+      DisplayFormat = '0 %'
     end
     object ATFooddata_food: TMemoField
       DisplayWidth = 10
@@ -160,15 +167,21 @@ object DM: TDM
       Visible = False
       BlobType = ftMemo
     end
-    object ATFoodid_category: TIntegerField
-      FieldName = 'id_category'
-      Visible = False
+    object ATFoodprice_food: TFloatField
+      DisplayLabel = #1062#1110#1085#1072
+      DisplayWidth = 10
+      FieldName = 'price_food'
+      DisplayFormat = '0.00 '#1075#1088#1085
     end
     object ATFoodname_category: TStringField
       DisplayLabel = #1050#1072#1090#1077#1075#1086#1088#1110#1103
-      DisplayWidth = 20
+      DisplayWidth = 30
       FieldName = 'name_category'
       Size = 100
+    end
+    object ATFoodid_category: TIntegerField
+      FieldName = 'id_category'
+      Visible = False
     end
   end
   object TSQL: TADOQuery
@@ -208,7 +221,7 @@ object DM: TDM
     Left = 32
     Top = 64
     Bitmap = {
-      494C01010C0028001C0210001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010C0028003C0210001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -787,11 +800,20 @@ object DM: TDM
     end
     object MTShowFoodprice_food: TFloatField
       FieldName = 'price_food'
-      DisplayFormat = '#.# '#1075#1088#1085
+      DisplayFormat = '0.00 '#1075#1088#1085
     end
     object MTShowFooddata_food: TMemoField
       FieldName = 'data_food'
       BlobType = ftMemo
+    end
+    object MTShowFoodunit_food: TStringField
+      FieldName = 'unit_food'
+      Size = 10
+    end
+    object MTShowFoodweight_unit: TStringField
+      FieldName = 'weight_unit'
+      ReadOnly = True
+      Size = 16
     end
   end
   object MTShowCategory: TADOTable
@@ -806,7 +828,9 @@ object DM: TDM
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
-      'SELECT * FROM eMenu.dbo.Food')
+      
+        'SELECT *, STR(weight_food, 5, 3)  + '#39'  '#39' + unit_food AS weight_u' +
+        'nit FROM eMenu.dbo.Food')
     Left = 576
     Top = 504
     object MQShowFoodid_food: TAutoIncField
@@ -840,6 +864,15 @@ object DM: TDM
       FieldName = 'data_food'
       BlobType = ftMemo
     end
+    object MQShowFoodunit_food: TStringField
+      FieldName = 'unit_food'
+      Size = 10
+    end
+    object MQShowFoodweight_unit: TStringField
+      FieldName = 'weight_unit'
+      ReadOnly = True
+      Size = 16
+    end
   end
   object MDSQShowFood: TDataSource
     DataSet = MQShowFood
@@ -852,7 +885,6 @@ object DM: TDM
     Top = 200
   end
   object ATDiscount: TADOTable
-    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     TableName = 'Discounts'
@@ -893,6 +925,9 @@ object DM: TDM
     object N1: TMenuItem
       Caption = #1060#1072#1081#1083
       ImageIndex = 10
+      object N14: TMenuItem
+        Caption = '-'
+      end
       object N2: TMenuItem
         Caption = #1054#1085#1086#1074#1083#1077#1085#1085#1103
         OnClick = N2Click
@@ -901,13 +936,151 @@ object DM: TDM
         Caption = '-'
       end
       object N6: TMenuItem
-        Caption = #1042#1080#1093#1110#1076' '#1110#1079' '#1082#1086#1088#1080#1089#1090#1091#1074#1072#1095#1072
+        Caption = #1055#1088#1086' '#1087#1088#1086#1075#1088#1072#1084#1091
       end
       object N4: TMenuItem
-        Caption = #1042#1080#1093#1110#1076' '#1110#1079' '#1087#1088#1086#1075#1088#1072#1084#1080
+        Caption = #1042#1080#1093#1110#1076
         ImageIndex = 1
         OnClick = N4Click
       end
     end
+    object N15: TMenuItem
+      Caption = #1040#1074#1090#1086#1088#1080#1079#1072#1094#1110#1103
+      OnClick = N15Click
+    end
+  end
+  object MAdmin: TMainMenu
+    Left = 80
+    Top = 584
+    object N5: TMenuItem
+      Caption = #1060#1072#1081#1083
+      object N12: TMenuItem
+        Caption = #1040#1076#1084#1110#1085#1110#1089#1090#1088#1072#1090#1086#1088
+        OnClick = N12Click
+      end
+      object N13: TMenuItem
+        Caption = #1054#1092#1110#1094#1110#1072#1085#1090
+      end
+      object N7: TMenuItem
+        Caption = '-'
+      end
+      object N8: TMenuItem
+        Caption = #1054#1085#1086#1074#1083#1077#1085#1085#1103
+        ShortCut = 116
+      end
+      object N9: TMenuItem
+        Caption = '-'
+      end
+      object N11: TMenuItem
+        Caption = #1042#1080#1093#1110#1076' '#1110#1079' '#1082#1086#1088#1080#1089#1090#1091#1074#1072#1095#1072
+        OnClick = N11Click
+      end
+      object N10: TMenuItem
+        Caption = #1042#1080#1093#1110#1076' '#1110#1079' '#1087#1088#1086#1075#1088#1072#1084#1080
+        OnClick = N10Click
+      end
+    end
+  end
+  object MUser: TMainMenu
+    Left = 144
+    Top = 584
+    object N16: TMenuItem
+      Caption = #1060#1072#1081#1083
+      object N17: TMenuItem
+        Caption = #1054#1092#1110#1094#1110#1072#1085#1090
+      end
+      object N18: TMenuItem
+        Caption = '-'
+      end
+      object N19: TMenuItem
+        Caption = #1054#1085#1086#1074#1083#1077#1085#1085#1103
+        ShortCut = 116
+        OnClick = N19Click
+      end
+      object N20: TMenuItem
+        Caption = '-'
+      end
+      object N21: TMenuItem
+        Caption = #1042#1080#1093#1110#1076' '#1110#1079' '#1082#1086#1088#1080#1089#1090#1091#1074#1072#1095#1072
+        OnClick = N21Click
+      end
+      object N22: TMenuItem
+        Caption = #1042#1080#1093#1110#1076' '#1110#1079' '#1087#1088#1086#1075#1088#1072#1084#1080
+        OnClick = N22Click
+      end
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = MonitorServer
+    Left = 112
+    Top = 248
+  end
+  object MonitorServer: TADOTable
+    Connection = ConnectionToDB
+    CursorType = ctStatic
+    TableName = 'MonitorServer'
+    Left = 32
+    Top = 248
+  end
+  object TimerUpdate: TTimer
+    Enabled = False
+    Interval = 5000
+    OnTimer = TimerUpdateTimer
+    Left = 32
+    Top = 192
+  end
+  object ADOQuery1: TADOQuery
+    Connection = ConnectionToDB
+    Parameters = <>
+    Left = 32
+    Top = 312
+  end
+  object ATFoodIngredient: TADOTable
+    Active = True
+    Connection = ConnectionToDB
+    CursorType = ctStatic
+    IndexFieldNames = 'kod_food'
+    MasterFields = 'id_food'
+    MasterSource = ADSFood
+    TableName = 'ListIngredientFood'
+    Left = 576
+    Top = 256
+    object ATFoodIngredientid_listingrfood: TAutoIncField
+      DisplayLabel = #8470
+      FieldName = 'id_listingrfood'
+      ReadOnly = True
+      Visible = False
+    end
+    object ATFoodIngredientkod_food: TIntegerField
+      DisplayLabel = #8470' '#1084#1077#1085#1102
+      FieldName = 'kod_food'
+      Visible = False
+    end
+    object ATFoodIngredientname_ingredient: TStringField
+      DisplayLabel = #1053#1072#1079#1074#1072' '#1110#1085#1075#1088#1077#1076#1110#1108#1085#1090#1091
+      DisplayWidth = 30
+      FieldName = 'name_ingredient'
+      Size = 50
+    end
+    object ATFoodIngredientcounts: TFloatField
+      DisplayLabel = #1050#1110#1083#1100#1082#1110#1089#1090#1100' ('#1074#1072#1075#1072')'
+      FieldName = 'counts'
+      DisplayFormat = '0.000'
+    end
+    object ATFoodIngredientunit: TStringField
+      DisplayLabel = #1054#1076'. '#1074#1080#1084'.'
+      FieldName = 'unit'
+      Size = 10
+    end
+    object ATFoodIngredientprice: TFloatField
+      DisplayLabel = #1062#1110#1085#1072' '#1079#1072' '#1086#1076#1080#1085#1080#1094#1102
+      FieldName = 'price'
+      DisplayFormat = '0.00 '#1075#1088#1085
+    end
+  end
+  object ADSFoodIngredient: TDataSource
+    DataSet = ATFoodIngredient
+    Left = 664
+    Top = 256
   end
 end

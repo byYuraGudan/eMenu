@@ -15,39 +15,58 @@
 #include <Vcl.DBGrids.hpp>
 #include <Vcl.Grids.hpp>
 #include <Vcl.Imaging.jpeg.hpp>
+#include <Vcl.Dialogs.hpp>
+#include <Vcl.ExtDlgs.hpp>
 //---------------------------------------------------------------------------
 class TFEditFood : public TForm
 {
 __published:	// IDE-managed Components
 	TPageControl *PageControl1;
 	TTabSheet *TabFood;
-	TTabSheet *TabIngredient;
+	TLabel *Label1;
+	TLabel *Label2;
 	TLabeledEdit *Edit_name_food;
-	TImage *Image1;
-	TComboBox *comboboxname_category;
+	TComboBox *CB_name_category;
 	TComboBox *CB_id_category;
+	TButton *EditImage;
+	TPanel *PanelImage;
+	TImage *Image1;
+	TLabeledEdit *EditID;
+	TButton *ButtonAccept;
+	TButton *ButtonCancel;
+	TGroupBox *GroupBox2;
 	TLabeledEdit *Edit_cost_price;
 	TLabeledEdit *Edit_mark_up;
-	TButton *EditImage;
+	TLabeledEdit *Edit_price;
+	TLabeledEdit *Edit_weight;
+	TComboBox *CB_unit;
+	TTabSheet *TabIngredient;
 	TGroupBox *GroupBox1;
 	TToolBar *ToolBar1;
 	TToolButton *ToolAdd;
 	TToolButton *ToolDelete;
-	TPanel *PanelImage;
-	TLabeledEdit *EditID;
-	TLabeledEdit *Edit_price;
-	TLabel *Label1;
-	TButton *ButtonAccept;
-	TButton *ButtonCancel;
+	TDBGrid *DBGridIngredient;
 	TPanel *PanelFood;
-	TLabeledEdit *Edit_weight;
-	TButton *ButtonCalculation;
-	TGroupBox *GroupBox2;
-	TDBGrid *DBGrid1;
+	TButton *ButtonCalculationPrice;
+	TButton *ButtonCalculationWeight;
+	TOpenPictureDialog *OPD;
+	void __fastcall ButtonAcceptClick(TObject *Sender);
 	void __fastcall EditImageClick(TObject *Sender);
+	void __fastcall FormShow(TObject *Sender);
+	void __fastcall EditIDChange(TObject *Sender);
+	void __fastcall CB_id_categoryChange(TObject *Sender);
+	void __fastcall CB_name_categoryChange(TObject *Sender);
+	void __fastcall Edit_cost_priceChange(TObject *Sender);
+	void __fastcall Edit_mark_upChange(TObject *Sender);
+	void __fastcall ToolAddClick(TObject *Sender);
+	void __fastcall ToolDeleteClick(TObject *Sender);
+	void __fastcall ButtonCalculationPriceClick(TObject *Sender);
+	void __fastcall ButtonCalculationWeightClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFEditFood(TComponent* Owner);
+	bool add;
+    void CalculationPrice();
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TFEditFood *FEditFood;

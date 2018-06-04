@@ -2,7 +2,7 @@ object FMainForm: TFMainForm
   Left = 0
   Top = 0
   Caption = 'eMenu'
-  ClientHeight = 600
+  ClientHeight = 540
   ClientWidth = 800
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -10,15 +10,17 @@ object FMainForm: TFMainForm
   Font.Height = -12
   Font.Name = 'Courier New'
   Font.Style = []
+  Menu = DM.MMain
   OldCreateOrder = False
+  Position = poScreenCenter
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
-    Top = 25
+    Top = 0
     Width = 225
-    Height = 575
+    Height = 540
     Align = alLeft
     Alignment = taLeftJustify
     BevelOuter = bvNone
@@ -28,7 +30,7 @@ object FMainForm: TFMainForm
       Left = 0
       Top = 0
       Width = 225
-      Height = 575
+      Height = 540
       Align = alClient
       DataSource = DM.MDSShowCategory
       Font.Charset = RUSSIAN_CHARSET
@@ -37,7 +39,7 @@ object FMainForm: TFMainForm
       Font.Name = 'Courier New'
       Font.Style = []
       PanelBorder = gbNone
-      PanelHeight = 38
+      PanelHeight = 36
       PanelWidth = 208
       ParentFont = False
       TabOrder = 0
@@ -47,7 +49,7 @@ object FMainForm: TFMainForm
         Left = 3
         Top = 3
         Width = 171
-        Height = 32
+        Height = 30
         Align = alClient
         Color = clBtnFace
         DataField = 'name_category'
@@ -67,7 +69,7 @@ object FMainForm: TFMainForm
         Left = 180
         Top = 10
         Width = 25
-        Height = 18
+        Height = 16
         Margins.Top = 10
         Margins.Bottom = 10
         Align = alRight
@@ -90,9 +92,9 @@ object FMainForm: TFMainForm
   end
   object Panel2: TPanel
     Left = 225
-    Top = 25
+    Top = 0
     Width = 575
-    Height = 575
+    Height = 540
     Align = alClient
     Caption = 'Panel2'
     TabOrder = 1
@@ -100,12 +102,12 @@ object FMainForm: TFMainForm
       Left = 1
       Top = 25
       Width = 573
-      Height = 549
+      Height = 514
       Align = alClient
       ColCount = 4
       DataSource = DM.MDSShowFood
       PanelBorder = gbNone
-      PanelHeight = 183
+      PanelHeight = 171
       PanelWidth = 139
       TabOrder = 0
       TabStop = False
@@ -114,49 +116,29 @@ object FMainForm: TFMainForm
         Left = 3
         Top = 3
         Width = 133
-        Height = 177
+        Height = 165
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
-        object DBText2: TDBText
-          AlignWithMargins = True
-          Left = 3
-          Top = 139
-          Width = 127
-          Height = 15
-          Align = alBottom
-          Alignment = taRightJustify
-          DataField = 'price_food'
-          DataSource = DM.MDSShowFood
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -12
-          Font.Name = 'Tahoma'
-          Font.Style = [fsBold]
-          ParentFont = False
-          ExplicitTop = 175
-          ExplicitWidth = 172
-        end
         object DBText4: TDBText
           AlignWithMargins = True
           Left = 3
-          Top = 100
+          Top = 85
           Width = 127
           Height = 33
           Align = alBottom
           DataField = 'name_food'
           DataSource = DM.MDSShowFood
           WordWrap = True
-          ExplicitLeft = 4
-          ExplicitTop = 136
-          ExplicitWidth = 172
+          ExplicitLeft = 2
+          ExplicitTop = 95
         end
         object DBImage1: TDBImage
           AlignWithMargins = True
           Left = 3
           Top = 3
           Width = 127
-          Height = 91
+          Height = 76
           Align = alClient
           DataField = 'picture'
           DataSource = DM.MDSShowFood
@@ -165,7 +147,7 @@ object FMainForm: TFMainForm
         end
         object Panel3: TPanel
           Left = 0
-          Top = 157
+          Top = 145
           Width = 133
           Height = 20
           ParentCustomHint = False
@@ -182,7 +164,48 @@ object FMainForm: TFMainForm
           ShowHint = False
           TabOrder = 1
           Visible = False
-          OnClick = Panel3Click
+        end
+        object Panel4: TPanel
+          Left = 0
+          Top = 121
+          Width = 133
+          Height = 24
+          Align = alBottom
+          BevelOuter = bvNone
+          TabOrder = 2
+          object DBText2: TDBText
+            AlignWithMargins = True
+            Left = 58
+            Top = 3
+            Width = 72
+            Height = 18
+            Align = alClient
+            Alignment = taRightJustify
+            DataField = 'price_food'
+            DataSource = DM.MDSShowFood
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -12
+            Font.Name = 'Tahoma'
+            Font.Style = [fsBold]
+            ParentFont = False
+            ExplicitLeft = 3
+            ExplicitTop = 175
+            ExplicitWidth = 172
+            ExplicitHeight = 15
+          end
+          object DBText5: TDBText
+            Left = 0
+            Top = 0
+            Width = 55
+            Height = 24
+            Align = alLeft
+            DataField = 'weight_unit'
+            DataSource = DM.MDSShowFood
+            ExplicitLeft = 26
+            ExplicitTop = 16
+            ExplicitHeight = 17
+          end
         end
       end
     end
@@ -202,17 +225,5 @@ object FMainForm: TFMainForm
       TextHint = #1055#1086#1096#1091#1082' '#1089#1090#1088#1072#1074#1080' '#1072#1073#1086' '#1085#1072#1087#1086#1102
       OnChange = EditMainSearchFoodChange
     end
-  end
-  object ToolBarMain: TToolBar
-    Left = 0
-    Top = 0
-    Width = 800
-    Height = 25
-    ButtonWidth = 55
-    Images = DM.ImageListButton
-    List = True
-    Menu = DM.MMain
-    ShowCaptions = True
-    TabOrder = 2
   end
 end

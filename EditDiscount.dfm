@@ -3537,7 +3537,7 @@ object FEditDiscount: TFEditDiscount
   end
   object ButtonAccept: TButton
     Left = 99
-    Top = 324
+    Top = 320
     Width = 120
     Height = 30
     Caption = #1055#1110#1076#1090#1074#1077#1088#1076#1080#1090#1080

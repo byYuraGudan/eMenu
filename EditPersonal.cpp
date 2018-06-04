@@ -127,11 +127,14 @@ void TPersonal::UpdateDBPersonal(){
 	DM->TSQL->Parameters->ParamByName("adr")->Value = this->adress;
 	DM->TSQL->Parameters->ParamByName("birt")->Value = this->birthday;
 	DM->TSQL->Parameters->ParamByName("datework")->Value = this->date_work;
-	//DM->TSQL->Parameters->ParamByName("daterelease")->Value = this->date_release;
 	DM->TSQL->ExecSQL();
 }
 void TPersonal::DeleteDBPersonal(){
-
+	DM->TSQL->SQL->Clear();
+	DM->TSQL->SQL->Add("DELETE FROM eMenu.dbo.Personal");
+	DM->TSQL->SQL->Add("WHERE id_personal = :id");
+	DM->TSQL->Parameters->ParamByName("id")->Value = this->id_personal;
+	DM->TSQL->ExecSQL();
 }
 
 void TPersonal::UpdateDBPersonalRelease(){
@@ -150,6 +153,7 @@ void TPersonal::UpdateDBPersonalRelease(){
 }
 void __fastcall TFEditPersonal::ButtonAcceptClick(TObject *Sender)
 {
+    try{
 	TPersonal personal;
 	personal.setLoginPassword(edit_login->Text,\
 							  edit_password->Text);
@@ -161,6 +165,10 @@ void __fastcall TFEditPersonal::ButtonAcceptClick(TObject *Sender)
 	personal.setActivity(PersonalActivity->Checked);
 	personal.setDateWork(date_work->Date);
 	personal.setDateRelease(edit_date_release->Text);
+		if (EditID->Text == 1){
+			personal.setAccess(True);
+			personal.setActivity(True);
+		}
 	if(add){
 	   personal.InsertDBPersonal();
 	} else {
@@ -168,6 +176,11 @@ void __fastcall TFEditPersonal::ButtonAcceptClick(TObject *Sender)
 	   personal.UpdateDBPersonal();
 	}
 	DM->OpenDB();
+	FEditPersonal->Hide();
+		}
+	catch(...){
+        MessageBox(NULL, L"Не вірно введені дані!", L"Відмова!",  MB_OK |MB_ICONWARNING);
+	}
 }
 //---------------------------------------------------------------------------
 

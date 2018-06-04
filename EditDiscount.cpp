@@ -81,6 +81,7 @@ void __fastcall TFEditDiscount::FormShow(TObject *Sender)
  //(float disc,String pib,String adres,String telefon,TDate birth)
 void __fastcall TFEditDiscount::ButtonAcceptClick(TObject *Sender)
 {
+    try{
 	TDiscount discount;
 	discount.setId_discount(StrToInt(edit_id->Text));
 	discount.setInfoDiscount(StrToFloat(edit_discount->Text),edit_pib_client->Text,edit_adress->Text,edit_telefon->Text,date_birthday->Date);
@@ -91,7 +92,11 @@ void __fastcall TFEditDiscount::ButtonAcceptClick(TObject *Sender)
         discount.UpdateDBDiscount();
 	}
 	DM->OpenDB();
-    Hide();
+	Hide();
+		}
+	catch(...){
+        MessageBox(NULL, L"Не вірно введені дані!", L"Відмова!",  MB_OK |MB_ICONWARNING);
+	}
 }
 //---------------------------------------------------------------------------
 

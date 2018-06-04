@@ -33,8 +33,6 @@ __fastcall TFMainForm::TFMainForm(TComponent* Owner)
 void __fastcall TFMainForm::FormShow(TObject *Sender)
 {
 	FAdmin->Show();
-	FAuth->Show();
-
 }
 //---------------------------------------------------------------------------
 
@@ -59,7 +57,7 @@ void __fastcall TFMainForm::EditMainSearchFoodChange(TObject *Sender)
 {
 	String tmp = EditMainSearchFood->Text;
 	if (tmp.Length()!=0) {
-		DM->DoSQL(DM->MQShowFood,"SELECT * FROM eMenu.dbo.Food WHERE name_food like '%"+tmp+"%'");
+		DM->DoSQL(DM->MQShowFood,"SELECT *, STR(weight_food, 5, 3)+' '+ unit_food AS weight_unit FROM eMenu.dbo.Food WHERE name_food like '%"+tmp+"%'");
 		DBCGShowFood->DataSource = DM->MDSQShowFood;
 	} else {
 			DBCGShowFood->DataSource = DM->MDSShowFood;
@@ -77,9 +75,4 @@ void __fastcall TFMainForm::EditMainSearchFoodChange(TObject *Sender)
 
 
 
-void __fastcall TFMainForm::Panel3Click(TObject *Sender)
-{
-	Panel3->Color = cl3DLight;
-}
-//---------------------------------------------------------------------------
 

@@ -12,6 +12,7 @@
 #include "EditDiscount.h"
 #include "EditFood.h"
 #include "EditPersonal.h"
+#include "EditIngredient.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -25,16 +26,14 @@ __fastcall TFAdmin::TFAdmin(TComponent* Owner)
 	PanelCategory->Align = alClient;
 	PanelDiscount->Align = alClient;
 	PanelOrderMenu->Align = alClient;
+    LookPanel->Align = alClient;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TFAdmin::buttonViewPersonalClick(TObject *Sender)
 {
+      this->HidePanel(Sender);
 	  PanelPersonal->Show();
-	  PanelFood->Hide();
-	  PanelCategory->Hide();
-	  PanelDiscount->Hide();
-      PanelOrderMenu->Hide();
 }
 //---------------------------------------------------------------------------
 
@@ -93,7 +92,7 @@ void TFAdmin::HidePanel(TObject *Sender){
 	PanelFood->Hide();
 	PanelCategory->Hide();
 	PanelOrderMenu->Hide();
-    DM->auth = false;
+    LookPanel->Hide();
 }
 
 //---------------------------------------------------------------------------
@@ -133,12 +132,13 @@ void __fastcall TFAdmin::EditCategoryClick(TObject *Sender)
 
 void __fastcall TFAdmin::EditSearchCategoryChange(TObject *Sender)
 {
-	AnsiString tmp = EditSearchCategory->Text;
+   	AnsiString tmp = EditSearchCategory->Text;
 	DM->ATCategory->Filtered = false;
 	if (tmp.Length()!=0){
 		DM->ATCategory->Filter = "name_category like '%"+tmp+"%'";
         DM->ATCategory->Filtered = true;
 	}
+
 }
 //---------------------------------------------------------------------------
 
@@ -172,13 +172,13 @@ void __fastcall TFAdmin::EditDiscountClick(TObject *Sender)
 
 void __fastcall TFAdmin::DeleteDiscountClick(TObject *Sender)
 {
-    try {
+	try {
 		if (IDYES == MessageBox(NULL, L"Ви впевнені, що хочете видалити ?", L"Підвердження!",  MB_YESNO |MB_ICONQUESTION))
 		{
 			TDiscount discount;
 			discount.setId_discount(DM->ATDiscountid_discount->Value);
 			discount.DeleteDBDiscount();
-            DM->OpenDB();
+			DM->OpenDB();
 		}
 	}
 	catch(...){
@@ -217,6 +217,109 @@ void __fastcall TFAdmin::EditPersonalClick(TObject *Sender)
 void __fastcall TFAdmin::AddPersonaClick(TObject *Sender)
 {
 	FEditPersonal->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::EditSearchPersonalChange(TObject *Sender)
+{
+	AnsiString tmp = EditSearchPersonal->Text;
+	DM->ATPersonal->Filtered = false;
+	if (tmp.Length()!=0){
+		DM->ATPersonal->Filter = "logins like '%"+tmp+"%' or pib_personal like '%"+tmp+"%'";
+		DM->ATPersonal->Filtered = true;
+	}
+}
+//--------------------------------------1-------------------------------------
+
+void __fastcall TFAdmin::DeletePersonalClick(TObject *Sender)
+{
+   try {
+		if (IDYES == MessageBox(NULL, L"Ви впевнені, що хочете видалити ?", L"Підвердження!",  MB_YESNO |MB_ICONQUESTION))
+		{
+			if(DM->ATPersonal->FieldByName("id_personal")->AsInteger != 1){
+				TPersonal personal;
+				personal.setId_personal(DM->ATPersonal->FieldByName("id_personal")->AsInteger);
+				personal.DeleteDBPersonal();
+				DM->OpenDB();
+			} else MessageBox(NULL, L"Видалення стандартного адміністратора заборонено!", L"Відмова!",  MB_OK |MB_ICONERROR);
+		}
+	}
+	catch(...){
+		MessageBox(NULL, L"Дані, пов'язанні з даною категоріює. Не можливо видалити!", L"Відмова!",  MB_OK |MB_ICONWARNING);
+	}
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TFAdmin::N4Click(TObject *Sender)
+{
+    FAuth->NotUserStatus(Sender);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::N5Click(TObject *Sender)
+{
+    FMainForm->Close();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::N2Click(TObject *Sender)
+{
+    DM->OpenDB();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TFAdmin::AddFoodClick(TObject *Sender)
+{
+	FEditFood->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::EditFoodClick(TObject *Sender)
+{
+	 FEditFood->Show();
+	 FEditFood->add = false;
+	 FEditFood->CB_id_category->Text = DM->ATFood->FieldByName("kod_category")->AsString;
+	 FEditFood->CB_name_category->Text = DM->ATFood->FieldByName("name_category")->AsString;
+	 FEditFood->CB_unit->Text =  DM->ATFood->FieldByName("unit_food")->AsString;
+	 FEditFood->EditID->Text = DM->ATFood->FieldByName("id_food")->AsString;
+	 FEditFood->Edit_cost_price->Text =  DM->ATFood->FieldByName("cost_price_food")->AsString;
+	 FEditFood->Edit_mark_up->Text =  DM->ATFood->FieldByName("mark_up")->AsString;
+	 FEditFood->Edit_price->Text =  DM->ATFood->FieldByName("price_food")->AsString;
+	 FEditFood->Edit_name_food->Text =  DM->ATFood->FieldByName("name_food")->AsString;
+	 FEditFood->Edit_weight->Text =  DM->ATFood->FieldByName("weight_food")->AsString;
+	 FEditFood->Image1->Picture->Assign(DM->ATFood->FieldByName("picture"));
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TFAdmin::DeleteFoodClick(TObject *Sender)
+{
+   try {
+		if (IDYES == MessageBox(NULL, L"Ви впевнені, що хочете видалити ?", L"Підвердження!",  MB_YESNO |MB_ICONQUESTION))
+		{
+				TFood food;
+				food.setIdFood(DM->ATFoodid_food->Value);
+                food.DeleteDBFood();
+				DM->OpenDB();
+		}
+	}
+	catch(...){
+		MessageBox(NULL, L"Дані, пов'язанні з даною інформацією. Не можливо видалити!", L"Відмова!",  MB_OK |MB_ICONWARNING);
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::EditSearchFoodChange(TObject *Sender)
+{
+	AnsiString tmp = EditSearchFood->Text;
+	DM->ATFood->Filtered = false;
+	if (tmp.Length()!=0){
+		DM->ATFood->Filter = "name_food like '%"+tmp+"%' or name_category like '%"+tmp+"%'";
+		DM->ATFood->Filtered = true;
+	}
 }
 //---------------------------------------------------------------------------
 

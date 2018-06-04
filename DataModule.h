@@ -11,6 +11,7 @@
 #include <Vcl.Controls.hpp>
 #include <Vcl.ImgList.hpp>
 #include <IniFiles.hpp>
+#include <Vcl.ExtCtrls.hpp>
 //---------------------------------------------------------------------------
 class TDM : public TDataModule
 {
@@ -67,8 +68,6 @@ __published:	// IDE-managed Components
 	TFloatField *ATFoodmark_up;
 	TFloatField *ATFoodprice_food;
 	TMemoField *ATFooddata_food;
-	TIntegerField *ATFoodid_category;
-	TStringField *ATFoodname_category;
 	TDataSource *ADSDiscounts;
 	TADOTable *ATDiscount;
 	TMainMenu *MMain;
@@ -76,7 +75,6 @@ __published:	// IDE-managed Components
 	TMenuItem *N2;
 	TMenuItem *N3;
 	TMenuItem *N4;
-	TMenuItem *N6;
 	TDateTimeField *ATPersonaldata_of_work;
 	TDateTimeField *ATPersonalrelease_date;
 	TIntegerField *ATDiscountid_discount;
@@ -89,11 +87,59 @@ __published:	// IDE-managed Components
 	TBooleanField *ATPersonalactivity;
 	TStringField *ATPersonaladress;
 	TDateTimeField *ATDiscountbirthday;
+	TMainMenu *MAdmin;
+	TMainMenu *MUser;
+	TMenuItem *N5;
+	TMenuItem *N7;
+	TMenuItem *N8;
+	TMenuItem *N9;
+	TMenuItem *N10;
+	TMenuItem *N11;
+	TMenuItem *N12;
+	TMenuItem *N13;
+	TMenuItem *N14;
+	TMenuItem *N15;
+	TMenuItem *N6;
+	TMenuItem *N16;
+	TMenuItem *N17;
+	TMenuItem *N18;
+	TMenuItem *N19;
+	TMenuItem *N20;
+	TMenuItem *N21;
+	TMenuItem *N22;
+	TDataSource *DataSource1;
+	TADOTable *MonitorServer;
+	TStringField *ATFoodunit_food;
+	TIntegerField *ATFoodid_category;
+	TStringField *ATFoodname_category;
+	TStringField *ATFoodweight_unit;
+	TStringField *MTShowFoodunit_food;
+	TStringField *MTShowFoodweight_unit;
+	TTimer *TimerUpdate;
+	TADOQuery *ADOQuery1;
+	TStringField *MQShowFoodunit_food;
+	TStringField *MQShowFoodweight_unit;
+	TADOTable *ATFoodIngredient;
+	TDataSource *ADSFoodIngredient;
+	TAutoIncField *ATFoodIngredientid_listingrfood;
+	TIntegerField *ATFoodIngredientkod_food;
+	TStringField *ATFoodIngredientname_ingredient;
+	TFloatField *ATFoodIngredientcounts;
+	TStringField *ATFoodIngredientunit;
+	TFloatField *ATFoodIngredientprice;
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall DataModuleDestroy(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);
 	void __fastcall N4Click(TObject *Sender);
 	void __fastcall N5Click(TObject *Sender);
+	void __fastcall N10Click(TObject *Sender);
+	void __fastcall N11Click(TObject *Sender);
+	void __fastcall N12Click(TObject *Sender);
+	void __fastcall N15Click(TObject *Sender);
+	void __fastcall N19Click(TObject *Sender);
+	void __fastcall N21Click(TObject *Sender);
+	void __fastcall N22Click(TObject *Sender);
+	void __fastcall TimerUpdateTimer(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDM(TComponent* Owner);
@@ -103,7 +149,9 @@ public:		// User declarations
 	void OpenDB();
 	TIniFile *ini;
 	bool auth;
-    bool admin;
+	bool admin;
+	int id_user;
+    String pib_personal;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TDM *DM;

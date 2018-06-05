@@ -101,7 +101,17 @@ __published:	// IDE-managed Components
 	TMenuItem *N5;
 	TMenuItem *N6;
 	TMenuItem *N7;
+	TCategoryPanel *CategoryPanel1;
+	TButton *ButtonViewTable;
+	TButton *ButtonAddListTable;
+	TPanel *PanelTable;
 	TPanel *LookPanel;
+	TDBGrid *DBGridTable;
+	TEdit *EditSearchTable;
+	TToolBar *ToolBarTable;
+	TToolButton *AddTable;
+	TToolButton *DeleteTable;
+	TToolButton *InvOcupTable;
 	void __fastcall buttonViewPersonalClick(TObject *Sender);
 	void __fastcall buttonAddPersonalClick(TObject *Sender);
 	void __fastcall buttonAddCategoryClick(TObject *Sender);
@@ -110,7 +120,7 @@ __published:	// IDE-managed Components
 	void __fastcall buttonViewFoodClick(TObject *Sender);
 	void __fastcall buttonViewOrderMenuClick(TObject *Sender);
 	void __fastcall buttonViewDiscountClick(TObject *Sender);
-	void __fastcall DeleteCategoryClick(TObject *Sender);
+	void __fastcall DeleteCategoyClick(TObject *Sender);
 	void __fastcall AddCategoryClick(TObject *Sender);
 	void __fastcall EditCategoryClick(TObject *Sender);
 	void __fastcall EditSearchCategoryChange(TObject *Sender);
@@ -129,6 +139,12 @@ __published:	// IDE-managed Components
 	void __fastcall EditFoodClick(TObject *Sender);
 	void __fastcall DeleteFoodClick(TObject *Sender);
 	void __fastcall EditSearchFoodChange(TObject *Sender);
+	void __fastcall ButtonViewTableClick(TObject *Sender);
+	void __fastcall EditSearchTableChange(TObject *Sender);
+	void __fastcall AddTableClick(TObject *Sender);
+	void __fastcall DeleteTableClick(TObject *Sender);
+	void __fastcall ButtonAddListTableClick(TObject *Sender);
+	void __fastcall InvOcupTableClick(TObject *Sender);
 
 
 private:	// User declarations

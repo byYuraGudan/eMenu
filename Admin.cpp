@@ -13,6 +13,7 @@
 #include "EditFood.h"
 #include "EditPersonal.h"
 #include "EditIngredient.h"
+#include "EditTabel.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -26,7 +27,8 @@ __fastcall TFAdmin::TFAdmin(TComponent* Owner)
 	PanelCategory->Align = alClient;
 	PanelDiscount->Align = alClient;
 	PanelOrderMenu->Align = alClient;
-    LookPanel->Align = alClient;
+	LookPanel->Align = alClient;
+    PanelTable->Align = alClient;
 }
 //---------------------------------------------------------------------------
 
@@ -92,14 +94,15 @@ void TFAdmin::HidePanel(TObject *Sender){
 	PanelFood->Hide();
 	PanelCategory->Hide();
 	PanelOrderMenu->Hide();
-    LookPanel->Hide();
+	LookPanel->Hide();
+    PanelTable->Hide();
 }
 
 //---------------------------------------------------------------------------
 
 
 
-void __fastcall TFAdmin::DeleteCategoryClick(TObject *Sender)
+void __fastcall TFAdmin::DeleteCategoyClick(TObject *Sender)
 {
 	try {
 		if (IDYES == MessageBox(NULL, L"Ви впевнені, що хочете видалити ?", L"Підвердження!",  MB_YESNO |MB_ICONQUESTION))
@@ -302,7 +305,7 @@ void __fastcall TFAdmin::DeleteFoodClick(TObject *Sender)
 		{
 				TFood food;
 				food.setIdFood(DM->ATFoodid_food->Value);
-                food.DeleteDBFood();
+				food.DeleteDBFood();
 				DM->OpenDB();
 		}
 	}
@@ -320,6 +323,64 @@ void __fastcall TFAdmin::EditSearchFoodChange(TObject *Sender)
 		DM->ATFood->Filter = "name_food like '%"+tmp+"%' or name_category like '%"+tmp+"%'";
 		DM->ATFood->Filtered = true;
 	}
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TFAdmin::ButtonViewTableClick(TObject *Sender)
+{
+	this->HidePanel(Sender);
+	PanelTable->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::EditSearchTableChange(TObject *Sender)
+{
+	AnsiString tmp = EditSearchTable->Text;
+	DM->ATListTable->Filtered = false;
+	if (tmp.Length()!=0){
+		DM->ATListTable->Filter = "name_table like '%"+tmp+"%'";
+        DM->ATListTable->Filtered = true;
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::AddTableClick(TObject *Sender)
+{
+    FEditTable->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::DeleteTableClick(TObject *Sender)
+{
+      try {
+		if (IDYES == MessageBox(NULL, L"Ви впевнені, що хочете видалити ?", L"Підвердження!",  MB_YESNO |MB_ICONQUESTION))
+		{
+				TListTable table;
+				table.setId_table(DM->ATListTable->FieldByName("id_table")->AsInteger);
+                table.DeleteDBListTable();
+				DM->OpenDB();
+		}
+	}
+	catch(...){
+		MessageBox(NULL, L"Дані, пов'язанні з даною інформацією. Не можливо видалити!", L"Відмова!",  MB_OK |MB_ICONWARNING);
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::ButtonAddListTableClick(TObject *Sender)
+{
+    FEditTable->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::InvOcupTableClick(TObject *Sender)
+{
+     TListTable table;
+	 table.setId_table(DM->ATListTable->FieldByName("id_table")->AsInteger);
+	 table.UpdateInverseOccupation();
+     DM->RefreshADO(DM->ATListTable);
 }
 //---------------------------------------------------------------------------
 

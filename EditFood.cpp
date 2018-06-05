@@ -13,6 +13,7 @@
 #include "EditPersonal.h"
 #include "eMenuPCH1.h"
 #include "MainForm.h"
+#include "Math.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -235,7 +236,7 @@ void __fastcall TFEditFood::ButtonCalculationPriceClick(TObject *Sender)
 	 DM->ATFoodIngredient->Next();
 	}
 	ShowMessage("Собівартість - "+FloatToStr(price)+" грн");
-	Edit_cost_price->Text = price;
+	Edit_cost_price->Text = (price*100)/100;
 
 }
 //---------------------------------------------------------------------------
@@ -251,9 +252,47 @@ void __fastcall TFEditFood::ButtonCalculationWeightClick(TObject *Sender)
 	 weight += prc;                   }
 	 DM->ATFoodIngredient->Next();
 	}
+	ShowMessage("Приблизна вага - "+FloatToStrF(weight,ffFixed,10,3)+" кг(л). \nЗауваження!!! Штуки не враховується!");
+	Edit_weight->Text = FloatToStrF(weight,ffFixed,10,3);
+}
+//---------------------------------------------------------------------------
 
-	ShowMessage("Приблизна вага - "+FloatToStr(weight)+" кг(л). \nЗауваження!!! Штуки не враховується!");
-	Edit_weight->Text = weight;
+void __fastcall TFEditFood::Edit_weightKeyPress(TObject *Sender, System::WideChar &Key)
+
+{
+if( Key == VK_BACK || (Key == ',')) return;
+if( (Key < L'0') || (Key > L'9') ) Key = 0;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFEditFood::Edit_cost_priceKeyPress(TObject *Sender, System::WideChar &Key)
+
+{
+if( Key == VK_BACK || (Key == ',')) return;
+if( (Key < L'0') || (Key > L'9') ) Key = 0;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFEditFood::Edit_mark_upKeyPress(TObject *Sender, System::WideChar &Key)
+
+{
+if( Key == VK_BACK) return;
+if( (Key < L'0') || (Key > L'9') ) Key = 0;
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TFEditFood::Edit_priceKeyPress(TObject *Sender, System::WideChar &Key)
+
+{
+if( Key == VK_BACK || (Key == ',')) return;
+if( (Key < L'0') || (Key > L'9') ) Key = 0;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFEditFood::ButtonCancelClick(TObject *Sender)
+{
+    FEditFood->Hide();
 }
 //---------------------------------------------------------------------------
 

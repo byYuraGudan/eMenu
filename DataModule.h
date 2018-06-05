@@ -37,7 +37,6 @@ __published:	// IDE-managed Components
 	TIntegerField *MTShowFoodkod_category;
 	TFloatField *MTShowFoodweight_food;
 	TFloatField *MTShowFoodcost_price_food;
-	TFloatField *MTShowFoodmark_up;
 	TFloatField *MTShowFoodprice_food;
 	TMemoField *MTShowFooddata_food;
 	TADOTable *MTShowCategory;
@@ -48,7 +47,6 @@ __published:	// IDE-managed Components
 	TIntegerField *MQShowFoodkod_category;
 	TFloatField *MQShowFoodweight_food;
 	TFloatField *MQShowFoodcost_price_food;
-	TFloatField *MQShowFoodmark_up;
 	TFloatField *MQShowFoodprice_food;
 	TMemoField *MQShowFooddata_food;
 	TDataSource *MDSQShowFood;
@@ -65,7 +63,6 @@ __published:	// IDE-managed Components
 	TIntegerField *ATFoodkod_category;
 	TFloatField *ATFoodweight_food;
 	TFloatField *ATFoodcost_price_food;
-	TFloatField *ATFoodmark_up;
 	TFloatField *ATFoodprice_food;
 	TMemoField *ATFooddata_food;
 	TDataSource *ADSDiscounts;
@@ -79,7 +76,6 @@ __published:	// IDE-managed Components
 	TDateTimeField *ATPersonalrelease_date;
 	TIntegerField *ATDiscountid_discount;
 	TStringField *ATDiscountpib_client;
-	TFloatField *ATDiscountdiscount;
 	TStringField *ATDiscountadress;
 	TStringField *ATDiscounttelefon;
 	TStringField *ATPersonaltelefon;
@@ -127,6 +123,13 @@ __published:	// IDE-managed Components
 	TFloatField *ATFoodIngredientcounts;
 	TStringField *ATFoodIngredientunit;
 	TFloatField *ATFoodIngredientprice;
+	TIntegerField *ATFoodmark_up;
+	TIntegerField *ATDiscountdiscount;
+	TADOTable *ATListTable;
+	TDataSource *ADSListTable;
+	TAutoIncField *ATListTableid_table;
+	TStringField *ATListTablename_table;
+	TBooleanField *ATListTableoccupation;
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall DataModuleDestroy(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);
@@ -144,6 +147,7 @@ private:	// User declarations
 public:		// User declarations
 	__fastcall TDM(TComponent* Owner);
 	void DoSQL(TADOQuery*,AnsiString);
+	void DoSQLExec(TADOQuery*,AnsiString);
 	void RefreshADO(TADOTable*);
 	void RefreshADO(TADOQuery*);
 	void OpenDB();

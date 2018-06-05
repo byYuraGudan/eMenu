@@ -98,3 +98,22 @@ void __fastcall TFEditIngredient::ButtonCancelClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TFEditIngredient::Edit_countKeyPress(TObject *Sender, System::WideChar &Key)
+
+{
+if( Key == VK_BACK || (Key == ',')) return;
+if( (Key < L'0') || (Key > L'9') ) Key = 0;
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TFEditIngredient::Edit_priceKeyPress(TObject *Sender, System::WideChar &Key)
+
+{
+if( Key == VK_BACK || (Key == ',')) return;
+if( (Key < L'0') || (Key > L'9') ) Key = 0;
+}
+//---------------------------------------------------------------------------
+
+

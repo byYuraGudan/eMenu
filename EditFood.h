@@ -62,6 +62,12 @@ __published:	// IDE-managed Components
 	void __fastcall ToolDeleteClick(TObject *Sender);
 	void __fastcall ButtonCalculationPriceClick(TObject *Sender);
 	void __fastcall ButtonCalculationWeightClick(TObject *Sender);
+	void __fastcall Edit_weightKeyPress(TObject *Sender, System::WideChar &Key);
+	void __fastcall Edit_cost_priceKeyPress(TObject *Sender, System::WideChar &Key);
+	void __fastcall Edit_mark_upKeyPress(TObject *Sender, System::WideChar &Key);
+	void __fastcall Edit_priceKeyPress(TObject *Sender, System::WideChar &Key);
+	void __fastcall ButtonCancelClick(TObject *Sender);
+
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFEditFood(TComponent* Owner);

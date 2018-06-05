@@ -4202,6 +4202,51 @@ object FAdmin: TFAdmin
     TabOrder = 0
     Touch.ParentTabletOptions = False
     Touch.TabletOptions = [toPressAndHold]
+    object CategoryPanel1: TCategoryPanel
+      Top = 156
+      Height = 26
+      Caption = #1057#1090#1086#1083#1080
+      Collapsed = True
+      CollapsedHotImageIndex = 12
+      CollapsedImageIndex = 12
+      CollapsedPressedImageIndex = 12
+      ExpandedHotImageIndex = 12
+      ExpandedImageIndex = 12
+      ExpandedPressedImageIndex = 12
+      TabOrder = 0
+      ExplicitTop = 497
+      ExplicitWidth = 183
+      object ButtonViewTable: TButton
+        AlignWithMargins = True
+        Left = 0
+        Top = 0
+        Width = 198
+        Height = 25
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = #1055#1077#1088#1077#1075#1083#1103#1076' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1111
+        TabOrder = 0
+        OnClick = ButtonViewTableClick
+      end
+      object ButtonAddListTable: TButton
+        AlignWithMargins = True
+        Left = 0
+        Top = 25
+        Width = 198
+        Height = 25
+        Margins.Left = 0
+        Margins.Top = 0
+        Margins.Right = 0
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = #1044#1086#1076#1072#1090#1080' '#1079#1072#1087#1080#1089
+        TabOrder = 1
+        OnClick = ButtonAddListTableClick
+      end
+    end
     object CPStatistic: TCategoryPanel
       Top = 130
       Height = 26
@@ -4213,7 +4258,8 @@ object FAdmin: TFAdmin
       ExpandedHotImageIndex = 9
       ExpandedImageIndex = 9
       ExpandedPressedImageIndex = 9
-      TabOrder = 0
+      TabOrder = 1
+      ExplicitTop = 410
       ExpandedHeight = 87
     end
     object CPDiscounts: TCategoryPanel
@@ -4226,14 +4272,16 @@ object FAdmin: TFAdmin
       CollapsedPressedImageIndex = 8
       ExpandedHotImageIndex = 8
       ExpandedImageIndex = 8
+      ExpandedPressedImageIndex = 8
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
       Font.Name = 'Courier New'
       Font.Style = []
       ParentFont = False
-      TabOrder = 1
-      ExpandedHeight = 122
+      TabOrder = 2
+      ExplicitTop = 338
+      ExpandedHeight = 72
       object Button2: TButton
         AlignWithMargins = True
         Left = 0
@@ -4275,7 +4323,8 @@ object FAdmin: TFAdmin
       CollapsedPressedImageIndex = 7
       ExpandedHotImageIndex = 7
       ExpandedImageIndex = 7
-      TabOrder = 2
+      TabOrder = 3
+      ExplicitTop = 216
       ExpandedHeight = 122
       object buttonViewOrderMenu: TButton
         AlignWithMargins = True
@@ -4317,8 +4366,9 @@ object FAdmin: TFAdmin
       CollapsedPressedImageIndex = 4
       ExpandedHotImageIndex = 4
       ExpandedImageIndex = 4
-      TabOrder = 3
-      ExpandedHeight = 122
+      TabOrder = 4
+      ExplicitTop = 144
+      ExpandedHeight = 72
       object buttonViewFood: TButton
         AlignWithMargins = True
         Left = 0
@@ -4364,7 +4414,8 @@ object FAdmin: TFAdmin
       ParentBiDiMode = False
       ParentBackground = True
       ParentColor = True
-      TabOrder = 4
+      TabOrder = 5
+      ExplicitTop = 72
       ExpandedHeight = 72
       object buttonViewCategory: TButton
         AlignWithMargins = True
@@ -4407,7 +4458,7 @@ object FAdmin: TFAdmin
       CollapsedPressedImageIndex = 3
       ExpandedHotImageIndex = 3
       ExpandedImageIndex = 3
-      TabOrder = 5
+      TabOrder = 6
       ExpandedHeight = 72
       object buttonViewPersonal: TButton
         AlignWithMargins = True
@@ -4504,7 +4555,7 @@ object FAdmin: TFAdmin
         Caption = #1042#1080#1076#1072#1083#1080#1090#1080' '#1079#1072#1087#1080#1089
         ImageIndex = 1
         Wrap = True
-        OnClick = DeleteCategoryClick
+        OnClick = DeleteCategoyClick
       end
       object EditCategory: TToolButton
         Left = 0
@@ -4804,9 +4855,10 @@ object FAdmin: TFAdmin
       end
     end
     object PanelFoodIngredient: TPanel
-      Left = 1
-      Top = 27
-      Width = 351
+      AlignWithMargins = True
+      Left = 4
+      Top = 24
+      Width = 345
       Height = 150
       Align = alBottom
       TabOrder = 3
@@ -4814,7 +4866,7 @@ object FAdmin: TFAdmin
         AlignWithMargins = True
         Left = 4
         Top = 4
-        Width = 200
+        Width = 194
         Height = 142
         Align = alClient
         DataSource = DM.ADSFoodIngredient
@@ -4827,7 +4879,7 @@ object FAdmin: TFAdmin
       end
       object FoodImage: TDBImage
         AlignWithMargins = True
-        Left = 210
+        Left = 204
         Top = 4
         Width = 137
         Height = 142
@@ -4839,12 +4891,83 @@ object FAdmin: TFAdmin
       end
     end
   end
+  object PanelTable: TPanel
+    Left = 807
+    Top = 175
+    Width = 194
+    Height = 117
+    TabOrder = 6
+    object DBGridTable: TDBGrid
+      AlignWithMargins = True
+      Left = 4
+      Top = 62
+      Width = 186
+      Height = 51
+      Align = alClient
+      DataSource = DM.ADSListTable
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -13
+      TitleFont.Name = 'Courier New'
+      TitleFont.Style = []
+    end
+    object EditSearchTable: TEdit
+      AlignWithMargins = True
+      Left = 4
+      Top = 32
+      Width = 186
+      Height = 24
+      Align = alTop
+      TabOrder = 1
+      TextHint = #1055#1086#1096#1091#1082
+      OnChange = EditSearchTableChange
+      ExplicitWidth = 281
+    end
+    object ToolBarTable: TToolBar
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 186
+      Height = 22
+      ButtonWidth = 155
+      Caption = 'ToolBar'
+      Images = DM.ImageListButton
+      List = True
+      ShowCaptions = True
+      TabOrder = 2
+      ExplicitLeft = 0
+      object AddTable: TToolButton
+        Left = 0
+        Top = 0
+        Caption = #1044#1086#1076#1072#1090#1080' '#1079#1072#1087#1080#1089
+        ImageIndex = 0
+        Wrap = True
+        OnClick = AddTableClick
+      end
+      object DeleteTable: TToolButton
+        Left = 0
+        Top = 22
+        Caption = #1042#1080#1076#1072#1083#1080#1090#1080' '#1079#1072#1087#1080#1089
+        ImageIndex = 1
+        Wrap = True
+        OnClick = DeleteTableClick
+      end
+      object InvOcupTable: TToolButton
+        Left = 0
+        Top = 44
+        Caption = #1047#1072#1081#1085#1103#1090#1110#1089#1090#1100' '#1089#1090#1086#1083#1072
+        ImageIndex = 5
+        OnClick = InvOcupTableClick
+      end
+    end
+  end
   object LookPanel: TPanel
     Left = 208
-    Top = 511
+    Top = 503
     Width = 185
     Height = 41
-    TabOrder = 6
+    TabOrder = 7
   end
   object MenuAdministrator: TMainMenu
     Left = 944

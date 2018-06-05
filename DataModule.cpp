@@ -42,6 +42,12 @@ void TDM::DoSQL(TADOQuery *Query,AnsiString str){
 	Query->ExecSQL();
 	Query->Open();
 }
+void TDM::DoSQLExec(TADOQuery *Query,AnsiString str){
+	Query->Close();
+	Query->SQL->Clear();
+	Query->SQL->Add(str);
+	Query->ExecSQL();
+}
 void TDM::RefreshADO(TADOTable *Table){
 	Table->Close();
 	Table->Open();
@@ -59,6 +65,7 @@ void TDM::OpenDB(){
 	RefreshADO(ATFood);
 	RefreshADO(ATDiscount);
 	RefreshADO(ATFoodIngredient);
+    RefreshADO(ATListTable);
 }
 //---------------------------------------------------------------------------
 

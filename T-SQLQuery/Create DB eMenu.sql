@@ -1,12 +1,12 @@
 CREATE DATABASE eMenu
 ON
 PRIMARY (NAME = eMenu1,
-	FILENAME = 'E:\eMenu\T-SQLQuery\eMenu_archive.mdf'),
+	FILENAME = 'E:\eMenu_archive.mdf'),
 FILEGROUP FileStreamGroup1 CONTAINS FILESTREAM( NAME = Arch3,
-	FILENAME = 'E:\eMenu\T-SQLQuery\eMenu_filestream')
+	FILENAME = 'E:\eMenu_filestream')
 
 LOG ON ( NAME = eMenuLog,
-	FILENAME = 'E:\eMenu\T-SQLQuery\eMenu_log.ldf')
+	FILENAME = 'E:\eMenu_log.ldf')
 GO
 USE eMenu
 GO
@@ -40,8 +40,8 @@ CREATE TABLE Discounts(id_discount INT PRIMARY KEY,
 					  discount INT NOT NULL DEFAULT 0)
 GO
 CREATE TABLE ListTable(id_table INT PRIMARY KEY IDENTITY(1,1),
-					   name_table VARCHAR(10) NOT NULL,
-					   occupation BIT DEFAULT 1)
+					   name_table VARCHAR(50) NOT NULL,
+					   occupation BIT DEFAULT 0)
 GO
 CREATE TABLE ListOrderMenu(id_listordermenu INT PRIMARY KEY IDENTITY(1,1),
 						   kod_order INT NOT NULL,
@@ -54,12 +54,12 @@ GO
 CREATE TABLE Food(id_food INT PRIMARY KEY IDENTITY(1,1),
 				  name_food VARCHAR(50) NOT NULL,
 				  picture VARBINARY(MAX),
-				  kod_category INT,
+				  kod_category INT NOT NULL,
 				  weight_food NUMERIC(10, 3),
 				  unit_food VARCHAR(10),
 				  cost_price_food NUMERIC(10, 2) NOT NULL,
 				  mark_up INT NOT NULL DEFAULT 1,
-				  price_food NUMERIC(10, 3),
+				  price_food NUMERIC(10, 2) NOT NULL,
 				  data_food VARCHAR(MAX))
 GO
 CREATE TABLE ListIngredientFood(id_listingrfood INT PRIMARY KEY IDENTITY(1,1),

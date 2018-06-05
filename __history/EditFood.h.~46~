@@ -1,0 +1,78 @@
+//---------------------------------------------------------------------------
+
+#ifndef EditFoodH
+#define EditFoodH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.ComCtrls.hpp>
+#include <Vcl.ExtCtrls.hpp>
+#include <Vcl.Touch.Keyboard.hpp>
+#include <Vcl.ToolWin.hpp>
+#include <Data.DB.hpp>
+#include <Vcl.DBGrids.hpp>
+#include <Vcl.Grids.hpp>
+#include <Vcl.Imaging.jpeg.hpp>
+#include <Vcl.Dialogs.hpp>
+#include <Vcl.ExtDlgs.hpp>
+//---------------------------------------------------------------------------
+class TFEditFood : public TForm
+{
+__published:	// IDE-managed Components
+	TPageControl *PageControl1;
+	TTabSheet *TabFood;
+	TLabel *Label1;
+	TLabel *Label2;
+	TLabeledEdit *Edit_name_food;
+	TComboBox *CB_name_category;
+	TComboBox *CB_id_category;
+	TButton *EditImage;
+	TPanel *PanelImage;
+	TImage *Image1;
+	TLabeledEdit *EditID;
+	TButton *ButtonAccept;
+	TButton *ButtonCancel;
+	TGroupBox *GroupBox2;
+	TLabeledEdit *Edit_cost_price;
+	TLabeledEdit *Edit_mark_up;
+	TLabeledEdit *Edit_price;
+	TLabeledEdit *Edit_weight;
+	TComboBox *CB_unit;
+	TTabSheet *TabIngredient;
+	TGroupBox *GroupBox1;
+	TToolBar *ToolBar1;
+	TToolButton *ToolAdd;
+	TToolButton *ToolDelete;
+	TDBGrid *DBGridIngredient;
+	TPanel *PanelFood;
+	TButton *ButtonCalculationPrice;
+	TButton *ButtonCalculationWeight;
+	TOpenPictureDialog *OPD;
+	void __fastcall ButtonAcceptClick(TObject *Sender);
+	void __fastcall EditImageClick(TObject *Sender);
+	void __fastcall FormShow(TObject *Sender);
+	void __fastcall EditIDChange(TObject *Sender);
+	void __fastcall CB_id_categoryChange(TObject *Sender);
+	void __fastcall CB_name_categoryChange(TObject *Sender);
+	void __fastcall Edit_cost_priceChange(TObject *Sender);
+	void __fastcall Edit_mark_upChange(TObject *Sender);
+	void __fastcall ToolAddClick(TObject *Sender);
+	void __fastcall ToolDeleteClick(TObject *Sender);
+	void __fastcall ButtonCalculationPriceClick(TObject *Sender);
+	void __fastcall ButtonCalculationWeightClick(TObject *Sender);
+	void __fastcall Edit_weightKeyPress(TObject *Sender, System::WideChar &Key);
+	void __fastcall Edit_cost_priceKeyPress(TObject *Sender, System::WideChar &Key);
+	void __fastcall Edit_mark_upKeyPress(TObject *Sender, System::WideChar &Key);
+
+private:	// User declarations
+public:		// User declarations
+	__fastcall TFEditFood(TComponent* Owner);
+	bool add;
+    void CalculationPrice();
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TFEditFood *FEditFood;
+//---------------------------------------------------------------------------
+#endif

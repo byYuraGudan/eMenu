@@ -49,15 +49,18 @@ class TListTable
 {
 private:
 	 int id_table;
+	 AnsiString name;
 	 bool occupation;
-
 protected:
 
 public:
 	void setId_table(int);
-	void setOccupation(bool);
 	int getId_table();
-	bool getOccupation(bool);
+	void setNameListTable(AnsiString);
+	void setOccupListTable(bool);
+	void InsertDBListTable();
+    void UpdateInverseOccupation();
+	void DeleteDBListTable();
 };
 
 class TDiscount

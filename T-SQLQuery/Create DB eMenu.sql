@@ -28,7 +28,7 @@ CREATE TABLE OrderMenu(id_order INT PRIMARY KEY IDENTITY(1,1),
 					   date_close_order DATETIME,
 					   kod_table INT NOT NULL,
 					   close_order BIT DEFAULT 0,
-					   payment FLOAT DEFAULT 0,
+					   payment NUMERIC(10, 2) DEFAULT 0,
 					   kod_personal INT NOT NULL,
 					   kod_discount INT NOT NULL)
 GO
@@ -37,7 +37,7 @@ CREATE TABLE Discounts(id_discount INT PRIMARY KEY,
 					  birthday DATETIME,
 					  adress VARCHAR(100),
 					  telefon VARCHAR(20), 
-					  discount FLOAT NOT NULL DEFAULT 0)
+					  discount INT NOT NULL DEFAULT 0)
 GO
 CREATE TABLE ListTable(id_table INT PRIMARY KEY IDENTITY(1,1),
 					   name_table VARCHAR(10) NOT NULL,
@@ -46,7 +46,7 @@ GO
 CREATE TABLE ListOrderMenu(id_listordermenu INT PRIMARY KEY IDENTITY(1,1),
 						   kod_order INT NOT NULL,
 						   kod_food INT NOT NULL,
-						   counts FLOAT DEFAULT 1)
+						   counts NUMERIC(10, 3) DEFAULT 1)
 GO
 CREATE TABLE Category(id_category INT PRIMARY KEY IDENTITY(1,1),
 					  name_category VARCHAR(100))
@@ -55,19 +55,19 @@ CREATE TABLE Food(id_food INT PRIMARY KEY IDENTITY(1,1),
 				  name_food VARCHAR(50) NOT NULL,
 				  picture VARBINARY(MAX),
 				  kod_category INT,
-				  weight_food FLOAT,
+				  weight_food NUMERIC(10, 3),
 				  unit_food VARCHAR(10),
-				  cost_price_food FLOAT NOT NULL,
-				  mark_up FLOAT NOT NULL DEFAULT 1,
-				  price_food FLOAT,
+				  cost_price_food NUMERIC(10, 2) NOT NULL,
+				  mark_up INT NOT NULL DEFAULT 1,
+				  price_food NUMERIC(10, 3),
 				  data_food VARCHAR(MAX))
 GO
 CREATE TABLE ListIngredientFood(id_listingrfood INT PRIMARY KEY IDENTITY(1,1),
 								kod_food INT NOT NULL,
-								counts FLOAT NOT NULL,
+								counts NUMERIC(10, 3) NOT NULL,
 								name_ingredient VARCHAR(50) NOT NULL,
 								unit VARCHAR(10),
-								price FLOAT NOT NULL)
+								price NUMERIC(10, 2) NOT NULL)
 
 ALTER TABLE OrderMenu
 ADD CONSTRAINT FK_OrderMenu_Personal FOREIGN KEY(kod_personal) 

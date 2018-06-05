@@ -45,3 +45,14 @@ FROM
 					   INNER JOIN eMenu.dbo.ListTable ON id_table = kod_table)
 					   INNER JOIN eMenu.dbo.Personal ON id_personal = kod_personal)
 GO
+
+CREATE VIEW AdminListOrdermenu AS
+SELECT id_listordermenu,
+	   kod_order,
+	   kod_food,
+	   name_food,
+	   counts,
+	   price_food
+FROM 
+dbo.ListOrderMenu INNER JOIN dbo.Food ON id_food = kod_food
+GO

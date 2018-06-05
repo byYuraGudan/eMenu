@@ -6,16 +6,17 @@
 //---------------------------------------------------------------------------
 #include <Vcl.Styles.hpp>
 #include <Vcl.Themes.hpp>
-USEFORM("EditIngredient.cpp", FEditIngredient);
-USEFORM("EditPersonal.cpp", FEditPersonal);
-USEFORM("MainForm.cpp", FMainForm);
-USEFORM("EditFood.cpp", FEditFood);
-USEFORM("Admin.cpp", FAdmin);
-USEFORM("Authorization.cpp", FAuth);
-USEFORM("DataModule.cpp", DM); /* TDataModule: File Type */
-USEFORM("EditCategory.cpp", FEditCategory);
-USEFORM("EditDiscount.cpp", FEditDiscount);
 USEFORM("EditTabel.cpp", FEditTable);
+USEFORM("EditPersonal.cpp", FEditPersonal);
+USEFORM("EditIngredient.cpp", FEditIngredient);
+USEFORM("MainForm.cpp", FMainForm);
+USEFORM("DataModule.cpp", DM); /* TDataModule: File Type */
+USEFORM("Authorization.cpp", FAuth);
+USEFORM("Admin.cpp", FAdmin);
+USEFORM("EditFood.cpp", FEditFood);
+USEFORM("EditDiscount.cpp", FEditDiscount);
+USEFORM("EditCategory.cpp", FEditCategory);
+USEFORM("Oficiant.cpp", FOficiant);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -34,6 +35,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(TFEditFood), &FEditFood);
 		Application->CreateForm(__classid(TFEditIngredient), &FEditIngredient);
 		Application->CreateForm(__classid(TFEditTable), &FEditTable);
+		Application->CreateForm(__classid(TFOficiant), &FOficiant);
 		Application->Run();
 	}
 	catch (Exception &exception)

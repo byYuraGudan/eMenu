@@ -65,7 +65,9 @@ void TDM::OpenDB(){
 	RefreshADO(ATFood);
 	RefreshADO(ATDiscount);
 	RefreshADO(ATFoodIngredient);
-    RefreshADO(ATListTable);
+	RefreshADO(ATListTable);
+	RefreshADO(ATOrderMenu);
+    RefreshADO(ATListOrderMenu);
 }
 //---------------------------------------------------------------------------
 

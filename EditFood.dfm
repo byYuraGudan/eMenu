@@ -3515,6 +3515,8 @@ object FEditFood: TFEditFood
     TabOrder = 0
     object TabFood: TTabSheet
       Caption = #1054#1089#1085#1086#1074#1085#1072' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1103
+      ExplicitLeft = 8
+      ExplicitTop = 31
       object Label1: TLabel
         Left = 264
         Top = 14
@@ -3534,9 +3536,9 @@ object FEditFood: TFEditFood
         Top = 90
         Width = 330
         Height = 24
-        EditLabel.Width = 88
+        EditLabel.Width = 144
         EditLabel.Height = 16
-        EditLabel.Caption = #1053#1072#1079#1074#1072' '#1084#1077#1085#1102'*'
+        EditLabel.Caption = #1053#1072#1081#1084#1077#1085#1091#1074#1072#1085#1085#1103' '#1084#1077#1085#1102'*'
         TabOrder = 0
       end
       object CB_name_category: TComboBox

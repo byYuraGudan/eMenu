@@ -4214,8 +4214,6 @@ object FAdmin: TFAdmin
       ExpandedImageIndex = 12
       ExpandedPressedImageIndex = 12
       TabOrder = 0
-      ExplicitTop = 497
-      ExplicitWidth = 183
       object ButtonViewTable: TButton
         AlignWithMargins = True
         Left = 0
@@ -4259,7 +4257,6 @@ object FAdmin: TFAdmin
       ExpandedImageIndex = 9
       ExpandedPressedImageIndex = 9
       TabOrder = 1
-      ExplicitTop = 410
       ExpandedHeight = 87
     end
     object CPDiscounts: TCategoryPanel
@@ -4280,7 +4277,6 @@ object FAdmin: TFAdmin
       Font.Style = []
       ParentFont = False
       TabOrder = 2
-      ExplicitTop = 338
       ExpandedHeight = 72
       object Button2: TButton
         AlignWithMargins = True
@@ -4324,7 +4320,6 @@ object FAdmin: TFAdmin
       ExpandedHotImageIndex = 7
       ExpandedImageIndex = 7
       TabOrder = 3
-      ExplicitTop = 216
       ExpandedHeight = 122
       object buttonViewOrderMenu: TButton
         AlignWithMargins = True
@@ -4367,7 +4362,6 @@ object FAdmin: TFAdmin
       ExpandedHotImageIndex = 4
       ExpandedImageIndex = 4
       TabOrder = 4
-      ExplicitTop = 144
       ExpandedHeight = 72
       object buttonViewFood: TButton
         AlignWithMargins = True
@@ -4415,7 +4409,6 @@ object FAdmin: TFAdmin
       ParentBackground = True
       ParentColor = True
       TabOrder = 5
-      ExplicitTop = 72
       ExpandedHeight = 72
       object buttonViewCategory: TButton
         AlignWithMargins = True
@@ -4567,30 +4560,31 @@ object FAdmin: TFAdmin
     end
   end
   object PanelOrderMenu: TPanel
-    Left = 512
-    Top = 175
-    Width = 297
-    Height = 322
+    Left = 496
+    Top = 106
+    Width = 457
+    Height = 374
     Caption = 'PanelOrderMenu'
     TabOrder = 2
     object EditSearchOrderMenu: TEdit
       AlignWithMargins = True
       Left = 4
       Top = 32
-      Width = 289
+      Width = 449
       Height = 24
       Align = alTop
       TabOrder = 0
       Text = 'EditSearchOrderMenu'
+      ExplicitWidth = 289
     end
     object DBGridListOrder: TDBGrid
       AlignWithMargins = True
       Left = 4
       Top = 62
-      Width = 289
+      Width = 449
       Height = 200
       Align = alTop
-      DataSource = DM.DataSource1
+      DataSource = DM.ADSOrderMenu
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -4602,9 +4596,10 @@ object FAdmin: TFAdmin
       AlignWithMargins = True
       Left = 4
       Top = 268
-      Width = 289
-      Height = 50
+      Width = 449
+      Height = 102
       Align = alClient
+      DataSource = DM.ADSListOrderMenu
       TabOrder = 2
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -4616,7 +4611,7 @@ object FAdmin: TFAdmin
       AlignWithMargins = True
       Left = 4
       Top = 4
-      Width = 289
+      Width = 449
       Height = 22
       ButtonWidth = 155
       Caption = 'ToolBar'
@@ -4624,23 +4619,23 @@ object FAdmin: TFAdmin
       List = True
       ShowCaptions = True
       TabOrder = 3
+      ExplicitWidth = 289
       object AddOrderMenu: TToolButton
         Left = 0
         Top = 0
         Caption = #1044#1086#1076#1072#1090#1080' '#1079#1072#1087#1080#1089
         ImageIndex = 0
-        Wrap = True
       end
       object DeleteOrderMenu: TToolButton
-        Left = 0
-        Top = 22
+        Left = 155
+        Top = 0
         Caption = #1042#1080#1076#1072#1083#1080#1090#1080' '#1079#1072#1087#1080#1089
         ImageIndex = 1
         Wrap = True
       end
       object EditOrderMenu: TToolButton
         Left = 0
-        Top = 44
+        Top = 22
         Caption = #1056#1077#1076#1072#1075#1091#1074#1072#1090#1080' '#1079#1072#1087#1080#1089
         ImageIndex = 2
       end
@@ -4922,7 +4917,6 @@ object FAdmin: TFAdmin
       TabOrder = 1
       TextHint = #1055#1086#1096#1091#1082
       OnChange = EditSearchTableChange
-      ExplicitWidth = 281
     end
     object ToolBarTable: TToolBar
       AlignWithMargins = True
@@ -4936,7 +4930,6 @@ object FAdmin: TFAdmin
       List = True
       ShowCaptions = True
       TabOrder = 2
-      ExplicitLeft = 0
       object AddTable: TToolButton
         Left = 0
         Top = 0

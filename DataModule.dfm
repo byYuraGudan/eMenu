@@ -123,17 +123,23 @@ object DM: TDM
       FieldName = 'close_order'
       DisplayValues = #1047#1072#1082#1088#1080#1090#1077';'#1042#1110#1076#1082#1088#1080#1090#1077
     end
+    object ATOrderMenupayment: TBCDField
+      DisplayLabel = #1054#1087#1083#1072#1090#1072' '#1079#1072#1084#1086#1074#1083#1077#1085#1103
+      FieldName = 'payment'
+      DisplayFormat = '0.00 '#1075#1088#1085
+      Precision = 10
+      Size = 2
+    end
     object ATOrderMenudiscount: TIntegerField
       DisplayLabel = #1047#1085#1080#1078#1082#1072
       FieldName = 'discount'
       DisplayFormat = '0 %'
     end
-    object ATOrderMenupayment: TBCDField
-      DisplayLabel = #1054#1087#1083#1072#1090#1072
-      FieldName = 'payment'
-      DisplayFormat = '0.00 '#1075#1088#1085
-      Precision = 10
-      Size = 2
+    object ATOrderMenuRealPayment: TStringField
+      DisplayLabel = #1054#1087#1083#1072#1090#1072' '#1079#1110' '#1079#1085#1080#1078#1082#1086#1102
+      FieldName = 'RealPayment'
+      ReadOnly = True
+      Size = 10
     end
     object ATOrderMenukod_table: TIntegerField
       DisplayLabel = #8470' '#1089#1090#1086#1083#1072

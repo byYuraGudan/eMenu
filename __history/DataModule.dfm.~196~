@@ -99,12 +99,73 @@ object DM: TDM
       Size = 100
     end
   end
-  object TableOrderMenu: TADOTable
+  object ATOrderMenu: TADOTable
+    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
-    TableName = 'OrderMenu'
-    Left = 224
-    Top = 96
+    TableName = 'AdminOrderMenu'
+    Left = 416
+    Top = 128
+    object ATOrderMenuid_order: TIntegerField
+      DisplayLabel = #8470' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
+      FieldName = 'id_order'
+    end
+    object ATOrderMenudate_open_order: TDateTimeField
+      DisplayLabel = #1042#1110#1076#1082#1088#1080#1090#1090#1103' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
+      FieldName = 'date_open_order'
+    end
+    object ATOrderMenudate_close_order: TDateTimeField
+      DisplayLabel = #1047#1072#1082#1088#1080#1090#1090#1103' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
+      FieldName = 'date_close_order'
+    end
+    object ATOrderMenuclose_order: TBooleanField
+      DisplayLabel = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103
+      FieldName = 'close_order'
+      DisplayValues = #1047#1072#1082#1088#1080#1090#1077';'#1042#1110#1076#1082#1088#1080#1090#1077
+    end
+    object ATOrderMenudiscount: TIntegerField
+      DisplayLabel = #1047#1085#1080#1078#1082#1072
+      FieldName = 'discount'
+      DisplayFormat = '0 %'
+    end
+    object ATOrderMenupayment: TBCDField
+      DisplayLabel = #1054#1087#1083#1072#1090#1072
+      FieldName = 'payment'
+      DisplayFormat = '0.00 '#1075#1088#1085
+      Precision = 10
+      Size = 2
+    end
+    object ATOrderMenukod_table: TIntegerField
+      DisplayLabel = #8470' '#1089#1090#1086#1083#1072
+      FieldName = 'kod_table'
+      Visible = False
+    end
+    object ATOrderMenuname_table: TStringField
+      DisplayLabel = #1053#1072#1081#1084'. '#1089#1090#1086#1083#1072
+      DisplayWidth = 15
+      FieldName = 'name_table'
+      Size = 50
+    end
+    object ATOrderMenukod_personal: TIntegerField
+      FieldName = 'kod_personal'
+      Visible = False
+    end
+    object ATOrderMenupib_personal: TStringField
+      DisplayLabel = #1054#1092#1110#1094#1110#1072#1085#1090
+      DisplayWidth = 20
+      FieldName = 'pib_personal'
+      Size = 50
+    end
+    object ATOrderMenukod_discount: TIntegerField
+      DisplayLabel = #8470' '#1082#1072#1088#1090#1082#1080
+      FieldName = 'kod_discount'
+    end
+    object ATOrderMenupib_client: TStringField
+      DisplayLabel = #1050#1083#1110#1108#1085#1090
+      DisplayWidth = 20
+      FieldName = 'pib_client'
+      Size = 50
+    end
   end
   object ATFood: TADOTable
     Active = True
@@ -120,7 +181,7 @@ object DM: TDM
       FieldName = 'id_food'
     end
     object ATFoodname_food: TStringField
-      DisplayLabel = #1053#1072#1079#1074#1072' '#1077#1083#1077#1084#1077#1085#1090' '#1084#1077#1085#1102
+      DisplayLabel = #1053#1072#1081#1084#1077#1085#1091#1074#1072#1085#1085#1103' '#1084#1077#1085#1102
       DisplayWidth = 33
       FieldName = 'name_food'
       Size = 50
@@ -209,15 +270,15 @@ object DM: TDM
   end
   object DSOpenOrder: TDataSource
     DataSet = TableOpenOrder
-    Left = 312
-    Top = 168
+    Left = 296
+    Top = 128
   end
   object TableOpenOrder: TADOTable
     Connection = ConnectionToDB
     CursorType = ctStatic
     TableName = 'OpenOrder'
-    Left = 224
-    Top = 168
+    Left = 208
+    Top = 128
   end
   object ImageListButton: TImageList
     Left = 32
@@ -1112,5 +1173,59 @@ object DM: TDM
     DataSet = ATListTable
     Left = 664
     Top = 312
+  end
+  object ADSOrderMenu: TDataSource
+    DataSet = ATOrderMenu
+    Left = 504
+    Top = 128
+  end
+  object ADSListOrderMenu: TDataSource
+    DataSet = ATListOrderMenu
+    Left = 504
+    Top = 192
+  end
+  object ATListOrderMenu: TADOTable
+    Active = True
+    Connection = ConnectionToDB
+    CursorType = ctStatic
+    IndexFieldNames = 'kod_order'
+    MasterFields = 'id_order'
+    MasterSource = ADSOrderMenu
+    TableName = 'AdminListOrdermenu'
+    Left = 416
+    Top = 192
+    object ATListOrderMenuid_listordermenu: TIntegerField
+      DisplayLabel = #8470
+      FieldName = 'id_listordermenu'
+      Visible = False
+    end
+    object ATListOrderMenukod_order: TIntegerField
+      FieldName = 'kod_order'
+      Visible = False
+    end
+    object ATListOrderMenukod_food: TIntegerField
+      FieldName = 'kod_food'
+      Visible = False
+    end
+    object ATListOrderMenuname_food: TStringField
+      DisplayLabel = #1053#1072#1081#1084#1077#1085#1091#1074#1072#1085#1085#1103' '#1084#1077#1085#1102
+      DisplayWidth = 35
+      FieldName = 'name_food'
+      Size = 50
+    end
+    object ATListOrderMenucounts: TBCDField
+      DisplayLabel = #1050#1110#1083#1100#1082#1110#1089#1090#1100
+      FieldName = 'counts'
+      DisplayFormat = '0.000'
+      Precision = 10
+      Size = 3
+    end
+    object ATListOrderMenuprice_food: TBCDField
+      DisplayLabel = #1062#1110#1085#1072' '#1079#1072' '#1086#1076#1080#1085#1080#1094#1102
+      FieldName = 'price_food'
+      DisplayFormat = '0.00 '#1075#1088#1085
+      Precision = 10
+      Size = 2
+    end
   end
 end

@@ -33,13 +33,14 @@ SELECT id_order,
 	   date_close_order,
 	   close_order,
 	   payment,
+	   discount,
+	   STR(payment - (payment * discount/100),10,2) AS RealPayment,
 	   kod_table,
 	   name_table,
 	   kod_personal,
 	   pib_personal,
 	   kod_discount,
-	   pib_client,
-	   discount
+	   pib_client
 FROM 
 (((eMenu.dbo.OrderMenu INNER JOIN eMenu.dbo.Discounts ON id_discount = kod_discount)
 					   INNER JOIN eMenu.dbo.ListTable ON id_table = kod_table)

@@ -116,7 +116,8 @@ void __fastcall TDM::N10Click(TObject *Sender)
 
 void __fastcall TDM::N11Click(TObject *Sender)
 {
-    FAuth->NotUserStatus(Sender);
+	FAuth->NotUserStatus(Sender);
+	DM->OpenDB();
 }
 //---------------------------------------------------------------------------
 
@@ -142,7 +143,8 @@ void __fastcall TDM::N19Click(TObject *Sender)
 
 void __fastcall TDM::N21Click(TObject *Sender)
 {
-    FAuth->NotUserStatus(Sender);
+	FAuth->NotUserStatus(Sender);
+    DM->OpenDB();
 }
 //---------------------------------------------------------------------------
 

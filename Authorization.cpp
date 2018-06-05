@@ -30,12 +30,14 @@ __fastcall TFAuth::TFAuth(TComponent* Owner)
 
 void TFAuth::AdminStatus(TObject *Sender){
 	DM->admin = true;
-    FMainForm->Menu = DM->MAdmin;
+	FMainForm->Menu = DM->MAdmin;
+	FMainForm->AddToOrder->Height = 20;
 }
 
 void TFAuth::UserStatus(TObject *Sender){
 	DM->admin = false;
 	FMainForm->Menu = DM->MUser;
+	FMainForm->AddToOrder->Height = 20;
 }
 
 void TFAuth::NotUserStatus(TObject *Sender){
@@ -45,7 +47,8 @@ void TFAuth::NotUserStatus(TObject *Sender){
 	FEditFood->Hide();
 	FEditIngredient->Hide();
 	FEditPersonal->Hide();
-    FMainForm->Menu = DM->MMain;
+	FMainForm->Menu = DM->MMain;
+	FMainForm->AddToOrder->Height = 0;
 }
 
 void __fastcall TFAuth::FormShow(TObject *Sender)
@@ -75,6 +78,7 @@ void __fastcall TFAuth::buttonOpenClick(TObject *Sender)
 		this->trycount++;
         this->LockedUser(login);
 	}
+    DM->RefreshADO(DM->MTShowFood);
 }
 //---------------------------------------------------------------------------
 

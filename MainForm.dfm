@@ -2,7 +2,7 @@ object FMainForm: TFMainForm
   Left = 0
   Top = 0
   Caption = 'eMenu'
-  ClientHeight = 540
+  ClientHeight = 500
   ClientWidth = 800
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -20,7 +20,7 @@ object FMainForm: TFMainForm
     Left = 0
     Top = 0
     Width = 225
-    Height = 540
+    Height = 500
     Align = alLeft
     Alignment = taLeftJustify
     BevelOuter = bvNone
@@ -30,7 +30,7 @@ object FMainForm: TFMainForm
       Left = 0
       Top = 0
       Width = 225
-      Height = 540
+      Height = 500
       Align = alClient
       DataSource = DM.MDSShowCategory
       Font.Charset = RUSSIAN_CHARSET
@@ -39,17 +39,19 @@ object FMainForm: TFMainForm
       Font.Name = 'Courier New'
       Font.Style = []
       PanelBorder = gbNone
-      PanelHeight = 36
+      PanelHeight = 33
       PanelWidth = 208
       ParentFont = False
       TabOrder = 0
       RowCount = 15
-      object DBText1: TDBText
+      ExplicitLeft = 1
+      ExplicitTop = 1
+      object DBCategory: TDBText
         AlignWithMargins = True
         Left = 3
         Top = 3
         Width = 171
-        Height = 30
+        Height = 27
         Align = alClient
         Color = clBtnFace
         DataField = 'name_category'
@@ -71,7 +73,7 @@ object FMainForm: TFMainForm
         Width = 25
         Height = 16
         Margins.Top = 10
-        Margins.Bottom = 10
+        Margins.Bottom = 7
         Align = alRight
         Alignment = taCenter
         BiDiMode = bdLeftToRight
@@ -85,8 +87,7 @@ object FMainForm: TFMainForm
         ParentBiDiMode = False
         ParentFont = False
         WordWrap = True
-        ExplicitTop = 2
-        ExplicitHeight = 20
+        ExplicitHeight = 15
       end
     end
   end
@@ -94,7 +95,7 @@ object FMainForm: TFMainForm
     Left = 225
     Top = 0
     Width = 575
-    Height = 540
+    Height = 500
     Align = alClient
     Caption = 'Panel2'
     TabOrder = 1
@@ -102,12 +103,12 @@ object FMainForm: TFMainForm
       Left = 1
       Top = 25
       Width = 573
-      Height = 514
+      Height = 474
       Align = alClient
       ColCount = 4
       DataSource = DM.MDSShowFood
       PanelBorder = gbNone
-      PanelHeight = 171
+      PanelHeight = 158
       PanelWidth = 139
       TabOrder = 0
       TabStop = False
@@ -116,69 +117,95 @@ object FMainForm: TFMainForm
         Left = 3
         Top = 3
         Width = 133
-        Height = 165
+        Height = 152
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
-        object DBText4: TDBText
+        object DBInformation: TDBText
           AlignWithMargins = True
           Left = 3
-          Top = 85
+          Top = 75
           Width = 127
           Height = 33
+          Margins.Top = 0
+          Margins.Bottom = 0
           Align = alBottom
+          Anchors = [akTop]
           DataField = 'name_food'
           DataSource = DM.MDSShowFood
           WordWrap = True
           ExplicitLeft = 2
-          ExplicitTop = 95
+          ExplicitTop = 72
         end
-        object DBImage1: TDBImage
+        object DBImageFood: TDBImage
           AlignWithMargins = True
           Left = 3
           Top = 3
           Width = 127
-          Height = 76
+          Height = 69
           Align = alClient
           DataField = 'picture'
           DataSource = DM.MDSShowFood
           Stretch = True
           TabOrder = 0
+          ExplicitHeight = 63
         end
-        object Panel3: TPanel
+        object AddToOrder: TPanel
           Left = 0
-          Top = 145
+          Top = 132
           Width = 133
           Height = 20
+          Margins.Top = 1
+          Margins.Bottom = 0
           ParentCustomHint = False
           Align = alBottom
-          Caption = 'Panel3'
+          BiDiMode = bdLeftToRight
+          Caption = #1044#1086#1076#1072#1090#1080
           Ctl3D = False
-          UseDockManager = False
           DoubleBuffered = False
-          FullRepaint = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -12
+          Font.Name = 'Courier New'
+          Font.Style = []
+          ParentBiDiMode = False
           ParentBackground = False
           ParentCtl3D = False
           ParentDoubleBuffered = False
+          ParentFont = False
           ParentShowHint = False
           ShowHint = False
           TabOrder = 1
-          Visible = False
+          TabStop = True
+          Touch.InteractiveGestures = []
+          Touch.InteractiveGestureOptions = []
+          Touch.ParentTabletOptions = False
+          Touch.TabletOptions = [toPressAndHold]
+          OnMouseDown = AddToOrderMouseDown
+          OnMouseUp = AddToOrderMouseUp
+          ExplicitLeft = -8
+          ExplicitTop = 140
         end
         object Panel4: TPanel
           Left = 0
-          Top = 121
+          Top = 108
           Width = 133
           Height = 24
+          Margins.Top = 0
+          Margins.Bottom = 0
           Align = alBottom
+          Anchors = [akTop]
           BevelOuter = bvNone
           TabOrder = 2
-          object DBText2: TDBText
+          object DBPrice: TDBText
             AlignWithMargins = True
-            Left = 58
-            Top = 3
-            Width = 72
-            Height = 18
+            Left = 55
+            Top = 0
+            Width = 75
+            Height = 24
+            Margins.Left = 0
+            Margins.Top = 0
+            Margins.Bottom = 0
             Align = alClient
             Alignment = taRightJustify
             DataField = 'price_food'
@@ -194,17 +221,19 @@ object FMainForm: TFMainForm
             ExplicitWidth = 172
             ExplicitHeight = 15
           end
-          object DBText5: TDBText
+          object DBWeight: TDBText
             Left = 0
             Top = 0
             Width = 55
             Height = 24
+            Margins.Top = 0
+            Margins.Right = 0
+            Margins.Bottom = 0
             Align = alLeft
             DataField = 'weight_unit'
             DataSource = DM.MDSShowFood
-            ExplicitLeft = 26
-            ExplicitTop = 16
-            ExplicitHeight = 17
+            ExplicitLeft = 2
+            ExplicitTop = 3
           end
         end
       end

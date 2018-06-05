@@ -3506,13 +3506,14 @@ object FEditTable: TFEditTable
     FFFF800000000007FFFF80000000000FFFFFC0000000001FFFFFC0000000003F
     FFFF}
   OldCreateOrder = False
+  Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
   object Edit_table: TLabeledEdit
     Left = 16
     Top = 32
     Width = 305
-    Height = 24
+    Height = 21
     EditLabel.Width = 105
     EditLabel.Height = 13
     EditLabel.Caption = #1053#1072#1081#1084#1077#1085#1091#1074#1072#1085#1085#1103' '#1089#1090#1086#1083#1091

@@ -36,20 +36,23 @@ __published:	// IDE-managed Components
 	TDBCtrlGrid *DBCGShowFood;
 	TPanel *Panel1;
 	TPanel *PanelElementShowFood;
-	TDBImage *DBImage1;
-	TDBText *DBText2;
-	TDBText *DBText4;
+	TDBImage *DBImageFood;
+	TDBText *DBPrice;
+	TDBText *DBInformation;
 	TPanel *Panel2;
 	TEdit *EditMainSearchFood;
 	TDBCtrlGrid *DBCtrlGrid1;
-	TDBText *DBText1;
+	TDBText *DBCategory;
 	TDBText *DBText3;
-	TPanel *Panel3;
-	TDBText *DBText5;
+	TPanel *AddToOrder;
+	TDBText *DBWeight;
 	TPanel *Panel4;
 	void __fastcall FormShow(TObject *Sender);
-	void __fastcall DBImage1Click(TObject *Sender);
 	void __fastcall EditMainSearchFoodChange(TObject *Sender);
+	void __fastcall AddToOrderMouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift,
+          int X, int Y);
+	void __fastcall AddToOrderMouseUp(TObject *Sender, TMouseButton Button, TShiftState Shift,
+          int X, int Y);
 
 
 private:	// User declarations

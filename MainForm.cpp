@@ -23,7 +23,6 @@ __fastcall TFMainForm::TFMainForm(TComponent* Owner)
 {
 	AddToOrder->StyleElements = TStyleElements();
 	AddToOrder->Font->Color = RGB(78,84,118);
-    AddToOrder->Height = 0;
 }
 
 
@@ -89,4 +88,5 @@ void __fastcall TFMainForm::AddToOrderMouseUp(TObject *Sender, TMouseButton Butt
    AddToOrder->Font->Color = RGB(78,84,118);
 }
 //---------------------------------------------------------------------------
+
 

@@ -24,7 +24,7 @@ __fastcall TFAuth::TFAuth(TComponent* Owner)
 {
 	DM->admin = false;
 	DM->auth = false;
-    this->trycount = 0;
+	this->trycount = 0;
 }
 //---------------------------------------------------------------------------
 

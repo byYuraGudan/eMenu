@@ -112,6 +112,8 @@ object FMainForm: TFMainForm
       PanelWidth = 139
       TabOrder = 0
       TabStop = False
+      ExplicitLeft = 6
+      ExplicitTop = -15
       object PanelElementShowFood: TPanel
         AlignWithMargins = True
         Left = 3
@@ -135,7 +137,7 @@ object FMainForm: TFMainForm
           DataSource = DM.MDSShowFood
           WordWrap = True
           ExplicitLeft = 2
-          ExplicitTop = 72
+          ExplicitTop = 51
         end
         object DBImageFood: TDBImage
           AlignWithMargins = True
@@ -183,8 +185,7 @@ object FMainForm: TFMainForm
           Touch.TabletOptions = [toPressAndHold]
           OnMouseDown = AddToOrderMouseDown
           OnMouseUp = AddToOrderMouseUp
-          ExplicitLeft = -8
-          ExplicitTop = 140
+          ExplicitLeft = 2
         end
         object Panel4: TPanel
           Left = 0
@@ -197,6 +198,9 @@ object FMainForm: TFMainForm
           Anchors = [akTop]
           BevelOuter = bvNone
           TabOrder = 2
+          ExplicitLeft = 1
+          ExplicitTop = -5
+          ExplicitWidth = 131
           object DBPrice: TDBText
             AlignWithMargins = True
             Left = 55
@@ -233,7 +237,7 @@ object FMainForm: TFMainForm
             DataField = 'weight_unit'
             DataSource = DM.MDSShowFood
             ExplicitLeft = 2
-            ExplicitTop = 3
+            ExplicitTop = 24
           end
         end
       end

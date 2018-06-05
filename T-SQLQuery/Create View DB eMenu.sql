@@ -26,3 +26,22 @@ CREATE VIEW AdminFoodIngredient AS
 SELECT id_listingrfood,kod_food,name_ingredient,counts,unit,price 
 FROM ListIngredientFood
 GO
+
+CREATE VIEW AdminOrderMenu AS
+SELECT id_order,
+	   date_open_order,
+	   date_close_order,
+	   close_order,
+	   payment,
+	   kod_table,
+	   name_table,
+	   kod_personal,
+	   pib_personal,
+	   kod_discount,
+	   pib_client,
+	   discount
+FROM 
+(((eMenu.dbo.OrderMenu INNER JOIN eMenu.dbo.Discounts ON id_discount = kod_discount)
+					   INNER JOIN eMenu.dbo.ListTable ON id_table = kod_table)
+					   INNER JOIN eMenu.dbo.Personal ON id_personal = kod_personal)
+GO

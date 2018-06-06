@@ -41,24 +41,38 @@ __published:	// IDE-managed Components
 	TDBText *DBInformation;
 	TPanel *Panel2;
 	TEdit *EditMainSearchFood;
-	TDBCtrlGrid *DBCtrlGrid1;
+	TDBCtrlGrid *DBGridCategory;
 	TDBText *DBCategory;
 	TDBText *DBText3;
 	TPanel *AddToOrder;
 	TDBText *DBWeight;
 	TPanel *Panel4;
+	TImage *Image1;
+	TPanel *PanelCategory;
+	TPanel *PanelOrderMenu;
+	TButton *ButtonViewOrder;
+	TLabel *Label1;
+	TButton *Button1;
+	TPanel *Panel3;
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall EditMainSearchFoodChange(TObject *Sender);
 	void __fastcall AddToOrderMouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift,
           int X, int Y);
 	void __fastcall AddToOrderMouseUp(TObject *Sender, TMouseButton Button, TShiftState Shift,
           int X, int Y);
+	void __fastcall Image1MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift,
+          int X, int Y);
+	void __fastcall Image1MouseUp(TObject *Sender, TMouseButton Button, TShiftState Shift,
+          int X, int Y);
+
 
 
 private:	// User declarations
 	bool authorization;
 public:		// User declarations
 	__fastcall TFMainForm(TComponent* Owner);
+	void HideOficiant();
+    void ShowOficiant();
 
 };
 //---------------------------------------------------------------------------

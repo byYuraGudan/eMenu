@@ -21,8 +21,7 @@ TFMainForm *FMainForm;
 __fastcall TFMainForm::TFMainForm(TComponent* Owner)
 	: TForm(Owner)
 {
-	AddToOrder->StyleElements = TStyleElements();
-	AddToOrder->Font->Color = RGB(78,84,118);
+		this->HideOficiant();
 }
 
 
@@ -37,7 +36,16 @@ void __fastcall TFMainForm::FormShow(TObject *Sender)
 	FAdmin->Show();
 }
 //---------------------------------------------------------------------------
-
+void TFMainForm::HideOficiant(){
+	this->DBGridCategory->RowCount = 15;
+	this->PanelOrderMenu->Hide();
+	this->AddToOrder->Hide();
+}
+void TFMainForm::ShowOficiant(){
+	this->DBGridCategory->RowCount = 9;
+	this->PanelOrderMenu->Show();
+	this->AddToOrder->Show();
+}
 
 
 
@@ -77,7 +85,7 @@ void __fastcall TFMainForm::AddToOrderMouseDown(TObject *Sender, TMouseButton Bu
 		  TShiftState Shift, int X, int Y)
 {
 	AddToOrder->Color = RGB(239,118,68);
-    AddToOrder->Font->Color = clBtnFace;
+	AddToOrder->Font->Color = clBtnFace;
 }
 //---------------------------------------------------------------------------
 
@@ -89,4 +97,21 @@ void __fastcall TFMainForm::AddToOrderMouseUp(TObject *Sender, TMouseButton Butt
 }
 //---------------------------------------------------------------------------
 
+
+
+
+
+void __fastcall TFMainForm::Image1MouseDown(TObject *Sender, TMouseButton Button,
+          TShiftState Shift, int X, int Y)
+{
+	AddToOrder->BevelOuter = bvLowered;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFMainForm::Image1MouseUp(TObject *Sender, TMouseButton Button, TShiftState Shift,
+          int X, int Y)
+{
+   AddToOrder->BevelOuter = bvRaised;
+}
+//---------------------------------------------------------------------------
 

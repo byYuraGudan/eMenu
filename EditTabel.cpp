@@ -75,6 +75,7 @@ void __fastcall TFEditTable::ButtonAccceptClick(TObject *Sender)
 	TListTable table;
 	table.setNameListTable(Edit_table->Text);
 	table.InsertDBListTable();
+    DM->OpenDB();
     Hide();
 }
 //---------------------------------------------------------------------------

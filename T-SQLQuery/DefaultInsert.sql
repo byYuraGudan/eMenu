@@ -4,7 +4,7 @@ INSERT INTO Personal(pib_personal,logins,passwords,access)
 VALUES('Administrator','admin','admin',1),('Oficiant','oficiant','1',0)
 GO
 INSERT INTO Discounts(id_discount,pib_client)
-VALUES(1234,'Default')
+VALUES(0,'Default')
 GO
 INSERT INTO Category(name_category)
 VALUES('Napoi'),('Salatu')

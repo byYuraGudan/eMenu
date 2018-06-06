@@ -1,4 +1,4 @@
-object FOficiant: TFOficiant
+﻿object FOficiant: TFOficiant
   Left = 0
   Top = 0
   Caption = 'FOficiant'
@@ -20,6 +20,7 @@ object FOficiant: TFOficiant
     Height = 65
     Align = alTop
     TabOrder = 0
+    ExplicitLeft = 8
     object Label1: TLabel
       Left = 335
       Top = 4
@@ -40,7 +41,7 @@ object FOficiant: TFOficiant
       Top = 19
       Width = 120
       Height = 30
-      Caption = #1042#1110#1076#1082#1088#1080#1090#1080' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
+      Caption = #1054#1092#1086#1088#1084#1080#1090#1080' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
       TabOrder = 1
     end
     object Button1: TButton
@@ -48,26 +49,46 @@ object FOficiant: TFOficiant
       Top = 19
       Width = 129
       Height = 30
-      Caption = #1054#1092#1086#1088#1084#1080#1090#1080' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
+      Caption = #1047#1072#1082#1088#1080#1090#1080' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
       TabOrder = 2
     end
   end
   object Panel1: TPanel
-    Left = 0
-    Top = 440
-    Width = 800
-    Height = 60
-    Align = alBottom
+    Left = 536
+    Top = 65
+    Width = 264
+    Height = 435
+    Align = alRight
     Caption = 'Panel1'
     TabOrder = 1
-    ExplicitLeft = -8
     object Button2: TButton
-      Left = 160
+      Left = 16
       Top = 16
       Width = 121
       Height = 25
       Caption = #1044#1088#1091#1082' '#1088#1072#1093#1091#1085#1082#1091
       TabOrder = 0
     end
+    object Видалити: TButton
+      Left = 16
+      Top = 56
+      Width = 75
+      Height = 25
+      Caption = #1042#1080#1076#1072#1083#1080#1090#1080
+      TabOrder = 1
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 65
+    Width = 536
+    Height = 435
+    Align = alClient
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
   end
 end

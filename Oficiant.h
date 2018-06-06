@@ -8,6 +8,9 @@
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
 #include <Vcl.ExtCtrls.hpp>
+#include <Data.DB.hpp>
+#include <Vcl.DBGrids.hpp>
+#include <Vcl.Grids.hpp>
 //---------------------------------------------------------------------------
 class TFOficiant : public TForm
 {
@@ -19,6 +22,8 @@ __published:	// IDE-managed Components
 	TButton *Button2;
 	TButton *Button1;
 	TLabel *Label1;
+	TDBGrid *DBGrid1;
+	TButton *Видалити;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFOficiant(TComponent* Owner);

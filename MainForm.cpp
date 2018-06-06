@@ -22,6 +22,7 @@ __fastcall TFMainForm::TFMainForm(TComponent* Owner)
 	: TForm(Owner)
 {
 		this->HideOficiant();
+        this->Label2->StyleElements = TStyleElements();
 }
 
 

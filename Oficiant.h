@@ -18,7 +18,6 @@ __published:	// IDE-managed Components
 	TPanel *PanelOrderMenu;
 	TComboBox *ComboBox1;
 	TPanel *Panel1;
-	TButton *AddOrderMenu;
 	TButton *Button2;
 	TButton *Button1;
 	TLabel *Label1;

@@ -20,37 +20,28 @@
     Height = 65
     Align = alTop
     TabOrder = 0
-    ExplicitLeft = 8
     object Label1: TLabel
-      Left = 335
+      Left = 287
       Top = 4
       Width = 76
       Height = 13
       Caption = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103' '#8470
     end
     object ComboBox1: TComboBox
-      Left = 301
+      Left = 245
       Top = 23
       Width = 145
       Height = 21
       TabOrder = 0
       Text = 'ComboBox1'
     end
-    object AddOrderMenu: TButton
-      Left = 16
-      Top = 19
-      Width = 120
-      Height = 30
-      Caption = #1054#1092#1086#1088#1084#1080#1090#1080' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
-      TabOrder = 1
-    end
     object Button1: TButton
-      Left = 152
+      Left = 16
       Top = 19
       Width = 129
       Height = 30
       Caption = #1047#1072#1082#1088#1080#1090#1080' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
-      TabOrder = 2
+      TabOrder = 1
     end
   end
   object Panel1: TPanel
@@ -70,8 +61,8 @@
       TabOrder = 0
     end
     object Видалити: TButton
-      Left = 16
-      Top = 56
+      Left = 24
+      Top = 72
       Width = 75
       Height = 25
       Caption = #1042#1080#1076#1072#1083#1080#1090#1080

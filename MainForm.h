@@ -54,6 +54,7 @@ __published:	// IDE-managed Components
 	TLabel *Label1;
 	TButton *Button1;
 	TPanel *Panel3;
+	TLabel *Label2;
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall EditMainSearchFoodChange(TObject *Sender);
 	void __fastcall AddToOrderMouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift,

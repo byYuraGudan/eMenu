@@ -69,7 +69,8 @@ void __fastcall TFAuth::buttonOpenClick(TObject *Sender)
 	   if(DM->TSQL->FieldByName("activity")->AsBoolean){
 			if (DM->TSQL->FieldByName("access")->AsBoolean)  this->AdminStatus(Sender);
 			else this->UserStatus(Sender);
-            FAuth->Hide();
+			FAuth->Hide();
+            DM->id_user = DM->TSQL->FieldByName("id_personal")->AsInteger;
 	   }
 	   else MessageBox(NULL, L"Користувач заблокований!", L"Відмова!",  MB_OK |MB_ICONWARNING);
 	}

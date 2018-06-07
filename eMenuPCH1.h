@@ -89,20 +89,6 @@ public:
     void DeleteDBDiscount();
 };
 
-class TOrderMenu : public TPersonal,public TListTable
-{
-private:
-	int id_ordermenu;
-	TDateTime date_open_order,date_close_order;
-	bool order_proccesing;
-	float payment;
-
-protected:
-
-public:
-	TOrderMenu();
-	virtual const void InsertDB();
-};
 
 
 
@@ -183,4 +169,32 @@ public:
 	void InsertDBIngredient();
 	void UpdateDBIngredient();
     void DeleteDBIngredient();
+};
+
+class TOrderMenu: public TDiscount, public TPersonal,public TListTable
+{
+private:
+	int id_order;
+	TDateTime date_open_order,date_close_order;
+	bool close_order;
+    float payment;
+public:
+	TOrderMenu(){
+		this->id_order = 0;
+		this->date_close_order = Date();
+		this->date_close_order = Date();
+		this->close_order = false;
+        this->payment = 0;
+	}
+	void setIdOrder(int);
+	void setDateOrder(TDateTime,TDateTime);
+	void setCloseOrder(bool);
+	void setPayment(float);
+    int getIdOrder();
+	void InsertDBOrderMenu();
+	void UpdateDBOrderMenu();
+    void DeleteDBOrderMenu();
+	void CloseOrderMenu();
+	void UpdatePayment();
+	void UpdateDiscount();
 };

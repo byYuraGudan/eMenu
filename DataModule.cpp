@@ -94,7 +94,7 @@ void __fastcall TDM::DataModuleDestroy(TObject *Sender)
 
 void __fastcall TDM::N2Click(TObject *Sender)
 {
-    DM->OpenDB();
+	DM->OpenDB();
 }
 //---------------------------------------------------------------------------
 

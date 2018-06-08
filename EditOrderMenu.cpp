@@ -118,9 +118,19 @@ void __fastcall TFEditOrderMenu::CB_id_orderChange(TObject *Sender)
 
 void __fastcall TFEditOrderMenu::btnRemovClick(TObject *Sender)
 {
-	TListOrder list;
-	list.setIdListingrfood(DM->OTListOrder->FieldByName("id_listordermenu")->AsInteger);
-    list.DeleteDBListOrder();
+  try {
+		if (IDYES == MessageBox(NULL, L"Ви впевнені, що хочете видалити ?", L"Підвердження!",  MB_YESNO |MB_ICONQUESTION))
+		{
+			TListOrder list;
+			list.setIdListingrfood(DM->OTListOrder->FieldByName("id_listordermenu")->AsInteger);
+			list.DeleteDBListOrder();
+		}
+	}
+	catch(...){
+		MessageBox(NULL, L"Дані, пов'язанні з даною інформацією. Не можливо видалити!", L"Відмова!",  MB_OK |MB_ICONWARNING);
+	}
+
+
 
 }
 //---------------------------------------------------------------------------
@@ -137,5 +147,9 @@ void __fastcall TFEditOrderMenu::FormShow(TObject *Sender)
     CB_id_orderChange(Sender);
 }
 //---------------------------------------------------------------------------
+
+
+
+
 
 

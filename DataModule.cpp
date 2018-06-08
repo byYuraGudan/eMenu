@@ -79,6 +79,7 @@ void TDM::OpenDBMain(){
 void TDM::OpenDBOficiant(){
 	RefreshADO(OTOpenOrder);
 	RefreshADO(OTNotOcupTable);
+    RefreshADO(OTListOrder);
 }
 //---------------------------------------------------------------------------
 

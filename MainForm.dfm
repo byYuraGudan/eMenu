@@ -182,6 +182,7 @@ object FMainForm: TFMainForm
         Height = 20
         DataField = 'id_order'
         DataSource = DM.ODSOpenOrder
+        StyleElements = [seClient, seBorder]
         WordWrap = True
       end
       object DBidtable: TDBText
@@ -191,6 +192,7 @@ object FMainForm: TFMainForm
         Height = 20
         DataField = 'name_table'
         DataSource = DM.ODSOpenOrder
+        StyleElements = [seClient, seBorder]
         WordWrap = True
       end
       object DBdateopen: TDBText
@@ -200,6 +202,7 @@ object FMainForm: TFMainForm
         Height = 20
         DataField = 'date_open_order'
         DataSource = DM.ODSOpenOrder
+        StyleElements = [seClient, seBorder]
         WordWrap = True
       end
       object DBoficiant: TDBText
@@ -209,6 +212,7 @@ object FMainForm: TFMainForm
         Height = 20
         DataField = 'pib_personal'
         DataSource = DM.ODSOpenOrder
+        StyleElements = [seClient, seBorder]
         WordWrap = True
       end
       object DBClient: TDBText
@@ -218,6 +222,7 @@ object FMainForm: TFMainForm
         Height = 20
         DataField = 'pib_client'
         DataSource = DM.ODSOpenOrder
+        StyleElements = [seClient, seBorder]
         WordWrap = True
       end
       object DBcount: TDBText
@@ -226,6 +231,7 @@ object FMainForm: TFMainForm
         Width = 221
         Height = 20
         DataSource = DM.ODSOpenOrder
+        StyleElements = [seClient, seBorder]
         WordWrap = True
       end
       object DBpayment: TDBText
@@ -235,6 +241,7 @@ object FMainForm: TFMainForm
         Height = 15
         DataField = 'payment'
         DataSource = DM.ODSOpenOrder
+        StyleElements = [seClient, seBorder]
         WordWrap = True
       end
       object DBdiscount: TDBText
@@ -244,21 +251,23 @@ object FMainForm: TFMainForm
         Height = 15
         DataField = 'discount'
         DataSource = DM.ODSOpenOrder
+        StyleElements = [seClient, seBorder]
         WordWrap = True
       end
       object DBrealpayment: TDBText
-        Left = 89
-        Top = 221
-        Width = 206
-        Height = 20
+        Left = 40
+        Top = 223
+        Width = 255
+        Height = 14
         DataField = 'RealPayment'
         DataSource = DM.ODSOpenOrder
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -12
+        Font.Height = -15
         Font.Name = 'Courier New'
         Font.Style = [fsBold]
         ParentFont = False
+        StyleElements = [seClient, seBorder]
         WordWrap = True
       end
       object Panel3: TPanel

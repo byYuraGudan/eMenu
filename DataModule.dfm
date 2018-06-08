@@ -7704,11 +7704,13 @@ object DM: TDM
     end
     object OTListOrdername_food: TStringField
       DisplayLabel = #1053#1072#1081#1084#1077#1085#1091#1074#1072#1085#1085#1103
+      DisplayWidth = 35
       FieldName = 'name_food'
       Size = 50
     end
     object OTListOrdercounts: TBCDField
       DisplayLabel = #1050#1110#1083#1100#1082#1110#1089#1090#1100
+      DisplayWidth = 11
       FieldName = 'counts'
       Precision = 10
       Size = 3

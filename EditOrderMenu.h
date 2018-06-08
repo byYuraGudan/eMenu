@@ -46,6 +46,16 @@ __published:	// IDE-managed Components
 	TLinkListControlToField *LinkListControlToField2;
 	TButton *btnReportDay;
 	TGroupBox *GroupBox1;
+	TLabel *Label3;
+	TDBText *DBdateopen;
+	TDBText *DBidtable;
+	TDBText *DBoficiant;
+	TDBText *DBClient;
+	TDBText *DBOrderid;
+	TLabel *Label4;
+	TDBText *DBdiscount;
+	TDBText *DBpayment;
+	TDBText *DBrealpayment;
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall CB_id_orderChange(TObject *Sender);
 	void __fastcall btnRemovClick(TObject *Sender);

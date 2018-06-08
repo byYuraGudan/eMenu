@@ -36,7 +36,7 @@ __published:	// IDE-managed Components
 	TButton *Button7;
 	TButton *Button8;
 	TButton *Button2;
-	TButton *Button3;
+	TButton *btnDiscount;
 	TButton *Button4;
 	TButton *Button5;
 	TButton *Button9;

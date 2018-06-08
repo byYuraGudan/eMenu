@@ -161,6 +161,7 @@ __published:	// IDE-managed Components
 	TAutoIncField *OTNotOcupTableid_table;
 	TStringField *OTNotOcupTablename_table;
 	TBooleanField *OTNotOcupTableoccupation;
+	TImageList *ImageBtn;
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall DataModuleDestroy(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);

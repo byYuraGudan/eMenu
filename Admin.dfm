@@ -4575,7 +4575,6 @@ object FAdmin: TFAdmin
       Align = alTop
       TabOrder = 0
       Text = 'EditSearchOrderMenu'
-      ExplicitWidth = 289
     end
     object DBGridListOrder: TDBGrid
       AlignWithMargins = True
@@ -4619,7 +4618,6 @@ object FAdmin: TFAdmin
       List = True
       ShowCaptions = True
       TabOrder = 3
-      ExplicitWidth = 289
       object AddOrderMenu: TToolButton
         Left = 0
         Top = 0

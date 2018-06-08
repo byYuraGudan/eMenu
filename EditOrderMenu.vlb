@@ -129,9 +129,6 @@ Coordinates=722,606,47,51
 [Button6]
 Coordinates=1005,606,53,51
 
-[Button3]
-Coordinates=553,740,53,51
-
 []
 Coordinates=1044,10,92,177
 Visible=True
@@ -158,4 +155,7 @@ Visible=False
 
 [BindSourceDB2]
 Coordinates=330,310,105,123
+
+[btnDiscount]
+Coordinates=553,740,53,51
 

@@ -17,27 +17,26 @@ object FEditOrderMenu: TFEditOrderMenu
     Left = 0
     Top = 0
     Width = 800
-    Height = 89
+    Height = 52
     Align = alTop
     TabOrder = 0
-    ExplicitTop = -4
     object Label1: TLabel
-      Left = 207
-      Top = 4
+      Left = 367
+      Top = 16
       Width = 76
       Height = 13
       Caption = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103' '#8470
     end
     object Label2: TLabel
-      Left = 385
-      Top = 4
+      Left = 553
+      Top = 16
       Width = 37
       Height = 13
       Caption = 'C'#1090#1110#1083' '#8470
     end
     object ComboBox1: TComboBox
-      Left = 181
-      Top = 23
+      Left = 341
+      Top = 35
       Width = 145
       Height = 21
       ItemIndex = 0
@@ -46,45 +45,67 @@ object FEditOrderMenu: TFEditOrderMenu
       Items.Strings = (
         '6'
         '7'
-        '12')
+        '12'
+        '14'
+        '15'
+        '16'
+        '17')
     end
     object Button1: TButton
-      Left = 22
-      Top = 55
-      Width = 129
-      Height = 30
+      AlignWithMargins = True
+      Left = 145
+      Top = 4
+      Width = 135
+      Height = 44
+      Align = alLeft
       Caption = #1047#1072#1082#1088#1080#1090#1080' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
+      ImageIndex = 1
+      Images = DM.ImageBtn
       TabOrder = 1
+      WordWrap = True
       OnClick = Button1Click
     end
     object Button6: TButton
-      Left = 22
-      Top = 18
-      Width = 129
-      Height = 31
-      Caption = 'Button6'
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 135
+      Height = 44
+      Align = alLeft
+      Caption = #1054#1092#1086#1088#1084#1080#1090#1080' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
+      HotImageIndex = 0
+      ImageIndex = 0
+      Images = DM.ImageBtn
       TabOrder = 2
+      WordWrap = True
       OnClick = Button6Click
+      ExplicitLeft = 1
+      ExplicitTop = 1
+      ExplicitHeight = 50
     end
     object ComboBox2: TComboBox
-      Left = 344
-      Top = 23
+      Left = 504
+      Top = 35
       Width = 145
       Height = 21
       ItemIndex = 0
       TabOrder = 3
-      Text = '2'
+      Text = #1094#1077#1085#1090#1088
       Items.Strings = (
-        '2'
-        '2'
-        '2')
+        #1094#1077#1085#1090#1088
+        #1094#1077#1085#1090#1088
+        #1094#1077#1085#1090#1088
+        #1094#1077#1085#1090#1088
+        #1094#1077#1085#1090#1088
+        #1094#1077#1085#1090#1088
+        #1094#1077#1085#1090#1088)
     end
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 89
+    Top = 52
     Width = 536
-    Height = 489
+    Height = 526
     Align = alClient
     DataSource = DM.ODSNotOcupTable
     TabOrder = 1
@@ -96,19 +117,19 @@ object FEditOrderMenu: TFEditOrderMenu
   end
   object Panel1: TPanel
     Left = 536
-    Top = 89
+    Top = 52
     Width = 264
-    Height = 489
+    Height = 526
     Align = alRight
     Caption = 'Panel1'
     TabOrder = 2
-    ExplicitTop = 71
-    ExplicitHeight = 513
+    ExplicitTop = 89
+    ExplicitHeight = 489
     object GridPanel1: TGridPanel
       Left = 1
       Top = 1
       Width = 262
-      Height = 487
+      Height = 524
       Align = alClient
       Caption = 'GridPanel1'
       ColumnCollection = <
@@ -136,7 +157,7 @@ object FEditOrderMenu: TFEditOrderMenu
         end
         item
           Column = 1
-          Control = Button3
+          Control = btnDiscount
           Row = 1
         end
         item
@@ -180,7 +201,7 @@ object FEditOrderMenu: TFEditOrderMenu
           Value = 100.000000000000000000
         end>
       TabOrder = 0
-      ExplicitLeft = 6
+      ExplicitHeight = 487
       object Button7: TButton
         Left = 1
         Top = 1
@@ -188,8 +209,10 @@ object FEditOrderMenu: TFEditOrderMenu
         Height = 60
         Align = alClient
         Caption = 'btnAdd'
+        ImageIndex = 2
+        Images = DM.ImageBtn
         TabOrder = 0
-        ExplicitHeight = 30
+        WordWrap = True
       end
       object Button8: TButton
         Left = 131
@@ -198,9 +221,10 @@ object FEditOrderMenu: TFEditOrderMenu
         Height = 60
         Align = alClient
         Caption = 'btnRemove'
+        ImageIndex = 3
+        Images = DM.ImageBtn
         TabOrder = 1
-        ExplicitLeft = 137
-        ExplicitTop = 5
+        WordWrap = True
       end
       object Button2: TButton
         Left = 1
@@ -209,19 +233,22 @@ object FEditOrderMenu: TFEditOrderMenu
         Height = 60
         Align = alClient
         Caption = 'btnPrint'
-        ImageIndex = 1
+        ImageIndex = 4
+        Images = DM.ImageBtn
         TabOrder = 2
-        ExplicitLeft = 81
-        ExplicitTop = -19
+        WordWrap = True
       end
-      object Button3: TButton
+      object btnDiscount: TButton
         Left = 131
         Top = 61
         Width = 130
         Height = 60
         Align = alClient
-        Caption = 'Button3'
+        Caption = 'btnDiscount'
+        ImageIndex = 5
+        Images = DM.ImageBtn
         TabOrder = 3
+        WordWrap = True
         ExplicitLeft = 137
         ExplicitTop = 55
       end
@@ -233,8 +260,7 @@ object FEditOrderMenu: TFEditOrderMenu
         Align = alClient
         Caption = 'Button4'
         TabOrder = 4
-        ExplicitTop = 51
-        ExplicitHeight = 30
+        WordWrap = True
       end
       object Button5: TButton
         Left = 131
@@ -244,8 +270,7 @@ object FEditOrderMenu: TFEditOrderMenu
         Align = alClient
         Caption = 'Button5'
         TabOrder = 5
-        ExplicitTop = 51
-        ExplicitHeight = 30
+        WordWrap = True
       end
       object Button9: TButton
         Left = 1
@@ -255,8 +280,7 @@ object FEditOrderMenu: TFEditOrderMenu
         Align = alClient
         Caption = 'Button9'
         TabOrder = 6
-        ExplicitTop = 76
-        ExplicitHeight = 30
+        WordWrap = True
       end
       object Button10: TButton
         Left = 131
@@ -266,8 +290,7 @@ object FEditOrderMenu: TFEditOrderMenu
         Align = alClient
         Caption = 'Button10'
         TabOrder = 7
-        ExplicitTop = 76
-        ExplicitHeight = 30
+        WordWrap = True
       end
     end
   end

@@ -11668,7 +11668,7 @@ object FEditOrderMenu: TFEditOrderMenu
     Width = 585
     Height = 522
     Align = alClient
-    DataSource = DM.ODSListOrder
+    DataSource = DM.DataSource1
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -11748,6 +11748,8 @@ object FEditOrderMenu: TFEditOrderMenu
         TabOrder = 0
         WordWrap = True
         OnClick = btnAddToOrderClick
+        ExplicitLeft = -5
+        ExplicitTop = -5
       end
       object btnRemov: TButton
         Left = 143
@@ -11761,6 +11763,8 @@ object FEditOrderMenu: TFEditOrderMenu
         TabOrder = 1
         WordWrap = True
         OnClick = btnRemovClick
+        ExplicitLeft = 142
+        ExplicitTop = 6
       end
       object btnPrint: TButton
         Left = 1
@@ -11833,7 +11837,7 @@ object FEditOrderMenu: TFEditOrderMenu
         ExplicitWidth = 301
       end
       object DBdateopen: TDBText
-        Left = 69
+        Left = 68
         Top = 78
         Width = 217
         Height = 20
@@ -11843,8 +11847,8 @@ object FEditOrderMenu: TFEditOrderMenu
         WordWrap = True
       end
       object DBidtable: TDBText
-        Left = 57
-        Top = 49
+        Left = 56
+        Top = 48
         Width = 229
         Height = 20
         DataField = 'name_table'
@@ -11926,7 +11930,7 @@ object FEditOrderMenu: TFEditOrderMenu
       end
       object DBrealpayment: TDBText
         Left = 40
-        Top = 221
+        Top = 224
         Width = 240
         Height = 13
         DataField = 'RealPayment'

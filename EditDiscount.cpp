@@ -60,7 +60,7 @@ void TDiscount::UpdateDBDiscount(){
 void TDiscount::DeleteDBDiscount(){
 	DM->TSQL->SQL->Clear();
 	DM->TSQL->SQL->Add("DELETE FROM eMenu.dbo.Discounts");
-	DM->TSQL->SQL->Add("WHERE id_discount = :id");
+	DM->TSQL->SQL->Add("WHERE id_discount = :id and id_discount <> 0");
 	DM->TSQL->Parameters->ParamByName("id")->Value = this->id_discount;
 	DM->TSQL->ExecSQL();
 }

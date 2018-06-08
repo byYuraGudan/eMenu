@@ -40,16 +40,27 @@ __published:	// IDE-managed Components
 	TBindSourceDB *BindSourceDB1;
 	TBindingsList *BindingsList1;
 	TLinkListControlToField *LinkListControlToField1;
-	TComboBox *ComboBox2;
+	TComboBox *CB_table;
 	TLabel *Label2;
 	TBindSourceDB *BindSourceDB2;
 	TLinkListControlToField *LinkListControlToField2;
 	TButton *btnReportDay;
 	TGroupBox *GroupBox1;
-	void __fastcall btnCloseOrderClick(TObject *Sender);
+	TLabel *Label3;
+	TDBText *DBdateopen;
+	TDBText *DBidtable;
+	TDBText *DBoficiant;
+	TDBText *DBClient;
+	TDBText *DBOrderid;
+	TLabel *Label4;
+	TDBText *DBdiscount;
+	TDBText *DBpayment;
+	TDBText *DBrealpayment;
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall CB_id_orderChange(TObject *Sender);
 	void __fastcall btnRemovClick(TObject *Sender);
+	void __fastcall btnAddToOrderClick(TObject *Sender);
+	void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFEditOrderMenu(TComponent* Owner);

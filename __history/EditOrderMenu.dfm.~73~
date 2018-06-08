@@ -8,7 +8,7 @@ object FEditOrderMenu: TFEditOrderMenu
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
-  Font.Name = 'Tahoma'
+  Font.Name = 'Courier New'
   Font.Style = []
   Icon.Data = {
     0000010006000000000001002000282004006600000010100000010020006804
@@ -11580,7 +11580,7 @@ object FEditOrderMenu: TFEditOrderMenu
   OnClose = FormClose
   OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 14
   object PanelOrderMenu: TPanel
     Left = 0
     Top = 0
@@ -11588,26 +11588,27 @@ object FEditOrderMenu: TFEditOrderMenu
     Height = 52
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 800
+    ExplicitLeft = 1
+    ExplicitTop = -3
     object Label1: TLabel
       Left = 403
       Top = 6
-      Width = 76
-      Height = 13
+      Width = 84
+      Height = 14
       Caption = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103' '#8470
     end
     object Label2: TLabel
       Left = 624
       Top = 6
-      Width = 37
-      Height = 13
+      Width = 42
+      Height = 14
       Caption = 'C'#1090#1110#1083' '#8470
     end
     object CB_id_order: TComboBox
       Left = 391
       Top = 25
       Width = 100
-      Height = 21
+      Height = 22
       ItemIndex = 0
       TabOrder = 0
       Text = '6'
@@ -11623,9 +11624,9 @@ object FEditOrderMenu: TFEditOrderMenu
     end
     object btnCloseOrder: TButton
       AlignWithMargins = True
-      Left = 142
+      Left = 148
       Top = 4
-      Width = 135
+      Width = 141
       Height = 44
       Margins.Left = 0
       Align = alLeft
@@ -11634,13 +11635,13 @@ object FEditOrderMenu: TFEditOrderMenu
       Images = DM.ImageBtn
       TabOrder = 1
       WordWrap = True
-      OnClick = btnCloseOrderClick
+      ExplicitLeft = 149
     end
     object btnOpenOrder: TButton
       AlignWithMargins = True
       Left = 4
       Top = 4
-      Width = 135
+      Width = 141
       Height = 44
       Align = alLeft
       Caption = #1054#1092#1086#1088#1084#1080#1090#1080' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
@@ -11654,7 +11655,7 @@ object FEditOrderMenu: TFEditOrderMenu
       Left = 592
       Top = 25
       Width = 100
-      Height = 21
+      Height = 22
       ItemIndex = 0
       TabOrder = 3
       Text = #1094#1077#1085#1090#1088
@@ -11665,9 +11666,9 @@ object FEditOrderMenu: TFEditOrderMenu
   end
   object DBGrid1: TDBGrid
     AlignWithMargins = True
-    Left = 280
+    Left = 292
     Top = 55
-    Width = 597
+    Width = 585
     Height = 522
     Align = alClient
     DataSource = DM.ODSListOrder
@@ -11675,23 +11676,20 @@ object FEditOrderMenu: TFEditOrderMenu
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
+    TitleFont.Name = 'Courier New'
     TitleFont.Style = []
   end
   object Panel1: TPanel
     Left = 0
     Top = 52
-    Width = 277
+    Width = 289
     Height = 528
     Align = alLeft
     TabOrder = 2
-    ExplicitLeft = -3
-    ExplicitTop = 58
-    ExplicitHeight = 526
     object GridPanel1: TGridPanel
       Left = 1
       Top = 369
-      Width = 275
+      Width = 287
       Height = 158
       Align = alBottom
       ColumnCollection = <
@@ -11736,13 +11734,16 @@ object FEditOrderMenu: TFEditOrderMenu
         end
         item
           Value = 33.333333333333340000
+        end
+        item
+          SizeStyle = ssAuto
         end>
       TabOrder = 0
-      ExplicitTop = 367
+      ExplicitWidth = 275
       object btnAddToOrder: TButton
         Left = 1
         Top = 1
-        Width = 136
+        Width = 142
         Height = 52
         Align = alClient
         Caption = #1044#1086#1076#1072#1090#1080' '#1076#1086' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
@@ -11751,13 +11752,12 @@ object FEditOrderMenu: TFEditOrderMenu
         TabOrder = 0
         WordWrap = True
         OnClick = btnAddToOrderClick
-        ExplicitLeft = -5
-        ExplicitTop = 6
+        ExplicitWidth = 136
       end
       object btnRemov: TButton
-        Left = 137
+        Left = 143
         Top = 1
-        Width = 137
+        Width = 143
         Height = 52
         Align = alClient
         Caption = #1042#1080#1076#1072#1083#1080#1090#1080' '#1079' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
@@ -11766,15 +11766,13 @@ object FEditOrderMenu: TFEditOrderMenu
         TabOrder = 1
         WordWrap = True
         OnClick = btnRemovClick
-        ExplicitLeft = 143
-        ExplicitTop = 0
-        ExplicitWidth = 131
-        ExplicitHeight = 61
+        ExplicitLeft = 137
+        ExplicitWidth = 136
       end
       object btnPrint: TButton
         Left = 1
         Top = 53
-        Width = 136
+        Width = 142
         Height = 52
         Align = alClient
         Caption = #1044#1088#1091#1082' '#1088#1072#1093#1091#1085#1082#1091
@@ -11782,14 +11780,12 @@ object FEditOrderMenu: TFEditOrderMenu
         Images = DM.ImageBtn
         TabOrder = 2
         WordWrap = True
-        ExplicitLeft = -5
-        ExplicitTop = 67
-        ExplicitHeight = 60
+        ExplicitWidth = 136
       end
       object btnDiscount: TButton
-        Left = 137
+        Left = 143
         Top = 53
-        Width = 137
+        Width = 143
         Height = 52
         Align = alClient
         Caption = #1047#1085#1080#1078#1082#1072
@@ -11797,13 +11793,13 @@ object FEditOrderMenu: TFEditOrderMenu
         Images = DM.ImageBtn
         TabOrder = 3
         WordWrap = True
-        ExplicitTop = 61
-        ExplicitHeight = 60
+        ExplicitLeft = 137
+        ExplicitWidth = 137
       end
       object btnReportDay: TButton
         Left = 1
         Top = 105
-        Width = 136
+        Width = 142
         Height = 52
         Align = alClient
         Caption = #1044#1077#1085#1085#1080#1081' '#1079#1072#1088#1086#1073#1110#1090#1086#1082
@@ -11811,20 +11807,150 @@ object FEditOrderMenu: TFEditOrderMenu
         Images = DM.ImageBtn
         TabOrder = 4
         WordWrap = True
+        ExplicitWidth = 136
       end
     end
     object GroupBox1: TGroupBox
       Left = 1
       Top = 1
-      Width = 275
+      Width = 287
       Height = 368
       Align = alClient
       Caption = #1030#1085#1092#1086#1088#1084#1072#1094#1110#1103' '#1087#1088#1086' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
       TabOrder = 1
-      ExplicitLeft = 40
-      ExplicitTop = 32
-      ExplicitWidth = 185
-      ExplicitHeight = 105
+      ExplicitLeft = -1
+      ExplicitTop = 2
+      object Label3: TLabel
+        AlignWithMargins = True
+        Left = 7
+        Top = 21
+        Width = 273
+        Height = 193
+        Margins.Left = 5
+        Margins.Top = 5
+        Margins.Right = 5
+        Margins.Bottom = 2
+        Align = alTop
+        Caption = 
+          #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103' '#8470': ------------------------------------------ '#1057#1090#1110#1083' '#8470':' +
+          ' ----------------------------------------- '#1044#1072#1090#1072'/'#1095#1072#1089':  ----------' +
+          '-------------------------------- '#1054#1092#1110#1094#1110#1072#1085#1090':  --------------------' +
+          '----------------------- '#1050#1083#1110#1108#1085#1090': --------------------------------' +
+          '----------- '#1050#1110#1083#1100#1082#1110#1089#1090#1100':  ----------------------------------------' +
+          '--- '#1041#1077#1079' '#1079#1085#1080#1078#1082#1080':                                 '#1047#1085#1080#1078#1082#1072':'
+        Color = clBtnFace
+        ParentColor = False
+        WordWrap = True
+      end
+      object DBdateopen: TDBText
+        Left = 69
+        Top = 78
+        Width = 217
+        Height = 20
+        DataField = 'date_open_order'
+        DataSource = DM.ODSOpenOrder
+        StyleElements = [seClient, seBorder]
+        WordWrap = True
+      end
+      object DBidtable: TDBText
+        Left = 57
+        Top = 49
+        Width = 229
+        Height = 20
+        DataField = 'name_table'
+        DataSource = DM.ODSOpenOrder
+        StyleElements = [seClient, seBorder]
+        WordWrap = True
+      end
+      object DBoficiant: TDBText
+        Left = 70
+        Top = 104
+        Width = 215
+        Height = 20
+        DataField = 'pib_personal'
+        DataSource = DM.ODSOpenOrder
+        StyleElements = [seClient, seBorder]
+        WordWrap = True
+      end
+      object DBClient: TDBText
+        Left = 57
+        Top = 133
+        Width = 230
+        Height = 20
+        DataField = 'pib_client'
+        DataSource = DM.ODSOpenOrder
+        StyleElements = [seClient, seBorder]
+        WordWrap = True
+      end
+      object DBOrderid: TDBText
+        Left = 103
+        Top = 21
+        Width = 183
+        Height = 20
+        DataField = 'id_order'
+        DataSource = DM.ODSOpenOrder
+        StyleElements = [seClient, seBorder]
+        WordWrap = True
+      end
+      object Label4: TLabel
+        AlignWithMargins = True
+        Left = 7
+        Top = 216
+        Width = 273
+        Height = 22
+        Margins.Left = 5
+        Margins.Top = 0
+        Margins.Right = 5
+        Align = alTop
+        Caption = #1054#1087#1083#1072#1090#1072':'
+        Color = clAqua
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -20
+        Font.Name = 'Courier New'
+        Font.Style = []
+        ParentColor = False
+        ParentFont = False
+        StyleElements = []
+        ExplicitTop = 219
+        ExplicitWidth = 84
+      end
+      object DBdiscount: TDBText
+        Left = 86
+        Top = 204
+        Width = 109
+        Height = 15
+        DataField = 'discount'
+        DataSource = DM.ODSOpenOrder
+        StyleElements = [seClient, seBorder]
+        WordWrap = True
+      end
+      object DBpayment: TDBText
+        Left = 86
+        Top = 189
+        Width = 200
+        Height = 17
+        DataField = 'payment'
+        DataSource = DM.ODSOpenOrder
+        StyleElements = [seClient, seBorder]
+        WordWrap = True
+      end
+      object DBrealpayment: TDBText
+        Left = 40
+        Top = 221
+        Width = 240
+        Height = 13
+        DataField = 'RealPayment'
+        DataSource = DM.ODSOpenOrder
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Courier New'
+        Font.Style = [fsBold]
+        ParentFont = False
+        StyleElements = [seClient, seBorder]
+        WordWrap = True
+      end
     end
   end
   object BindSourceDB1: TBindSourceDB

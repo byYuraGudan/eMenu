@@ -61,8 +61,7 @@ void TOrderMenu::DeleteDBOrderMenu(){
 	DM->DoSQLExec(DM->TSQL,"DELETE FROM eMenu.dbo.OrderMenu WHERE id_order ="+IntToStr(this->id_order));
 }
 void TOrderMenu::UpdateDiscount(){
-	DM->DoSQL(DM->TSQL,"Select * FROM eMenu.dbo.Discounts WHERE kod_discount = "+IntToStr(this->getId_discount())+\
-	" and id_order = "+IntToStr(this->id_order));
+	DM->DoSQL(DM->TSQL,"Select * FROM eMenu.dbo.Discounts WHERE id_discount = "+IntToStr(this->getId_discount()));
 	if(DM->TSQL->RecordCount!=0){
 		DM->DoSQLExec(DM->TSQL,\
 		"UPDATE eMenu.dbo.OrderMenu SET kod_discount ="+IntToStr(this->getId_discount())+\
@@ -128,6 +127,7 @@ void __fastcall TFEditOrderMenu::btnRemovClick(TObject *Sender)
 			TListOrder list;
 			list.setIdListingrfood(DM->OTListOrder->FieldByName("id_listordermenu")->AsInteger);
 			list.DeleteDBListOrder();
+			DM->OpenDBOficiant();
 		}
 	}
 	catch(...){
@@ -159,18 +159,29 @@ void __fastcall TFEditOrderMenu::FormShow(TObject *Sender)
 
 void __fastcall TFEditOrderMenu::btnDiscountClick(TObject *Sender)
 {
-//	try{
-    	String str;
+	try{
+		String str;
     	if (InputQuery("Введіть номер дискнотної картки","Картка",str)) {
 			TOrderMenu order;
     		order.setIdOrder(DM->OTOpenOrder->FieldByName("id_order")->AsInteger);
     		order.setId_discount(StrToInt(str));
 			order.UpdateDiscount();
-			DM->RefreshADO(DM->OTListOrder);
+			DM->OpenDBOficiant();
 		}
-//	} catch(...){
-//       MessageBox(NULL, L"Перевірьте правильність даних!", L"Відмова!",  MB_OK | MB_ICONWARNING);
-//	}
+	} catch(...){
+       MessageBox(NULL, L"Перевірьте правильність даних!", L"Відмова!",  MB_OK | MB_ICONWARNING);
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFEditOrderMenu::btnReportDayClick(TObject *Sender)
+{
+	DM->DoSQL(DM->TSQL,"SELECT 	SUM(payment - (payment * discount/100)) AS DayPayment  \
+	FROM ((OrderMenu INNER JOIN  Discounts ON id_discount = kod_discount)\
+	INNER JOIN Personal ON id_personal = kod_personal)\
+	INNER JOIN ListTable ON id_table = kod_table \
+	WHERE date_open_order = "+DateToStr(Date());
+	ShowMessage("Дений заробіток - "+DM->TSQL->FieldByName("DayPayment")->AsString+" грн.");
 }
 //---------------------------------------------------------------------------
 

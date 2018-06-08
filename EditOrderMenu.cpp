@@ -127,6 +127,7 @@ void __fastcall TFEditOrderMenu::btnRemovClick(TObject *Sender)
 			TListOrder list;
 			list.setIdListingrfood(DM->OTListOrder->FieldByName("id_listordermenu")->AsInteger);
 			list.DeleteDBListOrder();
+			DM->OpenDBOficiant();
 		}
 	}
 	catch(...){
@@ -170,6 +171,17 @@ void __fastcall TFEditOrderMenu::btnDiscountClick(TObject *Sender)
 	} catch(...){
        MessageBox(NULL, L"Перевірьте правильність даних!", L"Відмова!",  MB_OK | MB_ICONWARNING);
 	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFEditOrderMenu::btnReportDayClick(TObject *Sender)
+{
+	DM->DoSQL(DM->TSQL,"SELECT 	SUM(payment - (payment * discount/100)) AS DayPayment  \
+	FROM ((OrderMenu INNER JOIN  Discounts ON id_discount = kod_discount)\
+	INNER JOIN Personal ON id_personal = kod_personal)\
+	INNER JOIN ListTable ON id_table = kod_table \
+	WHERE date_open_order >= '"+DateToStr(Date())+" 00:00:00' and date_open_order <= '"+DateToStr(Date())+" 23:59:59'");
+	ShowMessage("Дений заробіток - "+DM->TSQL->FieldByName("DayPayment")->AsString+" грн.");
 }
 //---------------------------------------------------------------------------
 

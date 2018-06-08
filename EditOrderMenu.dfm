@@ -11798,6 +11798,7 @@ object FEditOrderMenu: TFEditOrderMenu
         Images = DM.ImageBtn
         TabOrder = 4
         WordWrap = True
+        OnClick = btnReportDayClick
       end
     end
     object GroupBox1: TGroupBox

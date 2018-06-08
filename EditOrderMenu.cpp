@@ -27,6 +27,7 @@ __fastcall TFEditOrderMenu::TFEditOrderMenu(TComponent* Owner)
 //---------------------------------------------------------------------------
 
 void TOrderMenu::setIdOrder(int a){ this->id_order  = a;}
+int TOrderMenu::getIdOrder(){ return this->id_order;}
 void TOrderMenu::setDateOrder(TDateTime open,TDateTime close) {
 	this->date_open_order = open;
 	this->date_close_order = close;
@@ -37,8 +38,9 @@ void TOrderMenu::CloseOrderMenu(){
 
 }
 void TOrderMenu::UpdatePayment(){
-
-}
+	DM->DoSQL(DM->TSQL,"SELECT count(counts),sum(counts*price_food)\
+	FROM dbo.ListOrderMenu INNER JOIN dbo.Food ON id_food = kod_food WHERE kod_food = "+IntToStr(this->id_order));
+	}
 
 void TOrderMenu::InsertDBOrderMenu(){
 	DM->TSQL->SQL->Clear();
@@ -65,9 +67,9 @@ void TOrderMenu::UpdateDiscount(){
 
 }
 
-void TListOrder::setIdListingrfood(int i){ this->id_listingrfood = i}
+void TListOrder::setIdListingrfood(int i){ this->id_listingrfood = i;}
 int TListOrder::getIdListingrfood(){return this->id_listingrfood;}
-void TListOrder::setListCounts(int i){this->counts = i;}
+void TListOrder::setListCounts(float i){this->counts = i;}
 void TListOrder::InsertDBListOrder(){
 	DM->TSQL->SQL->Clear();
 	DM->TSQL->SQL->Add("INSERT INTO eMenu.dbo.ListOrderMenu(kod_order,kod_food,counts)");
@@ -81,26 +83,15 @@ void TListOrder::InsertDBListOrder(){
 void TListOrder::DeleteDBListOrder(){
  	try{
 	DM->DoSQLExec(DM->TSQL,\
-	"DELETE FROM eMenu.dbo.ListOrderMenu where id_listingrfood ="+IntToStr(this->id_listingrfood);
-	} catch(...){MessageBox(NULL, L"Не вдалося видалити!", L"Відмова!",  MB_OK | MB_ICONERROR);
+	"DELETE FROM eMenu.dbo.ListOrderMenu where id_listordermenu ="+IntToStr(this->id_listingrfood));
+	DM->RefreshADO(DM->OTListOrder);
+	} catch(...){MessageBox(NULL, L"Не вдалося видалити!", L"Відмова!",  MB_OK | MB_ICONERROR); }
 }
 
 
 
 
-void __fastcall TFEditOrderMenu::Button6Click(TObject *Sender)
-{
-   ShowMessage(DM->OTNotOcupTable->FieldByName("id_table")->AsString);
-}
-//---------------------------------------------------------------------------
 
-void __fastcall TFEditOrderMenu::Button1Click(TObject *Sender)
-{
-	TOrderMenu order;
-	order.InsertDBOrderMenu();
-	DM->OpenDBOficiant();
-}
-//---------------------------------------------------------------------------
 
 void __fastcall TFEditOrderMenu::FormClose(TObject *Sender, TCloseAction &Action)
 
@@ -125,10 +116,26 @@ void __fastcall TFEditOrderMenu::CB_id_orderChange(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TFEditOrderMenu::Button8Click(TObject *Sender)
+void __fastcall TFEditOrderMenu::btnRemovClick(TObject *Sender)
 {
 	TListOrder list;
+	list.setIdListingrfood(DM->OTListOrder->FieldByName("id_listordermenu")->AsInteger);
+    list.DeleteDBListOrder();
 
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TFEditOrderMenu::btnAddToOrderClick(TObject *Sender)
+{
+    FEditOrderMenu->Hide();
+	FMainForm->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFEditOrderMenu::FormShow(TObject *Sender)
+{
+    CB_id_orderChange(Sender);
+}
+//---------------------------------------------------------------------------
+
 

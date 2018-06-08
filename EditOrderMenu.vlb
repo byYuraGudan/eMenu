@@ -80,9 +80,6 @@ Coordinates=140,10,119,344
 [DM.ATListTable]
 Coordinates=271,606,107,124
 
-[Button1]
-Coordinates=148,740,59,58
-
 [DM.ADSDiscounts]
 Coordinates=183,845,121,36
 
@@ -98,20 +95,8 @@ Coordinates=269,10,94,344
 [GridPanel1]
 Coordinates=504,606,79,58
 
-[Button8]
-Coordinates=79,740,59,58
-
-[Button7]
-Coordinates=10,740,59,58
-
-[Button2]
-Coordinates=786,606,59,58
-
 [Panel1]
 Coordinates=722,606,54,58
-
-[Button6]
-Coordinates=1005,606,59,58
 
 []
 Coordinates=293,740,53,51
@@ -122,10 +107,6 @@ Coordinates=810,210,108,344
 
 [BindingsList1]
 Coordinates=137,543,91,36
-
-[ComboBox2]
-Coordinates=540,420,101,124
-Visible=True
 
 [DM.ODSNotOcupTable]
 Coordinates=261,314,148,36
@@ -145,5 +126,24 @@ Coordinates=553,740,82,58
 
 [CB_id_order]
 Coordinates=20,320,101,124
+Visible=True
+
+[btnCloseOrder]
+Coordinates=148,740,59,58
+
+[btnOpenOrder]
+Coordinates=1005,606,59,58
+
+[btnAddToOrder]
+Coordinates=10,740,59,58
+
+[btnRemov]
+Coordinates=79,740,59,58
+
+[btnPrint]
+Coordinates=786,606,59,58
+
+[CB_table]
+Coordinates=540,420,101,124
 Visible=True
 

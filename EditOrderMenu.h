@@ -27,30 +27,30 @@ class TFEditOrderMenu : public TForm
 __published:	// IDE-managed Components
 	TPanel *PanelOrderMenu;
 	TComboBox *CB_id_order;
-	TButton *Button1;
+	TButton *btnCloseOrder;
 	TLabel *Label1;
 	TDBGrid *DBGrid1;
 	TPanel *Panel1;
-	TButton *Button6;
+	TButton *btnOpenOrder;
 	TGridPanel *GridPanel1;
-	TButton *Button7;
-	TButton *Button8;
-	TButton *Button2;
+	TButton *btnAddToOrder;
+	TButton *btnRemov;
+	TButton *btnPrint;
 	TButton *btnDiscount;
 	TBindSourceDB *BindSourceDB1;
 	TBindingsList *BindingsList1;
 	TLinkListControlToField *LinkListControlToField1;
-	TComboBox *ComboBox2;
+	TComboBox *CB_table;
 	TLabel *Label2;
 	TBindSourceDB *BindSourceDB2;
 	TLinkListControlToField *LinkListControlToField2;
 	TButton *btnReportDay;
 	TGroupBox *GroupBox1;
-	void __fastcall Button6Click(TObject *Sender);
-	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall CB_id_orderChange(TObject *Sender);
-	void __fastcall Button8Click(TObject *Sender);
+	void __fastcall btnRemovClick(TObject *Sender);
+	void __fastcall btnAddToOrderClick(TObject *Sender);
+	void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFEditOrderMenu(TComponent* Owner);

@@ -135,8 +135,18 @@ void __fastcall TFMainForm::ButtonViewOrderClick(TObject *Sender)
 
 void __fastcall TFMainForm::Image1Click(TObject *Sender)
 {
-
-	String id = InputBox("Виберіть кількість!", "Кількість = ", "1");
+	try{
+	float count = StrToFloat(InputBox("Виберіть кількість!", "Кількість = ", "1"));
+	TListOrder list;
+	list.setIdFood(DM->MTShowFood->FieldByName("id_food")->AsInteger);
+	list.setIdOrder(DM->OTOpenOrder->FieldByName("id_order")->AsInteger);
+	list.setListCounts(count);
+	list.InsertDBListOrder();
+	DM->RefreshADO(DM->OTListOrder);
+		}
+	catch(...){
+		MessageBox(NULL, L"Перевірьте правильність даних!", L"Відмова!",  MB_OK | MB_ICONWARNING);
+	}
 }
 //---------------------------------------------------------------------------
 

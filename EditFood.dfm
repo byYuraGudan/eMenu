@@ -3517,6 +3517,8 @@ object FEditFood: TFEditFood
       Caption = #1054#1089#1085#1086#1074#1085#1072' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1103
       ExplicitLeft = 8
       ExplicitTop = 31
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label1: TLabel
         Left = 264
         Top = 14
@@ -4819,6 +4821,10 @@ object FEditFood: TFEditFood
     object TabIngredient: TTabSheet
       Caption = #1044#1086#1076#1072#1090#1082#1086#1074#1072' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1103
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox1: TGroupBox
         AlignWithMargins = True
         Left = 3

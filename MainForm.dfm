@@ -281,7 +281,7 @@ object FMainForm: TFMainForm
           Font.Height = -20
           Font.Name = 'Courier New'
           Font.Style = []
-          ImageIndex = 1
+          ImageIndex = 7
           Images = DM.ImageBtn
           ParentFont = False
           TabOrder = 0

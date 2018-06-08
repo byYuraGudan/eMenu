@@ -187,10 +187,10 @@ public:
         this->payment = 0;
 	}
 	void setIdOrder(int);
+    int getIdOrder();
 	void setDateOrder(TDateTime,TDateTime);
 	void setCloseOrder(bool);
 	void setPayment(float);
-    int getIdOrder();
 	void InsertDBOrderMenu();
 	void UpdateDBOrderMenu();
     void DeleteDBOrderMenu();
@@ -202,10 +202,11 @@ public:
 class TListOrder: public TFood,public TOrderMenu
 {
 private:
-	int id_listingrfood,counts;
+	int id_listingrfood;
+	float counts;
 public:
 	void setIdListingrfood(int);
-	void setListCounts(int);
+	void setListCounts(float);
 	int getIdListingrfood();
 	void InsertDBListOrder();
     void DeleteDBListOrder();

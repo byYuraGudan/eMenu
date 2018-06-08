@@ -235,8 +235,8 @@ void __fastcall TFEditFood::ButtonCalculationPriceClick(TObject *Sender)
 	 price += prc * cnt;
 	 DM->ATFoodIngredient->Next();
 	}
-	ShowMessage("Собівартість - "+FloatToStr(price)+" грн");
-	Edit_cost_price->Text = (price*100)/100;
+	ShowMessage("Собівартість - "+FloatToStrF(price,ffFixed,10,2)+" грн");
+	Edit_cost_price->Text = FloatToStrF((price*100)/100,ffFixed,10,2);
 
 }
 //---------------------------------------------------------------------------

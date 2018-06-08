@@ -11663,6 +11663,17 @@ object FEditOrderMenu: TFEditOrderMenu
         #1094#1077#1085#1090#1088
         '2 '#1074#1110#1082#1085#1086)
     end
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 412
+      Top = 22
+      Width = 145
+      Height = 22
+      DataField = 'kod_table'
+      DataSource = DM.ODSOpenOrder
+      ListField = 'name_table'
+      ListSource = DM.ODSNotOcupTable
+      TabOrder = 4
+    end
   end
   object DBGrid1: TDBGrid
     AlignWithMargins = True

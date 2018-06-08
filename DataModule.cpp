@@ -74,6 +74,7 @@ void TDM::RefreshADO(TADOQuery *Query){
 }
 
 void TDM::OpenDB(){
+	try{
 	this->OpenDBMain();
     this->OpenDBOficiant();
 	RefreshADO(ATPersonal);
@@ -83,7 +84,7 @@ void TDM::OpenDB(){
 	RefreshADO(ATFoodIngredient);
 	RefreshADO(ATListTable);
 	RefreshADO(ATOrderMenu);
-    RefreshADO(ATListOrderMenu);
+    RefreshADO(ATListOrderMenu);  }catch(...){}
 }
 
 void TDM::OpenDBMain(){

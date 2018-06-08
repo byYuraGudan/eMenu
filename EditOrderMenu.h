@@ -56,6 +56,7 @@ __published:	// IDE-managed Components
 	TDBText *DBdiscount;
 	TDBText *DBpayment;
 	TDBText *DBrealpayment;
+	TDBLookupComboBox *DBLookupComboBox1;
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall CB_id_orderChange(TObject *Sender);
 	void __fastcall btnRemovClick(TObject *Sender);

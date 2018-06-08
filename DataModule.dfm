@@ -1314,7 +1314,7 @@ object DM: TDM
     end
   end
   object ODSNotOcupTable: TDataSource
-    DataSet = ATDiscount
+    DataSet = OTNotOcupTable
     Left = 288
     Top = 80
   end

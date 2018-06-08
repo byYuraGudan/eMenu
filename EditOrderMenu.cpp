@@ -142,9 +142,8 @@ void __fastcall TFEditOrderMenu::btnRemovClick(TObject *Sender)
 			list.setIdListingrfood(DM->OTListOrder->FieldByName("id_listordermenu")->AsInteger);
 			list.setIdOrder(DM->OTListOrder->FieldByName("kod_order")->AsInteger);
 			list.DeleteDBListOrder();
-            list.UpdatePayment();
-			DM->RefreshADO(DM->OTListOrder);
-            DM->OTOpenOrder->Refresh();
+			list.UpdatePayment();
+			DM->OpenDBOficiant();
 		}
 	}
 	catch(...){
@@ -186,7 +185,7 @@ void __fastcall TFEditOrderMenu::btnDiscountClick(TObject *Sender)
 			DM->OpenDBOficiant();
 		}
 	} catch(...){
-       MessageBox(NULL, L"Перевірьте правильність даних!", L"Відмова!",  MB_OK | MB_ICONWARNING);
+	   MessageBox(NULL, L"Перевірьте правильність даних!", L"Відмова!",  MB_OK | MB_ICONWARNING);
 	}
 }
 //---------------------------------------------------------------------------
@@ -202,4 +201,21 @@ void __fastcall TFEditOrderMenu::btnReportDayClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TFEditOrderMenu::btnOpenOrderClick(TObject *Sender)
+{
+	String str = DM->OTNotOcupTable->FieldByName("id_table")->AsString;
+	if(!str.IsEmpty()){
+		TOrderMenu order;
+		order.setId_personal(DM->id_user);
+		order.setId_discount(0);
+		order.setId_table(DM->OTNotOcupTable->FieldByName("id_table")->AsInteger);
+		order.UpdateInverseOccupation();
+		order.InsertDBOrderMenu();
+		DM->OpenDB();
+        DM->OTOpenOrder->Last();
+	} else MessageBox(NULL, L"Немає вільних місць!", L"Відмова!",  MB_OK | MB_ICONWARNING);
+
+}
+//---------------------------------------------------------------------------
 

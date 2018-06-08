@@ -13,6 +13,8 @@
 #include "EditFood.h"
 #include "EditIngredient.h"
 #include "EditPersonal.h"
+#include "EditOrderMenu.h"
+#include "EditTabel.h"
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -58,7 +60,8 @@ void TDM::RefreshADO(TADOQuery *Query){
 }
 
 void TDM::OpenDB(){
-
+	this->OpenDBMain();
+    this->OpenDBOficiant();
 	RefreshADO(ATPersonal);
 	RefreshADO(ATCategory);
 	RefreshADO(ATFood);
@@ -70,11 +73,13 @@ void TDM::OpenDB(){
 }
 
 void TDM::OpenDBMain(){
-		RefreshADO(MTShowCategory);
+	RefreshADO(MTShowCategory);
 	RefreshADO(MTShowFood);
 }
 void TDM::OpenDBOficiant(){
-
+	RefreshADO(OTOpenOrder);
+	RefreshADO(OTNotOcupTable);
+    RefreshADO(OTListOrder);
 }
 //---------------------------------------------------------------------------
 
@@ -177,6 +182,19 @@ void __fastcall TDM::TimerUpdateTimer(TObject *Sender)
 	DM->MonitorServer->Next();
  }
     if(f)DM->OpenDB();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TDM::N13Click(TObject *Sender)
+{
+	FEditOrderMenu->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TDM::N17Click(TObject *Sender)
+{
+	FEditOrderMenu->Show();
 }
 //---------------------------------------------------------------------------
 

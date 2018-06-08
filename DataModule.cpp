@@ -51,12 +51,26 @@ void TDM::DoSQLExec(TADOQuery *Query,AnsiString str){
 	Query->ExecSQL();
 }
 void TDM::RefreshADO(TADOTable *Table){
-	Table->Close();
-	Table->Open();
+	if(Table->Active){
+		int a = Table->RecNo;
+		Table->Close();
+		Table->Open();
+		Table->RecNo = a;
+	} else {
+		Table->Close();
+		Table->Open();
+    }
 }
 void TDM::RefreshADO(TADOQuery *Query){
-	Query->Close();
-	Query->Open();
+	if(Query->Active){
+		int a = Query->RecNo;
+		Query->Close();
+		Query->Open();
+		Query->RecNo = a;
+	}else{
+	    Query->Close();
+		Query->Open();
+    }
 }
 
 void TDM::OpenDB(){
@@ -78,6 +92,7 @@ void TDM::OpenDBMain(){
 }
 void TDM::OpenDBOficiant(){
 	RefreshADO(OTOpenOrder);
+
 	RefreshADO(OTNotOcupTable);
     RefreshADO(OTListOrder);
 }

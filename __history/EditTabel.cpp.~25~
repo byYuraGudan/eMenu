@@ -57,13 +57,26 @@ void TListTable::setOccupListTable(bool b){  this->occupation = b;}
 
 
 void TListTable::InsertDBListTable(){
-
+	DM->TSQL->SQL->Clear();
+	DM->TSQL->SQL->Add("INSERT INTO eMenu.dbo.ListTable(name_table)");
+	DM->TSQL->SQL->Add("VALUES(:P1)");
+	DM->TSQL->Parameters->ParamByName("P1")->Value = this->name;
+	DM->TSQL->ExecSQL();
 }
 void TListTable::UpdateInverseOccupation(){
-	DM->DoSQLExec(DM->TSQL);
-
+	DM->DoSQLExec(DM->TSQL,"Update eMenu.dbo.ListTable SET occupation =  occupation ^1 WHERE id_table ="+IntToStr(this->id_table));
 }
 void TListTable::DeleteDBListTable(){
-
+	DM->DoSQLExec(DM->TSQL,"DELETE FROM eMenu.dbo.ListTable WHERE id_table ="+IntToStr(this->id_table));
 }
+
+void __fastcall TFEditTable::ButtonAccceptClick(TObject *Sender)
+{
+	TListTable table;
+	table.setNameListTable(Edit_table->Text);
+	table.InsertDBListTable();
+    DM->OpenDB();
+    Hide();
+}
+//---------------------------------------------------------------------------
 

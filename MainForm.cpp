@@ -135,7 +135,7 @@ void __fastcall TFMainForm::ButtonViewOrderClick(TObject *Sender)
 
 void __fastcall TFMainForm::Image1Click(TObject *Sender)
 {
-//	try{
+	try{
       	String count;
 		if(InputQuery("Виберіть кількість!","Кількість",count)){
 			TListOrder list;
@@ -144,13 +144,12 @@ void __fastcall TFMainForm::Image1Click(TObject *Sender)
       		list.setListCounts(StrToFloat(count));
 			list.InsertDBListOrder();
             list.UpdatePayment();
-			DM->RefreshADO(DM->OTListOrder);
-			DM->OTOpenOrder->Refresh();
+            DM->OpenDBOficiant();
 		}
-//	}
-//	catch(...){
-//		MessageBox(NULL, L"Перевірьте правильність даних!", L"Відмова!",  MB_OK | MB_ICONWARNING);
-//	}
+	}
+	catch(...){
+		MessageBox(NULL, L"Перевірьте правильність даних!", L"Відмова!",  MB_OK | MB_ICONWARNING);
+	}
 }
 //---------------------------------------------------------------------------
 

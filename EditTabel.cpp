@@ -28,24 +28,6 @@ void __fastcall TFEditTable::ButtonCancelClick(TObject *Sender)
 {
  Hide();
 }
-//---------------------------------------------------------------------------
-//                         class TListTable
-//{
-//private:
-//	 int id_table;
-//	 AnsiString name;
-//	 bool occupation;
-//protected:
-//
-//public:
-//	void setId_table(int);
-//	int getId_table();
-//	void setInfoListTable(AnsiString,bool)
-//	void InsertDBListTable();
-//	void UpdateDBListTable();
-
-//	void DeleteDBListTable();
-//};
 
 void TListTable::setId_table(int a){ this->id_table = a;}
 

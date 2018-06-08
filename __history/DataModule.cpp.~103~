@@ -51,12 +51,16 @@ void TDM::DoSQLExec(TADOQuery *Query,AnsiString str){
 	Query->ExecSQL();
 }
 void TDM::RefreshADO(TADOTable *Table){
+	int a = Table->RecNo;
 	Table->Close();
 	Table->Open();
+    Table->RecNo = a;
 }
 void TDM::RefreshADO(TADOQuery *Query){
+	int a = Query->RecNo;
 	Query->Close();
 	Query->Open();
+    Query->RecNo = a;
 }
 
 void TDM::OpenDB(){
@@ -78,7 +82,9 @@ void TDM::OpenDBMain(){
 }
 void TDM::OpenDBOficiant(){
 	RefreshADO(OTOpenOrder);
+
 	RefreshADO(OTNotOcupTable);
+    RefreshADO(OTListOrder);
 }
 //---------------------------------------------------------------------------
 
@@ -186,6 +192,12 @@ void __fastcall TDM::TimerUpdateTimer(TObject *Sender)
 
 
 void __fastcall TDM::N13Click(TObject *Sender)
+{
+	FEditOrderMenu->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TDM::N17Click(TObject *Sender)
 {
 	FEditOrderMenu->Show();
 }

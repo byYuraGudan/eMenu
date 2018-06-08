@@ -11588,23 +11588,24 @@ object FEditOrderMenu: TFEditOrderMenu
     Height = 52
     Align = alTop
     TabOrder = 0
+    ExplicitTop = -3
     object Label1: TLabel
-      Left = 403
-      Top = 6
+      Left = 551
+      Top = 5
       Width = 84
       Height = 14
       Caption = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103' '#8470
     end
     object Label2: TLabel
-      Left = 624
-      Top = 6
+      Left = 335
+      Top = 3
       Width = 42
       Height = 14
       Caption = 'C'#1090#1110#1083' '#8470
     end
     object CB_id_order: TComboBox
-      Left = 391
-      Top = 25
+      Left = 543
+      Top = 24
       Width = 100
       Height = 22
       ItemIndex = 0
@@ -11633,7 +11634,6 @@ object FEditOrderMenu: TFEditOrderMenu
       Images = DM.ImageBtn
       TabOrder = 1
       WordWrap = True
-      ExplicitLeft = 149
     end
     object btnOpenOrder: TButton
       AlignWithMargins = True
@@ -11648,10 +11648,11 @@ object FEditOrderMenu: TFEditOrderMenu
       Images = DM.ImageBtn
       TabOrder = 2
       WordWrap = True
+      ExplicitTop = 3
     end
     object CB_table: TComboBox
-      Left = 592
-      Top = 25
+      Left = 306
+      Top = 22
       Width = 100
       Height = 22
       ItemIndex = 0
@@ -11737,7 +11738,6 @@ object FEditOrderMenu: TFEditOrderMenu
           SizeStyle = ssAuto
         end>
       TabOrder = 0
-      ExplicitWidth = 275
       object btnAddToOrder: TButton
         Left = 1
         Top = 1
@@ -11750,7 +11750,8 @@ object FEditOrderMenu: TFEditOrderMenu
         TabOrder = 0
         WordWrap = True
         OnClick = btnAddToOrderClick
-        ExplicitWidth = 136
+        ExplicitLeft = -5
+        ExplicitTop = -5
       end
       object btnRemov: TButton
         Left = 143
@@ -11764,8 +11765,8 @@ object FEditOrderMenu: TFEditOrderMenu
         TabOrder = 1
         WordWrap = True
         OnClick = btnRemovClick
-        ExplicitLeft = 137
-        ExplicitWidth = 136
+        ExplicitLeft = 142
+        ExplicitTop = 6
       end
       object btnPrint: TButton
         Left = 1
@@ -11778,7 +11779,6 @@ object FEditOrderMenu: TFEditOrderMenu
         Images = DM.ImageBtn
         TabOrder = 2
         WordWrap = True
-        ExplicitWidth = 136
       end
       object btnDiscount: TButton
         Left = 143
@@ -11791,8 +11791,7 @@ object FEditOrderMenu: TFEditOrderMenu
         Images = DM.ImageBtn
         TabOrder = 3
         WordWrap = True
-        ExplicitLeft = 137
-        ExplicitWidth = 137
+        OnClick = btnDiscountClick
       end
       object btnReportDay: TButton
         Left = 1
@@ -11805,7 +11804,7 @@ object FEditOrderMenu: TFEditOrderMenu
         Images = DM.ImageBtn
         TabOrder = 4
         WordWrap = True
-        ExplicitWidth = 136
+        OnClick = btnReportDayClick
       end
     end
     object GroupBox1: TGroupBox
@@ -11816,14 +11815,12 @@ object FEditOrderMenu: TFEditOrderMenu
       Align = alClient
       Caption = #1030#1085#1092#1086#1088#1084#1072#1094#1110#1103' '#1087#1088#1086' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
       TabOrder = 1
-      ExplicitLeft = -1
-      ExplicitTop = 2
       object Label3: TLabel
         AlignWithMargins = True
         Left = 7
         Top = 21
         Width = 273
-        Height = 193
+        Height = 168
         Margins.Left = 5
         Margins.Top = 5
         Margins.Right = 5
@@ -11834,14 +11831,14 @@ object FEditOrderMenu: TFEditOrderMenu
           ' ----------------------------------------- '#1044#1072#1090#1072'/'#1095#1072#1089':  ----------' +
           '-------------------------------- '#1054#1092#1110#1094#1110#1072#1085#1090':  --------------------' +
           '----------------------- '#1050#1083#1110#1108#1085#1090': --------------------------------' +
-          '----------- '#1050#1110#1083#1100#1082#1110#1089#1090#1100':  ----------------------------------------' +
-          '--- '#1041#1077#1079' '#1079#1085#1080#1078#1082#1080':                                 '#1047#1085#1080#1078#1082#1072':'
+          '----------- '#1041#1077#1079' '#1079#1085#1080#1078#1082#1080':                                 '#1047#1085#1080#1078#1082#1072':'
         Color = clBtnFace
         ParentColor = False
         WordWrap = True
+        ExplicitWidth = 301
       end
       object DBdateopen: TDBText
-        Left = 69
+        Left = 68
         Top = 78
         Width = 217
         Height = 20
@@ -11851,8 +11848,8 @@ object FEditOrderMenu: TFEditOrderMenu
         WordWrap = True
       end
       object DBidtable: TDBText
-        Left = 57
-        Top = 49
+        Left = 56
+        Top = 48
         Width = 229
         Height = 20
         DataField = 'name_table'
@@ -11893,7 +11890,7 @@ object FEditOrderMenu: TFEditOrderMenu
       object Label4: TLabel
         AlignWithMargins = True
         Left = 7
-        Top = 216
+        Top = 191
         Width = 273
         Height = 22
         Margins.Left = 5
@@ -11914,8 +11911,8 @@ object FEditOrderMenu: TFEditOrderMenu
         ExplicitWidth = 84
       end
       object DBdiscount: TDBText
-        Left = 86
-        Top = 204
+        Left = 85
+        Top = 176
         Width = 109
         Height = 15
         DataField = 'discount'
@@ -11924,8 +11921,8 @@ object FEditOrderMenu: TFEditOrderMenu
         WordWrap = True
       end
       object DBpayment: TDBText
-        Left = 86
-        Top = 189
+        Left = 85
+        Top = 161
         Width = 200
         Height = 17
         DataField = 'payment'
@@ -11934,9 +11931,9 @@ object FEditOrderMenu: TFEditOrderMenu
         WordWrap = True
       end
       object DBrealpayment: TDBText
-        Left = 40
-        Top = 221
-        Width = 240
+        Left = 91
+        Top = 198
+        Width = 194
         Height = 13
         DataField = 'RealPayment'
         DataSource = DM.ODSOpenOrder

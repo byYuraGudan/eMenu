@@ -11588,23 +11588,24 @@ object FEditOrderMenu: TFEditOrderMenu
     Height = 52
     Align = alTop
     TabOrder = 0
+    ExplicitTop = -3
     object Label1: TLabel
-      Left = 403
-      Top = 6
+      Left = 551
+      Top = 5
       Width = 84
       Height = 14
       Caption = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103' '#8470
     end
     object Label2: TLabel
-      Left = 624
-      Top = 6
+      Left = 335
+      Top = 3
       Width = 42
       Height = 14
       Caption = 'C'#1090#1110#1083' '#8470
     end
     object CB_id_order: TComboBox
-      Left = 391
-      Top = 25
+      Left = 543
+      Top = 24
       Width = 100
       Height = 22
       ItemIndex = 0
@@ -11647,11 +11648,12 @@ object FEditOrderMenu: TFEditOrderMenu
       Images = DM.ImageBtn
       TabOrder = 2
       WordWrap = True
+      OnClick = btnOpenOrderClick
       ExplicitTop = 3
     end
     object CB_table: TComboBox
-      Left = 592
-      Top = 25
+      Left = 306
+      Top = 22
       Width = 100
       Height = 22
       ItemIndex = 0

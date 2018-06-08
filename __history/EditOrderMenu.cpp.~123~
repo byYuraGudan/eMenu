@@ -126,11 +126,7 @@ void __fastcall TFEditOrderMenu::CB_id_orderChange(TObject *Sender)
 	DM->DoSQL(DM->OTListOrder,\
 	"SELECT   id_listordermenu, kod_order, kod_food,name_food,counts,price_food, counts * price_food AS Suma\
 	FROM eMenu.dbo.ListOrderMenu INNER JOIN eMenu.dbo.Food ON id_food = kod_food WHERE kod_order = "+CB_id_order->Text);
-	DM->DoSQL(DM->TSQL,"SELECT sum(counts) as cnt WHERE kod_order = "+CB_id_order->Text);
-	float val = DM->TSQL->FieldByName("price_all")->AsFloat;
-	int count = DM->TSQL->FieldByName("cnt")->AsInteger;
-	}
-	catch(...){
+	}catch(...){
 		MessageBox(NULL, L"Такого замовлення не існує", L"Відмова!",  MB_OK | MB_ICONERROR);
 	}
 }
@@ -181,7 +177,7 @@ void __fastcall TFEditOrderMenu::btnDiscountClick(TObject *Sender)
 {
 	try{
 		String str;
-    	if (InputQuery("Введіть номер дискнотної картки","Картка",str)) {
+		if (InputQuery("Введіть номер дисконтної картки","Картка",str)) {
 			TOrderMenu order;
     		order.setIdOrder(DM->OTOpenOrder->FieldByName("id_order")->AsInteger);
     		order.setId_discount(StrToInt(str));
@@ -202,6 +198,13 @@ void __fastcall TFEditOrderMenu::btnReportDayClick(TObject *Sender)
 	INNER JOIN ListTable ON id_table = kod_table \
 	WHERE date_open_order >= '"+DateToStr(Date())+" 00:00:00' and date_open_order <= '"+DateToStr(Date())+" 23:59:59'");
 	ShowMessage("Дений заробіток - "+DM->TSQL->FieldByName("DayPayment")->AsString+" грн.");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFEditOrderMenu::btnOpenOrderClick(TObject *Sender)
+{
+	CB_id_order->Text = 14;
+	ShowMessage(IntToStr(DM->OTListOrder->GetHashCode()));
 }
 //---------------------------------------------------------------------------
 

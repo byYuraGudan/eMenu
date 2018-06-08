@@ -144,7 +144,8 @@ void __fastcall TFMainForm::Image1Click(TObject *Sender)
       		list.setListCounts(StrToFloat(count));
 			list.InsertDBListOrder();
             list.UpdatePayment();
-			DM->OpenDBOficiant();
+			DM->RefreshADO(DM->OTListOrder);
+			DM->OTOpenOrder->Refresh();
 		}
 //	}
 //	catch(...){

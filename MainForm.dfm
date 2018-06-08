@@ -227,7 +227,7 @@ object FMainForm: TFMainForm
       end
       object DBpayment: TDBText
         Left = 84
-        Top = 156
+        Top = 158
         Width = 214
         Height = 15
         DataField = 'payment'
@@ -246,9 +246,9 @@ object FMainForm: TFMainForm
         WordWrap = True
       end
       object DBrealpayment: TDBText
-        Left = 99
+        Left = 93
         Top = 208
-        Width = 197
+        Width = 202
         Height = 14
         DataField = 'RealPayment'
         DataSource = DM.ODSOpenOrder

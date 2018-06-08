@@ -44,11 +44,11 @@ void TOrderMenu::UpdatePayment(){
 	float val = DM->TSQL->FieldByName("price_all")->AsFloat;
 	int count = DM->TSQL->FieldByName("cnt")->AsInteger;
 	if(DM->TSQL->RecordCount!=0){
-	DM->TSQL->SQL->Clear();
-	DM->TSQL->SQL->Add("UPDATE eMenu.dbo.OrderMenu SET payment = :pay WHERE id_order = :id");
-	DM->TSQL->Parameters->ParamByName("pay")->Value = val;
-	DM->TSQL->Parameters->ParamByName("id")->Value = this->id_order;
-	DM->TSQL->ExecSQL();
+		DM->TSQL->SQL->Clear();
+		DM->TSQL->SQL->Add("UPDATE eMenu.dbo.OrderMenu SET payment = :pay WHERE id_order = :id");
+		DM->TSQL->Parameters->ParamByName("pay")->Value = val;
+		DM->TSQL->Parameters->ParamByName("id")->Value = this->id_order;
+		DM->TSQL->ExecSQL();
 
 	}	else{
 	DM->DoSQLExec(DM->TSQL,"UPDATE eMenu.dbo.OrderMenu SET payment = 0 WHERE id_order ="+IntToStr(this->id_order));
@@ -143,7 +143,8 @@ void __fastcall TFEditOrderMenu::btnRemovClick(TObject *Sender)
 			list.setIdOrder(DM->OTListOrder->FieldByName("kod_order")->AsInteger);
 			list.DeleteDBListOrder();
             list.UpdatePayment();
-			DM->OpenDBOficiant();
+			DM->RefreshADO(DM->OTListOrder);
+            DM->OTOpenOrder->Refresh();
 		}
 	}
 	catch(...){
@@ -201,10 +202,4 @@ void __fastcall TFEditOrderMenu::btnReportDayClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TFEditOrderMenu::btnOpenOrderClick(TObject *Sender)
-{
-	CB_id_order->Text = 14;
-	ShowMessage(IntToStr(DM->OTListOrder->GetHashCode()));
-}
-//---------------------------------------------------------------------------
 

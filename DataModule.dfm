@@ -339,9 +339,11 @@ object DM: TDM
     object OTOpenOrderRealPayment: TStringField
       DefaultExpression = '0.00 '#1075#1088#1085
       DisplayLabel = #1054#1087#1083#1072#1090#1072' '#1079' '#1079#1085#1080#1078#1082#1086#1102
+      FieldKind = fkCalculated
       FieldName = 'RealPayment'
       ReadOnly = True
       Size = 10
+      Calculated = True
     end
   end
   object ImageListButton: TImageList

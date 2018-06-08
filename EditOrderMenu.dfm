@@ -11647,7 +11647,6 @@ object FEditOrderMenu: TFEditOrderMenu
       Images = DM.ImageBtn
       TabOrder = 2
       WordWrap = True
-      OnClick = btnOpenOrderClick
       ExplicitTop = 3
     end
     object CB_table: TComboBox

@@ -133,3 +133,10 @@ void __fastcall TFMainForm::ButtonViewOrderClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
+void __fastcall TFMainForm::Image1Click(TObject *Sender)
+{
+
+	String id = InputBox("Виберіть кількість!", "Кількість = ", "1");
+}
+//---------------------------------------------------------------------------
+

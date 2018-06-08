@@ -42,11 +42,11 @@ void TOrderMenu::UpdatePayment(){
 
 void TOrderMenu::InsertDBOrderMenu(){
 	DM->TSQL->SQL->Clear();
-	DM->TSQL->SQL->Add("INSERT INTO eMenu.dbo.OrderMenu(kod_t ble,kod_personal,kod_discount)");
+	DM->TSQL->SQL->Add("INSERT INTO eMenu.dbo.OrderMenu(kod_table,kod_personal,kod_discount)");
 	DM->TSQL->SQL->Add("VALUES(:t,:p,:d)");
-	DM->TSQL->Parameters->ParamByName("t")->Value =  2;//this->getId_table();
-	DM->TSQL->Parameters->ParamByName("p")->Value =  2;//this->getId_personal();
-	DM->TSQL->Parameters->ParamByName("d")->Value =  1234;//this->getId_discount();
+	DM->TSQL->Parameters->ParamByName("t")->Value =  this->getId_table();
+	DM->TSQL->Parameters->ParamByName("p")->Value =  this->getId_personal();
+	DM->TSQL->Parameters->ParamByName("d")->Value =  this->getId_discount();
 	DM->TSQL->ExecSQL();
 }
 
@@ -65,6 +65,25 @@ void TOrderMenu::UpdateDiscount(){
 
 }
 
+void TListOrder::setIdListingrfood(int i){ this->id_listingrfood = i}
+int TListOrder::getIdListingrfood(){return this->id_listingrfood;}
+void TListOrder::setListCounts(int i){this->counts = i;}
+void TListOrder::InsertDBListOrder(){
+	DM->TSQL->SQL->Clear();
+	DM->TSQL->SQL->Add("INSERT INTO eMenu.dbo.ListOrderMenu(kod_order,kod_food,counts)");
+	DM->TSQL->SQL->Add("VALUES(:t,:p,:d)");
+	DM->TSQL->Parameters->ParamByName("t")->Value =  this->getIdOrder();
+	DM->TSQL->Parameters->ParamByName("p")->Value =  this->getIdFood();
+	DM->TSQL->Parameters->ParamByName("d")->Value =  this->counts;
+	DM->TSQL->ExecSQL();
+}
+
+void TListOrder::DeleteDBListOrder(){
+ 	try{
+	DM->DoSQLExec(DM->TSQL,\
+	"DELETE FROM eMenu.dbo.ListOrderMenu where id_listingrfood ="+IntToStr(this->id_listingrfood);
+	} catch(...){MessageBox(NULL, L"Не вдалося видалити!", L"Відмова!",  MB_OK | MB_ICONERROR);
+}
 
 
 
@@ -87,6 +106,29 @@ void __fastcall TFEditOrderMenu::FormClose(TObject *Sender, TCloseAction &Action
 
 {
     FMainForm->Show();
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TFEditOrderMenu::CB_id_orderChange(TObject *Sender)
+{
+	try{
+	DM->DoSQL(DM->OTListOrder,\
+	"SELECT   id_listordermenu, kod_order, kod_food,name_food,counts,price_food, counts * price_food AS Suma\
+	FROM eMenu.dbo.ListOrderMenu INNER JOIN eMenu.dbo.Food ON id_food = kod_food WHERE kod_order = "+CB_id_order->Text);
+	}
+	catch(...){
+		MessageBox(NULL, L"Такого замовлення не існує", L"Відмова!",  MB_OK | MB_ICONERROR);
+	}
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TFEditOrderMenu::Button8Click(TObject *Sender)
+{
+	TListOrder list;
+
 }
 //---------------------------------------------------------------------------
 

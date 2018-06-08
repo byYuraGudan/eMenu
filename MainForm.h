@@ -75,6 +75,7 @@ __published:	// IDE-managed Components
           int X, int Y);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall ButtonViewOrderClick(TObject *Sender);
+	void __fastcall Image1Click(TObject *Sender);
 
 
 

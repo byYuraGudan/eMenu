@@ -198,3 +198,15 @@ public:
 	void UpdatePayment();
 	void UpdateDiscount();
 };
+
+class TListOrder: public TFood,public TOrderMenu
+{
+private:
+	int id_listingrfood,counts;
+public:
+	void setIdListingrfood(int);
+	void setListCounts(int);
+	int getIdListingrfood();
+	void InsertDBListOrder();
+    void DeleteDBListOrder();
+};

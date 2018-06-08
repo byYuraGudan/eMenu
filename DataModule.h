@@ -174,6 +174,15 @@ __published:	// IDE-managed Components
 	TBCDField *OTOpenOrderpayment;
 	TIntegerField *OTOpenOrderdiscount;
 	TStringField *OTOpenOrderRealPayment;
+	TADOQuery *OTListOrder;
+	TDataSource *ODSListOrder;
+	TAutoIncField *OTListOrderid_listordermenu;
+	TIntegerField *OTListOrderkod_order;
+	TIntegerField *OTListOrderkod_food;
+	TStringField *OTListOrdername_food;
+	TBCDField *OTListOrdercounts;
+	TBCDField *OTListOrderprice_food;
+	TFMTBCDField *OTListOrderSuma;
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall DataModuleDestroy(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);

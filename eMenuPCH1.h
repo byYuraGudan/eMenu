@@ -59,7 +59,8 @@ public:
 	void setNameListTable(AnsiString);
 	void setOccupListTable(bool);
 	void InsertDBListTable();
-    void UpdateInverseOccupation();
+	void UpdateInverseOccupation();
+	void UpdateOccupation();
 	void DeleteDBListTable();
 };
 

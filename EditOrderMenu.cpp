@@ -35,6 +35,7 @@ void TOrderMenu::setDateOrder(TDateTime open,TDateTime close) {
 void TOrderMenu::setCloseOrder(bool b){ this->close_order = b;}
 void TOrderMenu::setPayment(float f){ this->payment = f;}
 void TOrderMenu::CloseOrderMenu(){
+    DM->DoSQLExec(DM->TSQL,"UPDATE eMenu.dbo.OrderMenu SET date_close_order = GETDATE(),)
 
 }
 void TOrderMenu::UpdatePayment(){
@@ -216,6 +217,17 @@ void __fastcall TFEditOrderMenu::btnOpenOrderClick(TObject *Sender)
         DM->OTOpenOrder->Last();
 	} else MessageBox(NULL, L"Íåìàº â³ëüíèõ ì³ñöü!", L"Â³äìîâà!",  MB_OK | MB_ICONWARNING);
 
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFEditOrderMenu::btnCloseOrderClick(TObject *Sender)
+{
+	TOrderMenu order;
+	order.setIdOrder(DM->OTOpenOrder->FieldByName("id_order")->AsInteger);
+    order.setOccupListTable(true;)
+	order.setId_table(DM->OTOpenOrder->FieldByName("kod_table")->AsInteger);
+	order.UpdateOccupation();
+    order.CloseOrderMenu();
 }
 //---------------------------------------------------------------------------
 

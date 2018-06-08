@@ -45,6 +45,14 @@ void TListTable::InsertDBListTable(){
 	DM->TSQL->Parameters->ParamByName("P1")->Value = this->name;
 	DM->TSQL->ExecSQL();
 }
+void TListTable::UpdateOccupation(){
+	DM->TSQL->SQL->Clear();
+	DM->TSQL->SQL->Add("UPDATE eMenu.dbo.ListTable SET occupation = :ocup");
+	DM->TSQL->SQL->Add("WHERE id_table = :id");
+	DM->TSQL->Parameters->ParamByName("id")->Value = this->id_table;
+	DM->TSQL->Parameters->ParamByName("ocup")->Value = this->occupation;
+	DM->TSQL->ExecSQL();
+}
 void TListTable::UpdateInverseOccupation(){
 	DM->DoSQLExec(DM->TSQL,"Update eMenu.dbo.ListTable SET occupation =  occupation ^1 WHERE id_table ="+IntToStr(this->id_table));
 }

@@ -3520,6 +3520,10 @@ object FEditPersonal: TFEditPersonal
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = #1054#1089#1085#1086#1074#1085#1072' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1103
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object PersonalActivity: TCheckBox
         Left = 64
         Top = 110
@@ -3597,6 +3601,10 @@ object FEditPersonal: TFEditPersonal
     object TabSheet2: TTabSheet
       Caption = #1055#1077#1088#1089#1086#1085#1072#1083#1100#1085#1072' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1103
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object Label1: TLabel
         Left = 16
         Top = 47

@@ -6,7 +6,15 @@ CREATE VIEW TableNotOccupation AS
 GO
 
 CREATE VIEW OpenOrder AS
-	SELECT * FROM ((OrderMenu INNER JOIN ListOrderMenu ON kod_order = id_order) INNER JOIN Food ON kod_food = id_food) INNER JOIN  Category ON id_category = kod_category 
+	SELECT 
+	id_order,kod_discount,kod_personal,kod_table,
+	pib_client,pib_personal,name_table,
+	date_open_order,date_close_order,
+	payment,discount,STR(payment - (payment * discount/100),10,2) AS RealPayment
+	FROM ((OrderMenu 
+	INNER JOIN  Discounts ON id_discount = kod_discount) 
+	INNER JOIN Personal ON id_personal = kod_personal) 
+	INNER JOIN ListTable ON id_table = kod_table
 	WHERE close_order = 0
 GO
 CREATE VIEW MainShowCategory AS

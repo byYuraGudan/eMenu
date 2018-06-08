@@ -167,6 +167,12 @@
             <DependentOn>EditIngredient.h</DependentOn>
             <BuildOrder>10</BuildOrder>
         </CppCompile>
+        <CppCompile Include="EditOrderMenu.cpp">
+            <Form>FEditOrderMenu</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>EditOrderMenu.h</DependentOn>
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
         <CppCompile Include="EditPersonal.cpp">
             <Form>FEditPersonal</Form>
             <FormType>dfm</FormType>
@@ -186,12 +192,6 @@
             <BuildOrder>1</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
-        <CppCompile Include="FEditOrderMenu.cpp">
-            <Form>FOficiant</Form>
-            <FormType>dfm</FormType>
-            <DependentOn>FEditOrderMenu.h</DependentOn>
-            <BuildOrder>12</BuildOrder>
-        </CppCompile>
         <CppCompile Include="MainForm.cpp">
             <Form>FMainForm</Form>
             <FormType>dfm</FormType>
@@ -200,7 +200,7 @@
         </CppCompile>
         <FormResources Include="EditTabel.dfm"/>
         <FormResources Include="EditPersonal.dfm"/>
-        <FormResources Include="FEditOrderMenu.dfm"/>
+        <FormResources Include="EditOrderMenu.dfm"/>
         <FormResources Include="MainForm.dfm"/>
         <FormResources Include="EditIngredient.dfm"/>
         <FormResources Include="DataModule.dfm"/>

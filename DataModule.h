@@ -25,8 +25,8 @@ __published:	// IDE-managed Components
 	TDataSource *ADSFood;
 	TDataSource *ADSCategory;
 	TDataSource *ADSPersonal;
-	TDataSource *DSOpenOrder;
-	TADOTable *TableOpenOrder;
+	TDataSource *ODSOpenOrder;
+	TADOTable *OTOpenOrder;
 	TImageList *ImageListButton;
 	TDataSource *MDSShowFood;
 	TDataSource *MDSShowCategory;
@@ -173,6 +173,8 @@ public:		// User declarations
 	void RefreshADO(TADOTable*);
 	void RefreshADO(TADOQuery*);
 	void OpenDB();
+	void OpenDBOficiant();
+    void OpenDBMain();
 	TIniFile *ini;
 	bool auth;
 	bool admin;

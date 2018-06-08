@@ -274,23 +274,23 @@ object DM: TDM
     Left = 656
     Top = 16
   end
-  object DSOpenOrder: TDataSource
-    DataSet = TableOpenOrder
-    Left = 296
-    Top = 128
+  object ODSOpenOrder: TDataSource
+    DataSet = OTOpenOrder
+    Left = 224
+    Top = 400
   end
-  object TableOpenOrder: TADOTable
+  object OTOpenOrder: TADOTable
     Connection = ConnectionToDB
     CursorType = ctStatic
     TableName = 'OpenOrder'
-    Left = 208
-    Top = 128
+    Left = 152
+    Top = 400
   end
   object ImageListButton: TImageList
     Left = 32
     Top = 64
     Bitmap = {
-      494C01010D002800940210001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D0028009C0210001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

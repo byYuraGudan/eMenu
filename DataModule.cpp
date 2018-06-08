@@ -58,8 +58,8 @@ void TDM::RefreshADO(TADOQuery *Query){
 }
 
 void TDM::OpenDB(){
-	RefreshADO(MTShowCategory);
-	RefreshADO(MTShowFood);
+	this->OpenDBMain();
+    this->OpenDBOficiant();
 	RefreshADO(ATPersonal);
 	RefreshADO(ATCategory);
 	RefreshADO(ATFood);
@@ -68,6 +68,14 @@ void TDM::OpenDB(){
 	RefreshADO(ATListTable);
 	RefreshADO(ATOrderMenu);
     RefreshADO(ATListOrderMenu);
+}
+
+void TDM::OpenDBMain(){
+	RefreshADO(MTShowCategory);
+	RefreshADO(MTShowFood);
+}
+void TDM::OpenDBOficiant(){
+	RefreshADO(OTOpenOrder);
 }
 //---------------------------------------------------------------------------
 

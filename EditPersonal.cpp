@@ -58,6 +58,9 @@ void __fastcall TFEditPersonal::FormShow(TObject *Sender)
 void TPersonal::setId_personal(int a){
 	this->id_personal = a;
 }
+int TPersonal::getId_personal(){
+	return this->id_personal;
+}
 
 void TPersonal::setAccess(bool a){
 	this->access = a;

@@ -8,7 +8,7 @@
 #include <Vcl.Themes.hpp>
 USEFORM("EditTabel.cpp", FEditTable);
 USEFORM("EditPersonal.cpp", FEditPersonal);
-USEFORM("FEditOrderMenu.cpp", FOficiant);
+USEFORM("EditOrderMenu.cpp", FEditOrderMenu);
 USEFORM("MainForm.cpp", FMainForm);
 USEFORM("EditIngredient.cpp", FEditIngredient);
 USEFORM("DataModule.cpp", DM); /* TDataModule: File Type */
@@ -35,7 +35,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(TFEditFood), &FEditFood);
 		Application->CreateForm(__classid(TFEditIngredient), &FEditIngredient);
 		Application->CreateForm(__classid(TFEditTable), &FEditTable);
-		Application->CreateForm(__classid(TFOficiant), &FOficiant);
+		Application->CreateForm(__classid(TFEditOrderMenu), &FEditOrderMenu);
 		Application->Run();
 	}
 	catch (Exception &exception)

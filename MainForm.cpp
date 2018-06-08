@@ -13,6 +13,8 @@
 #include "EditIngredient.h"
 #include "EditPersonal.h"
 #include "eMenuPCH1.h"
+#include "EditOrderMenu.h"
+#include "EditTabel.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -113,6 +115,20 @@ void __fastcall TFMainForm::Image1MouseUp(TObject *Sender, TMouseButton Button, 
           int X, int Y)
 {
    AddToOrder->BevelOuter = bvRaised;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFMainForm::Button1Click(TObject *Sender)
+{
+	TOrderMenu order;
+    order.InsertDBOrderMenu();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TFMainForm::ButtonViewOrderClick(TObject *Sender)
+{
+	FEditOrderMenu->Show();
 }
 //---------------------------------------------------------------------------
 

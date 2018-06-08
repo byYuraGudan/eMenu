@@ -102,26 +102,14 @@ Coordinates=269,10,79,285
 [GridPanel1]
 Coordinates=504,606,68,51
 
-[Button10]
-Coordinates=217,740,58,51
-
 [Button8]
 Coordinates=79,740,53,51
-
-[Button5]
-Coordinates=936,606,53,51
 
 [Button7]
 Coordinates=10,740,53,51
 
 [Button2]
 Coordinates=786,606,53,51
-
-[Button9]
-Coordinates=484,740,53,51
-
-[Button4]
-Coordinates=293,740,53,51
 
 [Panel1]
 Coordinates=722,606,47,51
@@ -130,7 +118,7 @@ Coordinates=722,606,47,51
 Coordinates=1005,606,53,51
 
 []
-Coordinates=1044,10,92,177
+Coordinates=293,740,53,51
 Visible=True
 
 [BindSourceDB1]

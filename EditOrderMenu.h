@@ -37,10 +37,6 @@ __published:	// IDE-managed Components
 	TButton *Button8;
 	TButton *Button2;
 	TButton *btnDiscount;
-	TButton *Button4;
-	TButton *Button5;
-	TButton *Button9;
-	TButton *Button10;
 	TBindSourceDB *BindSourceDB1;
 	TBindingsList *BindingsList1;
 	TLinkListControlToField *LinkListControlToField1;
@@ -50,6 +46,7 @@ __published:	// IDE-managed Components
 	TLinkListControlToField *LinkListControlToField2;
 	void __fastcall Button6Click(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFEditOrderMenu(TComponent* Owner);

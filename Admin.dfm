@@ -4197,14 +4197,14 @@ object FAdmin: TFAdmin
     HeaderFont.Height = -11
     HeaderFont.Name = 'Tahoma'
     HeaderFont.Style = []
-    HeaderHeight = 20
+    HeaderHeight = 25
     Images = DM.ImageListButton
     TabOrder = 0
     Touch.ParentTabletOptions = False
     Touch.TabletOptions = [toPressAndHold]
     object CategoryPanel1: TCategoryPanel
-      Top = 156
-      Height = 26
+      Top = 186
+      Height = 31
       Caption = #1057#1090#1086#1083#1080
       Collapsed = True
       CollapsedHotImageIndex = 12
@@ -4214,6 +4214,7 @@ object FAdmin: TFAdmin
       ExpandedImageIndex = 12
       ExpandedPressedImageIndex = 12
       TabOrder = 0
+      ExpandedHeight = 77
       object ButtonViewTable: TButton
         AlignWithMargins = True
         Left = 0
@@ -4246,8 +4247,8 @@ object FAdmin: TFAdmin
       end
     end
     object CPStatistic: TCategoryPanel
-      Top = 130
-      Height = 26
+      Top = 155
+      Height = 31
       Caption = #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072
       Collapsed = True
       CollapsedHotImageIndex = 9
@@ -4260,8 +4261,8 @@ object FAdmin: TFAdmin
       ExpandedHeight = 87
     end
     object CPDiscounts: TCategoryPanel
-      Top = 104
-      Height = 26
+      Top = 124
+      Height = 31
       Caption = #1047#1085#1080#1078#1082#1080
       Collapsed = True
       CollapsedHotImageIndex = 8
@@ -4277,7 +4278,7 @@ object FAdmin: TFAdmin
       Font.Style = []
       ParentFont = False
       TabOrder = 2
-      ExpandedHeight = 72
+      ExpandedHeight = 77
       object Button2: TButton
         AlignWithMargins = True
         Left = 0
@@ -4310,8 +4311,8 @@ object FAdmin: TFAdmin
       end
     end
     object CPOrderMenu: TCategoryPanel
-      Top = 78
-      Height = 26
+      Top = 93
+      Height = 31
       Caption = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103
       Collapsed = True
       CollapsedHotImageIndex = 7
@@ -4320,7 +4321,7 @@ object FAdmin: TFAdmin
       ExpandedHotImageIndex = 7
       ExpandedImageIndex = 7
       TabOrder = 3
-      ExpandedHeight = 122
+      ExpandedHeight = 77
       object buttonViewOrderMenu: TButton
         AlignWithMargins = True
         Left = 0
@@ -4352,8 +4353,8 @@ object FAdmin: TFAdmin
       end
     end
     object CPFood: TCategoryPanel
-      Top = 52
-      Height = 26
+      Top = 62
+      Height = 31
       Caption = #1052#1077#1085#1102
       Collapsed = True
       CollapsedHotImageIndex = 4
@@ -4362,7 +4363,7 @@ object FAdmin: TFAdmin
       ExpandedHotImageIndex = 4
       ExpandedImageIndex = 4
       TabOrder = 4
-      ExpandedHeight = 72
+      ExpandedHeight = 77
       object buttonViewFood: TButton
         AlignWithMargins = True
         Left = 0
@@ -4395,8 +4396,8 @@ object FAdmin: TFAdmin
       end
     end
     object CPCategory: TCategoryPanel
-      Top = 26
-      Height = 26
+      Top = 31
+      Height = 31
       BiDiMode = bdLeftToRight
       Caption = #1050#1072#1090#1077#1075#1086#1088#1110#1111' '#1084#1077#1085#1102
       Collapsed = True
@@ -4409,7 +4410,7 @@ object FAdmin: TFAdmin
       ParentBackground = True
       ParentColor = True
       TabOrder = 5
-      ExpandedHeight = 72
+      ExpandedHeight = 77
       object buttonViewCategory: TButton
         AlignWithMargins = True
         Left = 0
@@ -4443,7 +4444,7 @@ object FAdmin: TFAdmin
     end
     object CPPersonal: TCategoryPanel
       Top = 0
-      Height = 26
+      Height = 31
       Caption = #1050#1086#1088#1080#1089#1090#1091#1074#1072#1095#1110
       Collapsed = True
       CollapsedHotImageIndex = 3
@@ -4452,7 +4453,7 @@ object FAdmin: TFAdmin
       ExpandedHotImageIndex = 3
       ExpandedImageIndex = 3
       TabOrder = 6
-      ExpandedHeight = 72
+      ExpandedHeight = 77
       object buttonViewPersonal: TButton
         AlignWithMargins = True
         Left = 0

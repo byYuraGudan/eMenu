@@ -45,7 +45,7 @@ void TFMainForm::HideOficiant(){
 	this->AddToOrder->Hide();
 }
 void TFMainForm::ShowOficiant(){
-	this->DBGridCategory->RowCount = 9;
+	this->DBGridCategory->RowCount = 7;
 	this->PanelOrderMenu->Show();
 	this->AddToOrder->Show();
 }
@@ -131,4 +131,5 @@ void __fastcall TFMainForm::ButtonViewOrderClick(TObject *Sender)
 	FEditOrderMenu->Show();
 }
 //---------------------------------------------------------------------------
+
 

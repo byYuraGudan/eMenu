@@ -13,6 +13,8 @@
 #include "EditFood.h"
 #include "EditIngredient.h"
 #include "EditPersonal.h"
+#include "EditOrderMenu.h"
+#include "EditTabel.h"
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -182,4 +184,16 @@ void __fastcall TDM::TimerUpdateTimer(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TDM::N13Click(TObject *Sender)
+{
+	FEditOrderMenu->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TDM::N17Click(TObject *Sender)
+{
+	FEditOrderMenu->Show();
+}
+//---------------------------------------------------------------------------
 

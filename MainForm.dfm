@@ -2,7 +2,7 @@ object FMainForm: TFMainForm
   Left = 0
   Top = 0
   Caption = 'eMenu'
-  ClientHeight = 700
+  ClientHeight = 680
   ClientWidth = 1024
   Color = clGradientInactiveCaption
   Font.Charset = DEFAULT_CHARSET
@@ -20,25 +20,24 @@ object FMainForm: TFMainForm
     Left = 0
     Top = 0
     Width = 300
-    Height = 700
+    Height = 680
     Align = alLeft
     Alignment = taLeftJustify
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitHeight = 702
     object PanelCategory: TPanel
       Left = 0
       Top = 0
       Width = 300
-      Height = 412
+      Height = 376
       Align = alClient
       TabOrder = 0
-      ExplicitHeight = 414
+      ExplicitHeight = 392
       object DBGridCategory: TDBCtrlGrid
         Left = 1
         Top = 35
         Width = 298
-        Height = 376
+        Height = 340
         Align = alClient
         AllowDelete = False
         AllowInsert = False
@@ -50,19 +49,21 @@ object FMainForm: TFMainForm
         Font.Name = 'Courier New'
         Font.Style = []
         PanelBorder = gbNone
-        PanelHeight = 41
+        PanelHeight = 48
         PanelWidth = 281
         ParentColor = False
         ParentFont = False
         TabOrder = 0
-        RowCount = 9
-        ExplicitHeight = 378
+        RowCount = 7
+        ExplicitLeft = 0
+        ExplicitTop = 38
+        ExplicitHeight = 316
         object DBCategory: TDBText
           AlignWithMargins = True
           Left = 3
           Top = 3
           Width = 234
-          Height = 35
+          Height = 42
           Align = alClient
           Color = clBtnFace
           DataField = 'name_category'
@@ -76,13 +77,14 @@ object FMainForm: TFMainForm
           ParentFont = False
           WordWrap = True
           ExplicitWidth = 171
+          ExplicitHeight = 35
         end
         object DBText3: TDBText
           AlignWithMargins = True
           Left = 243
           Top = 10
           Width = 35
-          Height = 24
+          Height = 31
           Margins.Top = 10
           Margins.Bottom = 7
           Align = alRight
@@ -126,12 +128,11 @@ object FMainForm: TFMainForm
     end
     object PanelOrderMenu: TPanel
       Left = 0
-      Top = 412
+      Top = 376
       Width = 300
-      Height = 288
+      Height = 304
       Align = alBottom
       TabOrder = 1
-      ExplicitTop = 414
       object Label1: TLabel
         AlignWithMargins = True
         Left = 6
@@ -174,37 +175,123 @@ object FMainForm: TFMainForm
         Font.Style = []
         ParentColor = False
         ParentFont = False
-        ExplicitWidth = 84
+        ExplicitLeft = 5
+        ExplicitTop = 221
+      end
+      object DBOrderid: TDBText
+        Left = 99
+        Top = 6
+        Width = 200
+        Height = 20
+        DataField = 'id_order'
+        DataSource = DM.ODSOpenOrder
+        WordWrap = True
+      end
+      object DBidtable: TDBText
+        Left = 56
+        Top = 37
+        Width = 239
+        Height = 20
+        DataField = 'name_table'
+        DataSource = DM.ODSOpenOrder
+        WordWrap = True
+      end
+      object DBdateopen: TDBText
+        Left = 71
+        Top = 67
+        Width = 229
+        Height = 20
+        DataField = 'date_open_order'
+        DataSource = DM.ODSOpenOrder
+        WordWrap = True
+      end
+      object DBoficiant: TDBText
+        Left = 71
+        Top = 97
+        Width = 229
+        Height = 20
+        DataField = 'pib_personal'
+        DataSource = DM.ODSOpenOrder
+        WordWrap = True
+      end
+      object DBClient: TDBText
+        Left = 57
+        Top = 126
+        Width = 243
+        Height = 20
+        DataField = 'pib_client'
+        DataSource = DM.ODSOpenOrder
+        WordWrap = True
+      end
+      object DBcount: TDBText
+        Left = 78
+        Top = 156
+        Width = 221
+        Height = 20
+        DataSource = DM.ODSOpenOrder
+        WordWrap = True
+      end
+      object DBpayment: TDBText
+        Left = 85
+        Top = 186
+        Width = 214
+        Height = 15
+        DataField = 'payment'
+        DataSource = DM.ODSOpenOrder
+        WordWrap = True
+      end
+      object DBdiscount: TDBText
+        Left = 85
+        Top = 201
+        Width = 214
+        Height = 15
+        DataField = 'discount'
+        DataSource = DM.ODSOpenOrder
+        WordWrap = True
+      end
+      object DBrealpayment: TDBText
+        Left = 89
+        Top = 221
+        Width = 206
+        Height = 20
+        DataField = 'RealPayment'
+        DataSource = DM.ODSOpenOrder
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Courier New'
+        Font.Style = [fsBold]
+        ParentFont = False
+        WordWrap = True
       end
       object Panel3: TPanel
         Left = 1
-        Top = 245
+        Top = 240
         Width = 298
-        Height = 42
+        Height = 63
         Align = alBottom
         TabOrder = 0
-        object Button1: TButton
-          AlignWithMargins = True
-          Left = 151
-          Top = 4
-          Width = 143
-          Height = 34
-          Align = alRight
-          Caption = #1054#1092#1086#1088#1084#1080#1090#1080' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
-          TabOrder = 0
-          WordWrap = True
-          OnClick = Button1Click
-        end
+        ExplicitTop = 264
         object ButtonViewOrder: TButton
           AlignWithMargins = True
           Left = 4
           Top = 4
-          Width = 143
-          Height = 34
-          Align = alLeft
+          Width = 290
+          Height = 55
+          Align = alClient
           Caption = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103
-          TabOrder = 1
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -20
+          Font.Name = 'Courier New'
+          Font.Style = []
+          ImageIndex = 1
+          Images = DM.ImageBtn
+          ParentFont = False
+          TabOrder = 0
           OnClick = ButtonViewOrderClick
+          ExplicitLeft = 3
+          ExplicitTop = 6
         end
       end
     end
@@ -213,16 +300,15 @@ object FMainForm: TFMainForm
     Left = 300
     Top = 0
     Width = 724
-    Height = 700
+    Height = 680
     Align = alClient
     Caption = 'Panel2'
     TabOrder = 1
-    ExplicitHeight = 702
     object DBCGShowFood: TDBCtrlGrid
       Left = 1
       Top = 1
       Width = 722
-      Height = 698
+      Height = 678
       Align = alClient
       AllowDelete = False
       AllowInsert = False
@@ -230,28 +316,25 @@ object FMainForm: TFMainForm
       Color = clBtnFace
       DataSource = DM.MDSShowFood
       PanelBorder = gbNone
-      PanelHeight = 232
+      PanelHeight = 226
       PanelWidth = 235
       ParentColor = False
       TabOrder = 0
       TabStop = False
-      ExplicitLeft = -15
       ExplicitTop = 0
-      ExplicitHeight = 700
       object PanelElementShowFood: TPanel
         AlignWithMargins = True
         Left = 3
         Top = 3
         Width = 229
-        Height = 226
+        Height = 220
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitHeight = 227
         object DBInformation: TDBText
           AlignWithMargins = True
           Left = 3
-          Top = 151
+          Top = 145
           Width = 223
           Height = 45
           Margins.Top = 0
@@ -262,23 +345,23 @@ object FMainForm: TFMainForm
           DataSource = DM.MDSShowFood
           WordWrap = True
           ExplicitLeft = 1
+          ExplicitTop = 151
         end
         object DBImageFood: TDBImage
           AlignWithMargins = True
           Left = 3
           Top = 3
           Width = 223
-          Height = 145
+          Height = 139
           Align = alClient
           DataField = 'picture'
           DataSource = DM.MDSShowFood
           Stretch = True
           TabOrder = 0
-          ExplicitHeight = 146
         end
         object Panel4: TPanel
           Left = 0
-          Top = 196
+          Top = 190
           Width = 229
           Height = 30
           Margins.Top = 0
@@ -287,7 +370,6 @@ object FMainForm: TFMainForm
           Anchors = [akTop]
           BevelOuter = bvNone
           TabOrder = 1
-          ExplicitTop = 197
           object DBPrice: TDBText
             AlignWithMargins = True
             Left = 65

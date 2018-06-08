@@ -83,3 +83,10 @@ void __fastcall TFEditOrderMenu::Button1Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TFEditOrderMenu::FormClose(TObject *Sender, TCloseAction &Action)
+
+{
+    FMainForm->Show();
+}
+//---------------------------------------------------------------------------
+

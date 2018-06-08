@@ -162,6 +162,18 @@ __published:	// IDE-managed Components
 	TStringField *OTNotOcupTablename_table;
 	TBooleanField *OTNotOcupTableoccupation;
 	TImageList *ImageBtn;
+	TIntegerField *OTOpenOrderid_order;
+	TIntegerField *OTOpenOrderkod_discount;
+	TIntegerField *OTOpenOrderkod_personal;
+	TIntegerField *OTOpenOrderkod_table;
+	TStringField *OTOpenOrderpib_client;
+	TStringField *OTOpenOrderpib_personal;
+	TStringField *OTOpenOrdername_table;
+	TDateTimeField *OTOpenOrderdate_open_order;
+	TDateTimeField *OTOpenOrderdate_close_order;
+	TBCDField *OTOpenOrderpayment;
+	TIntegerField *OTOpenOrderdiscount;
+	TStringField *OTOpenOrderRealPayment;
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall DataModuleDestroy(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);
@@ -175,6 +187,8 @@ __published:	// IDE-managed Components
 	void __fastcall N21Click(TObject *Sender);
 	void __fastcall N22Click(TObject *Sender);
 	void __fastcall TimerUpdateTimer(TObject *Sender);
+	void __fastcall N13Click(TObject *Sender);
+	void __fastcall N17Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDM(TComponent* Owner);

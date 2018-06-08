@@ -276,15 +276,16 @@ object DM: TDM
   end
   object ODSOpenOrder: TDataSource
     DataSet = OTOpenOrder
-    Left = 224
-    Top = 400
+    Left = 288
+    Top = 16
   end
   object OTOpenOrder: TADOTable
+    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     TableName = 'OpenOrder'
-    Left = 152
-    Top = 400
+    Left = 192
+    Top = 16
   end
   object ImageListButton: TImageList
     Left = 32
@@ -1233,5 +1234,29 @@ object DM: TDM
       Precision = 10
       Size = 2
     end
+  end
+  object OTNotOcupTable: TADOTable
+    Active = True
+    Connection = ConnectionToDB
+    CursorType = ctStatic
+    TableName = 'TableNotOccupation'
+    Left = 192
+    Top = 80
+    object OTNotOcupTableid_table: TAutoIncField
+      FieldName = 'id_table'
+      ReadOnly = True
+    end
+    object OTNotOcupTablename_table: TStringField
+      FieldName = 'name_table'
+      Size = 50
+    end
+    object OTNotOcupTableoccupation: TBooleanField
+      FieldName = 'occupation'
+    end
+  end
+  object ODSNotOcupTable: TDataSource
+    DataSet = ATDiscount
+    Left = 288
+    Top = 80
   end
 end

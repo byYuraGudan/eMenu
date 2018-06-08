@@ -22,35 +22,62 @@ object FEditOrderMenu: TFEditOrderMenu
     TabOrder = 0
     ExplicitTop = -4
     object Label1: TLabel
-      Left = 311
+      Left = 207
       Top = 4
       Width = 76
       Height = 13
       Caption = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103' '#8470
     end
+    object Label2: TLabel
+      Left = 385
+      Top = 4
+      Width = 37
+      Height = 13
+      Caption = 'C'#1090#1110#1083' '#8470
+    end
     object ComboBox1: TComboBox
-      Left = 293
+      Left = 181
       Top = 23
       Width = 145
       Height = 21
+      ItemIndex = 0
       TabOrder = 0
+      Text = '6'
+      Items.Strings = (
+        '6'
+        '7'
+        '12')
     end
     object Button1: TButton
-      Left = 30
+      Left = 22
       Top = 55
       Width = 129
       Height = 30
       Caption = #1047#1072#1082#1088#1080#1090#1080' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
       TabOrder = 1
+      OnClick = Button1Click
     end
     object Button6: TButton
-      Left = 30
+      Left = 22
       Top = 18
       Width = 129
       Height = 31
       Caption = 'Button6'
       TabOrder = 2
       OnClick = Button6Click
+    end
+    object ComboBox2: TComboBox
+      Left = 344
+      Top = 23
+      Width = 145
+      Height = 21
+      ItemIndex = 0
+      TabOrder = 3
+      Text = '2'
+      Items.Strings = (
+        '2'
+        '2'
+        '2')
     end
   end
   object DBGrid1: TDBGrid
@@ -59,7 +86,7 @@ object FEditOrderMenu: TFEditOrderMenu
     Width = 536
     Height = 489
     Align = alClient
-    DataSource = DM.ODSOpenOrder
+    DataSource = DM.ODSNotOcupTable
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -160,7 +187,7 @@ object FEditOrderMenu: TFEditOrderMenu
         Width = 130
         Height = 60
         Align = alClient
-        Caption = 'Button7'
+        Caption = 'btnAdd'
         TabOrder = 0
         ExplicitHeight = 30
       end
@@ -170,10 +197,10 @@ object FEditOrderMenu: TFEditOrderMenu
         Width = 130
         Height = 60
         Align = alClient
-        Caption = 'Button8'
+        Caption = 'btnRemove'
         TabOrder = 1
-        ExplicitLeft = -37
-        ExplicitTop = 127
+        ExplicitLeft = 137
+        ExplicitTop = 5
       end
       object Button2: TButton
         Left = 1
@@ -181,9 +208,8 @@ object FEditOrderMenu: TFEditOrderMenu
         Width = 130
         Height = 60
         Align = alClient
-        Caption = 'Button2'
+        Caption = 'btnPrint'
         ImageIndex = 1
-        Images = DM.ImageListButton
         TabOrder = 2
         ExplicitLeft = 81
         ExplicitTop = -19
@@ -196,8 +222,8 @@ object FEditOrderMenu: TFEditOrderMenu
         Align = alClient
         Caption = 'Button3'
         TabOrder = 3
-        ExplicitTop = 26
-        ExplicitHeight = 30
+        ExplicitLeft = 137
+        ExplicitTop = 55
       end
       object Button4: TButton
         Left = 1
@@ -248,13 +274,37 @@ object FEditOrderMenu: TFEditOrderMenu
   object BindSourceDB1: TBindSourceDB
     DataSet = DM.OTOpenOrder
     ScopeMappings = <>
-    Left = 392
-    Top = 296
+    Left = 760
+    Top = 8
   end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 20
-    Top = 5
+    Left = 759
+    Top = 8
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'id_order'
+      Control = ComboBox1
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkListControlToField2: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'name_table'
+      Control = ComboBox2
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+  object BindSourceDB2: TBindSourceDB
+    DataSet = DM.OTNotOcupTable
+    ScopeMappings = <>
+    Left = 760
+    Top = 8
   end
 end

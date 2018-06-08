@@ -12,6 +12,10 @@
 #include <Vcl.ImgList.hpp>
 #include <IniFiles.hpp>
 #include <Vcl.ExtCtrls.hpp>
+#include <Data.DBXMySQL.hpp>
+#include <Data.SqlExpr.hpp>
+#include <Datasnap.DBClient.hpp>
+#include <Datasnap.DSConnect.hpp>
 //---------------------------------------------------------------------------
 class TDM : public TDataModule
 {
@@ -152,6 +156,11 @@ __published:	// IDE-managed Components
 	TBCDField *ATListOrderMenuprice_food;
 	TIntegerField *ATListOrderMenukod_order;
 	TStringField *ATOrderMenuRealPayment;
+	TADOTable *OTNotOcupTable;
+	TDataSource *ODSNotOcupTable;
+	TAutoIncField *OTNotOcupTableid_table;
+	TStringField *OTNotOcupTablename_table;
+	TBooleanField *OTNotOcupTableoccupation;
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall DataModuleDestroy(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);
@@ -174,12 +183,12 @@ public:		// User declarations
 	void RefreshADO(TADOQuery*);
 	void OpenDB();
 	void OpenDBOficiant();
-    void OpenDBMain();
+	void OpenDBMain();
 	TIniFile *ini;
 	bool auth;
 	bool admin;
 	int id_user;
-    String pib_personal;
+	String pib_personal;
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TDM *DM;

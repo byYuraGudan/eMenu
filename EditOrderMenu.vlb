@@ -1,143 +1,161 @@
 ﻿[DBGrid1]
-Coordinates=622,740,64,36
+Coordinates=622,740,56,33
 
 [DM.ATFoodIngredient]
-Coordinates=744,10,141,190
+Coordinates=744,10,121,159
 
 [Label1]
-Coordinates=1074,606,53,58
+Coordinates=1074,606,46,51
 
 [DM.MDSShowCategory]
-Coordinates=620,815,150,36
+Coordinates=620,815,128,33
 
 [DM.ATListOrderMenu]
-Coordinates=895,10,139,190
+Coordinates=895,10,120,159
 
 [DM.ATPersonal]
-Coordinates=373,10,105,300
+Coordinates=373,10,90,249
 
 [DM.ADSFoodIngredient]
-Coordinates=113,1,151,36
+Coordinates=113,1,129,33
 
 [DM.OTOpenOrder]
-Coordinates=10,10,120,36
+Coordinates=10,10,101,33
 Visible=False
 
 [DM.ADSOrderMenu]
-Coordinates=441,562,129,36
+Coordinates=441,562,109,33
 
 [DM.DataSource1]
-Coordinates=25,745,113,36
+Coordinates=25,745,96,33
 
 [DM.ATCategory]
-Coordinates=388,606,106,102
+Coordinates=388,606,91,87
 
 [DM.MTShowCategory]
-Coordinates=121,606,140,124
+Coordinates=121,606,120,105
 
 [DM.ADSPersonal]
-Coordinates=620,298,115,36
+Coordinates=620,298,98,33
 
 [DM.ADSListTable]
-Coordinates=601,1227,116,36
+Coordinates=601,1227,100,33
 
 [DM.ADSFood]
-Coordinates=14,363,93,36
+Coordinates=14,363,80,33
 
 [DM.ADSCategory]
-Coordinates=620,694,116,36
+Coordinates=620,694,99,33
 
 [DM.ADOQuery1]
-Coordinates=1137,606,107,58
+Coordinates=1137,606,91,51
 
 [DM.MQShowFood]
-Coordinates=615,10,119,278
+Coordinates=615,10,102,231
 
 [DM.ATDiscount]
-Coordinates=1044,10,104,190
+Coordinates=1145,20,91,33
 
 [PanelOrderMenu]
-Coordinates=362,740,112,58
+Coordinates=362,740,96,51
 
 [DM.MonitorServer]
-Coordinates=593,606,119,58
+Coordinates=593,606,103,51
 
 [DM.TSQL]
-Coordinates=855,606,71,58
+Coordinates=855,606,60,51
 
 [DM.ODSOpenOrder]
-Coordinates=620,617,129,36
+Coordinates=620,617,109,33
 
 [DM.ADSListOrderMenu]
-Coordinates=620,958,149,36
+Coordinates=620,958,128,33
 
 [DM.MDSShowFood]
-Coordinates=620,1,127,36
+Coordinates=620,1,108,33
 
 [DM.ATOrderMenu]
-Coordinates=140,10,119,344
+Coordinates=140,10,101,285
 
 [ComboBox1]
-Coordinates=160,380,101,124
+Coordinates=20,320,84,105
 Visible=True
 
 [DM.ATListTable]
-Coordinates=271,606,107,124
+Coordinates=271,606,92,105
 
 [Button1]
-Coordinates=148,740,59,58
+Coordinates=148,740,53,51
 
 [DM.ADSDiscounts]
-Coordinates=183,845,121,36
+Coordinates=183,845,104,33
 
 [DM.MDSQShowFood]
-Coordinates=144,529,137,36
+Coordinates=144,529,116,33
 
 [DM.MTShowFood]
-Coordinates=488,10,117,278
+Coordinates=488,10,100,231
 
 [DM.ATFood]
-Coordinates=269,10,94,344
+Coordinates=269,10,79,285
 
 [GridPanel1]
-Coordinates=504,606,79,58
+Coordinates=504,606,68,51
 
 [Button10]
-Coordinates=217,740,66,58
+Coordinates=217,740,58,51
 
 [Button8]
-Coordinates=79,740,59,58
+Coordinates=79,740,53,51
 
 [Button5]
-Coordinates=936,606,59,58
+Coordinates=936,606,53,51
 
 [Button7]
-Coordinates=10,740,59,58
+Coordinates=10,740,53,51
 
 [Button2]
-Coordinates=786,606,59,58
+Coordinates=786,606,53,51
 
 [Button9]
-Coordinates=484,740,59,58
+Coordinates=484,740,53,51
 
 [Button4]
-Coordinates=293,740,59,58
+Coordinates=293,740,53,51
 
 [Panel1]
-Coordinates=722,606,54,58
+Coordinates=722,606,47,51
 
 [Button6]
-Coordinates=1005,606,59,58
+Coordinates=1005,606,53,51
 
 [Button3]
-Coordinates=553,740,59,58
+Coordinates=553,740,53,51
 
 []
-Coordinates=787,1145,91,36
+Coordinates=1044,10,92,177
+Visible=True
 
 [BindSourceDB1]
-Coordinates=10,10,108,608
+Coordinates=10,10,92,303
 
 [BindingsList1]
-Coordinates=137,543,91,36
+Coordinates=137,543,82,33
+
+[ComboBox2]
+Coordinates=180,320,84,105
+Visible=True
+
+[DM.ODSNotOcupTable]
+Coordinates=261,314,125,33
+
+[Label2]
+Coordinates=130,454,46,51
+
+[DM.OTNotOcupTable]
+Coordinates=520,340,117,33
+Visible=False
+
+[BindSourceDB2]
+Coordinates=330,310,105,123
 

@@ -42,11 +42,11 @@ void TOrderMenu::UpdatePayment(){
 
 void TOrderMenu::InsertDBOrderMenu(){
 	DM->TSQL->SQL->Clear();
-	DM->TSQL->SQL->Add("INSERT INTO eMenu.dbo.OrderMenu(kod_table,kod_personal,kod_discount)");
+	DM->TSQL->SQL->Add("INSERT INTO eMenu.dbo.OrderMenu(kod_t ble,kod_personal,kod_discount)");
 	DM->TSQL->SQL->Add("VALUES(:t,:p,:d)");
-	DM->TSQL->Parameters->ParamByName("t")->Value =  this->getId_table();
-	DM->TSQL->Parameters->ParamByName("p")->Value =  this->getId_personal();
-	DM->TSQL->Parameters->ParamByName("d")->Value =  this->getId_discount();
+	DM->TSQL->Parameters->ParamByName("t")->Value =  2;//this->getId_table();
+	DM->TSQL->Parameters->ParamByName("p")->Value =  2;//this->getId_personal();
+	DM->TSQL->Parameters->ParamByName("d")->Value =  1234;//this->getId_discount();
 	DM->TSQL->ExecSQL();
 }
 
@@ -71,7 +71,15 @@ void TOrderMenu::UpdateDiscount(){
 
 void __fastcall TFEditOrderMenu::Button6Click(TObject *Sender)
 {
-   ShowMessage(ComboBox1->Text);
+   ShowMessage(DM->OTNotOcupTable->FieldByName("id_table")->AsString);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFEditOrderMenu::Button1Click(TObject *Sender)
+{
+	TOrderMenu order;
+	order.InsertDBOrderMenu();
+	DM->OpenDBOficiant();
 }
 //---------------------------------------------------------------------------
 

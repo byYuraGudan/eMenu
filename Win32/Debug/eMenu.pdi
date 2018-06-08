@@ -1,5 +1,14 @@
+DBXMySQLDriver250.bpl
+dbexpress250.bpl
+dsnap250.bpl
 bindengine250.bpl
 adortl250.bpl
+dbrtl250.bpl
+CustomIPTransport250.bpl
+DbxClientDriver250.bpl
+DataSnapCommon250.bpl
+DataSnapProviderClient250.bpl
+DbxCommonDriver250.bpl
 xmlrtl250.bpl
 vcltouch250.bpl
 Tee9250.bpl
@@ -11,6 +20,5 @@ bindcomp250.bpl
 vcldb250.bpl
 vclimg250.bpl
 vclwinx250.bpl
-dbrtl250.bpl
 vcl250.bpl
 rtl250.bpl

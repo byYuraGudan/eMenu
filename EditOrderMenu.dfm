@@ -11647,6 +11647,8 @@ object FEditOrderMenu: TFEditOrderMenu
       Images = DM.ImageBtn
       TabOrder = 2
       WordWrap = True
+      OnClick = btnOpenOrderClick
+      ExplicitTop = 3
     end
     object CB_table: TComboBox
       Left = 592
@@ -11668,7 +11670,7 @@ object FEditOrderMenu: TFEditOrderMenu
     Width = 585
     Height = 522
     Align = alClient
-    DataSource = DM.DataSource1
+    DataSource = DM.ODSListOrder
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -11818,7 +11820,7 @@ object FEditOrderMenu: TFEditOrderMenu
         Left = 7
         Top = 21
         Width = 273
-        Height = 196
+        Height = 168
         Margins.Left = 5
         Margins.Top = 5
         Margins.Right = 5
@@ -11829,8 +11831,7 @@ object FEditOrderMenu: TFEditOrderMenu
           ' ----------------------------------------- '#1044#1072#1090#1072'/'#1095#1072#1089':  ----------' +
           '-------------------------------- '#1054#1092#1110#1094#1110#1072#1085#1090':  --------------------' +
           '----------------------- '#1050#1083#1110#1108#1085#1090': --------------------------------' +
-          '----------- '#1050#1110#1083#1100#1082#1110#1089#1090#1100':  ----------------------------------------' +
-          '--- '#1041#1077#1079' '#1079#1085#1080#1078#1082#1080':                                 '#1047#1085#1080#1078#1082#1072':'
+          '----------- '#1041#1077#1079' '#1079#1085#1080#1078#1082#1080':                                 '#1047#1085#1080#1078#1082#1072':'
         Color = clBtnFace
         ParentColor = False
         WordWrap = True
@@ -11889,7 +11890,7 @@ object FEditOrderMenu: TFEditOrderMenu
       object Label4: TLabel
         AlignWithMargins = True
         Left = 7
-        Top = 219
+        Top = 191
         Width = 273
         Height = 22
         Margins.Left = 5
@@ -11906,11 +11907,12 @@ object FEditOrderMenu: TFEditOrderMenu
         ParentColor = False
         ParentFont = False
         StyleElements = []
+        ExplicitTop = 219
         ExplicitWidth = 84
       end
       object DBdiscount: TDBText
-        Left = 86
-        Top = 204
+        Left = 85
+        Top = 176
         Width = 109
         Height = 15
         DataField = 'discount'
@@ -11919,8 +11921,8 @@ object FEditOrderMenu: TFEditOrderMenu
         WordWrap = True
       end
       object DBpayment: TDBText
-        Left = 86
-        Top = 189
+        Left = 85
+        Top = 161
         Width = 200
         Height = 17
         DataField = 'payment'
@@ -11929,9 +11931,9 @@ object FEditOrderMenu: TFEditOrderMenu
         WordWrap = True
       end
       object DBrealpayment: TDBText
-        Left = 40
-        Top = 224
-        Width = 240
+        Left = 91
+        Top = 198
+        Width = 194
         Height = 13
         DataField = 'RealPayment'
         DataSource = DM.ODSOpenOrder

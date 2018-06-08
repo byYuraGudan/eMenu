@@ -4968,6 +4968,7 @@ object FAdmin: TFAdmin
       Caption = #1060#1072#1081#1083
       object N7: TMenuItem
         Caption = #1042#1110#1082#1085#1086' '#1086#1092#1110#1094#1110#1072#1085#1090#1072
+        OnClick = N7Click
       end
       object N6: TMenuItem
         Caption = '-'

@@ -136,7 +136,7 @@ object FMainForm: TFMainForm
         Left = 6
         Top = 6
         Width = 288
-        Height = 210
+        Height = 195
         Margins.Left = 5
         Margins.Top = 5
         Margins.Right = 5
@@ -147,17 +147,16 @@ object FMainForm: TFMainForm
           ' ----------------------------------------- '#1044#1072#1090#1072'/'#1095#1072#1089':  ----------' +
           '-------------------------------- '#1054#1092#1110#1094#1110#1072#1085#1090':  --------------------' +
           '----------------------- '#1050#1083#1110#1108#1085#1090': --------------------------------' +
-          '----------- '#1050#1110#1083#1100#1082#1110#1089#1090#1100':  ----------------------------------------' +
-          '--- '#1041#1077#1079' '#1079#1085#1080#1078#1082#1080':                                   '#1047#1085#1080#1078#1082#1072':'
+          '----------- '#1041#1077#1079' '#1079#1085#1080#1078#1082#1080':                                   '#1047#1085#1080#1078#1082#1072 +
+          ':'
         Color = clBtnFace
         ParentColor = False
         WordWrap = True
-        ExplicitWidth = 301
       end
       object Label2: TLabel
         AlignWithMargins = True
         Left = 6
-        Top = 218
+        Top = 203
         Width = 288
         Height = 22
         Margins.Left = 5
@@ -173,6 +172,7 @@ object FMainForm: TFMainForm
         Font.Style = []
         ParentColor = False
         ParentFont = False
+        ExplicitTop = 218
         ExplicitWidth = 84
       end
       object DBOrderid: TDBText
@@ -216,7 +216,7 @@ object FMainForm: TFMainForm
         WordWrap = True
       end
       object DBClient: TDBText
-        Left = 57
+        Left = 55
         Top = 126
         Width = 243
         Height = 20
@@ -225,18 +225,9 @@ object FMainForm: TFMainForm
         StyleElements = [seClient, seBorder]
         WordWrap = True
       end
-      object DBcount: TDBText
-        Left = 78
-        Top = 156
-        Width = 221
-        Height = 20
-        DataSource = DM.ODSOpenOrder
-        StyleElements = [seClient, seBorder]
-        WordWrap = True
-      end
       object DBpayment: TDBText
-        Left = 85
-        Top = 186
+        Left = 84
+        Top = 156
         Width = 214
         Height = 15
         DataField = 'payment'
@@ -245,8 +236,8 @@ object FMainForm: TFMainForm
         WordWrap = True
       end
       object DBdiscount: TDBText
-        Left = 85
-        Top = 201
+        Left = 84
+        Top = 171
         Width = 214
         Height = 15
         DataField = 'discount'
@@ -255,9 +246,9 @@ object FMainForm: TFMainForm
         WordWrap = True
       end
       object DBrealpayment: TDBText
-        Left = 40
-        Top = 223
-        Width = 255
+        Left = 99
+        Top = 208
+        Width = 197
         Height = 14
         DataField = 'RealPayment'
         DataSource = DM.ODSOpenOrder

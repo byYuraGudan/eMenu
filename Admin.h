@@ -145,6 +145,7 @@ __published:	// IDE-managed Components
 	void __fastcall DeleteTableClick(TObject *Sender);
 	void __fastcall ButtonAddListTableClick(TObject *Sender);
 	void __fastcall InvOcupTableClick(TObject *Sender);
+	void __fastcall N7Click(TObject *Sender);
 
 
 private:	// User declarations

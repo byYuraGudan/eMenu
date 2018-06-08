@@ -59,7 +59,6 @@ __published:	// IDE-managed Components
 	TDBText *DBdateopen;
 	TDBText *DBoficiant;
 	TDBText *DBClient;
-	TDBText *DBcount;
 	TDBText *DBpayment;
 	TDBText *DBdiscount;
 	TDBText *DBrealpayment;

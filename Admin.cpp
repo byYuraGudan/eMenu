@@ -14,6 +14,7 @@
 #include "EditPersonal.h"
 #include "EditIngredient.h"
 #include "EditTabel.h"
+#include "EditOrderMenu.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -381,6 +382,12 @@ void __fastcall TFAdmin::InvOcupTableClick(TObject *Sender)
 	 table.setId_table(DM->ATListTable->FieldByName("id_table")->AsInteger);
 	 table.UpdateInverseOccupation();
      DM->RefreshADO(DM->ATListTable);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::N7Click(TObject *Sender)
+{
+    FEditOrderMenu->Show();
 }
 //---------------------------------------------------------------------------
 

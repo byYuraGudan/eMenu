@@ -1,0 +1,3550 @@
+
+(object Petal
+    version    	50
+    _written   	"Rose 2006.0.0.060314"
+    charSet    	204)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"59CDF635030C"
+    enforceClosureAutoLoad 	FALSE
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	0
+	gridY      	0
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    charSet    	204
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	3
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"59CDF635030E"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list
+	    (object Class "Співробітник"
+		quid       	"59CDF6A300DE"
+		stereotype 	"Actor")
+	    (object Class "Клієнт"
+		quid       	"59CDF6E50002"
+		stereotype 	"Actor"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"59CDFC330115"
+			stereotype 	"include"
+			supplier   	"Use Case View::Оплата"
+			quidu      	"59CDFBF902F3")
+		    (object Dependency_Relationship
+			quid       	"5B1BA4AF00F3"
+			supplier   	"Use Case View::Видача рахунку"
+			quidu      	"5B1BA49203CF")))
+	    (object Class "Офіціант"
+		quid       	"59CDF70C03D7"
+		stereotype 	"Actor"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"5B1BA49E0391"
+			supplier   	"Use Case View::Видача рахунку"
+			quidu      	"5B1BA49203CF"))
+		used_nodes 	(list uses_relationship_list
+		    (object Uses_Relationship
+			quid       	"59CDF7440145"
+			label      	"Обслуговування клієнта"
+			supplier   	"Use Case View::Клієнт"
+			quidu      	"59CDF6E50002")))
+	    (object Class "Адміністратор"
+		quid       	"59CDF7130281"
+		stereotype 	"Actor")
+	    (object UseCase "e"
+		quid       	"59CDF6C002B0")
+	    (object UseCase "Авторизація"
+		quid       	"59CDF6F40147"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"59CDF723013E"
+			supplier   	"Use Case View::Адміністратор"
+			quidu      	"59CDF7130281")
+		    (object Dependency_Relationship
+			quid       	"59CDF725023D"
+			supplier   	"Use Case View::Офіціант"
+			quidu      	"59CDF70C03D7")))
+	    (object UseCase "Додати інформацію"
+		quid       	"59CDF72C033A")
+	    (object UseCase "Здійснення замовлення"
+		quid       	"59CDF76101C2"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"59CDFC3602BB"
+			stereotype 	"include"
+			supplier   	"Use Case View::Вибрати категорію меню"
+			quidu      	"59CDFC0000F3")
+		    (object Dependency_Relationship
+			quid       	"59D1FBF302A4"
+			supplier   	"Use Case View::Оформлення замовлення"
+			quidu      	"59D1FBE5001C")))
+	    (object UseCase "Редагувати"
+		quid       	"59CDF78F02CE")
+	    (object UseCase "Редагувати дані"
+		quid       	"59CDF7D0035E")
+	    (object UseCase "Додати дані"
+		quid       	"59CDF7F6005D")
+	    (object UseCase "Видалити дані"
+		quid       	"59CDF810026F")
+	    (object UseCase "Звітність"
+		quid       	"59CDF87601A5")
+	    (object UseCase "Заказати страву"
+		quid       	"59CDFBE5032D"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"59CDFC21024D"
+			supplier   	"Use Case View::Оплата"
+			quidu      	"59CDFBF902F3")
+		    (object Dependency_Relationship
+			quid       	"59CDFC23026F"
+			supplier   	"Use Case View::Вибрати категорію меню"
+			quidu      	"59CDFC0000F3")
+		    (object Dependency_Relationship
+			quid       	"59CDFC25028B"
+			supplier   	
+|Use Case View::Вибрати елемент 
+|меню
+			
+			quidu      	"59CDFC0C02AE")))
+	    (object UseCase "Оплата"
+		quid       	"59CDFBF902F3")
+	    (object UseCase "Вибрати категорію меню"
+		quid       	"59CDFC0000F3"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"59CDFC380296"
+			stereotype 	"include"
+			supplier   	
+|Use Case View::Вибрати елемент 
+|меню
+			
+			quidu      	"59CDFC0C02AE")))
+	    (object UseCase "Вибрати елемент 
+меню"
+		quid       	"59CDFC0C02AE")
+	    (object UseCase "Оформлення замовлення"
+		quid       	"59D1FBE5001C")
+	    (object UseCase "Перегляд інформації про страви та напої"
+		quid       	"5B1BA3EA021D")
+	    (object UseCase "Видача рахунку"
+		quid       	"5B1BA49203CF"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"5B1BA4B302D3"
+			supplier   	"Use Case View::Клієнт"
+			quidu      	"59CDF6E50002")))
+	    (object Association "$UNNAMED$0"
+		quid       	"59CDF7020223"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$1"
+			quid       	"59CDF703011F"
+			supplier   	"Use Case View::Авторизація"
+			quidu      	"59CDF6F40147"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$2"
+			quid       	"59CDF7030121"
+			supplier   	"Use Case View::Співробітник"
+			quidu      	"59CDF6A300DE")))
+	    (object Association "$UNNAMED$3"
+		quid       	"59CDF82002CC"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$4"
+			quid       	"59CDF8220005"
+			supplier   	"Use Case View::Редагувати дані"
+			quidu      	"59CDF7D0035E"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$5"
+			quid       	"59CDF8220007"
+			supplier   	"Use Case View::Офіціант"
+			quidu      	"59CDF70C03D7")))
+	    (object Association "$UNNAMED$6"
+		quid       	"59CDF8240133"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$7"
+			quid       	"59CDF82403DD"
+			supplier   	"Use Case View::Редагувати дані"
+			quidu      	"59CDF7D0035E"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$8"
+			quid       	"59CDF82403DF"
+			supplier   	"Use Case View::Адміністратор"
+			quidu      	"59CDF7130281")))
+	    (object Association "$UNNAMED$9"
+		quid       	"59CDF82600F7"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$10"
+			quid       	"59CDF8260336"
+			supplier   	"Use Case View::Додати дані"
+			quidu      	"59CDF7F6005D"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$11"
+			quid       	"59CDF8260338"
+			supplier   	"Use Case View::Адміністратор"
+			quidu      	"59CDF7130281")))
+	    (object Association "$UNNAMED$12"
+		quid       	"59CDF82800D5"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$13"
+			quid       	"59CDF8280376"
+			supplier   	"Use Case View::Видалити дані"
+			quidu      	"59CDF810026F"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$14"
+			quid       	"59CDF8280378"
+			supplier   	"Use Case View::Адміністратор"
+			quidu      	"59CDF7130281")))
+	    (object Association "$UNNAMED$15"
+		quid       	"59CDF87D0381"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$16"
+			quid       	"59CDF87E020D"
+			supplier   	"Use Case View::Звітність"
+			quidu      	"59CDF87601A5"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$17"
+			quid       	"59CDF87E020F"
+			supplier   	"Use Case View::Адміністратор"
+			quidu      	"59CDF7130281")))
+	    (object Association "$UNNAMED$18"
+		quid       	"59CDF89201F2"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$19"
+			quid       	"59CDF893007A"
+			supplier   	"Use Case View::Додати дані"
+			quidu      	"59CDF7F6005D"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$20"
+			quid       	"59CDF893007D"
+			supplier   	"Use Case View::Офіціант"
+			quidu      	"59CDF70C03D7")))
+	    (object Association "$UNNAMED$21"
+		quid       	"59CDFC3C03C6"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$22"
+			quid       	"59CDFC3D01D4"
+			supplier   	"Use Case View::Здійснення замовлення"
+			quidu      	"59CDF76101C2"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$23"
+			quid       	"59CDFC3D01D6"
+			supplier   	"Use Case View::Клієнт"
+			quidu      	"59CDF6E50002")))
+	    (object Association "$UNNAMED$24"
+		quid       	"59CDFC96023A"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$25"
+			quid       	"59CDFC9701CF"
+			supplier   	"Use Case View::Здійснення замовлення"
+			quidu      	"59CDF76101C2"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$26"
+			quid       	"59CDFC9701D1"
+			supplier   	"Use Case View::Офіціант"
+			quidu      	"59CDF70C03D7")))
+	    (object Association "$UNNAMED$27"
+		quid       	"59CDFD850196"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$28"
+			quid       	"59CDFD8E0255"
+			supplier   	"Use Case View::Видалити дані"
+			quidu      	"59CDF810026F"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$29"
+			quid       	"59CDFD8E0257"
+			supplier   	"Use Case View::Адміністратор"
+			quidu      	"59CDF7130281")))
+	    (object Association "$UNNAMED$30"
+		quid       	"59D1FBD40037"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$31"
+			quid       	"59D1FBD50009"
+			supplier   	"Use Case View::Здійснення замовлення"
+			quidu      	"59CDF76101C2"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$32"
+			quid       	"59D1FBD5000D"
+			supplier   	"Use Case View::Клієнт"
+			quidu      	"59CDF6E50002")))
+	    (object Association "$UNNAMED$33"
+		quid       	"59D1FBF0012F"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$34"
+			quid       	"59D1FBF003B1"
+			supplier   	"Use Case View::Оформлення замовлення"
+			quidu      	"59D1FBE5001C"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$35"
+			quid       	"59D1FBF003B3"
+			supplier   	"Use Case View::Офіціант"
+			quidu      	"59CDF70C03D7")))
+	    (object Association "$UNNAMED$36"
+		quid       	"59D1FD75000C"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$37"
+			quid       	"59D1FD750356"
+			supplier   	"Use Case View::Адміністратор"
+			quidu      	"59CDF7130281"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$38"
+			quid       	"59D1FD750363"
+			supplier   	"Use Case View::Авторизація"
+			quidu      	"59CDF6F40147")))
+	    (object Association "$UNNAMED$39"
+		quid       	"59D1FD7800C5"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$40"
+			quid       	"59D1FD7900B4"
+			supplier   	"Use Case View::Офіціант"
+			quidu      	"59CDF70C03D7"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$41"
+			quid       	"59D1FD7900BD"
+			supplier   	"Use Case View::Авторизація"
+			quidu      	"59CDF6F40147")))
+	    (object Association "$UNNAMED$42"
+		quid       	"5B1BA41D030A"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$43"
+			quid       	"5B1BA41E00C8"
+			supplier   	"Use Case View::Перегляд інформації про страви та напої"
+			quidu      	"5B1BA3EA021D"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$44"
+			quid       	"5B1BA41E00CA"
+			supplier   	"Use Case View::Клієнт"
+			quidu      	"59CDF6E50002"))))
+	statemachine 	(object State_Machine "State/Activity Model"
+	    quid       	"59F228210058"
+	    states     	(list States
+		(object State "$UNNAMED$45"
+		    quid       	"59F2282B02E3"
+		    type       	"StartState")
+		(object State "Очікування"
+		    quid       	"59F22A8B031D"
+		    actions    	(list action_list
+			(object action "очікування замовлення"
+			    quid       	"59F22AF100CB"
+			    ActionTime 	(object ActionTime
+				when       	"Activity")))
+		    type       	"Normal")
+		(object State "$UNNAMED$46"
+		    quid       	"59F22B94014F"
+		    type       	"EndState")
+		(object State "Відображення меню"
+		    quid       	"59F22BDF025C"
+		    actions    	(list action_list
+			(object action "Відображення списку меню"
+			    quid       	"59F22BFA0100"
+			    ActionTime 	(object ActionTime
+				when       	"Activity")))
+		    type       	"Normal")
+		(object State "Перевірка наявності даного елемента меню"
+		    quid       	"59F22C280206"
+		    type       	"Normal")
+		(object State "Відображення списку вибраних страв"
+		    quid       	"59F22D13007C"
+		    actions    	(list action_list
+			(object action "відображує спискок"
+			    quid       	"59F22DAE039D"
+			    ActionTime 	(object ActionTime
+				when       	"Activity")))
+		    type       	"Normal")
+		(object State "Підрахунок ціни за замовлення"
+		    quid       	"59F22E09024B"
+		    actions    	(list action_list
+			(object action "Відображення ціни оплати"
+			    quid       	"59F22E2301AE"
+			    ActionTime 	(object ActionTime
+				when       	"Exit")))
+		    type       	"Normal")
+		(object State "Очікування оплати за замовлення"
+		    quid       	"59F22E7600CE"
+		    type       	"Normal")
+		(object State "Перевірка"
+		    quid       	"59F22FAF0205"
+		    actions    	(list action_list
+			(object action "введення оплати"
+			    quid       	"59F22FDA00AD"
+			    ActionTime 	(object ActionTime
+				when       	"Entry"))
+			(object action "перевірка суми оплати"
+			    quid       	"59F22FF200BE"
+			    ActionTime 	(object ActionTime
+				when       	"Activity")))
+		    type       	"Normal")
+		(object State "Приготовлення страв"
+		    quid       	"59F230790237"
+		    actions    	(list action_list
+			(object action "приготовлення"
+			    quid       	"59F230AB0295"
+			    ActionTime 	(object ActionTime
+				when       	"Activity"))
+			(object action "видача замовлення"
+			    quid       	"59F230BA007F"
+			    ActionTime 	(object ActionTime
+				when       	"Exit")))
+		    statemachine 	(object State_Machine "State/Activity Model2"
+			quid       	"59F231040184"
+			states     	(list States
+			    (object State "$UNNAMED$47"
+				quid       	"59F231040186"
+				type       	"EndState"))
+			partitions 	(list Partitions)
+			objects    	(list Objects)
+			transitions 	(list transition_list)
+			objectflows 	(list objectflow_list)
+			statediagrams 	(list StateDiagrams))
+		    type       	"Normal")
+		(object State "Друк чеку"
+		    quid       	"59F230F70099"
+		    type       	"Normal"))
+	    partitions 	(list Partitions)
+	    objects    	(list Objects)
+	    transitions 	(list transition_list
+		(object State_Transition
+		    quid       	"59F22A980016"
+		    supplier   	"Use Case View::State/Activity Model::Очікування"
+		    supplier_quidu 	"59F22A8B031D"
+		    client     	"$UNNAMED$45"
+		    client_quidu 	"59F2282B02E3"
+		    sendEvent  	(object sendEvent
+			quid       	"59F22A980019"))
+		(object State_Transition
+		    quid       	"59F22B96022F"
+		    supplier   	"$UNNAMED$46"
+		    supplier_quidu 	"59F22B94014F"
+		    client     	"Use Case View::State/Activity Model::Очікування"
+		    client_quidu 	"59F22A8B031D"
+		    sendEvent  	(object sendEvent
+			quid       	"59F22B960232"))
+		(object State_Transition
+		    quid       	"59F22C4700F8"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Перевірка наявності даного елемента меню"
+		    supplier_quidu 	"59F22C280206"
+		    client     	"Use Case View::State/Activity Model::Відображення меню"
+		    client_quidu 	"59F22BDF025C"
+		    Event      	(object Event "Вибрано елемент меню"
+			quid       	"59F22C4700F9")
+		    sendEvent  	(object sendEvent
+			quid       	"59F22C4700FB"))
+		(object State_Transition
+		    quid       	"59F22C710326"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Відображення меню"
+		    supplier_quidu 	"59F22BDF025C"
+		    client     	"Use Case View::State/Activity Model::Перевірка наявності даного елемента меню"
+		    client_quidu 	"59F22C280206"
+		    Event      	(object Event "Немає страви, так як не вистачає інгредієнтів"
+			quid       	"59F22C710327"
+			parameters 	"повідомлення")
+		    sendEvent  	(object sendEvent
+			quid       	"59F22C710329"))
+		(object State_Transition
+		    quid       	"59F22C780163"
+		    supplier   	"Use Case View::State/Activity Model::Відображення меню"
+		    supplier_quidu 	"59F22BDF025C"
+		    client     	"Use Case View::State/Activity Model::Очікування"
+		    client_quidu 	"59F22A8B031D"
+		    sendEvent  	(object sendEvent
+			quid       	"59F22C780166"))
+		(object State_Transition
+		    quid       	"59F22DD402E9"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Відображення списку вибраних страв"
+		    supplier_quidu 	"59F22D13007C"
+		    client     	"Use Case View::State/Activity Model::Перевірка наявності даного елемента меню"
+		    client_quidu 	"59F22C280206"
+		    Event      	(object Event "Вибрано елементи меню"
+			quid       	"59F22DD402EA")
+		    sendEvent  	(object sendEvent
+			quid       	"59F22DD402EC"))
+		(object State_Transition
+		    quid       	"59F22E5A007A"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Підрахунок ціни за замовлення"
+		    supplier_quidu 	"59F22E09024B"
+		    client     	"Use Case View::State/Activity Model::Відображення списку вибраних страв"
+		    client_quidu 	"59F22D13007C"
+		    Event      	(object Event "Всі страви є в наявності"
+			quid       	"59F22E5A007B")
+		    sendEvent  	(object sendEvent
+			quid       	"59F22E5A007D"))
+		(object State_Transition
+		    quid       	"59F22E84031A"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Очікування оплати за замовлення"
+		    supplier_quidu 	"59F22E7600CE"
+		    client     	"Use Case View::State/Activity Model::Підрахунок ціни за замовлення"
+		    client_quidu 	"59F22E09024B"
+		    Event      	(object Event "Ціна визначена"
+			quid       	"59F22E84031B")
+		    sendEvent  	(object sendEvent
+			quid       	"59F22E84031D"))
+		(object State_Transition
+		    quid       	"59F22FB203AF"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Перевірка"
+		    supplier_quidu 	"59F22FAF0205"
+		    client     	"Use Case View::State/Activity Model::Очікування оплати за замовлення"
+		    client_quidu 	"59F22E7600CE"
+		    Event      	(object Event "Сума введенна"
+			quid       	"59F22FB203B0")
+		    sendEvent  	(object sendEvent
+			quid       	"59F22FB203B2"))
+		(object State_Transition
+		    quid       	"59F23037018D"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Очікування оплати за замовлення"
+		    supplier_quidu 	"59F22E7600CE"
+		    client     	"Use Case View::State/Activity Model::Перевірка"
+		    client_quidu 	"59F22FAF0205"
+		    condition  	"отримана неправильна сума оплати"
+		    sendEvent  	(object sendEvent
+			quid       	"59F230370190"))
+		(object State_Transition
+		    quid       	"59F2308D0184"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Приготовлення страв"
+		    supplier_quidu 	"59F230790237"
+		    client     	"Use Case View::State/Activity Model::Перевірка"
+		    client_quidu 	"59F22FAF0205"
+		    Event      	(object Event "[отримана правильна сума]"
+			quid       	"59F2308D0185")
+		    sendEvent  	(object sendEvent
+			quid       	"59F2308D0187"))
+		(object State_Transition
+		    quid       	"59F2310800EB"
+		    supplier   	"Use Case View::State/Activity Model::Друк чеку"
+		    supplier_quidu 	"59F230F70099"
+		    client     	"Use Case View::State/Activity Model::Приготовлення страв"
+		    client_quidu 	"59F230790237"
+		    sendEvent  	(object sendEvent
+			quid       	"59F2310800EE"))
+		(object State_Transition
+		    quid       	"59F2311603AC"
+		    label      	""
+		    supplier   	"Use Case View::State/Activity Model::Очікування"
+		    supplier_quidu 	"59F22A8B031D"
+		    client     	"Use Case View::State/Activity Model::Друк чеку"
+		    client_quidu 	"59F230F70099"
+		    Event      	(object Event "Друк чеку закінчений"
+			quid       	"59F2311603AD")
+		    sendEvent  	(object sendEvent
+			quid       	"59F2311603AF")))
+	    objectflows 	(list objectflow_list)
+	    statediagrams 	(list StateDiagrams
+		(object State_Diagram "NewDiagram"
+		    quid       	"59F22821005A"
+		    title      	"NewDiagram"
+		    zoom       	65
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list
+			(object StateView "StartState" "$UNNAMED$45" @1
+			    location   	(998, 48)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"59F2282B02E3"
+			    autoResize 	TRUE)
+			(object StateView "Normal" "Очікування" @2
+			    location   	(998, 231)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@2
+				location   	(998, 212)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	518
+				justify    	0
+				label      	"Очікування")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"59F22A8B031D"
+			    compartment 	(object Compartment
+				Parent_View 	@2
+				location   	(748, 252)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				icon_style 	"Icon"
+				fill_color 	13434879
+				anchor     	2
+				nlines     	1
+				max_width  	570
+				justify    	1
+				compartmentItems 	(list Compartment
+				    "do/ очікування замовлення"))
+			    width      	615
+			    height     	150
+			    autoResize 	TRUE)
+			(object TransView "" @3
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"59F22A980016"
+			    client     	@1
+			    supplier   	@2
+			    vertices   	(list Points
+				(998, 78)
+				(998, 156))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "EndState" "$UNNAMED$46" @4
+			    location   	(1542, 233)
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    quidu      	"59F22B94014F"
+			    autoResize 	TRUE)
+			(object StateView "Normal" "Відображення меню" @5
+			    location   	(999, 626)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@5
+				location   	(999, 584)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	652
+				justify    	0
+				label      	"Відображення меню")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"59F22BDF025C"
+			    compartment 	(object Compartment
+				Parent_View 	@5
+				location   	(682, 624)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				icon_style 	"Icon"
+				fill_color 	13434879
+				anchor     	2
+				nlines     	1
+				max_width  	659
+				justify    	1
+				compartmentItems 	(list Compartment
+				    "do/ Відображення списку меню"))
+			    width      	748
+			    height     	196
+			    autoResize 	TRUE)
+			(object StateView "Normal" "Перевірка наявності даного елемента меню" @6
+			    location   	(2179, 626)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@6
+				location   	(2179, 615)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	444
+				justify    	0
+				label      	"Перевірка наявності даного елемента меню")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"59F22C280206"
+			    width      	540
+			    height     	134
+			    autoResize 	TRUE)
+			(object TransView "" @7
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @8
+				Parent_View 	@7
+				location   	(1641, 582)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"Вибрано елемент меню"
+				pctDist    	0.500000
+				height     	45
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"59F22C4700F8"
+			    client     	@5
+			    supplier   	@6
+			    vertices   	(list Points
+				(1373, 626)
+				(1909, 626))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @9
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"59F22B96022F"
+			    client     	@2
+			    supplier   	@4
+			    vertices   	(list Points
+				(1305, 232)
+				(1500, 232))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @10
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    stereotype 	FALSE
+			    line_color 	3342489
+			    quidu      	"59F22C780163"
+			    client     	@2
+			    supplier   	@5
+			    vertices   	(list Points
+				(998, 306)
+				(998, 527))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @11
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @12
+				Parent_View 	@11
+				location   	(1674, 408)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	1180
+				justify    	0
+				label      	"Немає страви, так як не вистачає інгредієнтів( повідомлення )"
+				pctDist    	0.485603
+				height     	34
+				orientation 	1)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"59F22C710326"
+			    client     	@6
+			    supplier   	@5
+			    vertices   	(list Points
+				(2177, 559)
+				(2176, 441)
+				(1119, 441)
+				(1062, 527))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "Normal" "Відображення списку вибраних страв" @13
+			    location   	(2179, 892)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@13
+				location   	(2179, 862)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	700
+				justify    	0
+				label      	"Відображення списку вибраних страв")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"59F22D13007C"
+			    compartment 	(object Compartment
+				Parent_View 	@13
+				location   	(1838, 902)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				icon_style 	"Icon"
+				fill_color 	13434879
+				anchor     	2
+				nlines     	1
+				max_width  	486
+				justify    	1
+				compartmentItems 	(list Compartment
+				    "do/ відображує спискок"))
+			    width      	796
+			    height     	172
+			    autoResize 	TRUE)
+			(object TransView "" @14
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @15
+				Parent_View 	@14
+				location   	(2454, 745)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	498
+				justify    	0
+				label      	"Вибрано елементи меню"
+				pctDist    	0.473373
+				height     	275
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"59F22DD402E9"
+			    client     	@6
+			    supplier   	@13
+			    vertices   	(list Points
+				(2179, 693)
+				(2179, 806))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "Normal" "Підрахунок ціни за замовлення" @16
+			    location   	(2181, 1170)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@16
+				location   	(2181, 1140)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	622
+				justify    	0
+				label      	"Підрахунок ціни за замовлення")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"59F22E09024B"
+			    compartment 	(object Compartment
+				Parent_View 	@16
+				location   	(1879, 1180)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				icon_style 	"Icon"
+				fill_color 	13434879
+				anchor     	2
+				nlines     	1
+				max_width  	654
+				justify    	1
+				compartmentItems 	(list Compartment
+				    "exit/ Відображення ціни оплати"))
+			    width      	718
+			    height     	172
+			    autoResize 	TRUE)
+			(object TransView "" @17
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @18
+				Parent_View 	@17
+				location   	(2417, 1032)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	470
+				justify    	0
+				label      	"Всі страви є в наявності"
+				pctDist    	0.534760
+				height     	237
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"59F22E5A007A"
+			    client     	@13
+			    supplier   	@16
+			    vertices   	(list Points
+				(2179, 977)
+				(2180, 1084))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "Normal" "Очікування оплати за замовлення" @19
+			    location   	(2180, 1436)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@19
+				location   	(2180, 1425)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	416
+				justify    	0
+				label      	"Очікування оплати за замовлення")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"59F22E7600CE"
+			    width      	512
+			    height     	134
+			    autoResize 	TRUE)
+			(object TransView "" @20
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @21
+				Parent_View 	@20
+				location   	(2337, 1304)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"Ціна визначена"
+				pctDist    	0.433628
+				height     	157
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"59F22E84031A"
+			    client     	@16
+			    supplier   	@19
+			    vertices   	(list Points
+				(2180, 1255)
+				(2180, 1368))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "Normal" "Перевірка" @22
+			    location   	(2185, 1722)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@22
+				location   	(2185, 1659)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	566
+				justify    	0
+				label      	"Перевірка")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"59F22FAF0205"
+			    compartment 	(object Compartment
+				Parent_View 	@22
+				location   	(1911, 1699)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				icon_style 	"Icon"
+				fill_color 	13434879
+				anchor     	2
+				nlines     	2
+				max_width  	503
+				justify    	1
+				compartmentItems 	(list Compartment
+				    "entry/ введення оплати"
+				    "do/ перевірка суми оплати"))
+			    width      	662
+			    height     	238
+			    autoResize 	TRUE)
+			(object TransView "" @23
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @24
+				Parent_View 	@23
+				location   	(2335, 1545)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"Сума введенна"
+				pctDist    	0.439910
+				height     	154
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"59F22FB203AF"
+			    client     	@19
+			    supplier   	@22
+			    vertices   	(list Points
+				(2181, 1503)
+				(2182, 1602))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @25
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @26
+				Parent_View 	@25
+				location   	(2998, 1530)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	2
+				max_width  	506
+				justify    	0
+				label      	"[ отримана неправильна сума оплати ]"
+				pctDist    	0.507825
+				height     	25
+				orientation 	1)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"59F23037018D"
+			    client     	@22
+			    supplier   	@19
+			    vertices   	(list Points
+				(2516, 1722)
+				(2973, 1722)
+				(2973, 1438)
+				(2436, 1436))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "Normal" "Приготовлення страв" @27
+			    location   	(2186, 2074)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@27
+				location   	(2186, 2020)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	480
+				justify    	0
+				label      	"Приготовлення страв")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"59F230790237"
+			    compartment 	(object Compartment
+				Parent_View 	@27
+				location   	(1955, 2060)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				icon_style 	"Icon"
+				fill_color 	13434879
+				anchor     	2
+				nlines     	2
+				max_width  	468
+				justify    	1
+				compartmentItems 	(list Compartment
+				    "do/ приготовлення"
+				    "exit/ видача замовлення"))
+			    width      	576
+			    height     	216
+			    autoResize 	TRUE)
+			(object TransView "" @28
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @29
+				Parent_View 	@28
+				location   	(2426, 1903)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	520
+				justify    	0
+				label      	"[отримана правильна сума]"
+				pctDist    	0.504000
+				height     	241
+				orientation 	0)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"59F2308D0184"
+			    client     	@22
+			    supplier   	@27
+			    vertices   	(list Points
+				(2185, 1841)
+				(2185, 1965))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object StateView "Normal" "Друк чеку" @30
+			    location   	(1557, 2083)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object ItemLabel
+				Parent_View 	@30
+				location   	(1557, 2070)
+				fill_color 	13434879
+				anchor_loc 	1
+				nlines     	2
+				max_width  	204
+				justify    	0
+				label      	"Друк чеку")
+			    icon_style 	"Icon"
+			    line_color 	3342489
+			    fill_color 	13434879
+			    quidu      	"59F230F70099"
+			    height     	134
+			    autoResize 	TRUE)
+			(object TransView "" @31
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"59F2310800EB"
+			    client     	@27
+			    supplier   	@30
+			    vertices   	(list Points
+				(1898, 2078)
+				(1707, 2080))
+			    line_style 	0
+			    x_offset   	FALSE)
+			(object TransView "" @32
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    label      	(object SegLabel @33
+				Parent_View 	@32
+				location   	(971, 2056)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				anchor_loc 	1
+				nlines     	1
+				max_width  	450
+				justify    	0
+				label      	"Друк чеку закінчений"
+				pctDist    	0.150917
+				height     	27
+				orientation 	1)
+			    stereotype 	TRUE
+			    line_color 	3342489
+			    quidu      	"59F2311603AC"
+			    client     	@30
+			    supplier   	@2
+			    vertices   	(list Points
+				(1407, 2083)
+				(533, 2083)
+				(533, 226)
+				(691, 227))
+			    line_style 	0
+			    x_offset   	FALSE)))
+		(object ActivityDiagram "NewDiagram2"
+		    quid       	"59F22A000130"
+		    title      	"NewDiagram2"
+		    zoom       	100
+		    max_height 	28350
+		    max_width  	21600
+		    origin_x   	0
+		    origin_y   	0
+		    items      	(list diagram_item_list
+			(object Swimlane "" @34
+			    line_color 	3342489
+			    width      	450)))))
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"59CDF6360207"
+		title      	"Main"
+		zoom       	90
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object UseCaseView "Use Case View::Оплата" @35
+			location   	(2742, 714)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@35
+			    location   	(2742, 852)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Оплата")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"59CDFBF902F3"
+			height     	118)
+		    (object UseCaseView "Use Case View::Вибрати категорію меню" @36
+			location   	(2345, 1074)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@36
+			    location   	(2345, 1212)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Вибрати категорію меню")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"59CDFC0000F3"
+			height     	118)
+		    (object UseCaseView "Use Case View::Вибрати елемент 
+меню" @37
+			location   	(2345, 1409)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@37
+			    location   	(2345, 1547)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	
+|Вибрати елемент 
+|меню
+			    )
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"59CDFC0C02AE"
+			height     	118)
+		    (object DependencyView "" @38
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@38
+			    location   	(2345, 1294)
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	216
+			    justify    	0
+			    label      	"")
+			stereotype 	(object SegLabel @39
+			    Parent_View 	@38
+			    location   	(2356, 1216)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    anchor     	10
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"<<include>>"
+			    pctDist    	0.504425
+			    height     	120
+			    orientation 	0)
+			line_color 	3342489
+			quidu      	"59CDFC380296"
+			client     	@36
+			supplier   	@37
+			vertices   	(list Points
+			    (2345, 1238)
+			    (2345, 1350))
+			line_style 	0)
+		    (object UseCaseView "Use Case View::Здійснення замовлення" @40
+			location   	(2345, 703)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@40
+			    location   	(2345, 841)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Здійснення замовлення")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"59CDF76101C2"
+			height     	118)
+		    (object DependencyView "" @41
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@41
+			    location   	(2345, 941)
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	216
+			    justify    	0
+			    label      	"")
+			stereotype 	(object SegLabel @42
+			    Parent_View 	@41
+			    location   	(2356, 863)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    anchor     	10
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"<<include>>"
+			    pctDist    	0.543624
+			    height     	123
+			    orientation 	0)
+			line_color 	3342489
+			quidu      	"59CDFC3602BB"
+			client     	@40
+			supplier   	@36
+			vertices   	(list Points
+			    (2345, 867)
+			    (2345, 1015))
+			line_style 	0)
+		    (object UseCaseView "Use Case View::Звітність" @43
+			location   	(1313, 1540)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@43
+			    location   	(1313, 1678)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Звітність")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"59CDF87601A5"
+			height     	118)
+		    (object UseCaseView "Use Case View::Видалити дані" @44
+			location   	(1766, 1140)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@44
+			    location   	(1766, 1278)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Видалити дані")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"59CDF810026F"
+			height     	118)
+		    (object UseCaseView "Use Case View::Редагувати дані" @45
+			location   	(1432, 1134)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@45
+			    location   	(1432, 1272)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Редагувати дані")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"59CDF7D0035E"
+			height     	118)
+		    (object UseCaseView "Use Case View::Додати дані" @46
+			location   	(1119, 1137)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@46
+			    location   	(1119, 1275)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Додати дані")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"59CDF7F6005D"
+			width      	225
+			height     	118)
+		    (object UseCaseView "Use Case View::Оформлення замовлення" @47
+			location   	(1811, 703)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@47
+			    location   	(1811, 841)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Оформлення замовлення")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"59D1FBE5001C"
+			height     	118)
+		    (object DependencyView "" @48
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"59D1FBF302A4"
+			client     	@40
+			supplier   	@47
+			vertices   	(list Points
+			    (2234, 703)
+			    (1919, 703))
+			line_style 	0)
+		    (object ClassView "Class" "Use Case View::Співробітник" @49
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(304, 699)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@49
+			    location   	(304, 859)
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	362
+			    justify    	0
+			    label      	"Співробітник")
+			icon       	"Actor"
+			icon_style 	"Icon"
+			line_color 	3342489
+			quidu      	"59CDF6A300DE"
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Use Case View::Адміністратор" @50
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(894, 1387)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@50
+			    location   	(894, 1547)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	362
+			    justify    	0
+			    label      	"Адміністратор")
+			icon       	"Actor"
+			icon_style 	"Icon"
+			line_color 	3342489
+			quidu      	"59CDF7130281"
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$15" @51
+			location   	(1179, 1387)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"59CDF87D0381"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$16" @52
+				Parent_View 	@51
+				location   	(715, 525)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59CDF87E020D"
+				client     	@51
+				supplier   	@43
+				vertices   	(list Points
+				    (1179, 1387)
+				    (1311, 1387)
+				    (1310, 1482))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$17" @53
+				Parent_View 	@51
+				location   	(715, 525)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59CDF87E020F"
+				client     	@51
+				supplier   	@50
+				vertices   	(list Points
+				    (1179, 1387)
+				    (951, 1387))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$27" @54
+			location   	(1399, 1387)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"59CDFD850196"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$28" @55
+				Parent_View 	@54
+				location   	(916, 525)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59CDFD8E0255"
+				client     	@54
+				supplier   	@44
+				vertices   	(list Points
+				    (1399, 1387)
+				    (1764, 1387)
+				    (1763, 1304))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$29" @56
+				Parent_View 	@54
+				location   	(916, 525)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59CDFD8E0257"
+				client     	@54
+				supplier   	@50
+				vertices   	(list Points
+				    (1399, 1387)
+				    (951, 1387))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$6" @57
+			location   	(1235, 1387)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"59CDF8240133"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$7" @58
+				Parent_View 	@57
+				location   	(771, 525)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59CDF82403DD"
+				client     	@57
+				supplier   	@45
+				vertices   	(list Points
+				    (1235, 1387)
+				    (1430, 1387)
+				    (1429, 1298))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$8" @59
+				Parent_View 	@57
+				location   	(771, 525)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59CDF82403DF"
+				client     	@57
+				supplier   	@50
+				vertices   	(list Points
+				    (1235, 1387)
+				    (951, 1387))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$9" @60
+			location   	(1054, 1387)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"59CDF82600F7"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$10" @61
+				Parent_View 	@60
+				location   	(590, 525)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59CDF8260336"
+				client     	@60
+				supplier   	@46
+				vertices   	(list Points
+				    (1054, 1387)
+				    (1114, 1387)
+				    (1114, 1301))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$11" @62
+				Parent_View 	@60
+				location   	(590, 525)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59CDF8260338"
+				client     	@60
+				supplier   	@50
+				vertices   	(list Points
+				    (1054, 1387)
+				    (951, 1387))
+				line_style 	0)))
+		    (object ClassView "Class" "Use Case View::Офіціант" @63
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1426, 700)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@63
+			    location   	(1426, 860)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	362
+			    justify    	0
+			    label      	"Офіціант")
+			icon       	"Actor"
+			icon_style 	"Icon"
+			line_color 	3342489
+			quidu      	"59CDF70C03D7"
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$3" @64
+			location   	(1427, 981)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"59CDF82002CC"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$4" @65
+				Parent_View 	@64
+				location   	(957, 856)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59CDF8220005"
+				client     	@64
+				supplier   	@45
+				vertices   	(list Points
+				    (1427, 981)
+				    (1428, 1076))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$5" @66
+				Parent_View 	@64
+				location   	(957, 856)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59CDF8220007"
+				client     	@64
+				supplier   	@63
+				vertices   	(list Points
+				    (1427, 981)
+				    (1427, 886))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$18" @67
+			location   	(1272, 984)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"59CDF89201F2"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$19" @68
+				Parent_View 	@67
+				location   	(802, 859)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59CDF893007A"
+				client     	@67
+				supplier   	@46
+				vertices   	(list Points
+				    (1272, 984)
+				    (1115, 984)
+				    (1115, 1079))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$20" @69
+				Parent_View 	@67
+				location   	(802, 859)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59CDF893007D"
+				client     	@67
+				supplier   	@63
+				vertices   	(list Points
+				    (1272, 984)
+				    (1427, 984)
+				    (1426, 886))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$33" @70
+			location   	(1591, 699)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"59D1FBF0012F"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$34" @71
+				Parent_View 	@70
+				location   	(592, 527)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59D1FBF003B1"
+				client     	@70
+				supplier   	@47
+				vertices   	(list Points
+				    (1591, 699)
+				    (1699, 699))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$35" @72
+				Parent_View 	@70
+				location   	(592, 527)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59D1FBF003B3"
+				client     	@70
+				supplier   	@63
+				vertices   	(list Points
+				    (1591, 699)
+				    (1483, 700))
+				line_style 	0)))
+		    (object UseCaseView "Use Case View::Авторизація" @73
+			location   	(893, 699)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@73
+			    location   	(893, 837)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Авторизація")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"59CDF6F40147"
+			height     	118)
+		    (object AssociationViewNew "$UNNAMED$0" @74
+			location   	(572, 699)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"59CDF7020223"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$1" @75
+				Parent_View 	@74
+				location   	(220, 274)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59CDF703011F"
+				client     	@74
+				supplier   	@73
+				vertices   	(list Points
+				    (572, 699)
+				    (783, 699))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$2" @76
+				Parent_View 	@74
+				location   	(220, 274)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59CDF7030121"
+				client     	@74
+				supplier   	@49
+				vertices   	(list Points
+				    (572, 699)
+				    (361, 699))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$36" @77
+			location   	(892, 1084)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"59D1FD75000C"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$37" @78
+				Parent_View 	@77
+				location   	(426, 913)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59D1FD750356"
+				client     	@77
+				supplier   	@50
+				vertices   	(list Points
+				    (892, 1084)
+				    (892, 1305))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$38" @79
+				Parent_View 	@77
+				location   	(426, 913)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59D1FD750363"
+				client     	@77
+				supplier   	@73
+				vertices   	(list Points
+				    (892, 1084)
+				    (893, 863))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$39" @80
+			location   	(1184, 698)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"59D1FD7800C5"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$40" @81
+				Parent_View 	@80
+				location   	(718, 527)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59D1FD7900B4"
+				client     	@80
+				supplier   	@63
+				vertices   	(list Points
+				    (1184, 698)
+				    (1367, 698))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$41" @82
+				Parent_View 	@80
+				location   	(718, 527)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59D1FD7900BD"
+				client     	@80
+				supplier   	@73
+				vertices   	(list Points
+				    (1184, 698)
+				    (1001, 698))
+				line_style 	0)))
+		    (object ClassView "Class" "Use Case View::Клієнт" @83
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(2345, 400)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@83
+			    location   	(2345, 560)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	362
+			    justify    	0
+			    label      	"Клієнт")
+			icon       	"Actor"
+			icon_style 	"Icon"
+			line_color 	3342489
+			quidu      	"59CDF6E50002"
+			annotation 	8
+			autoResize 	TRUE)
+		    (object DependencyView "" @84
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@84
+			    location   	(2535, 550)
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	216
+			    justify    	0
+			    label      	"")
+			stereotype 	(object SegLabel @85
+			    Parent_View 	@84
+			    location   	(2546, 472)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    anchor     	10
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	450
+			    justify    	0
+			    label      	"<<include>>"
+			    pctDist    	0.443441
+			    height     	126
+			    orientation 	0)
+			line_color 	3342489
+			quidu      	"59CDFC330115"
+			client     	@83
+			supplier   	@35
+			vertices   	(list Points
+			    (2402, 445)
+			    (2668, 655))
+			line_style 	0)
+		    (object AssociationViewNew "$UNNAMED$30" @86
+			location   	(2345, 551)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"59D1FBD40037"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$31" @87
+				Parent_View 	@86
+				location   	(-21, 383)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59D1FBD50009"
+				client     	@86
+				supplier   	@40
+				vertices   	(list Points
+				    (2345, 551)
+				    (2345, 703))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$32" @88
+				Parent_View 	@86
+				location   	(-21, 383)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59D1FBD5000D"
+				client     	@86
+				supplier   	@83
+				vertices   	(list Points
+				    (2345, 551)
+				    (2345, 400))
+				line_style 	0)))
+		    (object UseCaseView "Use Case View::Перегляд інформації про страви та напої" @89
+			location   	(2767, 1077)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@89
+			    location   	(2767, 1215)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Перегляд інформації про страви та напої")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5B1BA3EA021D"
+			height     	118)
+		    (object AssociationViewNew "$UNNAMED$42" @90
+			location   	(2570, 763)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5B1BA41D030A"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$43" @91
+				Parent_View 	@90
+				location   	(215, 390)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5B1BA41E00C8"
+				client     	@90
+				supplier   	@89
+				vertices   	(list Points
+				    (2570, 763)
+				    (2730, 1019))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$44" @92
+				Parent_View 	@90
+				location   	(215, 390)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5B1BA41E00CA"
+				client     	@90
+				supplier   	@83
+				vertices   	(list Points
+				    (2570, 763)
+				    (2410, 507))
+				line_style 	0)))
+		    (object UseCaseView "Use Case View::Видача рахунку" @93
+			location   	(1805, 443)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@93
+			    location   	(1805, 581)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Видача рахунку")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5B1BA49203CF"
+			height     	118)
+		    (object DependencyView "" @94
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5B1BA49E0391"
+			client     	@63
+			supplier   	@93
+			vertices   	(list Points
+			    (1483, 658)
+			    (1650, 548))
+			line_style 	0)
+		    (object DependencyView "" @95
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5B1BA4B302D3"
+			client     	@93
+			supplier   	@83
+			vertices   	(list Points
+			    (1913, 430)
+			    (2286, 403))
+			line_style 	0)))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"59CDF635030D"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"59CDF635030F"
+	logical_models 	(list unit_reference_list
+	    (object Mechanism @96
+		logical_models 	(list unit_reference_list
+		    (object Object "$UNNAMED$48"
+			quid       	"59D692F90288"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"59D6931701E4"
+				supplier   	"$UNNAMED$49"
+				quidu      	"59D692FC012B"
+				messages   	(list Messages
+				    (object Message "Офіціант подає меню"
+					quid       	"59D6931701E5"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"1"
+					ordinal    	0
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Повідомляє про вибрані пункти меню"
+					quid       	"59D6938501E6"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"ToClientFromSupplier"
+					sequence   	"3"
+					ordinal    	2
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Якщо немає то повідомляє"
+					quid       	"59D693BF028C"
+					frequency  	"Aperiodic"
+					synchronization 	"Return"
+					dir        	"FromClientToSupplier"
+					sequence   	"5"
+					ordinal    	4
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Подає замовлення"
+					quid       	"59D694D40089"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"9"
+					ordinal    	8
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Видача чеку"
+					quid       	"59D69587021E"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"13"
+					ordinal    	12
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Видача рахунку"
+					quid       	"59D737B0022C"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"11"
+					ordinal    	10
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Оплата замовлення"
+					quid       	"59D737CB03C7"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"ToClientFromSupplier"
+					sequence   	"12"
+					ordinal    	11
+					quidu      	"000000000000"
+					creation   	FALSE)))
+			    (object Link
+				quid       	"59D693A203DE"
+				supplier   	"$UNNAMED$48"
+				quidu      	"59D692F90288"
+				messages   	(list Messages
+				    (object Message "Перевіряє чи все є в наявності"
+					quid       	"59D693A203DF"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"4"
+					ordinal    	3
+					quidu      	"000000000000"
+					creation   	FALSE)))
+			    (object Link
+				quid       	"59D694300070"
+				supplier   	"Кухня"
+				quidu      	"59D693DD0350"
+				messages   	(list Messages
+				    (object Message "Офіціант подає замовлення на кухню"
+					quid       	"59D694300071"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"6"
+					ordinal    	5
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Передача замовлення для видачі"
+					quid       	"59D69488013D"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"ToClientFromSupplier"
+					sequence   	"8"
+					ordinal    	7
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			class      	"Use Case View::Офіціант"
+			quidu      	"59CDF70C03D7"
+			persistence 	"Transient"
+			creationObj 	FALSE
+			multi      	FALSE)
+		    (object Object "$UNNAMED$49"
+			quid       	"59D692FC012B"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"59D693390316"
+				supplier   	"$UNNAMED$49"
+				quidu      	"59D692FC012B"
+				messages   	(list Messages
+				    (object Message "Клієнт вибирає пункти меню"
+					quid       	"59D693390317"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"2"
+					ordinal    	1
+					quidu      	"000000000000"
+					creation   	FALSE)
+				    (object Message "Споживання їжі"
+					quid       	"59D694F30268"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"10"
+					ordinal    	9
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			class      	"Use Case View::Клієнт"
+			quidu      	"59CDF6E50002"
+			persistence 	"Transient"
+			creationObj 	FALSE
+			multi      	FALSE)
+		    (object Object "Кухня"
+			quid       	"59D693DD0350"
+			collaborators 	(list link_list
+			    (object Link
+				quid       	"59D694410118"
+				supplier   	"Кухня"
+				quidu      	"59D693DD0350"
+				messages   	(list Messages
+				    (object Message "Приготування замовлення"
+					quid       	"59D694410119"
+					frequency  	"Aperiodic"
+					synchronization 	"Simple"
+					dir        	"FromClientToSupplier"
+					sequence   	"7"
+					ordinal    	6
+					quidu      	"000000000000"
+					creation   	FALSE))))
+			persistence 	"Transient"
+			creationObj 	TRUE
+			multi      	FALSE))))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"59CDF636020B"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))
+	    (object InteractionDiagram " Oficiant-Klient"
+		mechanism_ref 	@96
+		quid       	"59D692F303C3"
+		title      	" Oficiant-Klient"
+		zoom       	80
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object InterObjView "$UNNAMED$48" @97
+			location   	(404, 231)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@97
+			    location   	(404, 256)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	360
+			    justify    	0
+			    label      	"")
+			icon       	"Actor"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"59D692F90288"
+			width      	120
+			height     	1967
+			icon_height 	162
+			icon_width 	120
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @98
+			    location   	(404, 363)
+			    line_color 	3342489
+			    InterObjView 	@97
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @99
+			    location   	(404, 648)
+			    line_color 	3342489
+			    InterObjView 	@97
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @100
+			    location   	(404, 778)
+			    line_color 	3342489
+			    InterObjView 	@97
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @101
+			    location   	(404, 803)
+			    line_color 	3342489
+			    InterObjView 	@97
+			    height     	90
+			    y_coord    	0
+			    Nested     	TRUE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @102
+			    location   	(404, 928)
+			    line_color 	3342489
+			    InterObjView 	@97
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @103
+			    location   	(404, 1050)
+			    line_color 	3342489
+			    InterObjView 	@97
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @104
+			    location   	(404, 1299)
+			    line_color 	3342489
+			    InterObjView 	@97
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @105
+			    location   	(404, 1415)
+			    line_color 	3342489
+			    InterObjView 	@97
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @106
+			    location   	(404, 1730)
+			    line_color 	3342489
+			    InterObjView 	@97
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @107
+			    location   	(404, 1874)
+			    line_color 	3342489
+			    InterObjView 	@97
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @108
+			    location   	(404, 2018)
+			    line_color 	3342489
+			    InterObjView 	@97
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE))
+		    (object InterObjView "Кухня" @109
+			location   	(1181, 234)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@109
+			    location   	(1181, 234)
+			    fill_color 	13434879
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	282
+			    justify    	0
+			    label      	"Кухня")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"59D693DD0350"
+			width      	300
+			height     	1964
+			icon_height 	0
+			icon_width 	0
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @110
+			    location   	(1181, 314)
+			    line_color 	3342489
+			    InterObjView 	@109
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @111
+			    location   	(1181, 1050)
+			    line_color 	3342489
+			    InterObjView 	@109
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @112
+			    location   	(1181, 1169)
+			    line_color 	3342489
+			    InterObjView 	@109
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @113
+			    location   	(1181, 1194)
+			    line_color 	3342489
+			    InterObjView 	@109
+			    height     	90
+			    y_coord    	0
+			    Nested     	TRUE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @114
+			    location   	(1181, 1299)
+			    line_color 	3342489
+			    InterObjView 	@109
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE))
+		    (object InterObjView "$UNNAMED$49" @115
+			location   	(1794, 241)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	TRUE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@115
+			    location   	(1794, 266)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	360
+			    justify    	0
+			    label      	"")
+			icon       	"Actor"
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"59D692FC012B"
+			width      	120
+			height     	1957
+			icon_height 	162
+			icon_width 	120
+			icon_y_offset 	0
+			annotation 	1
+			Focus_Of_Control 	(object Focus_Of_Control "" @116
+			    location   	(1794, 363)
+			    line_color 	3342489
+			    InterObjView 	@115
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @117
+			    location   	(1794, 506)
+			    line_color 	3342489
+			    InterObjView 	@115
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @118
+			    location   	(1794, 531)
+			    line_color 	3342489
+			    InterObjView 	@115
+			    height     	90
+			    y_coord    	0
+			    Nested     	TRUE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @119
+			    location   	(1794, 648)
+			    line_color 	3342489
+			    InterObjView 	@115
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @120
+			    location   	(1794, 928)
+			    line_color 	3342489
+			    InterObjView 	@115
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @121
+			    location   	(1794, 1415)
+			    line_color 	3342489
+			    InterObjView 	@115
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @122
+			    location   	(1794, 1570)
+			    line_color 	3342489
+			    InterObjView 	@115
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @123
+			    location   	(1794, 1595)
+			    line_color 	3342489
+			    InterObjView 	@115
+			    height     	90
+			    y_coord    	0
+			    Nested     	TRUE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @124
+			    location   	(1794, 1730)
+			    line_color 	3342489
+			    InterObjView 	@115
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @125
+			    location   	(1794, 1874)
+			    line_color 	3342489
+			    InterObjView 	@115
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE)
+			Focus_Of_Control 	(object Focus_Of_Control "" @126
+			    location   	(1794, 2018)
+			    line_color 	3342489
+			    InterObjView 	@115
+			    height     	90
+			    y_coord    	0
+			    Nested     	FALSE))
+		    (object InterMessView "Офіціант подає меню" @127
+			location   	(0, 363)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @128
+			    Parent_View 	@127
+			    location   	(1096, 321)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"59D6931701E5"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	497
+			    justify    	0
+			    label      	"Офіціант подає меню"
+			    pctDist    	0.498896
+			    height     	43
+			    orientation 	0)
+			line_color 	3342489
+			client     	@97
+			supplier   	@115
+			Focus_Src  	@98
+			Focus_Entry 	@116
+			origin     	(419, 363)
+			terminus   	(1778, 363)
+			ordinal    	0)
+		    (object SelfMessView "Клієнт вибирає пункти меню" @129
+			location   	(0, 506)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @130
+			    Parent_View 	@129
+			    location   	(1491, 475)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"59D693390317"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	640
+			    justify    	0
+			    label      	"Клієнт вибирає пункти меню"
+			    pctDist    	-2.126667
+			    height     	32
+			    orientation 	0)
+			line_color 	3342489
+			client     	@115
+			supplier   	@115
+			Focus_Src  	@117
+			Focus_Entry 	@118
+			origin     	(1810, 506)
+			terminus   	(1960, 506)
+			ordinal    	1)
+		    (object InterMessView "Повідомляє про вибрані пункти меню" @131
+			location   	(0, 648)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @132
+			    Parent_View 	@131
+			    location   	(1099, 604)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"59D6938501E6"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	839
+			    justify    	0
+			    label      	"Повідомляє про вибрані пункти меню"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	1)
+			line_color 	3342489
+			client     	@115
+			supplier   	@97
+			Focus_Src  	@119
+			Focus_Entry 	@99
+			origin     	(1778, 648)
+			terminus   	(420, 648)
+			ordinal    	2)
+		    (object SelfMessView "Перевіряє чи все є в наявності" @133
+			location   	(0, 778)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @134
+			    Parent_View 	@133
+			    location   	(781, 754)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"59D693A203DF"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	687
+			    justify    	0
+			    label      	"Перевіряє чи все є в наявності"
+			    pctDist    	2.406667
+			    height     	25
+			    orientation 	0)
+			line_color 	3342489
+			client     	@97
+			supplier   	@97
+			Focus_Src  	@100
+			Focus_Entry 	@101
+			origin     	(420, 778)
+			terminus   	(570, 778)
+			ordinal    	3)
+		    (object InterMessView "Якщо немає то повідомляє" @135
+			location   	(0, 928)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @136
+			    Parent_View 	@135
+			    location   	(1098, 884)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"59D693BF028C"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	618
+			    justify    	0
+			    label      	"Якщо немає то повідомляє"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@97
+			supplier   	@115
+			Focus_Src  	@102
+			Focus_Entry 	@120
+			origin     	(419, 928)
+			terminus   	(1778, 928)
+			ordinal    	4)
+		    (object InterMessView "Офіціант подає замовлення на кухню" @137
+			location   	(0, 1050)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @138
+			    Parent_View 	@137
+			    location   	(874, 1004)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"59D694300071"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	831
+			    justify    	0
+			    label      	"Офіціант подає замовлення на кухню"
+			    pctDist    	0.610526
+			    height     	47
+			    orientation 	0)
+			line_color 	3342489
+			client     	@97
+			supplier   	@109
+			Focus_Src  	@103
+			Focus_Entry 	@111
+			origin     	(419, 1050)
+			terminus   	(1165, 1050)
+			ordinal    	5)
+		    (object SelfMessView "Приготування замовлення" @139
+			location   	(0, 1169)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @140
+			    Parent_View 	@139
+			    location   	(1489, 1130)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"59D694410119"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	607
+			    justify    	0
+			    label      	"Приготування замовлення"
+			    pctDist    	1.946667
+			    height     	40
+			    orientation 	0)
+			line_color 	3342489
+			client     	@109
+			supplier   	@109
+			Focus_Src  	@112
+			Focus_Entry 	@113
+			origin     	(1197, 1169)
+			terminus   	(1347, 1169)
+			ordinal    	6)
+		    (object InterMessView "Передача замовлення для видачі" @141
+			location   	(0, 1299)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @142
+			    Parent_View 	@141
+			    location   	(792, 1258)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"59D69488013D"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	761
+			    justify    	0
+			    label      	"Передача замовлення для видачі"
+			    pctDist    	0.501506
+			    height     	42
+			    orientation 	1)
+			line_color 	3342489
+			client     	@109
+			supplier   	@97
+			Focus_Src  	@114
+			Focus_Entry 	@104
+			origin     	(1165, 1299)
+			terminus   	(420, 1299)
+			ordinal    	7)
+		    (object InterMessView "Подає замовлення" @143
+			location   	(0, 1415)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @144
+			    Parent_View 	@143
+			    location   	(775, 1458)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"59D694D40089"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	452
+			    justify    	0
+			    label      	"Подає замовлення"
+			    pctDist    	0.262693
+			    height     	43
+			    orientation 	1)
+			line_color 	3342489
+			client     	@97
+			supplier   	@115
+			Focus_Src  	@105
+			Focus_Entry 	@121
+			origin     	(419, 1415)
+			terminus   	(1778, 1415)
+			ordinal    	8)
+		    (object SelfMessView "Споживання їжі" @145
+			location   	(0, 1570)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @146
+			    Parent_View 	@145
+			    location   	(1566, 1562)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"59D694F30268"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	355
+			    justify    	0
+			    label      	"Споживання їжі"
+			    pctDist    	-1.633333
+			    height     	9
+			    orientation 	0)
+			line_color 	3342489
+			client     	@115
+			supplier   	@115
+			Focus_Src  	@122
+			Focus_Entry 	@123
+			origin     	(1810, 1570)
+			terminus   	(1960, 1570)
+			ordinal    	9)
+		    (object InterMessView "Видача чеку" @147
+			location   	(0, 2018)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @148
+			    Parent_View 	@147
+			    location   	(1098, 1974)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"59D69587021E"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	327
+			    justify    	0
+			    label      	"Видача чеку"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@97
+			supplier   	@115
+			Focus_Src  	@108
+			Focus_Entry 	@126
+			origin     	(419, 2018)
+			terminus   	(1778, 2018)
+			ordinal    	12)
+		    (object InterMessView "Видача рахунку" @149
+			location   	(0, 1730)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @150
+			    Parent_View 	@149
+			    location   	(1098, 1686)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"59D737B0022C"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	377
+			    justify    	0
+			    label      	"Видача рахунку"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	0)
+			line_color 	3342489
+			client     	@97
+			supplier   	@115
+			Focus_Src  	@106
+			Focus_Entry 	@124
+			origin     	(419, 1730)
+			terminus   	(1778, 1730)
+			ordinal    	10)
+		    (object InterMessView "Оплата замовлення" @151
+			location   	(0, 1874)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object SegLabel @152
+			    Parent_View 	@151
+			    location   	(1099, 1830)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    quidu      	"59D737CB03C7"
+			    anchor_loc 	1
+			    nlines     	1
+			    max_width  	445
+			    justify    	0
+			    label      	"Оплата замовлення"
+			    pctDist    	0.500000
+			    height     	45
+			    orientation 	1)
+			line_color 	3342489
+			client     	@115
+			supplier   	@97
+			Focus_Src  	@125
+			Focus_Entry 	@107
+			origin     	(1778, 1874)
+			terminus   	(420, 1874)
+			ordinal    	11)))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"59CDF635030F"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"59CDF6360206"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list)))
+	category   	"Logical View"
+	quidu      	"59CDF635030D")
+    process_structure 	(object Processes
+	quid       	"59CDF6350310"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"59CDF6350312"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	quid       	"59CDF6350311"))

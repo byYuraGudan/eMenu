@@ -60,7 +60,8 @@ CREATE TABLE Food(id_food INT PRIMARY KEY IDENTITY(1,1),
 				  cost_price_food NUMERIC(10, 2) NOT NULL,
 				  mark_up INT NOT NULL DEFAULT 1,
 				  price_food NUMERIC(10, 2) NOT NULL,
-				  data_food VARCHAR(MAX))
+				  data_food VARCHAR(MAX),
+				  visible BIT DEFAULT 1)
 GO
 CREATE TABLE ListIngredientFood(id_listingrfood INT PRIMARY KEY IDENTITY(1,1),
 								kod_food INT NOT NULL,

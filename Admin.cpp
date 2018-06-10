@@ -414,3 +414,22 @@ void __fastcall TFAdmin::DeleteOrderMenuClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+
+void __fastcall TFAdmin::ButtonDayReportClick(TObject *Sender)
+{
+	DM->DoSQL(DM->TSQL,"SELECT 	SUM(payment - (payment * discount/100)) AS DayPayment  \
+	FROM ((OrderMenu INNER JOIN  Discounts ON id_discount = kod_discount)\
+	INNER JOIN Personal ON id_personal = kod_personal)\
+	INNER JOIN ListTable ON id_table = kod_table \
+	WHERE date_open_order >= '"+DateToStr(Date())+" 00:00:00' and date_open_order <= '"+DateToStr(Date())+" 23:59:59'");
+	ShowMessage("Дений заробіток - "+DM->TSQL->FieldByName("DayPayment")->AsString+" грн.");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::buttonViewListOrderMenuClick(TObject *Sender)
+{
+    FEditOrderMenu->Show();
+}
+//---------------------------------------------------------------------------
+

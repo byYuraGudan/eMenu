@@ -74,7 +74,6 @@ __published:	// IDE-managed Components
 	TToolBar *ToolBar3;
 	TToolButton *AddOrderMenu;
 	TToolButton *DeleteOrderMenu;
-	TToolButton *EditOrderMenu;
 	TCategoryPanel *CPStatistic;
 	TPanel *PanelPersonal;
 	TEdit *EditSearchPersonal;
@@ -112,6 +111,7 @@ __published:	// IDE-managed Components
 	TToolButton *AddTable;
 	TToolButton *DeleteTable;
 	TToolButton *InvOcupTable;
+	TButton *ButtonDayReport;
 	void __fastcall buttonViewPersonalClick(TObject *Sender);
 	void __fastcall buttonAddPersonalClick(TObject *Sender);
 	void __fastcall buttonAddCategoryClick(TObject *Sender);
@@ -148,6 +148,8 @@ __published:	// IDE-managed Components
 	void __fastcall N7Click(TObject *Sender);
 	void __fastcall AddOrderMenuClick(TObject *Sender);
 	void __fastcall DeleteOrderMenuClick(TObject *Sender);
+	void __fastcall ButtonDayReportClick(TObject *Sender);
+	void __fastcall buttonViewListOrderMenuClick(TObject *Sender);
 
 
 private:	// User declarations

@@ -103,7 +103,7 @@ __published:	// IDE-managed Components
 	TMenuItem *N7;
 	TCategoryPanel *CategoryPanel1;
 	TButton *ButtonViewTable;
-	TButton *Button3;
+	TButton *ButtonAddListTable;
 	TPanel *PanelTable;
 	TPanel *LookPanel;
 	TDBGrid *DBGridTable;
@@ -112,6 +112,7 @@ __published:	// IDE-managed Components
 	TToolButton *AddTable;
 	TToolButton *DeleteTable;
 	TToolButton *InvOcupTable;
+	TButton *ButtonDayReport;
 	void __fastcall buttonViewPersonalClick(TObject *Sender);
 	void __fastcall buttonAddPersonalClick(TObject *Sender);
 	void __fastcall buttonAddCategoryClick(TObject *Sender);
@@ -143,6 +144,12 @@ __published:	// IDE-managed Components
 	void __fastcall EditSearchTableChange(TObject *Sender);
 	void __fastcall AddTableClick(TObject *Sender);
 	void __fastcall DeleteTableClick(TObject *Sender);
+	void __fastcall ButtonAddListTableClick(TObject *Sender);
+	void __fastcall InvOcupTableClick(TObject *Sender);
+	void __fastcall N7Click(TObject *Sender);
+	void __fastcall AddOrderMenuClick(TObject *Sender);
+	void __fastcall DeleteOrderMenuClick(TObject *Sender);
+	void __fastcall ButtonDayReportClick(TObject *Sender);
 
 
 private:	// User declarations

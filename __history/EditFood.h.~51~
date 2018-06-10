@@ -17,7 +17,6 @@
 #include <Vcl.Imaging.jpeg.hpp>
 #include <Vcl.Dialogs.hpp>
 #include <Vcl.ExtDlgs.hpp>
-#include <boost/math/distributions/poisson.hpp>
 //---------------------------------------------------------------------------
 class TFEditFood : public TForm
 {
@@ -51,6 +50,7 @@ __published:	// IDE-managed Components
 	TButton *ButtonCalculationPrice;
 	TButton *ButtonCalculationWeight;
 	TOpenPictureDialog *OPD;
+	TCheckBox *CheckBox1;
 	void __fastcall ButtonAcceptClick(TObject *Sender);
 	void __fastcall EditImageClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
@@ -63,6 +63,12 @@ __published:	// IDE-managed Components
 	void __fastcall ToolDeleteClick(TObject *Sender);
 	void __fastcall ButtonCalculationPriceClick(TObject *Sender);
 	void __fastcall ButtonCalculationWeightClick(TObject *Sender);
+	void __fastcall Edit_weightKeyPress(TObject *Sender, System::WideChar &Key);
+	void __fastcall Edit_cost_priceKeyPress(TObject *Sender, System::WideChar &Key);
+	void __fastcall Edit_mark_upKeyPress(TObject *Sender, System::WideChar &Key);
+	void __fastcall Edit_priceKeyPress(TObject *Sender, System::WideChar &Key);
+	void __fastcall ButtonCancelClick(TObject *Sender);
+
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFEditFood(TComponent* Owner);

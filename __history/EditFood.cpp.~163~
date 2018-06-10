@@ -30,6 +30,7 @@ __fastcall TFEditFood::TFEditFood(TComponent* Owner)
 void TFood::setIdFood(int a){ this->id_food = a;}
 void TFood::setWeigh_Food(float a){ this->weight_food = a;}
 void TFood::setPicture(TMemoryStream* a){ this->picture = a;}
+void TFood::setVisible(bool b){ this->visible = b}
 void TFood::setInfoFood(AnsiString name,AnsiString data, AnsiString unit){
 	this->name_food = name;
 	this->data_food = data;
@@ -235,8 +236,8 @@ void __fastcall TFEditFood::ButtonCalculationPriceClick(TObject *Sender)
 	 price += prc * cnt;
 	 DM->ATFoodIngredient->Next();
 	}
-	ShowMessage("Собівартість - "+FloatToStr(price)+" грн");
-	Edit_cost_price->Text = (price*100)/100;
+	ShowMessage("Собівартість - "+FloatToStrF(price,ffFixed,10,2)+" грн");
+	Edit_cost_price->Text = FloatToStrF((price*100)/100,ffFixed,10,2);
 
 }
 //---------------------------------------------------------------------------
@@ -260,9 +261,7 @@ void __fastcall TFEditFood::ButtonCalculationWeightClick(TObject *Sender)
 void __fastcall TFEditFood::Edit_weightKeyPress(TObject *Sender, System::WideChar &Key)
 
 {
-if( Key == VK_BACK )
-		return;
-if (Key == ',') {return;}
+if( Key == VK_BACK || (Key == ',')) return;
 if( (Key < L'0') || (Key > L'9') ) Key = 0;
 }
 //---------------------------------------------------------------------------
@@ -270,9 +269,7 @@ if( (Key < L'0') || (Key > L'9') ) Key = 0;
 void __fastcall TFEditFood::Edit_cost_priceKeyPress(TObject *Sender, System::WideChar &Key)
 
 {
-if( Key == VK_BACK )
-		return;
-if (Key == ',') {return;}
+if( Key == VK_BACK || (Key == ',')) return;
 if( (Key < L'0') || (Key > L'9') ) Key = 0;
 }
 //---------------------------------------------------------------------------
@@ -280,9 +277,7 @@ if( (Key < L'0') || (Key > L'9') ) Key = 0;
 void __fastcall TFEditFood::Edit_mark_upKeyPress(TObject *Sender, System::WideChar &Key)
 
 {
-if( Key == VK_BACK )
-		return;
-if (Key == ',') {return;}
+if( Key == VK_BACK) return;
 if( (Key < L'0') || (Key > L'9') ) Key = 0;
 }
 //---------------------------------------------------------------------------
@@ -291,9 +286,8 @@ if( (Key < L'0') || (Key > L'9') ) Key = 0;
 void __fastcall TFEditFood::Edit_priceKeyPress(TObject *Sender, System::WideChar &Key)
 
 {
-if( Key == VK_BACK )
-		return;
-if( (Key < L'0') || (Key > L'9') || (Key == L'44') ) Key = 0;
+if( Key == VK_BACK || (Key == ',')) return;
+if( (Key < L'0') || (Key > L'9') ) Key = 0;
 }
 //---------------------------------------------------------------------------
 

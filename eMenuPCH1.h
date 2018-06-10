@@ -122,6 +122,7 @@ private:
 	AnsiString name_food,data_food,unit_food;
 	float weight_food,cost_price_food,mark_up,price_food;
 	TMemoryStream *picture;
+	bool visible;
 
 protected:
 
@@ -135,6 +136,7 @@ public:
 	 this->cost_price_food = 0;
 	 this->mark_up = 0;
 	 this->price_food = 0;
+     this->visible = true;
      this->picture = new TMemoryStream;
 	}
 	void setIdFood(int);
@@ -142,6 +144,7 @@ public:
 	void setInfoFood(AnsiString,AnsiString,AnsiString);
 	void setCostFood(float,float,float);
 	void setPicture(TMemoryStream*);
+    void setVisible(bool);
 	int getIdFood();
 	void InsertDBFood();
 	void UpdateDBFood();

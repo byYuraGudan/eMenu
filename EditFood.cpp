@@ -30,6 +30,7 @@ __fastcall TFEditFood::TFEditFood(TComponent* Owner)
 void TFood::setIdFood(int a){ this->id_food = a;}
 void TFood::setWeigh_Food(float a){ this->weight_food = a;}
 void TFood::setPicture(TMemoryStream* a){ this->picture = a;}
+void TFood::setVisible(bool b){ this->visible = b;}
 void TFood::setInfoFood(AnsiString name,AnsiString data, AnsiString unit){
 	this->name_food = name;
 	this->data_food = data;
@@ -45,8 +46,8 @@ int TFood::getIdFood(){ return this->id_food;}
 
 void TFood::InsertDBFood(){
 	DM->TSQL->SQL->Clear();
-	DM->TSQL->SQL->Add("INSERT INTO eMenu.dbo.Food(kod_category,name_food,data_food,unit_food,cost_price_food,mark_up,price_food,weight_food,picture)");
-	DM->TSQL->SQL->Add("VALUES(:p1,:p2,:p3,:p4,:p5,:p6,:p7,:p8,:pict)");
+	DM->TSQL->SQL->Add("INSERT INTO eMenu.dbo.Food(kod_category,name_food,data_food,unit_food,cost_price_food,mark_up,price_food,weight_food,picture,visible)");
+	DM->TSQL->SQL->Add("VALUES(:p1,:p2,:p3,:p4,:p5,:p6,:p7,:p8,:pict,:vis)");
 	DM->TSQL->Parameters->ParamByName("p1")->Value = this->getId_category();
 	DM->TSQL->Parameters->ParamByName("p2")->Value =  this->name_food;
 	DM->TSQL->Parameters->ParamByName("p3")->Value =  this->data_food;
@@ -55,6 +56,7 @@ void TFood::InsertDBFood(){
 	DM->TSQL->Parameters->ParamByName("p6")->Value = this->mark_up;
 	DM->TSQL->Parameters->ParamByName("p7")->Value = this->price_food;
 	DM->TSQL->Parameters->ParamByName("p8")->Value = this->weight_food;
+	DM->TSQL->Parameters->ParamByName("vis")->Value = this->visible;
 	DM->TSQL->Parameters->ParamByName("pict")->DataType = ftBlob;
 	DM->TSQL->Parameters->ParamByName("pict")->LoadFromStream(this->picture,ftBlob);
 	DM->TSQL->ExecSQL();
@@ -62,7 +64,7 @@ void TFood::InsertDBFood(){
 
 void TFood::UpdateDBFood(){
 	DM->TSQL->SQL->Clear();
-	DM->TSQL->SQL->Add("UPDATE eMenu.dbo.Food SET kod_category = :p1, name_food =:p2, data_food =:p3,unit_food =:p4,cost_price_food =:p5, mark_up =:p6, price_food =:p7, weight_food =:p8");
+	DM->TSQL->SQL->Add("UPDATE eMenu.dbo.Food SET visible = :p9, kod_category = :p1, name_food =:p2, data_food =:p3,unit_food =:p4,cost_price_food =:p5, mark_up =:p6, price_food =:p7, weight_food =:p8");
 	DM->TSQL->SQL->Add("WHERE id_food = :id");
 	DM->TSQL->Parameters->ParamByName("p1")->Value = this->getId_category();
 	DM->TSQL->Parameters->ParamByName("p2")->Value =  this->name_food;
@@ -72,6 +74,7 @@ void TFood::UpdateDBFood(){
 	DM->TSQL->Parameters->ParamByName("p6")->Value = this->mark_up;
 	DM->TSQL->Parameters->ParamByName("p7")->Value = this->price_food;
 	DM->TSQL->Parameters->ParamByName("p8")->Value = this->weight_food;
+	DM->TSQL->Parameters->ParamByName("p9")->Value = this->visible;
 	DM->TSQL->Parameters->ParamByName("id")->Value = this->id_food;
 	DM->TSQL->ExecSQL();
 }
@@ -106,6 +109,7 @@ void __fastcall TFEditFood::ButtonAcceptClick(TObject *Sender)
 						StrToFloat(Edit_price->Text));
 	   food.setWeigh_Food(StrToFloat(Edit_weight->Text));
 	   food.setId_category(StrToInt(CB_id_category->Text));
+	   food.setVisible(CBvisible->Checked);
 	   TMemoryStream *str = new TMemoryStream;
 	   Image1->Picture->SaveToStream(str);
 	   food.setPicture(str);
@@ -146,6 +150,7 @@ void __fastcall TFEditFood::FormShow(TObject *Sender)
 	Edit_price->Text = 0;
 	Edit_name_food->Clear();
 	Edit_weight->Text = 0;
+    CBvisible->Checked = true;
 	Image1->Picture->Graphic = new Graphics::TBitmap;
 	DM->ATCategory->First();
 	for (int i = 0; i < DM->ATCategory->RecordCount; i++) {

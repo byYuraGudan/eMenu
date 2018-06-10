@@ -14,6 +14,7 @@
 #include "EditPersonal.h"
 #include "EditIngredient.h"
 #include "EditTabel.h"
+#include "EditOrderMenu.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -354,12 +355,12 @@ void __fastcall TFAdmin::AddTableClick(TObject *Sender)
 
 void __fastcall TFAdmin::DeleteTableClick(TObject *Sender)
 {
-      try {
+	  try {
 		if (IDYES == MessageBox(NULL, L"Ви впевнені, що хочете видалити ?", L"Підвердження!",  MB_YESNO |MB_ICONQUESTION))
 		{
 				TListTable table;
 				table.setId_table(DM->ATListTable->FieldByName("id_table")->AsInteger);
-                table.DeleteDBListTable();
+				table.DeleteDBListTable();
 				DM->OpenDB();
 		}
 	}
@@ -381,6 +382,54 @@ void __fastcall TFAdmin::InvOcupTableClick(TObject *Sender)
 	 table.setId_table(DM->ATListTable->FieldByName("id_table")->AsInteger);
 	 table.UpdateInverseOccupation();
      DM->RefreshADO(DM->ATListTable);
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::N7Click(TObject *Sender)
+{
+    FEditOrderMenu->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::AddOrderMenuClick(TObject *Sender)
+{
+    FEditOrderMenu->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::DeleteOrderMenuClick(TObject *Sender)
+{
+	  try {
+		if (IDYES == MessageBox(NULL, L"Ви впевнені, що хочете видалити ?", L"Підвердження!",  MB_YESNO |MB_ICONQUESTION))
+		{
+				TOrderMenu order;
+				order.setIdOrder(DM->ATOrderMenu->FieldByName("id_order")->AsInteger);
+				order.DeleteDBOrderMenu();
+				DM->OpenDB();
+		}
+	}
+	catch(...){
+		MessageBox(NULL, L"Дані, пов'язанні з даною інформацією. Не можливо видалити!", L"Відмова!",  MB_OK |MB_ICONWARNING);
+	}
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TFAdmin::ButtonDayReportClick(TObject *Sender)
+{
+	DM->DoSQL(DM->TSQL,"SELECT 	SUM(payment - (payment * discount/100)) AS DayPayment  \
+	FROM ((OrderMenu INNER JOIN  Discounts ON id_discount = kod_discount)\
+	INNER JOIN Personal ON id_personal = kod_personal)\
+	INNER JOIN ListTable ON id_table = kod_table \
+	WHERE date_open_order >= '"+DateToStr(Date())+" 00:00:00' and date_open_order <= '"+DateToStr(Date())+" 23:59:59'");
+	ShowMessage("Дений заробіток - "+DM->TSQL->FieldByName("DayPayment")->AsString+" грн.");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::buttonViewListOrderMenuClick(TObject *Sender)
+{
+    FEditOrderMenu->Show();
 }
 //---------------------------------------------------------------------------
 

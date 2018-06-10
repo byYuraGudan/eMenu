@@ -294,6 +294,7 @@ void __fastcall TFAdmin::EditFoodClick(TObject *Sender)
 	 FEditFood->Edit_price->Text =  DM->ATFood->FieldByName("price_food")->AsString;
 	 FEditFood->Edit_name_food->Text =  DM->ATFood->FieldByName("name_food")->AsString;
 	 FEditFood->Edit_weight->Text =  DM->ATFood->FieldByName("weight_food")->AsString;
+     FEditFood->CBvisible->Checked = DM->ATFood->FieldByName("visible")->AsBoolean;
 	 FEditFood->Image1->Picture->Assign(DM->ATFood->FieldByName("picture"));
 }
 //---------------------------------------------------------------------------

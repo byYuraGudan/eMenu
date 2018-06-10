@@ -30,6 +30,7 @@ __fastcall TFEditFood::TFEditFood(TComponent* Owner)
 void TFood::setIdFood(int a){ this->id_food = a;}
 void TFood::setWeigh_Food(float a){ this->weight_food = a;}
 void TFood::setPicture(TMemoryStream* a){ this->picture = a;}
+void TFood::setVisible(bool b){ this->visible = b}
 void TFood::setInfoFood(AnsiString name,AnsiString data, AnsiString unit){
 	this->name_food = name;
 	this->data_food = data;
@@ -45,8 +46,8 @@ int TFood::getIdFood(){ return this->id_food;}
 
 void TFood::InsertDBFood(){
 	DM->TSQL->SQL->Clear();
-	DM->TSQL->SQL->Add("INSERT INTO eMenu.dbo.Food(kod_category,name_food,data_food,unit_food,cost_price_food,mark_up,price_food,weight_food,picture)");
-	DM->TSQL->SQL->Add("VALUES(:p1,:p2,:p3,:p4,:p5,:p6,:p7,:p8,:pict)");
+	DM->TSQL->SQL->Add("INSERT INTO eMenu.dbo.Food(kod_category,name_food,data_food,unit_food,cost_price_food,mark_up,price_food,weight_food,picture,visible)");
+	DM->TSQL->SQL->Add("VALUES(:p1,:p2,:p3,:p4,:p5,:p6,:p7,:p8,:pict,:vis)");
 	DM->TSQL->Parameters->ParamByName("p1")->Value = this->getId_category();
 	DM->TSQL->Parameters->ParamByName("p2")->Value =  this->name_food;
 	DM->TSQL->Parameters->ParamByName("p3")->Value =  this->data_food;
@@ -55,6 +56,7 @@ void TFood::InsertDBFood(){
 	DM->TSQL->Parameters->ParamByName("p6")->Value = this->mark_up;
 	DM->TSQL->Parameters->ParamByName("p7")->Value = this->price_food;
 	DM->TSQL->Parameters->ParamByName("p8")->Value = this->weight_food;
+	DM->TSQL->Parameters->ParamByName("vis")->Value = this->visible;
 	DM->TSQL->Parameters->ParamByName("pict")->DataType = ftBlob;
 	DM->TSQL->Parameters->ParamByName("pict")->LoadFromStream(this->picture,ftBlob);
 	DM->TSQL->ExecSQL();
@@ -62,7 +64,7 @@ void TFood::InsertDBFood(){
 
 void TFood::UpdateDBFood(){
 	DM->TSQL->SQL->Clear();
-	DM->TSQL->SQL->Add("UPDATE eMenu.dbo.Food SET kod_category = :p1, name_food =:p2, data_food =:p3,unit_food =:p4,cost_price_food =:p5, mark_up =:p6, price_food =:p7, weight_food =:p8");
+	DM->TSQL->SQL->Add("UPDATE eMenu.dbo.Food SET visible = :p9, kod_category = :p1, name_food =:p2, data_food =:p3,unit_food =:p4,cost_price_food =:p5, mark_up =:p6, price_food =:p7, weight_food =:p8");
 	DM->TSQL->SQL->Add("WHERE id_food = :id");
 	DM->TSQL->Parameters->ParamByName("p1")->Value = this->getId_category();
 	DM->TSQL->Parameters->ParamByName("p2")->Value =  this->name_food;
@@ -72,6 +74,7 @@ void TFood::UpdateDBFood(){
 	DM->TSQL->Parameters->ParamByName("p6")->Value = this->mark_up;
 	DM->TSQL->Parameters->ParamByName("p7")->Value = this->price_food;
 	DM->TSQL->Parameters->ParamByName("p8")->Value = this->weight_food;
+	DM->TSQL->Parameters->ParamByName("p9")->Value = this->visible;
 	DM->TSQL->Parameters->ParamByName("id")->Value = this->id_food;
 	DM->TSQL->ExecSQL();
 }
@@ -235,8 +238,8 @@ void __fastcall TFEditFood::ButtonCalculationPriceClick(TObject *Sender)
 	 price += prc * cnt;
 	 DM->ATFoodIngredient->Next();
 	}
-	ShowMessage("Собівартість - "+FloatToStr(price)+" грн");
-	Edit_cost_price->Text = (price*100)/100;
+	ShowMessage("Собівартість - "+FloatToStrF(price,ffFixed,10,2)+" грн");
+	Edit_cost_price->Text = FloatToStrF((price*100)/100,ffFixed,10,2);
 
 }
 //---------------------------------------------------------------------------
@@ -260,9 +263,7 @@ void __fastcall TFEditFood::ButtonCalculationWeightClick(TObject *Sender)
 void __fastcall TFEditFood::Edit_weightKeyPress(TObject *Sender, System::WideChar &Key)
 
 {
-if( Key == VK_BACK )
-		return;
-if (Key == ',') {return;}
+if( Key == VK_BACK || (Key == ',')) return;
 if( (Key < L'0') || (Key > L'9') ) Key = 0;
 }
 //---------------------------------------------------------------------------
@@ -270,18 +271,16 @@ if( (Key < L'0') || (Key > L'9') ) Key = 0;
 void __fastcall TFEditFood::Edit_cost_priceKeyPress(TObject *Sender, System::WideChar &Key)
 
 {
-if( Key == VK_BACK )
-		return;
-if( (Key < L'0') || (Key > L'9') || (Key == L'44') ) Key = 0;
+if( Key == VK_BACK || (Key == ',')) return;
+if( (Key < L'0') || (Key > L'9') ) Key = 0;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TFEditFood::Edit_mark_upKeyPress(TObject *Sender, System::WideChar &Key)
 
 {
-if( Key == VK_BACK )
-		return;
-if( (Key < L'0') || (Key > L'9') || (Key == L'44') ) Key = 0;
+if( Key == VK_BACK) return;
+if( (Key < L'0') || (Key > L'9') ) Key = 0;
 }
 //---------------------------------------------------------------------------
 
@@ -289,9 +288,8 @@ if( (Key < L'0') || (Key > L'9') || (Key == L'44') ) Key = 0;
 void __fastcall TFEditFood::Edit_priceKeyPress(TObject *Sender, System::WideChar &Key)
 
 {
-if( Key == VK_BACK )
-		return;
-if( (Key < L'0') || (Key > L'9') || (Key == L'44') ) Key = 0;
+if( Key == VK_BACK || (Key == ',')) return;
+if( (Key < L'0') || (Key > L'9') ) Key = 0;
 }
 //---------------------------------------------------------------------------
 

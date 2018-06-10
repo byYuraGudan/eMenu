@@ -50,6 +50,7 @@ __published:	// IDE-managed Components
 	TButton *ButtonCalculationPrice;
 	TButton *ButtonCalculationWeight;
 	TOpenPictureDialog *OPD;
+	TCheckBox *CBvisible;
 	void __fastcall ButtonAcceptClick(TObject *Sender);
 	void __fastcall EditImageClick(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);

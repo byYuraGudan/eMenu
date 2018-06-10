@@ -18,8 +18,11 @@ CREATE VIEW OpenOrder AS
 	WHERE close_order = 0
 GO
 CREATE VIEW MainShowCategory AS
-SELECT count(id_food) AS CountRecord,id_category,name_category FROM Category INNER JOIN Food ON kod_category = id_category 
-	GROUP BY id_category,name_category
+	SELECT        COUNT(dbo.Food.id_food) AS CountRecord, dbo.Category.id_category, dbo.Category.name_category,dbo.Food.visible
+	FROM            dbo.Category INNER JOIN
+                         dbo.Food ON dbo.Food.kod_category = dbo.Category.id_category
+	GROUP BY dbo.Category.id_category, dbo.Category.name_category,dbo.Food.visible
+	HAVING dbo.Food.visible = 1
 GO
 CREATE VIEW MainShowFood AS
 SELECT *, STR(dbo.Food.weight_food, 5, 3) + ' ' + dbo.Food.unit_food AS weight_unit FROM Food

@@ -3515,8 +3515,8 @@ object FEditFood: TFEditFood
     TabOrder = 0
     object TabFood: TTabSheet
       Caption = #1054#1089#1085#1086#1074#1085#1072' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1103
-      ExplicitLeft = 8
-      ExplicitTop = 31
+      ExplicitLeft = 0
+      ExplicitTop = 0
       ExplicitWidth = 0
       ExplicitHeight = 0
       object Label1: TLabel
@@ -4727,8 +4727,8 @@ object FEditFood: TFEditFood
         OnChange = EditIDChange
       end
       object ButtonAccept: TButton
-        Left = 264
-        Top = 336
+        Left = 270
+        Top = 352
         Width = 120
         Height = 30
         Caption = #1055#1110#1076#1090#1074#1077#1088#1076#1080#1090#1080
@@ -4740,8 +4740,8 @@ object FEditFood: TFEditFood
         OnClick = ButtonAcceptClick
       end
       object ButtonCancel: TButton
-        Left = 404
-        Top = 336
+        Left = 410
+        Top = 352
         Width = 120
         Height = 30
         Caption = #1042#1110#1076#1084#1110#1085#1080#1090#1080
@@ -4816,6 +4816,14 @@ object FEditFood: TFEditFood
           #1082#1075'.'
           #1083'.'
           #1096#1090'.')
+      end
+      object CBvisible: TCheckBox
+        Left = 200
+        Top = 317
+        Width = 330
+        Height = 17
+        Caption = #1042#1110#1076#1086#1073#1088#1072#1079#1080#1090#1080' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1102
+        TabOrder = 11
       end
     end
     object TabIngredient: TTabSheet

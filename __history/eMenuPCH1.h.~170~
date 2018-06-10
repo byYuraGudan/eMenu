@@ -59,7 +59,8 @@ public:
 	void setNameListTable(AnsiString);
 	void setOccupListTable(bool);
 	void InsertDBListTable();
-    void UpdateInverseOccupation();
+	void UpdateInverseOccupation();
+	void UpdateOccupation();
 	void DeleteDBListTable();
 };
 
@@ -121,6 +122,7 @@ private:
 	AnsiString name_food,data_food,unit_food;
 	float weight_food,cost_price_food,mark_up,price_food;
 	TMemoryStream *picture;
+	bool visible;
 
 protected:
 
@@ -134,6 +136,7 @@ public:
 	 this->cost_price_food = 0;
 	 this->mark_up = 0;
 	 this->price_food = 0;
+     this->visible = true;
      this->picture = new TMemoryStream;
 	}
 	void setIdFood(int);
@@ -187,13 +190,27 @@ public:
         this->payment = 0;
 	}
 	void setIdOrder(int);
+    int getIdOrder();
 	void setDateOrder(TDateTime,TDateTime);
 	void setCloseOrder(bool);
-	void setPayment(payment);
-    int getIdOrder();
+	void setPayment(float);
 	void InsertDBOrderMenu();
 	void UpdateDBOrderMenu();
     void DeleteDBOrderMenu();
 	void CloseOrderMenu();
 	void UpdatePayment();
+	void UpdateDiscount();
+};
+
+class TListOrder: public TFood,public TOrderMenu
+{
+private:
+	int id_listingrfood;
+	float counts;
+public:
+	void setIdListingrfood(int);
+	void setListCounts(float);
+	int getIdListingrfood();
+	void InsertDBListOrder();
+    void DeleteDBListOrder();
 };

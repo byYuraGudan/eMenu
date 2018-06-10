@@ -183,6 +183,7 @@ __published:	// IDE-managed Components
 	TBCDField *OTListOrdercounts;
 	TBCDField *OTListOrderprice_food;
 	TFMTBCDField *OTListOrderSuma;
+	TBooleanField *ATFoodvisible;
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall DataModuleDestroy(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);

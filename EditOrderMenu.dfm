@@ -11607,26 +11607,8 @@ object FEditOrderMenu: TFEditOrderMenu
       Top = 22
       Width = 100
       Height = 22
-      ItemIndex = 0
       TabOrder = 0
-      Text = '6'
       OnChange = CB_id_orderChange
-      Items.Strings = (
-        '6'
-        '7'
-        '12'
-        '14'
-        '15'
-        '16'
-        '17'
-        '19'
-        '21'
-        '22'
-        '23'
-        '24'
-        '25'
-        '26'
-        '27')
     end
     object btnCloseOrder: TButton
       AlignWithMargins = True
@@ -11665,9 +11647,9 @@ object FEditOrderMenu: TFEditOrderMenu
       Height = 22
       ItemIndex = 0
       TabOrder = 3
-      Text = '2 '#1074#1110#1082#1085#1086
+      Text = '1'
       Items.Strings = (
-        '2 '#1074#1110#1082#1085#1086)
+        '1')
     end
   end
   object DBGrid1: TDBGrid

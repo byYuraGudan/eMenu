@@ -29,7 +29,8 @@ __fastcall TFAdmin::TFAdmin(TComponent* Owner)
 	PanelDiscount->Align = alClient;
 	PanelOrderMenu->Align = alClient;
 	LookPanel->Align = alClient;
-    PanelTable->Align = alClient;
+	PanelTable->Align = alClient;
+    PanelReport->Align = alClient;
 }
 //---------------------------------------------------------------------------
 
@@ -96,7 +97,8 @@ void TFAdmin::HidePanel(TObject *Sender){
 	PanelCategory->Hide();
 	PanelOrderMenu->Hide();
 	LookPanel->Hide();
-    PanelTable->Hide();
+	PanelTable->Hide();
+    PanelReport->Hide();
 }
 
 //---------------------------------------------------------------------------
@@ -431,6 +433,29 @@ void __fastcall TFAdmin::ButtonDayReportClick(TObject *Sender)
 void __fastcall TFAdmin::buttonViewListOrderMenuClick(TObject *Sender)
 {
     FEditOrderMenu->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::Button6Click(TObject *Sender)
+{
+	this->HidePanel(Sender);
+	PanelReport->Show();
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::Button5Click(TObject *Sender)
+{
+    DM->frxReport1->ShowReport();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::FormShow(TObject *Sender)
+{
+	DateFirst->Date = Date();
+	DateSecond->Date = Date();
+	TimeFirst->Time = StrToTime("0:00:00");
+	TimeSecond->Time = StrToTime("23:59:59");
 }
 //---------------------------------------------------------------------------
 

@@ -104,7 +104,6 @@ __published:	// IDE-managed Components
 	TButton *ButtonViewTable;
 	TButton *ButtonAddListTable;
 	TPanel *PanelTable;
-	TPanel *LookPanel;
 	TDBGrid *DBGridTable;
 	TEdit *EditSearchTable;
 	TToolBar *ToolBarTable;
@@ -112,6 +111,21 @@ __published:	// IDE-managed Components
 	TToolButton *DeleteTable;
 	TToolButton *InvOcupTable;
 	TButton *ButtonDayReport;
+	TPanel *PanelReport;
+	TPanel *LookPanel;
+	TGroupBox *GroupBox1;
+	TDateTimePicker *DateFirst;
+	TDateTimePicker *TimeFirst;
+	TLabel *Labelasd;
+	TLabel *Labeldqwe;
+	TDateTimePicker *DateSecond;
+	TDateTimePicker *TimeSecond;
+	TGridPanel *GridPanel1;
+	TButton *Button1;
+	TButton *Button3;
+	TButton *Button4;
+	TButton *Button5;
+	TButton *Button6;
 	void __fastcall buttonViewPersonalClick(TObject *Sender);
 	void __fastcall buttonAddPersonalClick(TObject *Sender);
 	void __fastcall buttonAddCategoryClick(TObject *Sender);
@@ -150,6 +164,9 @@ __published:	// IDE-managed Components
 	void __fastcall DeleteOrderMenuClick(TObject *Sender);
 	void __fastcall ButtonDayReportClick(TObject *Sender);
 	void __fastcall buttonViewListOrderMenuClick(TObject *Sender);
+	void __fastcall Button6Click(TObject *Sender);
+	void __fastcall Button5Click(TObject *Sender);
+	void __fastcall FormShow(TObject *Sender);
 
 
 private:	// User declarations

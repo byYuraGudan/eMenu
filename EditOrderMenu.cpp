@@ -37,7 +37,6 @@ void TOrderMenu::setPayment(float f){ this->payment = f;}
 
 void TOrderMenu::CloseOrderMenu(){
 	DM->DoSQLExec(DM->TSQL,"UPDATE eMenu.dbo.OrderMenu SET date_close_order = GETDATE(), close_order = 1 WHERE id_order = "+IntToStr(this->getIdOrder()));
-	this->UpdateOccupation();
 }
 void TOrderMenu::UpdatePayment(){
 
@@ -238,6 +237,7 @@ void __fastcall TFEditOrderMenu::btnCloseOrderClick(TObject *Sender)
 			order.setIdOrder(id);
 			order.setId_table(DM->OTOpenOrder->FieldByName("kod_table")->AsInteger);
 			order.setOccupListTable(false);
+            order.UpdateOccupation();
 			order.CloseOrderMenu();
 			ShowMessage("Замовлення №"+IntToStr(id)+" закрито");
 			DM->OTListOrder->Close();
@@ -246,7 +246,7 @@ void __fastcall TFEditOrderMenu::btnCloseOrderClick(TObject *Sender)
 		{
 				MessageBox(NULL, L"Виберіть замовлення!", L"Відмова!",  MB_OK |MB_ICONWARNING);
 				DM->OTListOrder->Close();
-        }
+		}
 		} catch(...){}
 }
 //---------------------------------------------------------------------------

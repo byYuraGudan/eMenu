@@ -16,6 +16,7 @@
 #include <Data.SqlExpr.hpp>
 #include <Datasnap.DBClient.hpp>
 #include <Datasnap.DSConnect.hpp>
+#include "frxClass.hpp"
 //---------------------------------------------------------------------------
 class TDM : public TDataModule
 {
@@ -184,6 +185,8 @@ __published:	// IDE-managed Components
 	TBCDField *OTListOrderprice_food;
 	TFMTBCDField *OTListOrderSuma;
 	TBooleanField *ATFoodvisible;
+	TfrxReport *frxReport1;
+	TfrxUserDataSet *frxUserDataSet1;
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall DataModuleDestroy(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);

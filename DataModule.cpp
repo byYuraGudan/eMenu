@@ -19,6 +19,7 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma classgroup "Vcl.Controls.TControl"
+#pragma link "frxClass"
 #pragma resource "*.dfm"
 TDM *DM;
 //---------------------------------------------------------------------------

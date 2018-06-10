@@ -26,15 +26,15 @@ __fastcall TDM::TDM(TComponent* Owner)
 	: TDataModule(Owner)
 {
 	 this->ini = new TIniFile(GetCurrentDir()+"\\options.ini");
-	 try {
+	 //try {
 			ConnectionToDB->Connected = false;
 			ConnectionToDB->ConnectionString = ini->ReadString("SQL Server","ConnectionString","ConnectionString=Provider=SQLOLEDB.1;Password=1;Persist Security Info=True;User ID=sa;Initial Catalog=eMenu;Data Source=127.0.0.1;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=YURAHUDAN-ПК;Use Encryption for Data=False;Tag with column collation when possible=False");
 			ConnectionToDB->Connected = true;
 			OpenDB();
-		}
-		catch(...) {
-			ShowMessage("Не вдалось підлючитись до БД!");
-		}
+//		}
+//		catch(...) {
+//			ShowMessage("Не вдалось підлючитись до БД!");
+//		}
 }
 
 void TDM::DoSQL(TADOQuery *Query,AnsiString str){
@@ -48,6 +48,7 @@ void TDM::DoSQLExec(TADOQuery *Query,AnsiString str){
 	Query->Close();
 	Query->SQL->Clear();
 	Query->SQL->Add(str);
+	//ShowMessage(DM->TSQL->SQL->GetText());
 	Query->ExecSQL();
 }
 void TDM::RefreshADO(TADOTable *Table){
@@ -62,20 +63,19 @@ void TDM::RefreshADO(TADOTable *Table){
     }
 }
 void TDM::RefreshADO(TADOQuery *Query){
-	if(Query->Actve){
+	if(Query->Active){
 		int a = Query->RecNo;
 		Query->Close();
 		Query->Open();
 		Query->RecNo = a;
 	}else{
-	Query->Close();
+	    Query->Close();
 		Query->Open();
     }
 }
 
 void TDM::OpenDB(){
-	this->OpenDBMain();
-    this->OpenDBOficiant();
+	try{
 	RefreshADO(ATPersonal);
 	RefreshADO(ATCategory);
 	RefreshADO(ATFood);
@@ -83,7 +83,10 @@ void TDM::OpenDB(){
 	RefreshADO(ATFoodIngredient);
 	RefreshADO(ATListTable);
 	RefreshADO(ATOrderMenu);
-    RefreshADO(ATListOrderMenu);
+	RefreshADO(ATListOrderMenu);
+	this->OpenDBMain();
+	this->OpenDBOficiant();
+	}catch(...){}
 }
 
 void TDM::OpenDBMain(){
@@ -92,9 +95,9 @@ void TDM::OpenDBMain(){
 }
 void TDM::OpenDBOficiant(){
 	RefreshADO(OTOpenOrder);
-
 	RefreshADO(OTNotOcupTable);
-    RefreshADO(OTListOrder);
+	TObject *Sender;
+	FEditOrderMenu->CB_id_orderChange(Sender);
 }
 //---------------------------------------------------------------------------
 

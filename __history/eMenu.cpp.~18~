@@ -6,10 +6,17 @@
 //---------------------------------------------------------------------------
 #include <Vcl.Styles.hpp>
 #include <Vcl.Themes.hpp>
+USEFORM("EditTabel.cpp", FEditTable);
+USEFORM("EditPersonal.cpp", FEditPersonal);
+USEFORM("EditOrderMenu.cpp", FEditOrderMenu);
 USEFORM("MainForm.cpp", FMainForm);
+USEFORM("EditIngredient.cpp", FEditIngredient);
 USEFORM("DataModule.cpp", DM); /* TDataModule: File Type */
+USEFORM("Authorization.cpp", FAuth);
 USEFORM("Admin.cpp", FAdmin);
-USEFORM("DataModuleMainForm.cpp", DMMain); /* TDataModule: File Type */
+USEFORM("EditFood.cpp", FEditFood);
+USEFORM("EditDiscount.cpp", FEditDiscount);
+USEFORM("EditCategory.cpp", FEditCategory);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -21,7 +28,14 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(TFMainForm), &FMainForm);
 		Application->CreateForm(__classid(TFAdmin), &FAdmin);
 		Application->CreateForm(__classid(TDM), &DM);
-		Application->CreateForm(__classid(TDMMain), &DMMain);
+		Application->CreateForm(__classid(TFAuth), &FAuth);
+		Application->CreateForm(__classid(TFEditPersonal), &FEditPersonal);
+		Application->CreateForm(__classid(TFEditCategory), &FEditCategory);
+		Application->CreateForm(__classid(TFEditDiscount), &FEditDiscount);
+		Application->CreateForm(__classid(TFEditFood), &FEditFood);
+		Application->CreateForm(__classid(TFEditIngredient), &FEditIngredient);
+		Application->CreateForm(__classid(TFEditTable), &FEditTable);
+		Application->CreateForm(__classid(TFEditOrderMenu), &FEditOrderMenu);
 		Application->Run();
 	}
 	catch (Exception &exception)

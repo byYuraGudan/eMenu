@@ -101,11 +101,12 @@ void TListOrder::InsertDBListOrder(){
 }
 
 void TListOrder::DeleteDBListOrder(){
-   //	try{
+   	try{
 	DM->DoSQLExec(DM->TSQL,\
 	"DELETE FROM eMenu.dbo.ListOrderMenu where id_listordermenu ="+IntToStr(this->id_listingrfood));
-	DM->RefreshADO(DM->OTListOrder);
-   //	} catch(...){MessageBox(NULL, L"Не вдалося видалити!", L"Відмова!",  MB_OK | MB_ICONERROR); }
+	TObject *Sender;
+	FEditOrderMenu->CB_id_orderChange(Sender);
+	} catch(...){MessageBox(NULL, L"Не вдалося видалити!", L"Відмова!",  MB_OK | MB_ICONERROR); }
 }
 
 

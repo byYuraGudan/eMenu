@@ -17,6 +17,7 @@ USEFORM("Admin.cpp", FAdmin);
 USEFORM("EditFood.cpp", FEditFood);
 USEFORM("EditDiscount.cpp", FEditDiscount);
 USEFORM("EditCategory.cpp", FEditCategory);
+USEFORM("DataModuleReporting.cpp", DMReporting); /* TDataModule: File Type */
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -36,6 +37,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(TFEditIngredient), &FEditIngredient);
 		Application->CreateForm(__classid(TFEditTable), &FEditTable);
 		Application->CreateForm(__classid(TFEditOrderMenu), &FEditOrderMenu);
+		Application->CreateForm(__classid(TDMReporting), &DMReporting);
 		Application->Run();
 	}
 	catch (Exception &exception)

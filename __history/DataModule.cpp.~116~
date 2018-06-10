@@ -48,6 +48,7 @@ void TDM::DoSQLExec(TADOQuery *Query,AnsiString str){
 	Query->Close();
 	Query->SQL->Clear();
 	Query->SQL->Add(str);
+	//ShowMessage(DM->TSQL->SQL->GetText());
 	Query->ExecSQL();
 }
 void TDM::RefreshADO(TADOTable *Table){
@@ -62,13 +63,19 @@ void TDM::RefreshADO(TADOTable *Table){
     }
 }
 void TDM::RefreshADO(TADOQuery *Query){
-	int a = Query->RecNo;
-	Query->Close();
-	Query->Open();
-    Query->RecNo = a;
+	if(Query->Active){
+		int a = Query->RecNo;
+		Query->Close();
+		Query->Open();
+		Query->RecNo = a;
+	}else{
+	    Query->Close();
+		Query->Open();
+    }
 }
 
 void TDM::OpenDB(){
+	try{
 	this->OpenDBMain();
     this->OpenDBOficiant();
 	RefreshADO(ATPersonal);
@@ -78,7 +85,7 @@ void TDM::OpenDB(){
 	RefreshADO(ATFoodIngredient);
 	RefreshADO(ATListTable);
 	RefreshADO(ATOrderMenu);
-    RefreshADO(ATListOrderMenu);
+    RefreshADO(ATListOrderMenu);  }catch(...){}
 }
 
 void TDM::OpenDBMain(){
@@ -87,9 +94,10 @@ void TDM::OpenDBMain(){
 }
 void TDM::OpenDBOficiant(){
 	RefreshADO(OTOpenOrder);
-
 	RefreshADO(OTNotOcupTable);
-    RefreshADO(OTListOrder);
+	TObject *Sender;
+	FEditOrderMenu->CB_id_orderChange(Sender);
+	//RefreshADO(OTListOrder);
 }
 //---------------------------------------------------------------------------
 

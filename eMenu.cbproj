@@ -143,6 +143,13 @@
             <DependentOn>DataModule.h</DependentOn>
             <BuildOrder>3</BuildOrder>
         </CppCompile>
+        <CppCompile Include="DataModuleReporting.cpp">
+            <Form>DMReporting</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+            <DependentOn>DataModuleReporting.h</DependentOn>
+            <BuildOrder>13</BuildOrder>
+        </CppCompile>
         <CppCompile Include="EditCategory.cpp">
             <Form>FEditCategory</Form>
             <FormType>dfm</FormType>
@@ -209,6 +216,7 @@
         <FormResources Include="EditFood.dfm"/>
         <FormResources Include="EditDiscount.dfm"/>
         <FormResources Include="EditCategory.dfm"/>
+        <FormResources Include="DataModuleReporting.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

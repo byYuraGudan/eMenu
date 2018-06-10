@@ -1,22 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.976,C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Unit1.dfm=E:\eMenu\MainForm.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.262,E:\eMenu\Unit1.h=E:\eMenu\EditIngredient.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.298,E:\eMenu\Unit1.h=E:\eMenu\EditTabel.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.874,E:\eMenu\Unit1.h=E:\eMenu\EditPersonal.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.335,E:\eMenu\DataModuleMainForm.dfm=E:\eMenu\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.823,E:\eMenu\Unit1.h=E:\eMenu\DataModule.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.197,E:\eMenu\File1.cpp=E:\eMenu\eMenuFunc.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.281,=E:\eMenu\File1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.591,E:\eMenu\Admin.h=E:\eMenu\Unit1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.779,E:\eMenu\DataModuleMainForm.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.976,C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Unit1.dfm=E:\eMenu\MainForm.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.335,E:\eMenu\DataModuleMainForm.h=E:\eMenu\Unit1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.142,E:\eMenu\Oficiant.h=E:\eMenu\FEditOrderMenu.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.775,E:\eMenu\Oficiant.h=E:\eMenu\Unit1.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.823,E:\eMenu\Unit1.h=E:\eMenu\DataModule.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.087,=C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.775,E:\eMenu\Oficiant.dfm=E:\eMenu\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.142,E:\eMenu\Oficiant.dfm=E:\eMenu\FEditOrderMenu.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.335,E:\eMenu\DataModuleMainForm.cpp=E:\eMenu\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.779,E:\eMenu\DataModuleMainForm.cpp=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.335,E:\eMenu\DataModuleMainForm.dfm=E:\eMenu\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.298,E:\eMenu\Unit1.dfm=E:\eMenu\EditTabel.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.823,E:\eMenu\Unit1.dfm=E:\eMenu\DataModule.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.262,E:\eMenu\Unit1.dfm=E:\eMenu\EditIngredient.dfm</Transaction>
@@ -33,7 +34,7 @@
     <Transaction>1899.12.30 00:00:00.000.456,E:\eMenu\EditOrderMenu.dfm=E:\eMenu\FEditOrderMenu.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.428,E:\eMenu\eMenuFunc.cpp=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.578,C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Project1.cbproj=E:\eMenu\eMenu.cbproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.087,=C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.146,=C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.204,=E:\eMenu\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.852,=E:\eMenu\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.316,=E:\eMenu\Unit1.cpp</Transaction>
@@ -50,22 +51,25 @@
     <Transaction>1899.12.30 00:00:00.000.262,E:\eMenu\Unit1.cpp=E:\eMenu\EditIngredient.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.979,=C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.171,=C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.549,=E:\eMenu\Unit2.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.266,=E:\eMenu\Unit2.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.635,=E:\eMenu\Unit2.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.208,E:\eMenu\Unit2.cpp=E:\eMenu\EditDiscount.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.146,=C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.456,E:\eMenu\EditOrderMenu.h=E:\eMenu\FEditOrderMenu.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.436,C:\Users\yura.hudan\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=E:\eMenu\eMenuPCH1.h</Transaction>
     <Transaction>1899.12.30 00:00:00.000.590,E:\eMenu\Unit2.cpp=E:\eMenu\EditFood.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.586,E:\eMenu\Unit2.cpp=E:\eMenu\EditCategory.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.549,=E:\eMenu\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.456,E:\eMenu\EditOrderMenu.cpp=E:\eMenu\FEditOrderMenu.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.874,E:\eMenu\Unit1.cpp=E:\eMenu\EditPersonal.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.824,=E:\eMenu\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.631,=E:\eMenu\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.836,=E:\eMenu\Unit1.cpp</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.456,E:\eMenu\EditOrderMenu.h=E:\eMenu\FEditOrderMenu.h</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.456,E:\eMenu\EditOrderMenu.cpp=E:\eMenu\FEditOrderMenu.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.775,E:\eMenu\Oficiant.cpp=E:\eMenu\Unit1.cpp</Transaction>
     <Transaction>1899.12.30 00:00:00.000.142,E:\eMenu\Oficiant.cpp=E:\eMenu\FEditOrderMenu.cpp</Transaction>
+    <Transaction>2018.06.10 12:23:46.244,=E:\eMenu\Unit1.cpp</Transaction>
+    <Transaction>2018.06.10 12:24:15.367,E:\eMenu\DataModuleReporting.dfm=E:\eMenu\Unit1.dfm</Transaction>
+    <Transaction>2018.06.10 12:24:15.367,E:\eMenu\DataModuleReporting.h=E:\eMenu\Unit1.h</Transaction>
+    <Transaction>2018.06.10 12:24:15.367,E:\eMenu\DataModuleReporting.cpp=E:\eMenu\Unit1.cpp</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="Admin.cpp"/>
@@ -114,5 +118,9 @@
     <File Path="MainForm.cpp"/>
     <File Path="MainForm.dfm"/>
     <File Path="MainForm.h"/>
+    <File Path="DataModuleReporting.cpp"/>
+    <File Path="DataModuleReporting.cpp"/>
+    <File Path="DataModuleReporting.dfm"/>
+    <File Path="DataModuleReporting.h"/>
   </ProjectSortOrder>
 </BorlandProject>

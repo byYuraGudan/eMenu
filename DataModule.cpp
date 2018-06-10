@@ -76,8 +76,6 @@ void TDM::RefreshADO(TADOQuery *Query){
 
 void TDM::OpenDB(){
 	try{
-	this->OpenDBMain();
-    this->OpenDBOficiant();
 	RefreshADO(ATPersonal);
 	RefreshADO(ATCategory);
 	RefreshADO(ATFood);
@@ -85,7 +83,10 @@ void TDM::OpenDB(){
 	RefreshADO(ATFoodIngredient);
 	RefreshADO(ATListTable);
 	RefreshADO(ATOrderMenu);
-    RefreshADO(ATListOrderMenu);  }catch(...){}
+	RefreshADO(ATListOrderMenu);
+	this->OpenDBMain();
+	this->OpenDBOficiant();
+	}catch(...){}
 }
 
 void TDM::OpenDBMain(){
@@ -95,7 +96,8 @@ void TDM::OpenDBMain(){
 void TDM::OpenDBOficiant(){
 	RefreshADO(OTOpenOrder);
 	RefreshADO(OTNotOcupTable);
-	RefreshADO(OTListOrder);
+	TObject *Sender;
+	FEditOrderMenu->CB_id_orderChange(Sender);
 }
 //---------------------------------------------------------------------------
 

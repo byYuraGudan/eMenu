@@ -101,11 +101,11 @@ void TListOrder::InsertDBListOrder(){
 }
 
 void TListOrder::DeleteDBListOrder(){
- 	try{
+   //	try{
 	DM->DoSQLExec(DM->TSQL,\
 	"DELETE FROM eMenu.dbo.ListOrderMenu where id_listordermenu ="+IntToStr(this->id_listingrfood));
-	DM->RefreshADO(DM->OTListOrder);
-	} catch(...){MessageBox(NULL, L"Не вдалося видалити!", L"Відмова!",  MB_OK | MB_ICONERROR); }
+    FEditOrderMenu->CB_id_orderChange(Sender);
+   //	} catch(...){MessageBox(NULL, L"Не вдалося видалити!", L"Відмова!",  MB_OK | MB_ICONERROR); }
 }
 
 
@@ -124,14 +124,17 @@ void __fastcall TFEditOrderMenu::FormClose(TObject *Sender, TCloseAction &Action
 
 void __fastcall TFEditOrderMenu::CB_id_orderChange(TObject *Sender)
 {
-	try{
+//	try{
+	String tmp = CB_id_order->Text;
+	if (!tmp.IsEmpty()) {
 	DM->DoSQL(DM->OTListOrder,\
 	"SELECT   id_listordermenu, kod_order, kod_food,name_food,counts,price_food, counts * price_food AS Suma\
-	FROM eMenu.dbo.ListOrderMenu INNER JOIN eMenu.dbo.Food ON id_food = kod_food WHERE kod_order = "+CB_id_order->Text);
-	}catch(...){
-
-        ShowMessage("");
-	}
+	FROM eMenu.dbo.ListOrderMenu INNER JOIN eMenu.dbo.Food ON id_food = kod_food WHERE kod_order = "+tmp);
+	} else DM->OTListOrder->Close();
+	//	}catch(...){
+//
+//        ShowMessage("");
+//	}
 }
 //---------------------------------------------------------------------------
 
@@ -150,7 +153,7 @@ void __fastcall TFEditOrderMenu::btnRemovClick(TObject *Sender)
 		}
 	}
 	catch(...){
-		MessageBox(NULL, L"Дані, пов'язанні з даною інформацією. Не можливо видалити!", L"Відмова!",  MB_OK |MB_ICONWARNING);
+		//MessageBox(NULL, L"Дані, пов'язанні з даною інформацією. Не можливо видалити!", L"Відмова!",  MB_OK |MB_ICONWARNING);
 	}
 
 
@@ -217,6 +220,7 @@ void __fastcall TFEditOrderMenu::btnOpenOrderClick(TObject *Sender)
 		order.InsertDBOrderMenu();
 		DM->OpenDB();
 		DM->OTOpenOrder->Last();
+        CB_id_orderChange(Sender);
 	} else MessageBox(NULL, L"Немає вільних місць!", L"Відмова!",  MB_OK | MB_ICONWARNING);
 
 }
@@ -245,4 +249,5 @@ void __fastcall TFEditOrderMenu::btnCloseOrderClick(TObject *Sender)
 		} catch(...){}
 }
 //---------------------------------------------------------------------------
+
 

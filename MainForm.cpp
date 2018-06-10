@@ -137,19 +137,23 @@ void __fastcall TFMainForm::Image1Click(TObject *Sender)
 {
 	try{
 		String count;
+		if(DM->OTOpenOrder->RecordCount == 0)
+		MessageBox(NULL, L"Створіть замовлення!", L"Відмова!",  MB_OK | MB_ICONWARNING);
+        else
 		if(InputQuery("Виберіть кількість!","Кількість",count)){
-			TListOrder list;
-      		list.setIdFood(DM->MTShowFood->FieldByName("id_food")->AsInteger);
-			list.setIdOrder(DM->OTOpenOrder->FieldByName("id_order")->AsInteger);
-      		list.setListCounts(StrToFloat(count));
-			list.InsertDBListOrder();
-			DM->OpenDBOficiant();
-			list.UpdatePayment();
-			DM->OpenDBOficiant();
-		}
+
+	       		TListOrder list;
+	       		list.setIdFood(DM->MTShowFood->FieldByName("id_food")->AsInteger);
+	       		list.setIdOrder(DM->OTOpenOrder->FieldByName("id_order")->AsInteger);
+	       		list.setListCounts(StrToFloat(count));
+	       		list.InsertDBListOrder();
+	       		DM->OpenDBOficiant();
+	       		list.UpdatePayment();
+				DM->OpenDBOficiant();
+			}
 	}
 	catch(...){
-	   //	MessageBox(NULL, L"Перевірьте правильність даних!", L"Відмова!",  MB_OK | MB_ICONWARNING);
+		MessageBox(NULL, L"Перевірьте правильність даних!", L"Відмова!",  MB_OK | MB_ICONWARNING);
 	}
 }
 //---------------------------------------------------------------------------

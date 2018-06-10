@@ -14,6 +14,9 @@
 #include "EditFood.h"
 #include "EditIngredient.h"
 #include "EditPersonal.h"
+#include "DataModuleReporting.h"
+#include "EditOrderMenu.h"
+#include "EditTabel.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -49,6 +52,8 @@ void TFAuth::NotUserStatus(TObject *Sender){
 	FEditPersonal->Hide();
 	FMainForm->Menu = DM->MMain;
 	FMainForm->HideOficiant();
+	FEditOrderMenu->Hide();
+	FEditTable->Hide();
 }
 
 void __fastcall TFAuth::FormShow(TObject *Sender)

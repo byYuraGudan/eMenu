@@ -11588,7 +11588,6 @@ object FEditOrderMenu: TFEditOrderMenu
     Height = 52
     Align = alTop
     TabOrder = 0
-    ExplicitTop = -3
     object Label1: TLabel
       Left = 551
       Top = 5
@@ -11604,8 +11603,8 @@ object FEditOrderMenu: TFEditOrderMenu
       Caption = 'C'#1090#1110#1083' '#8470
     end
     object CB_id_order: TComboBox
-      Left = 543
-      Top = 24
+      Left = 544
+      Top = 22
       Width = 100
       Height = 22
       ItemIndex = 0
@@ -11619,7 +11618,15 @@ object FEditOrderMenu: TFEditOrderMenu
         '14'
         '15'
         '16'
-        '17')
+        '17'
+        '19'
+        '21'
+        '22'
+        '23'
+        '24'
+        '25'
+        '26'
+        '27')
     end
     object btnCloseOrder: TButton
       AlignWithMargins = True
@@ -11650,18 +11657,16 @@ object FEditOrderMenu: TFEditOrderMenu
       TabOrder = 2
       WordWrap = True
       OnClick = btnOpenOrderClick
-      ExplicitTop = 3
     end
     object CB_table: TComboBox
       Left = 306
-      Top = 22
+      Top = 23
       Width = 100
       Height = 22
       ItemIndex = 0
       TabOrder = 3
-      Text = #1094#1077#1085#1090#1088
+      Text = '2 '#1074#1110#1082#1085#1086
       Items.Strings = (
-        #1094#1077#1085#1090#1088
         '2 '#1074#1110#1082#1085#1086)
     end
   end
@@ -11752,8 +11757,6 @@ object FEditOrderMenu: TFEditOrderMenu
         TabOrder = 0
         WordWrap = True
         OnClick = btnAddToOrderClick
-        ExplicitLeft = -5
-        ExplicitTop = -5
       end
       object btnRemov: TButton
         Left = 143
@@ -11767,8 +11770,6 @@ object FEditOrderMenu: TFEditOrderMenu
         TabOrder = 1
         WordWrap = True
         OnClick = btnRemovClick
-        ExplicitLeft = 142
-        ExplicitTop = 6
       end
       object btnPrint: TButton
         Left = 1
@@ -11909,7 +11910,6 @@ object FEditOrderMenu: TFEditOrderMenu
         ParentColor = False
         ParentFont = False
         StyleElements = []
-        ExplicitTop = 219
         ExplicitWidth = 84
       end
       object DBdiscount: TDBText
@@ -11953,14 +11953,14 @@ object FEditOrderMenu: TFEditOrderMenu
   object BindSourceDB1: TBindSourceDB
     DataSet = DM.OTOpenOrder
     ScopeMappings = <>
-    Left = 760
+    Left = 840
     Top = 8
   end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 759
-    Top = 8
+    Left = 20
+    Top = 5
     object LinkListControlToField1: TLinkListControlToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
@@ -11983,7 +11983,7 @@ object FEditOrderMenu: TFEditOrderMenu
   object BindSourceDB2: TBindSourceDB
     DataSet = DM.OTNotOcupTable
     ScopeMappings = <>
-    Left = 760
-    Top = 8
+    Left = 432
+    Top = 296
   end
 end

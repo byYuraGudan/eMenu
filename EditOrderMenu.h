@@ -37,13 +37,8 @@ __published:	// IDE-managed Components
 	TButton *btnRemov;
 	TButton *btnPrint;
 	TButton *btnDiscount;
-	TBindSourceDB *BindSourceDB1;
-	TBindingsList *BindingsList1;
-	TLinkListControlToField *LinkListControlToField1;
 	TComboBox *CB_table;
 	TLabel *Label2;
-	TBindSourceDB *BindSourceDB2;
-	TLinkListControlToField *LinkListControlToField2;
 	TButton *btnReportDay;
 	TGroupBox *GroupBox1;
 	TLabel *Label3;
@@ -56,6 +51,11 @@ __published:	// IDE-managed Components
 	TDBText *DBdiscount;
 	TDBText *DBpayment;
 	TDBText *DBrealpayment;
+	TBindSourceDB *BindSourceDB1;
+	TBindingsList *BindingsList1;
+	TLinkListControlToField *LinkListControlToField1;
+	TBindSourceDB *BindSourceDB2;
+	TLinkListControlToField *LinkListControlToField2;
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall CB_id_orderChange(TObject *Sender);
 	void __fastcall btnRemovClick(TObject *Sender);

@@ -4500,20 +4500,21 @@ object FAdmin: TFAdmin
     object EditSearchCategory: TEdit
       AlignWithMargins = True
       Left = 4
-      Top = 32
+      Top = 76
       Width = 290
       Height = 24
       Align = alTop
       TabOrder = 0
       TextHint = #1055#1086#1096#1091#1082' '#1082#1072#1090#1077#1075#1086#1088#1110#1111
       OnChange = EditSearchCategoryChange
+      ExplicitTop = 32
     end
     object DBGridCategory: TDBGrid
       AlignWithMargins = True
       Left = 4
-      Top = 62
+      Top = 106
       Width = 290
-      Height = 89
+      Height = 45
       Align = alClient
       DataSource = DM.ADSCategory
       TabOrder = 1
@@ -4528,7 +4529,8 @@ object FAdmin: TFAdmin
       Left = 4
       Top = 4
       Width = 290
-      Height = 22
+      Height = 66
+      AutoSize = True
       ButtonWidth = 155
       Caption = 'ToolBar'
       Images = DM.ImageListButton
@@ -4561,8 +4563,8 @@ object FAdmin: TFAdmin
     end
   end
   object PanelOrderMenu: TPanel
-    Left = 496
-    Top = 106
+    Left = 504
+    Top = 167
     Width = 457
     Height = 374
     Caption = 'PanelOrderMenu'
@@ -4570,17 +4572,18 @@ object FAdmin: TFAdmin
     object EditSearchOrderMenu: TEdit
       AlignWithMargins = True
       Left = 4
-      Top = 32
+      Top = 54
       Width = 449
       Height = 24
       Align = alTop
       TabOrder = 0
       Text = 'EditSearchOrderMenu'
+      ExplicitTop = 32
     end
     object DBGridListOrder: TDBGrid
       AlignWithMargins = True
       Left = 4
-      Top = 62
+      Top = 84
       Width = 449
       Height = 200
       Align = alTop
@@ -4595,9 +4598,9 @@ object FAdmin: TFAdmin
     object DBGridOrderMenu: TDBGrid
       AlignWithMargins = True
       Left = 4
-      Top = 268
+      Top = 290
       Width = 449
-      Height = 102
+      Height = 80
       Align = alClient
       DataSource = DM.ADSListOrderMenu
       TabOrder = 2
@@ -4612,7 +4615,8 @@ object FAdmin: TFAdmin
       Left = 4
       Top = 4
       Width = 449
-      Height = 22
+      Height = 44
+      AutoSize = True
       ButtonWidth = 155
       Caption = 'ToolBar'
       Images = DM.ImageListButton
@@ -4624,6 +4628,7 @@ object FAdmin: TFAdmin
         Top = 0
         Caption = #1044#1086#1076#1072#1090#1080' '#1079#1072#1087#1080#1089
         ImageIndex = 0
+        OnClick = AddOrderMenuClick
       end
       object DeleteOrderMenu: TToolButton
         Left = 155
@@ -4631,6 +4636,7 @@ object FAdmin: TFAdmin
         Caption = #1042#1080#1076#1072#1083#1080#1090#1080' '#1079#1072#1087#1080#1089
         ImageIndex = 1
         Wrap = True
+        OnClick = DeleteOrderMenuClick
       end
       object EditOrderMenu: TToolButton
         Left = 0
@@ -4650,19 +4656,20 @@ object FAdmin: TFAdmin
     object EditSearchDiscount: TEdit
       AlignWithMargins = True
       Left = 4
-      Top = 32
+      Top = 76
       Width = 286
       Height = 24
       Align = alTop
       TabOrder = 0
       TextHint = #1055#1086#1096#1091#1082
+      ExplicitTop = 32
     end
     object DBGridDiscount: TDBGrid
       AlignWithMargins = True
       Left = 4
-      Top = 62
+      Top = 106
       Width = 286
-      Height = 95
+      Height = 51
       Align = alClient
       DataSource = DM.ADSDiscounts
       TabOrder = 1
@@ -4677,7 +4684,8 @@ object FAdmin: TFAdmin
       Left = 4
       Top = 4
       Width = 286
-      Height = 22
+      Height = 66
+      AutoSize = True
       ButtonWidth = 155
       Caption = 'ToolBar'
       Images = DM.ImageListButton
@@ -4720,20 +4728,21 @@ object FAdmin: TFAdmin
     object EditSearchPersonal: TEdit
       AlignWithMargins = True
       Left = 3
-      Top = 30
+      Top = 75
       Width = 302
       Height = 24
       Align = alTop
       TabOrder = 0
       TextHint = #1055#1086#1096#1091#1082' '#1082#1086#1088#1080#1089#1090#1091#1074#1072#1095#1072
       OnChange = EditSearchPersonalChange
+      ExplicitTop = 30
     end
     object DBGridPersonal: TDBGrid
       AlignWithMargins = True
       Left = 3
-      Top = 60
+      Top = 105
       Width = 302
-      Height = 90
+      Height = 45
       Align = alClient
       DataSource = DM.ADSPersonal
       TabOrder = 1
@@ -4748,7 +4757,8 @@ object FAdmin: TFAdmin
       Left = 3
       Top = 3
       Width = 302
-      Height = 21
+      Height = 66
+      AutoSize = True
       ButtonWidth = 155
       Caption = 'ToolBar'
       Images = DM.ImageListButton
@@ -4782,7 +4792,7 @@ object FAdmin: TFAdmin
   end
   object PanelFood: TPanel
     Left = 522
-    Top = -5
+    Top = -9
     Width = 353
     Height = 178
     Caption = 'PanelFood'
@@ -4790,18 +4800,19 @@ object FAdmin: TFAdmin
     object EditSearchFood: TEdit
       AlignWithMargins = True
       Left = 4
-      Top = 32
+      Top = 54
       Width = 345
       Height = 24
       Align = alTop
       TabOrder = 0
       TextHint = #1055#1086#1096#1091#1082' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1111' '#1087#1086' '#1085#1072#1079#1074#1110' '#1090#1072' '#1082#1072#1090#1077#1075#1086#1088#1110#1111
       OnChange = EditSearchFoodChange
+      ExplicitTop = 32
     end
     object DBGridFood: TDBGrid
       AlignWithMargins = True
       Left = 4
-      Top = 62
+      Top = 84
       Width = 345
       Height = 0
       Align = alClient
@@ -4818,7 +4829,8 @@ object FAdmin: TFAdmin
       Left = 4
       Top = 4
       Width = 345
-      Height = 22
+      Height = 44
+      AutoSize = True
       ButtonWidth = 155
       Caption = 'ToolBar'
       Images = DM.ImageListButton
@@ -4886,17 +4898,17 @@ object FAdmin: TFAdmin
     end
   end
   object PanelTable: TPanel
-    Left = 807
-    Top = 175
+    Left = 798
+    Top = 44
     Width = 194
     Height = 117
     TabOrder = 6
     object DBGridTable: TDBGrid
       AlignWithMargins = True
       Left = 4
-      Top = 62
+      Top = 106
       Width = 186
-      Height = 51
+      Height = 7
       Align = alClient
       DataSource = DM.ADSListTable
       TabOrder = 0
@@ -4909,20 +4921,22 @@ object FAdmin: TFAdmin
     object EditSearchTable: TEdit
       AlignWithMargins = True
       Left = 4
-      Top = 32
+      Top = 76
       Width = 186
       Height = 24
       Align = alTop
       TabOrder = 1
       TextHint = #1055#1086#1096#1091#1082
       OnChange = EditSearchTableChange
+      ExplicitTop = 32
     end
     object ToolBarTable: TToolBar
       AlignWithMargins = True
       Left = 4
       Top = 4
       Width = 186
-      Height = 22
+      Height = 66
+      AutoSize = True
       ButtonWidth = 155
       Caption = 'ToolBar'
       Images = DM.ImageListButton

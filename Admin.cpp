@@ -355,12 +355,12 @@ void __fastcall TFAdmin::AddTableClick(TObject *Sender)
 
 void __fastcall TFAdmin::DeleteTableClick(TObject *Sender)
 {
-      try {
+	  try {
 		if (IDYES == MessageBox(NULL, L"Ви впевнені, що хочете видалити ?", L"Підвердження!",  MB_YESNO |MB_ICONQUESTION))
 		{
 				TListTable table;
 				table.setId_table(DM->ATListTable->FieldByName("id_table")->AsInteger);
-                table.DeleteDBListTable();
+				table.DeleteDBListTable();
 				DM->OpenDB();
 		}
 	}
@@ -388,6 +388,29 @@ void __fastcall TFAdmin::InvOcupTableClick(TObject *Sender)
 void __fastcall TFAdmin::N7Click(TObject *Sender)
 {
     FEditOrderMenu->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::AddOrderMenuClick(TObject *Sender)
+{
+    FEditOrderMenu->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::DeleteOrderMenuClick(TObject *Sender)
+{
+	  try {
+		if (IDYES == MessageBox(NULL, L"Ви впевнені, що хочете видалити ?", L"Підвердження!",  MB_YESNO |MB_ICONQUESTION))
+		{
+				TOrderMenu order;
+				order.setIdOrder(DM->ATOrderMenu->FieldByName("id_order")->AsInteger);
+				order.DeleteDBOrderMenu();
+				DM->OpenDB();
+		}
+	}
+	catch(...){
+		MessageBox(NULL, L"Дані, пов'язанні з даною інформацією. Не можливо видалити!", L"Відмова!",  MB_OK |MB_ICONWARNING);
+	}
 }
 //---------------------------------------------------------------------------
 

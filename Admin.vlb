@@ -51,7 +51,6 @@ Coordinates=606,141,137,33
 Coordinates=277,312,53,51
 
 [DM.OTOpenOrder]
-Visible=False
 
 [DM.OTNotOcupTable]
 Visible=False

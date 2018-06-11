@@ -20,6 +20,7 @@
 #pragma package(smart_init)
 #pragma classgroup "Vcl.Controls.TControl"
 #pragma link "frxClass"
+#pragma link "frxDBSet"
 #pragma resource "*.dfm"
 TDM *DM;
 //---------------------------------------------------------------------------
@@ -43,13 +44,14 @@ void TDM::DoSQL(TADOQuery *Query,AnsiString str){
 	Query->SQL->Clear();
 	Query->SQL->Add(str);
 	Query->ExecSQL();
+
 	Query->Open();
 }
 void TDM::DoSQLExec(TADOQuery *Query,AnsiString str){
 	Query->Close();
 	Query->SQL->Clear();
 	Query->SQL->Add(str);
-	//ShowMessage(DM->TSQL->SQL->GetText());
+
 	Query->ExecSQL();
 }
 void TDM::RefreshADO(TADOTable *Table){
@@ -83,7 +85,7 @@ void TDM::OpenDB(){
     	RefreshADO(ATDiscount);
     	RefreshADO(ATFoodIngredient);
     	RefreshADO(ATListTable);
-    	RefreshADO(ATOrderMenu);
+		RefreshADO(ATOrderMenu);
     	RefreshADO(ATListOrderMenu);
     	this->OpenDBMain();
 		this->OpenDBOficiant();
@@ -220,4 +222,5 @@ void __fastcall TDM::N17Click(TObject *Sender)
 	FEditOrderMenu->Show();
 }
 //---------------------------------------------------------------------------
+
 

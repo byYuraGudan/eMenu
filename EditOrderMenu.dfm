@@ -11649,15 +11649,6 @@ object FEditOrderMenu: TFEditOrderMenu
       ListSource = DM.ODSNotOcupTable
       TabOrder = 3
     end
-    object Button1: TButton
-      Left = 439
-      Top = 23
-      Width = 75
-      Height = 25
-      Caption = 'Button1'
-      TabOrder = 4
-      OnClick = Button1Click
-    end
   end
   object DBGrid1: TDBGrid
     AlignWithMargins = True
@@ -11948,7 +11939,7 @@ object FEditOrderMenu: TFEditOrderMenu
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 20
+    Left = 780
     Top = 5
     object LinkListControlToField1: TLinkListControlToField
       Category = 'Quick Bindings'

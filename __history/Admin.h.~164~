@@ -1,0 +1,190 @@
+//---------------------------------------------------------------------------
+
+#ifndef AdminH
+#define AdminH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.ExtCtrls.hpp>
+#include <Data.DB.hpp>
+#include <Vcl.DBGrids.hpp>
+#include <Vcl.Grids.hpp>
+#include <Data.Bind.Components.hpp>
+#include <Data.Bind.DBScope.hpp>
+#include <Data.Bind.EngExt.hpp>
+#include <System.Bindings.Outputs.hpp>
+#include <System.Rtti.hpp>
+#include <Vcl.Bind.DBEngExt.hpp>
+#include <Vcl.Bind.Editors.hpp>
+#include <Vcl.DBCtrls.hpp>
+#include <Vcl.Tabs.hpp>
+#include <VCLTee.Chart.hpp>
+#include <VCLTee.DBChart.hpp>
+#include <VCLTee.TeeData.hpp>
+#include <VclTee.TeeGDIPlus.hpp>
+#include <VCLTee.TeEngine.hpp>
+#include <VCLTee.TeeProcs.hpp>
+#include <Vcl.ButtonGroup.hpp>
+#include <Vcl.ComCtrls.hpp>
+#include <Vcl.TabNotBk.hpp>
+#include <Vcl.Imaging.jpeg.hpp>
+#include <Vcl.Graphics.hpp>
+#include <Vcl.ToolWin.hpp>
+#include <Vcl.Menus.hpp>
+//---------------------------------------------------------------------------
+class TFAdmin : public TForm
+{
+__published:	// IDE-managed Components
+	TCategoryPanelGroup *AdminPanelGroupButton;
+	TCategoryPanel *CPOrderMenu;
+	TCategoryPanel *CPCategory;
+	TCategoryPanel *CPFood;
+	TCategoryPanel *CPPersonal;
+	TCategoryPanel *CPDiscounts;
+	TButton *buttonViewPersonal;
+	TButton *buttonAddPersonal;
+	TButton *buttonViewCategory;
+	TButton *buttonAddCategory;
+	TButton *buttonViewFood;
+	TButton *buttonViewOrderMenu;
+	TButton *buttonViewDiscount;
+	TButton *Button8;
+	TButton *buttonViewListOrderMenu;
+	TButton *Button2;
+	TPanel *PanelCategory;
+	TEdit *EditSearchCategory;
+	TDBGrid *DBGridCategory;
+	TPanel *PanelOrderMenu;
+	TPanel *PanelDiscount;
+	TEdit *EditSearchDiscount;
+	TEdit *EditSearchOrderMenu;
+	TDBGrid *DBGridListOrder;
+	TDBGrid *DBGridOrderMenu;
+	TDBGrid *DBGridDiscount;
+	TToolBar *ToolBar;
+	TToolButton *AddCategory;
+	TToolButton *DeleteCategory;
+	TToolButton *EditCategory;
+	TToolBar *ToolBarDiscount;
+	TToolButton *AddDiscount;
+	TToolButton *DeleteDiscount;
+	TToolButton *EditDiscount;
+	TToolBar *ToolBar3;
+	TToolButton *AddOrderMenu;
+	TToolButton *DeleteOrderMenu;
+	TCategoryPanel *CPStatistic;
+	TPanel *PanelPersonal;
+	TEdit *EditSearchPersonal;
+	TDBGrid *DBGridPersonal;
+	TToolBar *ToolBar4;
+	TToolButton *AddPersona;
+	TToolButton *DeletePersonal;
+	TToolButton *EditPersonal;
+	TPanel *PanelFood;
+	TEdit *EditSearchFood;
+	TDBGrid *DBGridFood;
+	TToolBar *ToolBar2;
+	TToolButton *AddFood;
+	TToolButton *DeleteFood;
+	TToolButton *EditFood;
+	TPanel *PanelFoodIngredient;
+	TDBGrid *DBGridIngredient;
+	TDBImage *FoodImage;
+	TMainMenu *MenuAdministrator;
+	TMenuItem *N1;
+	TMenuItem *N2;
+	TMenuItem *N3;
+	TMenuItem *N4;
+	TMenuItem *N5;
+	TMenuItem *N6;
+	TMenuItem *N7;
+	TCategoryPanel *CategoryPanel1;
+	TButton *ButtonViewTable;
+	TButton *ButtonAddListTable;
+	TPanel *PanelTable;
+	TDBGrid *DBGridTable;
+	TEdit *EditSearchTable;
+	TToolBar *ToolBarTable;
+	TToolButton *AddTable;
+	TToolButton *DeleteTable;
+	TToolButton *InvOcupTable;
+	TButton *ButtonDayReport;
+	TPanel *PanelReport;
+	TPanel *LookPanel;
+	TGroupBox *GroupBox1;
+	TDateTimePicker *DateFirst;
+	TDateTimePicker *TimeFirst;
+	TLabel *Labelasd;
+	TLabel *Labeldqwe;
+	TDateTimePicker *DateSecond;
+	TDateTimePicker *TimeSecond;
+	TGridPanel *GridPanel1;
+	TButton *btnShowOrder;
+	TButton *btnScorePersonal;
+	TButton *btnScoreFood;
+	TButton *Button6;
+	TButton *btnSaleIngredient;
+	TButton *btnScoreDiscount;
+	TDBGrid *DBGrid1;
+	void __fastcall buttonViewPersonalClick(TObject *Sender);
+	void __fastcall buttonAddPersonalClick(TObject *Sender);
+	void __fastcall buttonAddCategoryClick(TObject *Sender);
+	void __fastcall Button8Click(TObject *Sender);
+	void __fastcall buttonViewCategoryClick(TObject *Sender);
+	void __fastcall buttonViewFoodClick(TObject *Sender);
+	void __fastcall buttonViewOrderMenuClick(TObject *Sender);
+	void __fastcall buttonViewDiscountClick(TObject *Sender);
+	void __fastcall DeleteCategoyClick(TObject *Sender);
+	void __fastcall AddCategoryClick(TObject *Sender);
+	void __fastcall EditCategoryClick(TObject *Sender);
+	void __fastcall EditSearchCategoryChange(TObject *Sender);
+	void __fastcall Button2Click(TObject *Sender);
+	void __fastcall AddDiscountClick(TObject *Sender);
+	void __fastcall EditDiscountClick(TObject *Sender);
+	void __fastcall DeleteDiscountClick(TObject *Sender);
+	void __fastcall EditPersonalClick(TObject *Sender);
+	void __fastcall AddPersonaClick(TObject *Sender);
+	void __fastcall EditSearchPersonalChange(TObject *Sender);
+	void __fastcall DeletePersonalClick(TObject *Sender);
+	void __fastcall N4Click(TObject *Sender);
+	void __fastcall N5Click(TObject *Sender);
+	void __fastcall N2Click(TObject *Sender);
+	void __fastcall AddFoodClick(TObject *Sender);
+	void __fastcall EditFoodClick(TObject *Sender);
+	void __fastcall DeleteFoodClick(TObject *Sender);
+	void __fastcall EditSearchFoodChange(TObject *Sender);
+	void __fastcall ButtonViewTableClick(TObject *Sender);
+	void __fastcall EditSearchTableChange(TObject *Sender);
+	void __fastcall AddTableClick(TObject *Sender);
+	void __fastcall DeleteTableClick(TObject *Sender);
+	void __fastcall ButtonAddListTableClick(TObject *Sender);
+	void __fastcall InvOcupTableClick(TObject *Sender);
+	void __fastcall N7Click(TObject *Sender);
+	void __fastcall AddOrderMenuClick(TObject *Sender);
+	void __fastcall DeleteOrderMenuClick(TObject *Sender);
+	void __fastcall ButtonDayReportClick(TObject *Sender);
+	void __fastcall buttonViewListOrderMenuClick(TObject *Sender);
+	void __fastcall Button6Click(TObject *Sender);
+	void __fastcall FormShow(TObject *Sender);
+	void __fastcall TimeFirstChange(TObject *Sender);
+	void __fastcall DateFirstChange(TObject *Sender);
+	void __fastcall DateSecondChange(TObject *Sender);
+	void __fastcall TimeSecondChange(TObject *Sender);
+	void __fastcall btnSaleIngredientClick(TObject *Sender);
+	void __fastcall btnScoreDiscountClick(TObject *Sender);
+	void __fastcall btnScorePersonalClick(TObject *Sender);
+	void __fastcall btnShowOrderClick(TObject *Sender);
+
+
+private:	// User declarations
+public:		// User declarations
+	__fastcall TFAdmin(TComponent* Owner);
+    void HidePanel(TObject *Sender);
+
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TFAdmin *FAdmin;
+//---------------------------------------------------------------------------
+#endif

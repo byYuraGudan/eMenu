@@ -7668,7 +7668,7 @@ object DM: TDM
     Left = 288
     Top = 136
   end
-  object frxReport1: TfrxReport
+  object frxScoreDiscount: TfrxReport
     Version = '6.0.10'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
@@ -7676,23 +7676,295 @@ object DM: TDM
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 43261.994367152780000000
-    ReportOptions.LastChange = 43261.994367152780000000
+    ReportOptions.CreateDate = 43262.632180775500000000
+    ReportOptions.LastChange = 43262.632180775500000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
+      ''
       'begin'
       ''
       'end.')
-    Left = 320
-    Top = 424
-    Datasets = <>
+    Left = 344
+    Top = 272
+    Datasets = <
+      item
+        DataSet = frxDBSaleIngredient
+        DataSetName = 'frxDBDiscount'
+      end>
     Variables = <>
-    Style = <>
-  end
-  object frxUserDataSet1: TfrxUserDataSet
-    UserName = 'frxUserDataSet1'
-    Left = 392
-    Top = 424
+    Style = <
+      item
+        Name = 'Title'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Fill.BackColor = clGray
+      end
+      item
+        Name = 'Header'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+      end
+      item
+        Name = 'Group header'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Fill.BackColor = 16053492
+      end
+      item
+        Name = 'Data'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = []
+      end
+      item
+        Name = 'Group footer'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+      end
+      item
+        Name = 'Header line'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = [ftBottom]
+        Frame.Width = 2.000000000000000000
+      end>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      Frame.Typ = []
+      object ReportTitle1: TfrxReportTitle
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 22.677180000000000000
+        Top = 18.897650000000000000
+        Width = 718.110700000000000000
+        object Memo1: TfrxMemoView
+          Align = baWidth
+          Width = 718.110700000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Fill.BackColor = clGray
+          HAlign = haCenter
+          Memo.UTF8W = (
+            #1056#1077#1081#1090#1080#1085#1075' '#1082#1083#1110#1108#1085#1090#1110#1074)
+          ParentFont = False
+          Style = 'Title'
+          VAlign = vaCenter
+        end
+      end
+      object MasterData1: TfrxMasterData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 79.370130000000000000
+        Top = 102.047310000000000000
+        Width = 718.110700000000000000
+        DataSet = frxDBSaleIngredient
+        DataSetName = 'frxDBDiscount'
+        RowCount = 0
+        object Memo2: TfrxMemoView
+          Width = 149.354360000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            #1044#1080#1089#1082#1086#1085#1090#1085#1072' '#1082#1072#1088#1090#1082#1072' '#8470)
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo3: TfrxMemoView
+          Left = 149.354360000000000000
+          Width = 569.338900000000000000
+          Height = 22.677180000000000000
+          DataField = 'id_discount'
+          DataSet = frxDBSaleIngredient
+          DataSetName = 'frxDBDiscount'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDiscount."id_discount"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+        object Memo4: TfrxMemoView
+          Top = 18.897650000000000000
+          Width = 149.354360000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            #1055#1088#1110#1079#1074#1080#1097#1077' '#1110#1085#1110#1094#1110#1072#1083#1080':')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo5: TfrxMemoView
+          Left = 149.354360000000000000
+          Top = 18.897650000000000000
+          Width = 568.535560000000000000
+          Height = 22.677180000000000000
+          DataField = 'pib_client'
+          DataSet = frxDBSaleIngredient
+          DataSetName = 'frxDBDiscount'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDiscount."pib_client"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+        object Memo6: TfrxMemoView
+          Top = 37.795300000000000000
+          Width = 149.354360000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            #1050#1110#1083#1100#1082#1110#1089#1090#1100' '#1079#1072#1084#1086#1074#1083#1077#1085#1100':')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo7: TfrxMemoView
+          Left = 149.354360000000000000
+          Top = 37.795300000000000000
+          Width = 569.338900000000000000
+          Height = 22.677180000000000000
+          DataField = 'CountBuyOrder'
+          DataSet = frxDBSaleIngredient
+          DataSetName = 'frxDBDiscount'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDiscount."CountBuyOrder"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+        object Memo8: TfrxMemoView
+          Top = 56.692950000000000000
+          Width = 149.354360000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            #1047#1072#1075#1072#1083#1100#1085#1072' '#1086#1087#1083#1072#1090#1072':')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo9: TfrxMemoView
+          Left = 149.354360000000000000
+          Top = 56.692950000000000000
+          Width = 570.685220000000000000
+          Height = 22.677180000000000000
+          DataField = 'PaymentAll'
+          DataSet = frxDBSaleIngredient
+          DataSetName = 'frxDBDiscount'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDiscount."PaymentAll"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+      end
+      object PageFooter1: TfrxPageFooter
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 26.456710000000000000
+        Top = 241.889920000000000000
+        Width = 718.110700000000000000
+        object Memo10: TfrxMemoView
+          Align = baWidth
+          Width = 718.110700000000000000
+          Frame.Typ = [ftTop]
+          Frame.Width = 2.000000000000000000
+        end
+        object Memo11: TfrxMemoView
+          Top = 1.000000000000000000
+          Height = 22.677180000000000000
+          AutoWidth = True
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[Date] [Time]')
+        end
+        object Memo12: TfrxMemoView
+          Align = baRight
+          Left = 642.520100000000000000
+          Top = 1.000000000000000000
+          Width = 75.590600000000000000
+          Height = 22.677180000000000000
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Page [Page#]')
+        end
+      end
+    end
   end
   object OTListOpenOrder: TADOTable
     Active = True
@@ -7742,5 +8014,660 @@ object DM: TDM
       Precision = 21
       Size = 5
     end
+  end
+  object TReportDiscount: TADOQuery
+    Active = True
+    Connection = ConnectionToDB
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT id_discount,pib_client,count(id_order) AS CountBuyOrder,s' +
+        'um(payment - (payment*discount/100)) AS PaymentAll FROM Discount' +
+        's INNER JOIN OrderMenu ON kod_discount = id_discount GROUP BY id' +
+        '_discount,pib_client')
+    Left = 256
+    Top = 272
+    object TReportDiscountid_discount: TIntegerField
+      DisplayLabel = #1044#1080#1089#1082#1086#1085#1090#1085#1072' '#1082#1072#1088#1090#1082#1072' '#8470':'
+      DisplayWidth = 15
+      FieldName = 'id_discount'
+    end
+    object TReportDiscountpib_client: TStringField
+      DisplayLabel = #1055#1030#1041' '#1082#1083#1110#1108#1085#1090#1072':'
+      DisplayWidth = 20
+      FieldName = 'pib_client'
+      Size = 50
+    end
+    object TReportDiscountCountBuyOrder: TIntegerField
+      DisplayLabel = #1050#1110#1083#1100#1082#1110#1089#1090#1100' '#1079#1072#1084#1086#1074#1083#1077#1085#1100':'
+      FieldName = 'CountBuyOrder'
+      ReadOnly = True
+    end
+    object TReportDiscountPaymentAll: TFMTBCDField
+      DisplayLabel = #1047#1072#1075#1072#1083#1100#1085#1072' '#1086#1087#1083#1072#1090#1072':'
+      FieldName = 'PaymentAll'
+      ReadOnly = True
+      DisplayFormat = '0.00 '#1075#1088#1085
+      Precision = 38
+      Size = 6
+    end
+  end
+  object frxSaleIngredient: TfrxReport
+    Version = '6.0.10'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick, pbCopy, pbSelection]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 43262.627328969910000000
+    ReportOptions.LastChange = 43262.627328969910000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      ''
+      'begin'
+      ''
+      'end.')
+    Left = 349
+    Top = 328
+    Datasets = <
+      item
+        DataSet = frxDBDiscount
+        DataSetName = 'frxDBSaleIngredient'
+      end>
+    Variables = <>
+    Style = <
+      item
+        Name = 'Title'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Fill.BackColor = clGray
+      end
+      item
+        Name = 'Header'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+      end
+      item
+        Name = 'Group header'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Fill.BackColor = 16053492
+      end
+      item
+        Name = 'Data'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = []
+      end
+      item
+        Name = 'Group footer'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+      end
+      item
+        Name = 'Header line'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = [ftBottom]
+        Frame.Width = 2.000000000000000000
+      end>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      Frame.Typ = []
+      object ReportTitle1: TfrxReportTitle
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 26.456710000000000000
+        Top = 18.897650000000000000
+        Width = 718.110700000000000000
+        object Memo1: TfrxMemoView
+          Align = baWidth
+          Width = 718.110700000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Fill.BackColor = clGray
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Report')
+          ParentFont = False
+          Style = 'Title'
+          VAlign = vaCenter
+        end
+      end
+      object GroupHeader1: TfrxGroupHeader
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 26.456710000000000000
+        Top = 105.826840000000000000
+        Width = 718.110700000000000000
+        Condition = 'frxDBSaleIngredient."name_food"'
+        object Memo2: TfrxMemoView
+          Align = baWidth
+          Width = 718.110700000000000000
+          Height = 22.677180000000000000
+          DataField = 'name_food'
+          DataSet = frxDBDiscount
+          DataSetName = 'frxDBSaleIngredient'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Fill.BackColor = 16053492
+          Memo.UTF8W = (
+            '[frxDBSaleIngredient."name_food"]')
+          ParentFont = False
+          Style = 'Group header'
+          VAlign = vaCenter
+        end
+      end
+      object MasterData1: TfrxMasterData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 94.488250000000000000
+        Top = 154.960730000000000000
+        Width = 718.110700000000000000
+        DataSet = frxDBDiscount
+        DataSetName = 'frxDBSaleIngredient'
+        RowCount = 0
+        object Memo3: TfrxMemoView
+          Width = 151.000000000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'name_ingredient')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo4: TfrxMemoView
+          Left = 169.897650000000000000
+          Width = 372.000000000000000000
+          Height = 18.897650000000000000
+          DataField = 'name_ingredient'
+          DataSet = frxDBDiscount
+          DataSetName = 'frxDBSaleIngredient'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBSaleIngredient."name_ingredient"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+        object Memo5: TfrxMemoView
+          Top = 18.897650000000000000
+          Width = 151.000000000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'AsCountSaleIngredient')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo6: TfrxMemoView
+          Left = 169.897650000000000000
+          Top = 18.897650000000000000
+          Width = 291.000000000000000000
+          Height = 18.897650000000000000
+          DataField = 'AsCountSaleIngredient'
+          DataSet = frxDBDiscount
+          DataSetName = 'frxDBSaleIngredient'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBSaleIngredient."AsCountSaleIngredient"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+        object Memo7: TfrxMemoView
+          Top = 37.795300000000000000
+          Width = 151.000000000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'unit')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo8: TfrxMemoView
+          Left = 169.897650000000000000
+          Top = 37.795300000000000000
+          Width = 78.000000000000000000
+          Height = 18.897650000000000000
+          DataField = 'unit'
+          DataSet = frxDBDiscount
+          DataSetName = 'frxDBSaleIngredient'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBSaleIngredient."unit"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+        object Memo9: TfrxMemoView
+          Top = 56.692950000000000000
+          Width = 151.000000000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'SaleFood')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo10: TfrxMemoView
+          Left = 169.897650000000000000
+          Top = 56.692950000000000000
+          Width = 291.000000000000000000
+          Height = 18.897650000000000000
+          DataField = 'SaleFood'
+          DataSet = frxDBDiscount
+          DataSetName = 'frxDBSaleIngredient'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBSaleIngredient."SaleFood"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+      end
+      object GroupFooter1: TfrxGroupFooter
+        FillType = ftBrush
+        Frame.Typ = []
+        Top = 272.126160000000000000
+        Width = 718.110700000000000000
+      end
+      object PageFooter1: TfrxPageFooter
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 26.456710000000000000
+        Top = 332.598640000000000000
+        Width = 718.110700000000000000
+        object Memo11: TfrxMemoView
+          Align = baWidth
+          Width = 718.110700000000000000
+          Frame.Typ = [ftTop]
+          Frame.Width = 2.000000000000000000
+        end
+        object Memo12: TfrxMemoView
+          Top = 1.000000000000000000
+          Height = 22.677180000000000000
+          AutoWidth = True
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[Date] [Time]')
+        end
+        object Memo13: TfrxMemoView
+          Align = baRight
+          Left = 642.520100000000000000
+          Top = 1.000000000000000000
+          Width = 75.590600000000000000
+          Height = 22.677180000000000000
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Page [Page#]')
+        end
+      end
+    end
+  end
+  object frxScoreFood: TfrxReport
+    Version = '6.0.10'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick, pbCopy, pbSelection]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 43262.594274062500000000
+    ReportOptions.LastChange = 43262.594274062500000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 344
+    Top = 384
+    Datasets = <>
+    Variables = <>
+    Style = <>
+  end
+  object frxScorePersonal: TfrxReport
+    Version = '6.0.10'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick, pbCopy, pbSelection]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 43262.594338680550000000
+    ReportOptions.LastChange = 43262.594338680550000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 344
+    Top = 448
+    Datasets = <>
+    Variables = <>
+    Style = <>
+  end
+  object frxShowOrder: TfrxReport
+    Version = '6.0.10'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick, pbCopy, pbSelection]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 43262.594479745370000000
+    ReportOptions.LastChange = 43262.594479745370000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 344
+    Top = 504
+    Datasets = <>
+    Variables = <>
+    Style = <>
+  end
+  object frxDBDiscount: TfrxDBDataset
+    UserName = 'frxDBSaleIngredient'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'id_discount=id_discount'
+      'pib_client=pib_client'
+      'CountBuyOrder=CountBuyOrder'
+      'PaymentAll=PaymentAll')
+    DataSet = TReportDiscount
+    BCDToCurrency = False
+    Left = 430
+    Top = 272
+  end
+  object frxDBSaleIngredient: TfrxDBDataset
+    UserName = 'frxDBDiscount'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'name_food=name_food'
+      'name_ingredient=name_ingredient'
+      'AsCountSaleIngredient=AsCountSaleIngredient'
+      'unit=unit'
+      'SaleFood=SaleFood')
+    DataSet = TReportIngredient
+    BCDToCurrency = False
+    Left = 432
+    Top = 328
+  end
+  object frxDBScoreFood: TfrxDBDataset
+    UserName = 'frxDBScoreFood'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'name_food=name_food'
+      'CountSale=CountSale')
+    DataSet = TReportFood
+    BCDToCurrency = False
+    Left = 432
+    Top = 384
+  end
+  object frxDBScorePersonal: TfrxDBDataset
+    UserName = 'frxDBScorePersonal'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'pib_personal=pib_personal'
+      'CountOrder=CountOrder'
+      'Payment=Payment'
+      'PaymentDiscount=PaymentDiscount')
+    DataSet = TReportPersonal
+    BCDToCurrency = False
+    Left = 432
+    Top = 448
+  end
+  object frxDBShowOrder: TfrxDBDataset
+    UserName = 'frxDBShowOrder'
+    CloseDataSource = False
+    FieldAliases.Strings = (
+      'id_order=id_order'
+      'kod_discount=kod_discount'
+      'kod_personal=kod_personal'
+      'kod_table=kod_table'
+      'pib_client=pib_client'
+      'pib_personal=pib_personal'
+      'name_table=name_table'
+      'date_open_order=date_open_order'
+      'date_close_order=date_close_order'
+      'payment=payment'
+      'discount=discount'
+      'RealPayment=RealPayment')
+    DataSet = OTOpenOrder
+    BCDToCurrency = False
+    Left = 432
+    Top = 504
+  end
+  object DSReport: TDataSource
+    DataSet = TReportDiscount
+    Left = 176
+    Top = 384
+  end
+  object TReportIngredient: TADOQuery
+    Connection = ConnectionToDB
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT name_food,name_ingredient, sum(ListOrderMenu.counts * Lis' +
+        'tIngredientFood.counts) AsCountSaleIngredient,unit,sum(ListIngre' +
+        'dientFood.price * ListOrderMenu.counts) AS SaleFood FROM ((Order' +
+        'Menu INNER JOIN ListOrderMenu ON id_order = kod_order) INNER JOI' +
+        'N Food ON id_food = ListOrderMenu.kod_food )INNER JOIN ListIngre' +
+        'dientFood ON ListIngredientFood.kod_food = id_food'
+      'GROUP BY name_food,name_ingredient,unit')
+    Left = 256
+    Top = 328
+    object TReportIngredientname_food: TStringField
+      DisplayLabel = #1053#1072#1081#1084#1077#1085#1091#1074#1072#1085#1085#1103':'
+      DisplayWidth = 20
+      FieldName = 'name_food'
+      Size = 50
+    end
+    object TReportIngredientname_ingredient: TStringField
+      DisplayLabel = #1053#1072#1081#1084#1077#1085#1091#1074#1072#1085#1085#1103' '#1110#1085#1075#1088#1077#1076#1110#1108#1085#1090#1072':'
+      DisplayWidth = 20
+      FieldName = 'name_ingredient'
+      Size = 50
+    end
+    object TReportIngredientAsCountSaleIngredient: TFMTBCDField
+      DisplayLabel = #1042#1080#1090#1088#1072#1095#1077#1085#1086':'
+      DisplayWidth = 15
+      FieldName = 'AsCountSaleIngredient'
+      ReadOnly = True
+      Precision = 38
+      Size = 6
+    end
+    object TReportIngredientunit: TStringField
+      DisplayLabel = #1054#1076'. '#1074#1080#1084#1110#1088#1091':'
+      DisplayWidth = 5
+      FieldName = 'unit'
+      Size = 10
+    end
+    object TReportIngredientSaleFood: TFMTBCDField
+      DisplayLabel = #1057#1091#1084#1072' '#1074#1080#1090#1088#1072#1090':'
+      DisplayWidth = 40
+      FieldName = 'SaleFood'
+      ReadOnly = True
+      DisplayFormat = '0.00 '#1075#1088#1085
+      Precision = 38
+      Size = 5
+    end
+  end
+  object TReportFood: TADOQuery
+    Active = True
+    Connection = ConnectionToDB
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT name_food,count(counts) AS CountSale FROM (Food INNER JOI' +
+        'N ListOrderMenu ON kod_food = id_food) INNER JOIN OrderMenu ON i' +
+        'd_order = kod_order'
+      'GROUP BY name_food'
+      'ORDER BY CountSale desc')
+    Left = 256
+    Top = 384
+    object TReportFoodname_food: TStringField
+      DisplayLabel = #1053#1072#1081#1084#1077#1085#1091#1074#1072#1085#1085#1103':'
+      DisplayWidth = 30
+      FieldName = 'name_food'
+      Size = 50
+    end
+    object TReportFoodCountSale: TIntegerField
+      DisplayLabel = #1050#1110#1083#1100#1082#1110#1089#1090#1100' '#1087#1088#1086#1076#1072#1078':'
+      DisplayWidth = 20
+      FieldName = 'CountSale'
+      ReadOnly = True
+    end
+  end
+  object TReportPersonal: TADOQuery
+    Active = True
+    Connection = ConnectionToDB
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT pib_personal,count(id_order) AS CountOrder,sum(payment) A' +
+        'S Payment, sum(payment-(payment*discount/100)) AS PaymentDiscoun' +
+        't FROM (Personal INNER JOIN OrderMenu ON id_personal = kod_perso' +
+        'nal) INNER JOIN Discounts ON kod_discount = id_discount'
+      
+        'WHERE date_open_order >= '#39'10.06.2018 14:41:13'#39' and date_open_ord' +
+        'er <= '#39'11.06.2018 08:39:28'#39
+      'GROUP BY pib_personal')
+    Left = 256
+    Top = 448
+    object TReportPersonalpib_personal: TStringField
+      DisplayLabel = #1055#1088#1110#1079#1074#1080#1097#1077' '#1110#1085#1110#1094#1110#1072#1083#1080' '#1087#1088#1072#1094#1110#1074#1085#1080#1082#1072':'
+      DisplayWidth = 30
+      FieldName = 'pib_personal'
+      Size = 50
+    end
+    object TReportPersonalCountOrder: TIntegerField
+      DisplayLabel = #1054#1092#1086#1088#1084#1083#1077#1085#1086' '#1079#1072#1084#1086#1074#1083#1077#1085#1100':'
+      FieldName = 'CountOrder'
+      ReadOnly = True
+    end
+    object TReportPersonalPayment: TFMTBCDField
+      DisplayLabel = #1057#1091#1084#1072' '#1086#1087#1083#1072#1090#1080' '#1079#1072#1084#1086#1074#1083#1077#1085#1100' '#1073#1077#1079' '#1079#1085#1080#1078#1082#1080
+      FieldName = 'Payment'
+      ReadOnly = True
+      DisplayFormat = '0.00 '#1075#1088#1085
+      Precision = 38
+      Size = 2
+    end
+    object TReportPersonalPaymentDiscount: TFMTBCDField
+      DisplayLabel = #1057#1091#1084#1072' '#1086#1087#1083#1072#1090#1080' '#1079#1072#1084#1086#1074#1083#1077#1085#1100' '#1079' '#1079#1085#1080#1078#1082#1086#1102
+      FieldName = 'PaymentDiscount'
+      ReadOnly = True
+      DisplayFormat = '0.00 '#1075#1088#1085
+      Precision = 38
+      Size = 6
+    end
+  end
+  object TReportOrder: TADOQuery
+    Active = True
+    Connection = ConnectionToDB
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT id_order,date_open_order,pib_personal,pib_client,payment,' +
+        'discount,sum(payment-(payment*discount/100)) AS PaymentDiscount '
+      
+        'FROM ((OrderMenu INNER JOIN Personal ON id_personal = kod_person' +
+        'al) INNER JOIN Discounts ON id_discount = kod_discount) INNER JO' +
+        'IN ListTable ON id_table = kod_table'
+      
+        'WHERE date_open_order >= '#39'10.06.2018 14:41:13'#39' and date_open_ord' +
+        'er <= '#39'11.06.2018 08:39:28'#39
+      
+        'GROUP BY id_order,date_open_order,pib_personal,pib_client,paymen' +
+        't,discount')
+    Left = 256
+    Top = 504
   end
 end

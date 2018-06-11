@@ -54,7 +54,6 @@ __published:	// IDE-managed Components
 	TBindingsList *BindingsList1;
 	TLinkListControlToField *LinkListControlToField1;
 	TDBLookupComboBox *CB_table;
-	TButton *Button1;
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall btnRemovClick(TObject *Sender);
 	void __fastcall btnAddToOrderClick(TObject *Sender);

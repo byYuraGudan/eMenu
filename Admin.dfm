@@ -4981,6 +4981,8 @@ object FAdmin: TFAdmin
     Height = 600
     Align = alClient
     TabOrder = 7
+    ExplicitLeft = 203
+    ExplicitTop = 8
     object GroupBox1: TGroupBox
       Left = 1
       Top = 1
@@ -5011,6 +5013,7 @@ object FAdmin: TFAdmin
         Date = 43261.000000000000000000
         Time = 43261.000000000000000000
         TabOrder = 0
+        OnChange = DateFirstChange
       end
       object TimeFirst: TDateTimePicker
         Left = 271
@@ -5021,6 +5024,7 @@ object FAdmin: TFAdmin
         Time = 43261.000000000000000000
         Kind = dtkTime
         TabOrder = 1
+        OnChange = TimeFirstChange
       end
       object DateSecond: TDateTimePicker
         Left = 450
@@ -5030,6 +5034,7 @@ object FAdmin: TFAdmin
         Date = 43261.979590393520000000
         Time = 43261.979590393520000000
         TabOrder = 2
+        OnChange = DateSecondChange
       end
       object TimeSecond: TDateTimePicker
         Left = 581
@@ -5040,13 +5045,15 @@ object FAdmin: TFAdmin
         Time = 43261.999988425920000000
         Kind = dtkTime
         TabOrder = 3
+        OnChange = TimeSecondChange
       end
     end
     object GridPanel1: TGridPanel
       Left = 1
-      Top = 61
+      Top = 399
       Width = 796
-      Height = 76
+      Height = 200
+      Align = alBottom
       Caption = 'GridPanel1'
       ColumnCollection = <
         item
@@ -5059,7 +5066,7 @@ object FAdmin: TFAdmin
         item
           Column = 0
           Control = btnShowOrder
-          Row = 0
+          Row = 2
         end
         item
           Column = 1
@@ -5068,59 +5075,107 @@ object FAdmin: TFAdmin
         end
         item
           Column = 0
+          ColumnSpan = 2
           Control = btnScoreFood
           Row = 1
         end
         item
+          Column = 0
+          Control = btnScoreDiscount
+          Row = 0
+        end
+        item
           Column = 1
           Control = btnSaleIngredient
-          Row = 1
+          Row = 2
         end>
       RowCollection = <
         item
-          Value = 50.000000000000000000
+          Value = 33.476169441302910000
         end
         item
-          Value = 50.000000000000000000
+          Value = 33.317650914063320000
+        end
+        item
+          Value = 33.206179644633760000
         end>
       TabOrder = 1
+      ExplicitTop = 61
       object btnShowOrder: TButton
         Left = 1
-        Top = 1
+        Top = 132
         Width = 397
-        Height = 37
+        Height = 67
         Align = alClient
         Caption = #1055#1077#1088#1077#1075#1083#1103#1076' '#1079#1072#1084#1086#1074#1083#1077#1085#1100
         TabOrder = 0
+        OnClick = btnShowOrderClick
+        ExplicitLeft = 424
+        ExplicitTop = 148
+        ExplicitHeight = 71
       end
       object btnScorePersonal: TButton
         Left = 398
         Top = 1
         Width = 397
-        Height = 37
+        Height = 66
         Align = alClient
         Caption = #1056#1077#1081#1090#1080#1085#1075' '#1087#1088#1072#1094#1110#1074#1085#1080#1082#1110#1074
         TabOrder = 1
+        OnClick = btnScorePersonalClick
+        ExplicitHeight = 37
       end
       object btnScoreFood: TButton
         Left = 1
-        Top = 38
-        Width = 397
-        Height = 37
+        Top = 67
+        Width = 794
+        Height = 65
         Align = alClient
         Caption = #1056#1077#1081#1090#1080#1085#1075' '#1089#1090#1088#1072#1074' '#1090#1072' '#1085#1072#1087#1086#1111#1074' '#1084#1077#1085#1102
         TabOrder = 2
+        OnClick = btnScoreFoodClick
+        ExplicitLeft = 0
+        ExplicitTop = 73
+      end
+      object btnScoreDiscount: TButton
+        Left = 1
+        Top = 1
+        Width = 397
+        Height = 66
+        Align = alClient
+        Caption = #1056#1077#1081#1090#1080#1085#1075' '#1082#1083#1110#1108#1085#1090#1110#1074
+        TabOrder = 4
+        OnClick = btnScoreDiscountClick
+        ExplicitLeft = 0
+        ExplicitTop = -1
       end
       object btnSaleIngredient: TButton
         Left = 398
-        Top = 38
+        Top = 132
         Width = 397
-        Height = 37
+        Height = 67
         Align = alClient
-        Caption = 'btnSaleIngredient'
+        Caption = #1042#1080#1090#1088#1072#1090#1080' '#1110#1085#1075#1088#1077#1076#1110#1108#1085#1090#1110#1074
         TabOrder = 3
-        OnClick = Button5Click
+        OnClick = btnSaleIngredientClick
+        ExplicitTop = 38
+        ExplicitHeight = 37
       end
+    end
+    object DBGridReport: TDBGrid
+      AlignWithMargins = True
+      Left = 4
+      Top = 64
+      Width = 790
+      Height = 332
+      Align = alClient
+      DataSource = DM.DSReport
+      TabOrder = 2
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -13
+      TitleFont.Name = 'Courier New'
+      TitleFont.Style = []
     end
   end
   object LookPanel: TPanel

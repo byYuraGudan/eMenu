@@ -1,6 +1,8 @@
 DBXMySQLDriver250.bpl
 bindengine250.bpl
 adortl250.bpl
+fsDB25.bpl
+frxDB25.bpl
 fs25.bpl
 frx25.bpl
 CustomIPTransport250.bpl

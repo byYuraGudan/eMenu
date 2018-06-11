@@ -17,6 +17,7 @@
 #include <Datasnap.DBClient.hpp>
 #include <Datasnap.DSConnect.hpp>
 #include "frxClass.hpp"
+#include "frxDBSet.hpp"
 //---------------------------------------------------------------------------
 class TDM : public TDataModule
 {
@@ -177,8 +178,7 @@ __published:	// IDE-managed Components
 	TStringField *OTOpenOrderRealPayment;
 	TDataSource *ODSListOpenOrder;
 	TBooleanField *ATFoodvisible;
-	TfrxReport *frxReport1;
-	TfrxUserDataSet *frxUserDataSet1;
+	TfrxReport *frxScoreDiscount;
 	TADOTable *OTListOpenOrder;
 	TIntegerField *OTListOpenOrderid_listordermenu;
 	TIntegerField *OTListOpenOrderkod_order;
@@ -187,6 +187,36 @@ __published:	// IDE-managed Components
 	TBCDField *OTListOpenOrdercounts;
 	TBCDField *OTListOpenOrderprice_food;
 	TFMTBCDField *OTListOpenOrderSuma;
+	TADOQuery *TReportDiscount;
+	TfrxReport *frxSaleIngredient;
+	TfrxReport *frxScoreFood;
+	TfrxReport *frxScorePersonal;
+	TfrxReport *frxShowOrder;
+	TfrxDBDataset *frxDBDiscount;
+	TfrxDBDataset *frxDBSaleIngredient;
+	TfrxDBDataset *frxDBScoreFood;
+	TfrxDBDataset *frxDBScorePersonal;
+	TfrxDBDataset *frxDBShowOrder;
+	TDataSource *DSReport;
+	TADOQuery *TReportIngredient;
+	TADOQuery *TReportFood;
+	TADOQuery *TReportPersonal;
+	TADOQuery *TReportOrder;
+	TIntegerField *TReportDiscountid_discount;
+	TStringField *TReportDiscountpib_client;
+	TIntegerField *TReportDiscountCountBuyOrder;
+	TFMTBCDField *TReportDiscountPaymentAll;
+	TStringField *TReportFoodname_food;
+	TIntegerField *TReportFoodCountSale;
+	TStringField *TReportIngredientname_food;
+	TStringField *TReportIngredientname_ingredient;
+	TFMTBCDField *TReportIngredientAsCountSaleIngredient;
+	TStringField *TReportIngredientunit;
+	TFMTBCDField *TReportIngredientSaleFood;
+	TStringField *TReportPersonalpib_personal;
+	TIntegerField *TReportPersonalCountOrder;
+	TFMTBCDField *TReportPersonalPayment;
+	TFMTBCDField *TReportPersonalPaymentDiscount;
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall DataModuleDestroy(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);

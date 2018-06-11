@@ -126,6 +126,8 @@ __published:	// IDE-managed Components
 	TButton *btnScoreFood;
 	TButton *Button6;
 	TButton *btnSaleIngredient;
+	TButton *btnScoreDiscount;
+	TDBGrid *DBGridReport;
 	void __fastcall buttonViewPersonalClick(TObject *Sender);
 	void __fastcall buttonAddPersonalClick(TObject *Sender);
 	void __fastcall buttonAddCategoryClick(TObject *Sender);
@@ -165,8 +167,16 @@ __published:	// IDE-managed Components
 	void __fastcall ButtonDayReportClick(TObject *Sender);
 	void __fastcall buttonViewListOrderMenuClick(TObject *Sender);
 	void __fastcall Button6Click(TObject *Sender);
-	void __fastcall Button5Click(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
+	void __fastcall TimeFirstChange(TObject *Sender);
+	void __fastcall DateFirstChange(TObject *Sender);
+	void __fastcall DateSecondChange(TObject *Sender);
+	void __fastcall TimeSecondChange(TObject *Sender);
+	void __fastcall btnSaleIngredientClick(TObject *Sender);
+	void __fastcall btnScoreDiscountClick(TObject *Sender);
+	void __fastcall btnScorePersonalClick(TObject *Sender);
+	void __fastcall btnShowOrderClick(TObject *Sender);
+	void __fastcall btnScoreFoodClick(TObject *Sender);
 
 
 private:	// User declarations

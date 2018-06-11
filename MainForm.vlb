@@ -45,9 +45,6 @@ Coordinates=464,1015,109,33
 [DM.OTNotOcupTable]
 Coordinates=738,895,117,33
 
-[DM.OTListOrder]
-Coordinates=274,269,93,177
-
 [DM.ADSCategory]
 Coordinates=778,561,99,33
 
@@ -156,9 +153,6 @@ Coordinates=778,1297,74,51
 [DM.ADOQuery1]
 Coordinates=778,421,91,51
 
-[DM.ODSListOrder]
-Coordinates=611,335,101,33
-
 [DM.MDSShowCategory]
 Coordinates=433,891,128,33
 
@@ -185,4 +179,10 @@ Coordinates=778,877,63,51
 
 [DM.MQShowFood]
 Coordinates=324,966,102,231
+
+[DM.]
+Coordinates=274,269,93,177
+
+[DM.ODSListOpenOrder]
+Coordinates=611,335,101,33
 

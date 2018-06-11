@@ -121,11 +121,11 @@ __published:	// IDE-managed Components
 	TDateTimePicker *DateSecond;
 	TDateTimePicker *TimeSecond;
 	TGridPanel *GridPanel1;
-	TButton *Button1;
-	TButton *Button3;
-	TButton *Button4;
-	TButton *Button5;
+	TButton *btnShowOrder;
+	TButton *btnScorePersonal;
+	TButton *btnScoreFood;
 	TButton *Button6;
+	TButton *btnSaleIngredient;
 	void __fastcall buttonViewPersonalClick(TObject *Sender);
 	void __fastcall buttonAddPersonalClick(TObject *Sender);
 	void __fastcall buttonAddCategoryClick(TObject *Sender);

@@ -35,7 +35,7 @@ void TOrderMenu::setDateOrder(TDateTime open,TDateTime close) {
 void TOrderMenu::setCloseOrder(bool b){ this->close_order = b;}
 void TOrderMenu::setPayment(float f){ this->payment = f;}
 
-void TOrderMenu::CloseOrderMenu(){
+	void TOrderMenu::CloseOrderMenu(){
 	DM->DoSQLExec(DM->TSQL,"UPDATE eMenu.dbo.OrderMenu SET date_close_order = GETDATE(), close_order = 1 WHERE id_order = "+IntToStr(this->getIdOrder()));
 }
 void TOrderMenu::UpdatePayment(){
@@ -103,8 +103,6 @@ void TListOrder::DeleteDBListOrder(){
    	try{
 	DM->DoSQLExec(DM->TSQL,\
 	"DELETE FROM eMenu.dbo.ListOrderMenu where id_listordermenu ="+IntToStr(this->id_listingrfood));
-	TObject *Sender;
-	FEditOrderMenu->CB_id_orderChange(Sender);
 	} catch(...){MessageBox(NULL, L"Не вдалося видалити!", L"Відмова!",  MB_OK | MB_ICONERROR); }
 }
 
@@ -122,21 +120,6 @@ void __fastcall TFEditOrderMenu::FormClose(TObject *Sender, TCloseAction &Action
 
 
 
-void __fastcall TFEditOrderMenu::CB_id_orderChange(TObject *Sender)
-{
-//	try{
-	String tmp = CB_id_order->Text;
-	if (!tmp.IsEmpty()) {
-	DM->DoSQL(DM->OTListOrder,\
-	"SELECT   id_listordermenu, kod_order, kod_food,name_food,counts,price_food, counts * price_food AS Suma\
-	FROM eMenu.dbo.ListOrderMenu INNER JOIN eMenu.dbo.Food ON id_food = kod_food WHERE kod_order = "+tmp);
-	} else DM->OTListOrder->Close();
-	//	}catch(...){
-//
-//        ShowMessage("");
-//	}
-}
-//---------------------------------------------------------------------------
 
 
 void __fastcall TFEditOrderMenu::btnRemovClick(TObject *Sender)
@@ -145,8 +128,8 @@ void __fastcall TFEditOrderMenu::btnRemovClick(TObject *Sender)
 		if (IDYES == MessageBox(NULL, L"Ви впевнені, що хочете видалити ?", L"Підвердження!",  MB_YESNO |MB_ICONQUESTION))
 		{
 			TListOrder list;
-			list.setIdListingrfood(DM->OTListOrder->FieldByName("id_listordermenu")->AsInteger);
-			list.setIdOrder(DM->OTListOrder->FieldByName("kod_order")->AsInteger);
+			list.setIdListingrfood(DM->OTListOpenOrder->FieldByName("id_listordermenu")->AsInteger);
+			list.setIdOrder(DM->OTListOpenOrder->FieldByName("kod_order")->AsInteger);
 			list.DeleteDBListOrder();
 			list.UpdatePayment();
 			DM->OpenDBOficiant();
@@ -168,11 +151,6 @@ void __fastcall TFEditOrderMenu::btnAddToOrderClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TFEditOrderMenu::FormShow(TObject *Sender)
-{
-    CB_id_orderChange(Sender);
-}
-//---------------------------------------------------------------------------
 
 
 
@@ -220,8 +198,6 @@ void __fastcall TFEditOrderMenu::btnOpenOrderClick(TObject *Sender)
 		order.InsertDBOrderMenu();
 		DM->OpenDB();
 		DM->OTOpenOrder->Last();
-		CB_id_orderChange(Sender);
-
 	}
 	else       {
 		MessageBox(NULL, L"Немає вільних місць!", L"Відмова!",  MB_OK | MB_ICONWARNING);
@@ -255,5 +231,13 @@ void __fastcall TFEditOrderMenu::btnCloseOrderClick(TObject *Sender)
 //		} catch(...){ ShowMessage("tut");}
 }
 //---------------------------------------------------------------------------
+
+
+void __fastcall TFEditOrderMenu::Button1Click(TObject *Sender)
+{
+	ShowMessage(DM->OTNotOcupTable->FieldByName("id_table")->AsString) ;
+}
+//---------------------------------------------------------------------------
+
 
 

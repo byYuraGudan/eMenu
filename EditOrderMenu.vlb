@@ -33,7 +33,7 @@ Coordinates=25,745,96,33
 Coordinates=388,606,91,87
 
 [DM.MTShowCategory]
-Coordinates=121,606,120,105
+Coordinates=121,606,120,51
 
 [DM.ADSPersonal]
 Coordinates=620,298,98,33
@@ -90,7 +90,7 @@ Coordinates=144,529,116,33
 Coordinates=488,10,100,231
 
 [DM.ATFood]
-Coordinates=269,10,79,285
+Coordinates=269,10,79,303
 
 [GridPanel1]
 Coordinates=504,606,68,51
@@ -99,7 +99,7 @@ Coordinates=504,606,68,51
 Coordinates=722,606,47,51
 
 []
-Coordinates=54,196,82,33
+Coordinates=0,0,84,105
 Visible=True
 
 [DM.ODSNotOcupTable]
@@ -109,8 +109,7 @@ Coordinates=261,314,125,33
 Coordinates=130,454,46,51
 
 [DM.OTNotOcupTable]
-Coordinates=668,350,117,33
-Visible=False
+Coordinates=880,330,117,105
 
 [btnDiscount]
 Coordinates=553,740,74,51
@@ -133,10 +132,6 @@ Coordinates=79,740,64,51
 
 [btnPrint]
 Coordinates=786,606,53,51
-
-[CB_table]
-Coordinates=540,420,84,105
-Visible=True
 
 [DBClient]
 Coordinates=283,745,57,51
@@ -165,17 +160,11 @@ Coordinates=447,329,46,51
 [btnReportDay]
 Coordinates=750,482,82,51
 
-[DM.ODSListOrder]
-Coordinates=283,1,101,33
-
 [DBpayment]
 Coordinates=750,219,71,51
 
 [DBOrderid]
 Coordinates=544,944,66,51
-
-[DM.OTListOrder]
-Coordinates=0,0,93,177
 
 [GroupBox1]
 Coordinates=352,745,70,51
@@ -186,6 +175,12 @@ Coordinates=140,20,92,285
 [BindingsList1]
 Coordinates=52,196,82,33
 
-[BindSourceDB2]
-Coordinates=668,350,105,123
+[DM.]
+Coordinates=0,0,93,177
+
+[DM.ODSListOpenOrder]
+Coordinates=283,1,128,33
+
+[DM.OTListOpenOrder]
+Coordinates=34,845,120,177
 

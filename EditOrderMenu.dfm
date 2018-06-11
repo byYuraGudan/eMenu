@@ -11578,7 +11578,6 @@ object FEditOrderMenu: TFEditOrderMenu
     00000001FFFFFFFF00000003FFFFFFFF00000007FFFF}
   OldCreateOrder = False
   OnClose = FormClose
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 14
   object PanelOrderMenu: TPanel
@@ -11588,9 +11587,10 @@ object FEditOrderMenu: TFEditOrderMenu
     Height = 52
     Align = alTop
     TabOrder = 0
+    ExplicitTop = -3
     object Label1: TLabel
-      Left = 551
-      Top = 5
+      Left = 567
+      Top = 10
       Width = 84
       Height = 14
       Caption = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103' '#8470
@@ -11603,12 +11603,11 @@ object FEditOrderMenu: TFEditOrderMenu
       Caption = 'C'#1090#1110#1083' '#8470
     end
     object CB_id_order: TComboBox
-      Left = 544
-      Top = 22
+      Left = 560
+      Top = 27
       Width = 100
       Height = 22
       TabOrder = 0
-      OnChange = CB_id_orderChange
     end
     object btnCloseOrder: TButton
       AlignWithMargins = True
@@ -11624,7 +11623,6 @@ object FEditOrderMenu: TFEditOrderMenu
       TabOrder = 1
       WordWrap = True
       OnClick = btnCloseOrderClick
-      ExplicitTop = 5
     end
     object btnOpenOrder: TButton
       AlignWithMargins = True
@@ -11641,16 +11639,24 @@ object FEditOrderMenu: TFEditOrderMenu
       WordWrap = True
       OnClick = btnOpenOrderClick
     end
-    object CB_table: TComboBox
-      Left = 306
+    object CB_table: TDBLookupComboBox
+      Left = 304
       Top = 23
-      Width = 100
+      Width = 113
       Height = 22
-      ItemIndex = 0
+      KeyField = 'id_table'
+      ListField = 'name_table'
+      ListSource = DM.ODSNotOcupTable
       TabOrder = 3
-      Text = '1'
-      Items.Strings = (
-        '1')
+    end
+    object Button1: TButton
+      Left = 439
+      Top = 23
+      Width = 75
+      Height = 25
+      Caption = 'Button1'
+      TabOrder = 4
+      OnClick = Button1Click
     end
   end
   object DBGrid1: TDBGrid
@@ -11660,7 +11666,7 @@ object FEditOrderMenu: TFEditOrderMenu
     Width = 585
     Height = 522
     Align = alClient
-    DataSource = DM.ODSListOrder
+    DataSource = DM.ODSListOpenOrder
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -11936,7 +11942,7 @@ object FEditOrderMenu: TFEditOrderMenu
   object BindSourceDB1: TBindSourceDB
     DataSet = DM.OTOpenOrder
     ScopeMappings = <>
-    Left = 840
+    Left = 832
     Top = 8
   end
   object BindingsList1: TBindingsList
@@ -11953,20 +11959,5 @@ object FEditOrderMenu: TFEditOrderMenu
       FillHeaderExpressions = <>
       FillBreakGroups = <>
     end
-    object LinkListControlToField2: TLinkListControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB2
-      FieldName = 'name_table'
-      Control = CB_table
-      FillExpressions = <>
-      FillHeaderExpressions = <>
-      FillBreakGroups = <>
-    end
-  end
-  object BindSourceDB2: TBindSourceDB
-    DataSet = DM.OTNotOcupTable
-    ScopeMappings = <>
-    Left = 432
-    Top = 296
   end
 end

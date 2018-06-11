@@ -1,6 +1,19 @@
 USE eMenu
 GO
 --DROP VIEW TableNotOccupation,OpenOrder
+
+CREATE VIEW ListOpenOrderMenu AS
+SELECT   id_listordermenu,
+	   kod_order,
+	   kod_food,
+	   name_food,
+	   counts,
+	   price_food,
+counts * price_food AS Suma
+FROM 
+eMenu.dbo.ListOrderMenu INNER JOIN eMenu.dbo.Food ON id_food = kod_food
+GO
+
 CREATE VIEW TableNotOccupation AS
 	SELECT * FROM ListTable WHERE occupation = 0;
 GO

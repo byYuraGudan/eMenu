@@ -4203,7 +4203,6 @@ object FAdmin: TFAdmin
     TabOrder = 0
     Touch.ParentTabletOptions = False
     Touch.TabletOptions = [toPressAndHold]
-    ExplicitHeight = 202
     object CPStatistic: TCategoryPanel
       Top = 487
       Height = 53
@@ -4229,7 +4228,6 @@ object FAdmin: TFAdmin
         Caption = #1047#1074#1110#1090#1085#1110#1089#1090#1100
         TabOrder = 0
         OnClick = Button6Click
-        ExplicitTop = 8
       end
     end
     object CategoryPanel1: TCategoryPanel
@@ -4983,8 +4981,6 @@ object FAdmin: TFAdmin
     Height = 600
     Align = alClient
     TabOrder = 7
-    ExplicitLeft = 207
-    ExplicitTop = -6
     object GroupBox1: TGroupBox
       Left = 1
       Top = 1
@@ -5062,22 +5058,22 @@ object FAdmin: TFAdmin
       ControlCollection = <
         item
           Column = 0
-          Control = Button1
+          Control = btnShowOrder
           Row = 0
         end
         item
           Column = 1
-          Control = Button3
+          Control = btnScorePersonal
           Row = 0
         end
         item
           Column = 0
-          Control = Button4
+          Control = btnScoreFood
           Row = 1
         end
         item
           Column = 1
-          Control = Button5
+          Control = btnSaleIngredient
           Row = 1
         end>
       RowCollection = <
@@ -5088,7 +5084,7 @@ object FAdmin: TFAdmin
           Value = 50.000000000000000000
         end>
       TabOrder = 1
-      object Button1: TButton
+      object btnShowOrder: TButton
         Left = 1
         Top = 1
         Width = 397
@@ -5096,10 +5092,8 @@ object FAdmin: TFAdmin
         Align = alClient
         Caption = #1055#1077#1088#1077#1075#1083#1103#1076' '#1079#1072#1084#1086#1074#1083#1077#1085#1100
         TabOrder = 0
-        ExplicitLeft = 0
-        ExplicitTop = -5
       end
-      object Button3: TButton
+      object btnScorePersonal: TButton
         Left = 398
         Top = 1
         Width = 397
@@ -5107,10 +5101,8 @@ object FAdmin: TFAdmin
         Align = alClient
         Caption = #1056#1077#1081#1090#1080#1085#1075' '#1087#1088#1072#1094#1110#1074#1085#1080#1082#1110#1074
         TabOrder = 1
-        ExplicitLeft = 404
-        ExplicitTop = 6
       end
-      object Button4: TButton
+      object btnScoreFood: TButton
         Left = 1
         Top = 38
         Width = 397
@@ -5118,22 +5110,16 @@ object FAdmin: TFAdmin
         Align = alClient
         Caption = #1056#1077#1081#1090#1080#1085#1075' '#1089#1090#1088#1072#1074' '#1090#1072' '#1085#1072#1087#1086#1111#1074' '#1084#1077#1085#1102
         TabOrder = 2
-        ExplicitLeft = 0
-        ExplicitTop = 44
       end
-      object Button5: TButton
+      object btnSaleIngredient: TButton
         Left = 398
         Top = 38
         Width = 397
         Height = 37
         Align = alClient
-        Caption = 'Button5'
+        Caption = 'btnSaleIngredient'
         TabOrder = 3
         OnClick = Button5Click
-        ExplicitLeft = 416
-        ExplicitTop = 296
-        ExplicitWidth = 75
-        ExplicitHeight = 25
       end
     end
   end

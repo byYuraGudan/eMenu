@@ -17,7 +17,6 @@ object DM: TDM
     Top = 8
   end
   object ATPersonal: TADOTable
-    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     TableName = 'Personal'
@@ -81,7 +80,6 @@ object DM: TDM
     end
   end
   object ATCategory: TADOTable
-    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     TableName = 'Category'
@@ -100,7 +98,6 @@ object DM: TDM
     end
   end
   object ATOrderMenu: TADOTable
-    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     TableName = 'AdminOrderMenu'
@@ -174,7 +171,6 @@ object DM: TDM
     end
   end
   object ATFood: TADOTable
-    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     Filtered = True
@@ -353,7 +349,7 @@ object DM: TDM
     Left = 32
     Top = 64
     Bitmap = {
-      494C01010D002800B00210001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D002800BC0210001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -899,7 +895,6 @@ object DM: TDM
     Top = 80
   end
   object MTShowFood: TADOTable
-    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     IndexFieldNames = 'kod_category'
@@ -947,7 +942,6 @@ object DM: TDM
     end
   end
   object MTShowCategory: TADOTable
-    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     TableName = 'MainShowCategory'
@@ -1013,7 +1007,6 @@ object DM: TDM
     Top = 184
   end
   object ATDiscount: TADOTable
-    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     TableName = 'Discounts'
@@ -1169,7 +1162,6 @@ object DM: TDM
     Top = 336
   end
   object ATFoodIngredient: TADOTable
-    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     IndexFieldNames = 'kod_food'
@@ -1256,7 +1248,6 @@ object DM: TDM
     Top = 416
   end
   object ATListOrderMenu: TADOTable
-    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     IndexFieldNames = 'kod_order'
@@ -1329,7 +1320,7 @@ object DM: TDM
     Left = 32
     Top = 128
     Bitmap = {
-      494C01010800F000B40040004000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010800F000C00040004000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000000010000C000000001002000000000000000
       0300000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -7672,74 +7663,8 @@ object DM: TDM
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000000000000000000000000000
       000000000000}
   end
-  object OTListOrder: TADOQuery
-    Active = True
-    Connection = ConnectionToDB
-    CursorType = ctStatic
-    Parameters = <>
-    SQL.Strings = (
-      'SELECT   id_listordermenu,'
-      #9'   kod_order,'
-      #9'   kod_food,'
-      #9'   name_food,'
-      #9'   counts,'
-      #9'   price_food,'
-      'counts * price_food AS Suma'
-      'FROM '
-      
-        'eMenu.dbo.ListOrderMenu INNER JOIN eMenu.dbo.Food ON id_food = k' +
-        'od_food')
-    Left = 192
-    Top = 136
-    object OTListOrderid_listordermenu: TAutoIncField
-      DisplayLabel = #8470
-      FieldName = 'id_listordermenu'
-      ReadOnly = True
-      Visible = False
-    end
-    object OTListOrderkod_order: TIntegerField
-      DisplayLabel = #8470' '#1047#1072#1084#1086#1074#1083#1077#1085#1085#1103
-      FieldName = 'kod_order'
-      Visible = False
-    end
-    object OTListOrderkod_food: TIntegerField
-      DisplayLabel = #8470' '#1084#1077#1085#1102
-      FieldName = 'kod_food'
-      Visible = False
-    end
-    object OTListOrdername_food: TStringField
-      DisplayLabel = #1053#1072#1081#1084#1077#1085#1091#1074#1072#1085#1085#1103
-      DisplayWidth = 35
-      FieldName = 'name_food'
-      Size = 50
-    end
-    object OTListOrdercounts: TBCDField
-      DisplayLabel = #1050#1110#1083#1100#1082#1110#1089#1090#1100
-      DisplayWidth = 11
-      FieldName = 'counts'
-      Precision = 10
-      Size = 3
-    end
-    object OTListOrderprice_food: TBCDField
-      DisplayLabel = #1062#1110#1085#1072' '#1079#1072' '#1086#1076#1080#1085'.'
-      DisplayWidth = 15
-      FieldName = 'price_food'
-      DisplayFormat = '0.00 '#1075#1088#1085
-      Precision = 10
-      Size = 2
-    end
-    object OTListOrderSuma: TFMTBCDField
-      DisplayLabel = #1057#1091#1084#1072
-      DisplayWidth = 15
-      FieldName = 'Suma'
-      ReadOnly = True
-      DisplayFormat = '0.00 '#1075#1088#1085
-      Precision = 21
-      Size = 5
-    end
-  end
-  object ODSListOrder: TDataSource
-    DataSet = OTListOrder
+  object ODSListOpenOrder: TDataSource
+    DataSet = OTListOpenOrder
     Left = 288
     Top = 136
   end
@@ -7768,5 +7693,54 @@ object DM: TDM
     UserName = 'frxUserDataSet1'
     Left = 392
     Top = 424
+  end
+  object OTListOpenOrder: TADOTable
+    Active = True
+    Connection = ConnectionToDB
+    CursorType = ctStatic
+    IndexFieldNames = 'kod_order'
+    MasterFields = 'id_order'
+    MasterSource = ODSOpenOrder
+    TableName = 'ListOpenOrderMenu'
+    Left = 192
+    Top = 136
+    object OTListOpenOrderid_listordermenu: TIntegerField
+      FieldName = 'id_listordermenu'
+    end
+    object OTListOpenOrderkod_order: TIntegerField
+      FieldName = 'kod_order'
+      Visible = False
+    end
+    object OTListOpenOrderkod_food: TIntegerField
+      FieldName = 'kod_food'
+      Visible = False
+    end
+    object OTListOpenOrdername_food: TStringField
+      DisplayLabel = #1053#1072#1081#1084#1077#1085#1091#1074#1072#1085#1085#1103
+      DisplayWidth = 30
+      FieldName = 'name_food'
+      Size = 50
+    end
+    object OTListOpenOrdercounts: TBCDField
+      DisplayLabel = #1050#1110#1083#1100#1082#1110#1089#1090#1100
+      FieldName = 'counts'
+      Precision = 10
+      Size = 3
+    end
+    object OTListOpenOrderprice_food: TBCDField
+      DisplayLabel = #1062#1110#1085#1072' '#1079#1072' '#1086#1076'.'
+      FieldName = 'price_food'
+      DisplayFormat = '0.00 '#1075#1088#1085
+      Precision = 10
+      Size = 2
+    end
+    object OTListOpenOrderSuma: TFMTBCDField
+      DisplayLabel = #1057#1091#1084#1072
+      FieldName = 'Suma'
+      ReadOnly = True
+      DisplayFormat = '0.00 '#1075#1088#1085
+      Precision = 21
+      Size = 5
+    end
   end
 end

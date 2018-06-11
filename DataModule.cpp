@@ -207,16 +207,16 @@ void __fastcall TDM::N22Click(TObject *Sender)
 
 void __fastcall TDM::TimerUpdateTimer(TObject *Sender)
 {
- DM->DoSQL(DM->ADOQuery1,"SELECT        OBJECT_NAME(object_id) AS DatabaseName, last_user_update FROM            sys.dm_db_index_usage_stats WHERE        (database_id = DB_ID('eMenu'))");
- DM->ADOQuery1->First();
- DM->MonitorServer->First();
- bool f = false;
- for (int i = 0; i < DM->ADOQuery1->RecordCount; i++) {
-	if (DM->MonitorServer->FieldByName("last_user_update")->AsString != DM->ADOQuery1->FieldByName("last_user_update")->AsString) f = true;
-	DM->ADOQuery1->Next();
-	DM->MonitorServer->Next();
- }
-    if(f)DM->OpenDB();
+// DM->DoSQL(DM->ADOQuery1,"SELECT        OBJECT_NAME(object_id) AS DatabaseName, last_user_update FROM            sys.dm_db_index_usage_stats WHERE        (database_id = DB_ID('eMenu'))");
+// DM->ADOQuery1->First();
+// DM->MonitorServer->First();
+// bool f = false;
+// for (int i = 0; i < DM->ADOQuery1->RecordCount; i++) {
+//	if (DM->MonitorServer->FieldByName("last_user_update")->AsString != DM->ADOQuery1->FieldByName("last_user_update")->AsString) f = true;
+//	DM->ADOQuery1->Next();
+//	DM->MonitorServer->Next();
+// }
+//    if(f)DM->OpenDB();
 }
 //---------------------------------------------------------------------------
 

@@ -106,9 +106,6 @@ Coordinates=880,53,153,33
 [TimerUpdate]
 Coordinates=702,573,77,33
 
-[ADOQuery1]
-Coordinates=518,503,72,51
-
 [MQShowFooddata_food]
 Coordinates=702,625,132,33
 
@@ -420,4 +417,7 @@ Coordinates=491,443,137,33
 
 [OTNotOcupTableoccupation]
 Coordinates=529,573,153,33
+
+[TSQLCheck]
+Coordinates=518,503,72,51
 

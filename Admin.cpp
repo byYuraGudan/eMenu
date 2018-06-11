@@ -550,7 +550,6 @@ void __fastcall TFAdmin::RBperiodClick(TObject *Sender)
 	String str = DM->DSReport->DataSet->Name;
 	String dt = "WHERE date_open_order >= '"+DateToStr(DateFirst->Date)+" "+TimeToStr(TimeFirst->Time)+"'  \
 	and date_open_order <= '"+DateToStr(DateSecond->Date)+" "+TimeToStr(TimeSecond->Time)+"'";
-	ShowMessage(dt);
 	if (str == "TReportDiscount") {
 	DM->DoSQL(DM->TReportDiscount,"SELECT id_discount,pib_client,count(id_order) AS CountBuyOrder,sum(payment - (payment*discount/100)) AS PaymentAll FROM Discounts INNER JOIN OrderMenu ON kod_discount = id_discount\
 	"+dt+" 	GROUP BY id_discount,pib_client");

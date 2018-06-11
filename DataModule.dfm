@@ -1155,11 +1155,11 @@ object DM: TDM
     Left = 32
     Top = 216
   end
-  object ADOQuery1: TADOQuery
+  object TSQLCheck: TADOQuery
     Connection = ConnectionToDB
     Parameters = <>
-    Left = 32
-    Top = 336
+    Left = 72
+    Top = 376
   end
   object ATFoodIngredient: TADOTable
     Connection = ConnectionToDB
@@ -9505,6 +9505,13 @@ object DM: TDM
       FieldName = 'unit'
       Size = 10
     end
+    object TReportIngredientprice: TBCDField
+      DisplayLabel = #1062#1110#1085#1072' '#1079#1072' '#1086#1076'. '#1074'.'
+      FieldName = 'price'
+      DisplayFormat = '0.00 '#1075#1088#1085
+      Precision = 10
+      Size = 2
+    end
     object TReportIngredientSaleFood: TFMTBCDField
       DisplayLabel = #1057#1091#1084#1072' '#1074#1080#1090#1088#1072#1090':'
       DisplayWidth = 40
@@ -9513,13 +9520,6 @@ object DM: TDM
       DisplayFormat = '0.00 '#1075#1088#1085
       Precision = 38
       Size = 5
-    end
-    object TReportIngredientprice: TBCDField
-      DisplayLabel = #1062#1110#1085#1072' '#1079#1072' '#1086#1076'. '#1074'.'
-      FieldName = 'price'
-      DisplayFormat = '0.00 '#1075#1088#1085
-      Precision = 10
-      Size = 2
     end
   end
   object TReportFood: TADOQuery
@@ -9611,33 +9611,89 @@ object DM: TDM
     Left = 256
     Top = 504
     object TReportOrderid_order: TAutoIncField
+      DisplayLabel = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103' '#8470
       FieldName = 'id_order'
       ReadOnly = True
     end
     object TReportOrderdate_open_order: TDateTimeField
+      DisplayLabel = #1054#1092#1086#1088#1084#1083#1077#1085#1085#1103' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103':'
+      DisplayWidth = 15
       FieldName = 'date_open_order'
     end
     object TReportOrderpib_personal: TStringField
+      DisplayLabel = #1055#1077#1088#1089#1086#1085#1072#1083
+      DisplayWidth = 15
       FieldName = 'pib_personal'
       Size = 50
     end
     object TReportOrderpib_client: TStringField
+      DisplayLabel = #1050#1083#1110#1108#1085#1090
+      DisplayWidth = 15
       FieldName = 'pib_client'
       Size = 50
     end
     object TReportOrderpayment: TBCDField
+      DisplayLabel = #1054#1087#1083#1072#1090#1072
       FieldName = 'payment'
+      DisplayFormat = '0.00 '#1075#1088#1085
       Precision = 10
       Size = 2
     end
     object TReportOrderdiscount: TIntegerField
+      DisplayLabel = #1047#1085#1080#1078#1082#1072
       FieldName = 'discount'
+      DisplayFormat = '0 %'
     end
     object TReportOrderPaymentDiscount: TFMTBCDField
+      DisplayLabel = #1054#1087#1083#1072#1090#1072' '#1079' '#1079#1085#1080#1078#1082#1086#1102':'
       FieldName = 'PaymentDiscount'
       ReadOnly = True
+      DisplayFormat = '0.00 '#1075#1088#1085
       Precision = 38
       Size = 6
     end
+  end
+  object frxCheck: TfrxReport
+    Version = '6.0.10'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick, pbCopy, pbSelection]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 43262.917545740740000000
+    ReportOptions.LastChange = 43262.917545740740000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 32
+    Top = 440
+    Datasets = <>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      Frame.Typ = []
+    end
+  end
+  object frxDBCheck: TfrxDBDataset
+    UserName = 'frxDBCheck'
+    CloseDataSource = False
+    DataSet = TSQLCheck
+    BCDToCurrency = False
+    Left = 112
+    Top = 440
   end
 end

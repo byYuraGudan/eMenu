@@ -118,7 +118,7 @@ __published:	// IDE-managed Components
 	TStringField *MTShowFoodunit_food;
 	TStringField *MTShowFoodweight_unit;
 	TTimer *TimerUpdate;
-	TADOQuery *ADOQuery1;
+	TADOQuery *TSQLCheck;
 	TStringField *MQShowFoodunit_food;
 	TStringField *MQShowFoodweight_unit;
 	TADOTable *ATFoodIngredient;
@@ -225,6 +225,8 @@ __published:	// IDE-managed Components
 	TBCDField *TReportOrderpayment;
 	TIntegerField *TReportOrderdiscount;
 	TFMTBCDField *TReportOrderPaymentDiscount;
+	TfrxReport *frxCheck;
+	TfrxDBDataset *frxDBCheck;
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall DataModuleDestroy(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);

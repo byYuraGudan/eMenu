@@ -7684,8 +7684,8 @@ object DM: TDM
       'begin'
       ''
       'end.')
-    Left = 336
-    Top = 320
+    Left = 344
+    Top = 272
     Datasets = <
       item
         DataSet = frxDBSaleIngredient
@@ -7766,7 +7766,7 @@ object DM: TDM
       object ReportTitle1: TfrxReportTitle
         FillType = ftBrush
         Frame.Typ = []
-        Height = 170.078850000000000000
+        Height = 22.677180000000000000
         Top = 18.897650000000000000
         Width = 718.110700000000000000
         object Memo1: TfrxMemoView
@@ -7787,70 +7787,12 @@ object DM: TDM
           Style = 'Title'
           VAlign = vaCenter
         end
-        object Chart1: TfrxChartView
-          Left = 3.779530000000000000
-          Top = 22.677180000000000000
-          Width = 710.551640000000000000
-          Height = 143.622140000000000000
-          HighlightColor = clBlack
-          Frame.Typ = []
-          Chart = {
-            5450463006544368617274054368617274044C656674020003546F7002000557
-            696474680390010648656967687403FA00144261636B57616C6C2E50656E2E56
-            697369626C65080B4178697356697369626C65080D4672616D652E5669736962
-            6C6508175669657733444F7074696F6E732E456C65766174696F6E033B011856
-            69657733444F7074696F6E732E4F7274686F676F6E616C08195669657733444F
-            7074696F6E732E50657273706563746976650200165669657733444F7074696F
-            6E732E526F746174696F6E0368010B56696577334457616C6C73080A42657665
-            6C4F75746572070662764E6F6E6505436F6C6F720707636C57686974650D4465
-            6661756C7443616E766173060E54474449506C757343616E76617311436F6C6F
-            7250616C65747465496E646578020D000A545069655365726965730753657269
-            6573310D5856616C7565732E4F72646572070B6C6F417363656E64696E670C59
-            56616C7565732E4E616D6506035069650D5956616C7565732E4F726465720706
-            6C6F4E6F6E651A4672616D652E496E6E657242727573682E4261636B436F6C6F
-            720705636C526564224672616D652E496E6E657242727573682E477261646965
-            6E742E456E64436F6C6F720706636C47726179224672616D652E496E6E657242
-            727573682E4772616469656E742E4D6964436F6C6F720707636C576869746524
-            4672616D652E496E6E657242727573682E4772616469656E742E537461727443
-            6F6C6F720440404000214672616D652E496E6E657242727573682E4772616469
-            656E742E56697369626C65091B4672616D652E4D6964646C6542727573682E42
-            61636B436F6C6F720708636C59656C6C6F77234672616D652E4D6964646C6542
-            727573682E4772616469656E742E456E64436F6C6F720482828200234672616D
-            652E4D6964646C6542727573682E4772616469656E742E4D6964436F6C6F7207
-            07636C5768697465254672616D652E4D6964646C6542727573682E4772616469
-            656E742E5374617274436F6C6F720706636C47726179224672616D652E4D6964
-            646C6542727573682E4772616469656E742E56697369626C65091A4672616D65
-            2E4F7574657242727573682E4261636B436F6C6F720707636C477265656E2246
-            72616D652E4F7574657242727573682E4772616469656E742E456E64436F6C6F
-            720440404000224672616D652E4F7574657242727573682E4772616469656E74
-            2E4D6964436F6C6F720707636C5768697465244672616D652E4F757465724272
-            7573682E4772616469656E742E5374617274436F6C6F720708636C53696C7665
-            72214672616D652E4F7574657242727573682E4772616469656E742E56697369
-            626C65090B4672616D652E57696474680204194F74686572536C6963652E4C65
-            67656E642E56697369626C6508000000}
-          ChartElevation = 315
-          SeriesData = <
-            item
-              InheritedName = 'TfrxSeriesItem2'
-              DataType = dtDBData
-              DataBand = frxScoreDiscount.MasterData1
-              DataSet = frxDBSaleIngredient
-              DataSetName = 'frxDBDiscount'
-              SortOrder = soNone
-              TopN = 0
-              XType = xtText
-              Source1 = 'frxDBDiscount."pib_client"'
-              Source2 = 'frxDBDiscount."CountBuyOrder"'
-              XSource = 'frxDBDiscount."pib_client"'
-              YSource = 'frxDBDiscount."CountBuyOrder"'
-            end>
-        end
       end
       object MasterData1: TfrxMasterData
         FillType = ftBrush
         Frame.Typ = []
         Height = 79.370130000000000000
-        Top = 249.448980000000000000
+        Top = 102.047310000000000000
         Width = 718.110700000000000000
         DataSet = frxDBSaleIngredient
         DataSetName = 'frxDBDiscount'
@@ -7994,7 +7936,7 @@ object DM: TDM
         FillType = ftBrush
         Frame.Typ = []
         Height = 26.456710000000000000
-        Top = 389.291590000000000000
+        Top = 241.889920000000000000
         Width = 718.110700000000000000
         object Memo10: TfrxMemoView
           Align = baWidth
@@ -8073,7 +8015,7 @@ object DM: TDM
       Size = 5
     end
   end
-  object TSQLReport: TADOQuery
+  object TReportDiscount: TADOQuery
     Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
@@ -8082,13 +8024,34 @@ object DM: TDM
       
         'SELECT id_discount,pib_client,count(id_order) AS CountBuyOrder,s' +
         'um(payment - (payment*discount/100)) AS PaymentAll FROM Discount' +
-        's INNER JOIN OrderMenu ON kod_discount = id_discount'
-      
-        'WHERE date_open_order >= '#39'10.06.2018 14:41:13'#39' and date_open_ord' +
-        'er <= '#39'11.06.2018 08:39:28'#39
-      'GROUP BY id_discount,pib_client')
+        's INNER JOIN OrderMenu ON kod_discount = id_discount GROUP BY id' +
+        '_discount,pib_client')
     Left = 256
-    Top = 320
+    Top = 272
+    object TReportDiscountid_discount: TIntegerField
+      DisplayLabel = #1044#1080#1089#1082#1086#1085#1090#1085#1072' '#1082#1072#1088#1090#1082#1072' '#8470':'
+      DisplayWidth = 15
+      FieldName = 'id_discount'
+    end
+    object TReportDiscountpib_client: TStringField
+      DisplayLabel = #1055#1030#1041' '#1082#1083#1110#1108#1085#1090#1072':'
+      DisplayWidth = 20
+      FieldName = 'pib_client'
+      Size = 50
+    end
+    object TReportDiscountCountBuyOrder: TIntegerField
+      DisplayLabel = #1050#1110#1083#1100#1082#1110#1089#1090#1100' '#1079#1072#1084#1086#1074#1083#1077#1085#1100':'
+      FieldName = 'CountBuyOrder'
+      ReadOnly = True
+    end
+    object TReportDiscountPaymentAll: TFMTBCDField
+      DisplayLabel = #1047#1072#1075#1072#1083#1100#1085#1072' '#1086#1087#1083#1072#1090#1072':'
+      FieldName = 'PaymentAll'
+      ReadOnly = True
+      DisplayFormat = '0.00 '#1075#1088#1085
+      Precision = 38
+      Size = 6
+    end
   end
   object frxSaleIngredient: TfrxReport
     Version = '6.0.10'
@@ -8106,8 +8069,8 @@ object DM: TDM
       'begin'
       ''
       'end.')
-    Left = 341
-    Top = 376
+    Left = 344
+    Top = 328
     Datasets = <
       item
         DataSet = frxDBDiscount
@@ -8437,8 +8400,8 @@ object DM: TDM
       'begin'
       ''
       'end.')
-    Left = 336
-    Top = 432
+    Left = 344
+    Top = 384
     Datasets = <>
     Variables = <>
     Style = <>
@@ -8458,8 +8421,8 @@ object DM: TDM
       'begin'
       ''
       'end.')
-    Left = 336
-    Top = 496
+    Left = 344
+    Top = 448
     Datasets = <>
     Variables = <>
     Style = <>
@@ -8479,8 +8442,8 @@ object DM: TDM
       'begin'
       ''
       'end.')
-    Left = 336
-    Top = 552
+    Left = 344
+    Top = 504
     Datasets = <>
     Variables = <>
     Style = <>
@@ -8493,48 +8456,213 @@ object DM: TDM
       'pib_client=pib_client'
       'CountBuyOrder=CountBuyOrder'
       'PaymentAll=PaymentAll')
-    DataSet = TSQLReport
+    DataSet = TReportDiscount
     BCDToCurrency = False
-    Left = 422
-    Top = 320
+    Left = 430
+    Top = 272
   end
   object frxDBSaleIngredient: TfrxDBDataset
     UserName = 'frxDBDiscount'
     CloseDataSource = False
     FieldAliases.Strings = (
-      'id_discount=id_discount'
-      'pib_client=pib_client'
-      'CountBuyOrder=CountBuyOrder'
-      'PaymentAll=PaymentAll')
-    DataSet = TSQLReport
+      'name_food=name_food'
+      'name_ingredient=name_ingredient'
+      'AsCountSaleIngredient=AsCountSaleIngredient'
+      'unit=unit'
+      'SaleFood=SaleFood')
+    DataSet = TReportIngredient
     BCDToCurrency = False
-    Left = 424
-    Top = 376
+    Left = 430
+    Top = 328
   end
   object frxDBScoreFood: TfrxDBDataset
     UserName = 'frxDBScoreFood'
     CloseDataSource = False
+    FieldAliases.Strings = (
+      'name_food=name_food'
+      'CountSale=CountSale')
+    DataSet = TReportFood
     BCDToCurrency = False
-    Left = 424
-    Top = 432
+    Left = 430
+    Top = 384
   end
   object frxDBScorePersonal: TfrxDBDataset
     UserName = 'frxDBScorePersonal'
     CloseDataSource = False
+    FieldAliases.Strings = (
+      'pib_personal=pib_personal'
+      'CountOrder=CountOrder'
+      'Payment=Payment'
+      'PaymentDiscount=PaymentDiscount')
+    DataSet = TReportPersonal
     BCDToCurrency = False
-    Left = 424
-    Top = 496
+    Left = 430
+    Top = 448
   end
   object frxDBShowOrder: TfrxDBDataset
     UserName = 'frxDBShowOrder'
     CloseDataSource = False
+    FieldAliases.Strings = (
+      'id_order=id_order'
+      'kod_discount=kod_discount'
+      'kod_personal=kod_personal'
+      'kod_table=kod_table'
+      'pib_client=pib_client'
+      'pib_personal=pib_personal'
+      'name_table=name_table'
+      'date_open_order=date_open_order'
+      'date_close_order=date_close_order'
+      'payment=payment'
+      'discount=discount'
+      'RealPayment=RealPayment')
+    DataSet = OTOpenOrder
     BCDToCurrency = False
-    Left = 424
-    Top = 552
+    Left = 430
+    Top = 504
   end
   object DSReport: TDataSource
-    DataSet = TSQLReport
-    Left = 104
-    Top = 456
+    DataSet = TReportDiscount
+    Left = 176
+    Top = 384
+  end
+  object TReportIngredient: TADOQuery
+    Active = True
+    Connection = ConnectionToDB
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT name_food,name_ingredient, sum(ListOrderMenu.counts * Lis' +
+        'tIngredientFood.counts) AsCountSaleIngredient,unit,sum(ListIngre' +
+        'dientFood.price * ListOrderMenu.counts) AS SaleFood FROM ((Order' +
+        'Menu INNER JOIN ListOrderMenu ON id_order = kod_order) INNER JOI' +
+        'N Food ON id_food = ListOrderMenu.kod_food )INNER JOIN ListIngre' +
+        'dientFood ON ListIngredientFood.kod_food = id_food'
+      'GROUP BY name_food,name_ingredient,unit')
+    Left = 256
+    Top = 328
+    object TReportIngredientname_food: TStringField
+      DisplayLabel = #1053#1072#1081#1084#1077#1085#1091#1074#1072#1085#1085#1103':'
+      DisplayWidth = 20
+      FieldName = 'name_food'
+      Size = 50
+    end
+    object TReportIngredientname_ingredient: TStringField
+      DisplayLabel = #1053#1072#1081#1084#1077#1085#1091#1074#1072#1085#1085#1103' '#1110#1085#1075#1088#1077#1076#1110#1108#1085#1090#1072':'
+      DisplayWidth = 20
+      FieldName = 'name_ingredient'
+      Size = 50
+    end
+    object TReportIngredientAsCountSaleIngredient: TFMTBCDField
+      DisplayLabel = #1042#1080#1090#1088#1072#1095#1077#1085#1086':'
+      DisplayWidth = 15
+      FieldName = 'AsCountSaleIngredient'
+      ReadOnly = True
+      Precision = 38
+      Size = 6
+    end
+    object TReportIngredientunit: TStringField
+      DisplayLabel = #1054#1076'. '#1074#1080#1084#1110#1088#1091':'
+      DisplayWidth = 5
+      FieldName = 'unit'
+      Size = 10
+    end
+    object TReportIngredientSaleFood: TFMTBCDField
+      DisplayLabel = #1057#1091#1084#1072' '#1074#1080#1090#1088#1072#1090':'
+      DisplayWidth = 40
+      FieldName = 'SaleFood'
+      ReadOnly = True
+      DisplayFormat = '0.00 '#1075#1088#1085
+      Precision = 38
+      Size = 5
+    end
+  end
+  object TReportFood: TADOQuery
+    Active = True
+    Connection = ConnectionToDB
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT name_food,count(counts) AS CountSale FROM (Food INNER JOI' +
+        'N ListOrderMenu ON kod_food = id_food) INNER JOIN OrderMenu ON i' +
+        'd_order = kod_order'
+      'GROUP BY name_food'
+      'ORDER BY CountSale desc')
+    Left = 256
+    Top = 384
+    object TReportFoodname_food: TStringField
+      DisplayLabel = #1053#1072#1081#1084#1077#1085#1091#1074#1072#1085#1085#1103':'
+      DisplayWidth = 30
+      FieldName = 'name_food'
+      Size = 50
+    end
+    object TReportFoodCountSale: TIntegerField
+      DisplayLabel = #1050#1110#1083#1100#1082#1110#1089#1090#1100' '#1087#1088#1086#1076#1072#1078':'
+      DisplayWidth = 20
+      FieldName = 'CountSale'
+      ReadOnly = True
+    end
+  end
+  object TReportPersonal: TADOQuery
+    Active = True
+    Connection = ConnectionToDB
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT pib_personal,count(id_order) AS CountOrder,sum(payment) A' +
+        'S Payment, sum(payment-(payment*discount/100)) AS PaymentDiscoun' +
+        't FROM (Personal INNER JOIN OrderMenu ON id_personal = kod_perso' +
+        'nal) INNER JOIN Discounts ON kod_discount = id_discount'
+      'GROUP BY pib_personal')
+    Left = 256
+    Top = 448
+    object TReportPersonalpib_personal: TStringField
+      DisplayLabel = #1055#1088#1110#1079#1074#1080#1097#1077' '#1110#1085#1110#1094#1110#1072#1083#1080' '#1087#1088#1072#1094#1110#1074#1085#1080#1082#1072':'
+      DisplayWidth = 30
+      FieldName = 'pib_personal'
+      Size = 50
+    end
+    object TReportPersonalCountOrder: TIntegerField
+      DisplayLabel = #1054#1092#1086#1088#1084#1083#1077#1085#1086' '#1079#1072#1084#1086#1074#1083#1077#1085#1100':'
+      FieldName = 'CountOrder'
+      ReadOnly = True
+    end
+    object TReportPersonalPayment: TFMTBCDField
+      DisplayLabel = #1057#1091#1084#1072' '#1086#1087#1083#1072#1090#1080' '#1079#1072#1084#1086#1074#1083#1077#1085#1100' '#1073#1077#1079' '#1079#1085#1080#1078#1082#1080
+      FieldName = 'Payment'
+      ReadOnly = True
+      DisplayFormat = '0.00 '#1075#1088#1085
+      Precision = 38
+      Size = 2
+    end
+    object TReportPersonalPaymentDiscount: TFMTBCDField
+      DisplayLabel = #1057#1091#1084#1072' '#1086#1087#1083#1072#1090#1080' '#1079#1072#1084#1086#1074#1083#1077#1085#1100' '#1079' '#1079#1085#1080#1078#1082#1086#1102
+      FieldName = 'PaymentDiscount'
+      ReadOnly = True
+      DisplayFormat = '0.00 '#1075#1088#1085
+      Precision = 38
+      Size = 6
+    end
+  end
+  object TReportOrder: TADOQuery
+    Active = True
+    Connection = ConnectionToDB
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT id_order,date_open_order,pib_personal,pib_client,payment,' +
+        'discount,sum(payment-(payment*discount/100)) AS PaymentDiscount '
+      
+        'FROM ((OrderMenu INNER JOIN Personal ON id_personal = kod_person' +
+        'al) INNER JOIN Discounts ON id_discount = kod_discount) INNER JO' +
+        'IN ListTable ON id_table = kod_table'
+      
+        'GROUP BY id_order,date_open_order,pib_personal,pib_client,paymen' +
+        't,discount')
+    Left = 256
+    Top = 504
   end
 end

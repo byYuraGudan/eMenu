@@ -349,7 +349,7 @@ object DM: TDM
     Left = 32
     Top = 64
     Bitmap = {
-      494C01010D002800BC0210001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D002800C00210001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -1320,7 +1320,7 @@ object DM: TDM
     Left = 32
     Top = 128
     Bitmap = {
-      494C01010800F000C00040004000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010800F000C40040004000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000000010000C000000001002000000000000000
       0300000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -8024,11 +8024,8 @@ object DM: TDM
       
         'SELECT id_discount,pib_client,count(id_order) AS CountBuyOrder,s' +
         'um(payment - (payment*discount/100)) AS PaymentAll FROM Discount' +
-        's INNER JOIN OrderMenu ON kod_discount = id_discount'
-      
-        'WHERE date_open_order >= '#39'10.06.2018 14:41:13'#39' and date_open_ord' +
-        'er <= '#39'11.06.2018 08:39:28'#39
-      'GROUP BY id_discount,pib_client')
+        's INNER JOIN OrderMenu ON kod_discount = id_discount GROUP BY id' +
+        '_discount,pib_client')
     Left = 256
     Top = 272
     object TReportDiscountid_discount: TIntegerField
@@ -8072,7 +8069,7 @@ object DM: TDM
       'begin'
       ''
       'end.')
-    Left = 349
+    Left = 344
     Top = 328
     Datasets = <
       item
@@ -8408,6 +8405,20 @@ object DM: TDM
     Datasets = <>
     Variables = <>
     Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      Frame.Typ = []
+    end
   end
   object frxScorePersonal: TfrxReport
     Version = '6.0.10'
@@ -8429,6 +8440,20 @@ object DM: TDM
     Datasets = <>
     Variables = <>
     Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      Frame.Typ = []
+    end
   end
   object frxShowOrder: TfrxReport
     Version = '6.0.10'
@@ -8450,6 +8475,20 @@ object DM: TDM
     Datasets = <>
     Variables = <>
     Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      Frame.Typ = []
+    end
   end
   object frxDBDiscount: TfrxDBDataset
     UserName = 'frxDBSaleIngredient'
@@ -8475,7 +8514,7 @@ object DM: TDM
       'SaleFood=SaleFood')
     DataSet = TReportIngredient
     BCDToCurrency = False
-    Left = 432
+    Left = 430
     Top = 328
   end
   object frxDBScoreFood: TfrxDBDataset
@@ -8486,7 +8525,7 @@ object DM: TDM
       'CountSale=CountSale')
     DataSet = TReportFood
     BCDToCurrency = False
-    Left = 432
+    Left = 430
     Top = 384
   end
   object frxDBScorePersonal: TfrxDBDataset
@@ -8499,7 +8538,7 @@ object DM: TDM
       'PaymentDiscount=PaymentDiscount')
     DataSet = TReportPersonal
     BCDToCurrency = False
-    Left = 432
+    Left = 430
     Top = 448
   end
   object frxDBShowOrder: TfrxDBDataset
@@ -8520,13 +8559,13 @@ object DM: TDM
       'RealPayment=RealPayment')
     DataSet = OTOpenOrder
     BCDToCurrency = False
-    Left = 432
+    Left = 430
     Top = 504
   end
   object DSReport: TDataSource
     DataSet = TReportDiscount
-    Left = 104
-    Top = 456
+    Left = 176
+    Top = 384
   end
   object TReportIngredient: TADOQuery
     Active = True
@@ -8541,9 +8580,6 @@ object DM: TDM
         'Menu INNER JOIN ListOrderMenu ON id_order = kod_order) INNER JOI' +
         'N Food ON id_food = ListOrderMenu.kod_food )INNER JOIN ListIngre' +
         'dientFood ON ListIngredientFood.kod_food = id_food'
-      
-        'WHERE date_open_order >= '#39'10.06.2018 14:41:13'#39' and date_open_ord' +
-        'er <= '#39'11.06.2018 08:39:28'#39
       'GROUP BY name_food,name_ingredient,unit')
     Left = 256
     Top = 328
@@ -8593,9 +8629,6 @@ object DM: TDM
         'SELECT name_food,count(counts) AS CountSale FROM (Food INNER JOI' +
         'N ListOrderMenu ON kod_food = id_food) INNER JOIN OrderMenu ON i' +
         'd_order = kod_order'
-      
-        'WHERE date_open_order >= '#39'10.06.2018 14:41:13'#39' and date_open_ord' +
-        'er <= '#39'11.06.2018 08:39:28'#39
       'GROUP BY name_food'
       'ORDER BY CountSale desc')
     Left = 256
@@ -8624,12 +8657,36 @@ object DM: TDM
         'S Payment, sum(payment-(payment*discount/100)) AS PaymentDiscoun' +
         't FROM (Personal INNER JOIN OrderMenu ON id_personal = kod_perso' +
         'nal) INNER JOIN Discounts ON kod_discount = id_discount'
-      
-        'WHERE date_open_order >= '#39'10.06.2018 14:41:13'#39' and date_open_ord' +
-        'er <= '#39'11.06.2018 08:39:28'#39
       'GROUP BY pib_personal')
     Left = 256
     Top = 448
+    object TReportPersonalpib_personal: TStringField
+      DisplayLabel = #1055#1088#1110#1079#1074#1080#1097#1077' '#1110#1085#1110#1094#1110#1072#1083#1080' '#1087#1088#1072#1094#1110#1074#1085#1080#1082#1072':'
+      DisplayWidth = 30
+      FieldName = 'pib_personal'
+      Size = 50
+    end
+    object TReportPersonalCountOrder: TIntegerField
+      DisplayLabel = #1054#1092#1086#1088#1084#1083#1077#1085#1086' '#1079#1072#1084#1086#1074#1083#1077#1085#1100':'
+      FieldName = 'CountOrder'
+      ReadOnly = True
+    end
+    object TReportPersonalPayment: TFMTBCDField
+      DisplayLabel = #1057#1091#1084#1072' '#1086#1087#1083#1072#1090#1080' '#1079#1072#1084#1086#1074#1083#1077#1085#1100' '#1073#1077#1079' '#1079#1085#1080#1078#1082#1080
+      FieldName = 'Payment'
+      ReadOnly = True
+      DisplayFormat = '0.00 '#1075#1088#1085
+      Precision = 38
+      Size = 2
+    end
+    object TReportPersonalPaymentDiscount: TFMTBCDField
+      DisplayLabel = #1057#1091#1084#1072' '#1086#1087#1083#1072#1090#1080' '#1079#1072#1084#1086#1074#1083#1077#1085#1100' '#1079' '#1079#1085#1080#1078#1082#1086#1102
+      FieldName = 'PaymentDiscount'
+      ReadOnly = True
+      DisplayFormat = '0.00 '#1075#1088#1085
+      Precision = 38
+      Size = 6
+    end
   end
   object TReportOrder: TADOQuery
     Active = True
@@ -8644,9 +8701,6 @@ object DM: TDM
         'FROM ((OrderMenu INNER JOIN Personal ON id_personal = kod_person' +
         'al) INNER JOIN Discounts ON id_discount = kod_discount) INNER JO' +
         'IN ListTable ON id_table = kod_table'
-      
-        'WHERE date_open_order >= '#39'10.06.2018 14:41:13'#39' and date_open_ord' +
-        'er <= '#39'11.06.2018 08:39:28'#39
       
         'GROUP BY id_order,date_open_order,pib_personal,pib_client,paymen' +
         't,discount')

@@ -349,7 +349,7 @@ object DM: TDM
     Left = 32
     Top = 64
     Bitmap = {
-      494C01010D002800BC0210001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010D002800C40210001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000004000000001002000000000000040
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -1320,7 +1320,7 @@ object DM: TDM
     Left = 32
     Top = 128
     Bitmap = {
-      494C01010800F000C00040004000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C01010800F000C80040004000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000000010000C000000001002000000000000000
       0300000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -7689,7 +7689,7 @@ object DM: TDM
     Datasets = <
       item
         DataSet = frxDBSaleIngredient
-        DataSetName = 'frxDBDiscount'
+        DataSetName = 'frxDBSaleIngredient'
       end>
     Variables = <>
     Style = <
@@ -7795,7 +7795,7 @@ object DM: TDM
         Top = 102.047310000000000000
         Width = 718.110700000000000000
         DataSet = frxDBSaleIngredient
-        DataSetName = 'frxDBDiscount'
+        DataSetName = 'frxDBSaleIngredient'
         RowCount = 0
         object Memo2: TfrxMemoView
           Width = 149.354360000000000000
@@ -7817,7 +7817,7 @@ object DM: TDM
           Height = 22.677180000000000000
           DataField = 'id_discount'
           DataSet = frxDBSaleIngredient
-          DataSetName = 'frxDBDiscount'
+          DataSetName = 'frxDBSaleIngredient'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -7851,7 +7851,7 @@ object DM: TDM
           Height = 22.677180000000000000
           DataField = 'pib_client'
           DataSet = frxDBSaleIngredient
-          DataSetName = 'frxDBDiscount'
+          DataSetName = 'frxDBSaleIngredient'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -7885,7 +7885,7 @@ object DM: TDM
           Height = 22.677180000000000000
           DataField = 'CountBuyOrder'
           DataSet = frxDBSaleIngredient
-          DataSetName = 'frxDBDiscount'
+          DataSetName = 'frxDBSaleIngredient'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -7919,7 +7919,7 @@ object DM: TDM
           Height = 22.677180000000000000
           DataField = 'PaymentAll'
           DataSet = frxDBSaleIngredient
-          DataSetName = 'frxDBDiscount'
+          DataSetName = 'frxDBSaleIngredient'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -8061,20 +8061,20 @@ object DM: TDM
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 43262.627328969910000000
-    ReportOptions.LastChange = 43262.627328969910000000
+    ReportOptions.CreateDate = 43262.627328969900000000
+    ReportOptions.LastChange = 43262.888210914400000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
       'begin'
       ''
       'end.')
-    Left = 349
+    Left = 344
     Top = 328
     Datasets = <
       item
         DataSet = frxDBDiscount
-        DataSetName = 'frxDBSaleIngredient'
+        DataSetName = 'frxDBDiscount'
       end>
     Variables = <>
     Style = <
@@ -8167,7 +8167,7 @@ object DM: TDM
           Fill.BackColor = clGray
           HAlign = haCenter
           Memo.UTF8W = (
-            'Report')
+            #1030#1085#1092#1086#1088#1084#1072#1094#1110#1103' '#1087#1088#1086' '#1074#1080#1082#1086#1088#1080#1089#1090#1072#1085#1080#1093' '#1110#1085#1075#1088#1077#1076#1110#1108#1085#1090#1110#1074)
           ParentFont = False
           Style = 'Title'
           VAlign = vaCenter
@@ -8186,7 +8186,7 @@ object DM: TDM
           Height = 22.677180000000000000
           DataField = 'name_food'
           DataSet = frxDBDiscount
-          DataSetName = 'frxDBSaleIngredient'
+          DataSetName = 'frxDBDiscount'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clMaroon
           Font.Height = -13
@@ -8194,6 +8194,7 @@ object DM: TDM
           Font.Style = [fsBold]
           Frame.Typ = []
           Fill.BackColor = 16053492
+          HAlign = haCenter
           Memo.UTF8W = (
             '[frxDBSaleIngredient."name_food"]')
           ParentFont = False
@@ -8208,10 +8209,10 @@ object DM: TDM
         Top = 154.960730000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDiscount
-        DataSetName = 'frxDBSaleIngredient'
+        DataSetName = 'frxDBDiscount'
         RowCount = 0
         object Memo3: TfrxMemoView
-          Width = 151.000000000000000000
+          Width = 188.795300000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clMaroon
@@ -8220,17 +8221,17 @@ object DM: TDM
           Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
-            'name_ingredient')
+            #1053#1072#1081#1084#1077#1085#1091#1074#1072#1085#1085#1103' '#1110#1085#1075#1088#1077'. :')
           ParentFont = False
           Style = 'Header'
         end
         object Memo4: TfrxMemoView
-          Left = 169.897650000000000000
+          Left = 347.535560000000000000
           Width = 372.000000000000000000
           Height = 18.897650000000000000
           DataField = 'name_ingredient'
           DataSet = frxDBDiscount
-          DataSetName = 'frxDBSaleIngredient'
+          DataSetName = 'frxDBDiscount'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -8244,7 +8245,7 @@ object DM: TDM
         end
         object Memo5: TfrxMemoView
           Top = 18.897650000000000000
-          Width = 151.000000000000000000
+          Width = 188.795300000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clMaroon
@@ -8253,18 +8254,18 @@ object DM: TDM
           Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
-            'AsCountSaleIngredient')
+            #1050#1110#1083#1100#1082#1110#1089#1090#1100' '#1074#1080#1082'. '#1110#1085#1075#1088#1077'. :')
           ParentFont = False
           Style = 'Header'
         end
         object Memo6: TfrxMemoView
-          Left = 169.897650000000000000
+          Left = 347.535560000000000000
           Top = 18.897650000000000000
           Width = 291.000000000000000000
           Height = 18.897650000000000000
           DataField = 'AsCountSaleIngredient'
           DataSet = frxDBDiscount
-          DataSetName = 'frxDBSaleIngredient'
+          DataSetName = 'frxDBDiscount'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -8278,7 +8279,7 @@ object DM: TDM
         end
         object Memo7: TfrxMemoView
           Top = 37.795300000000000000
-          Width = 151.000000000000000000
+          Width = 188.795300000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clMaroon
@@ -8287,18 +8288,18 @@ object DM: TDM
           Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
-            'unit')
+            #1054#1076#1080#1085#1080#1094#1103' '#1074#1080#1084#1110#1088#1091':')
           ParentFont = False
           Style = 'Header'
         end
         object Memo8: TfrxMemoView
-          Left = 169.897650000000000000
+          Left = 347.535560000000000000
           Top = 37.795300000000000000
           Width = 78.000000000000000000
           Height = 18.897650000000000000
           DataField = 'unit'
           DataSet = frxDBDiscount
-          DataSetName = 'frxDBSaleIngredient'
+          DataSetName = 'frxDBDiscount'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -8312,7 +8313,7 @@ object DM: TDM
         end
         object Memo9: TfrxMemoView
           Top = 56.692950000000000000
-          Width = 151.000000000000000000
+          Width = 188.795300000000000000
           Height = 18.897650000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clMaroon
@@ -8321,18 +8322,18 @@ object DM: TDM
           Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
-            'SaleFood')
+            #1057#1091#1084#1072' '#1087#1088#1086#1076#1072#1085#1086#1075#1086' '#1110#1085#1075#1088#1077#1076#1110#1108#1085#1090#1072)
           ParentFont = False
           Style = 'Header'
         end
         object Memo10: TfrxMemoView
-          Left = 169.897650000000000000
+          Left = 347.535560000000000000
           Top = 56.692950000000000000
           Width = 291.000000000000000000
           Height = 18.897650000000000000
           DataField = 'SaleFood'
           DataSet = frxDBDiscount
-          DataSetName = 'frxDBSaleIngredient'
+          DataSetName = 'frxDBDiscount'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -8405,6 +8406,20 @@ object DM: TDM
     Datasets = <>
     Variables = <>
     Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      Frame.Typ = []
+    end
   end
   object frxScorePersonal: TfrxReport
     Version = '6.0.10'
@@ -8426,6 +8441,20 @@ object DM: TDM
     Datasets = <>
     Variables = <>
     Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      Frame.Typ = []
+    end
   end
   object frxShowOrder: TfrxReport
     Version = '6.0.10'
@@ -8447,9 +8476,23 @@ object DM: TDM
     Datasets = <>
     Variables = <>
     Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      Frame.Typ = []
+    end
   end
   object frxDBDiscount: TfrxDBDataset
-    UserName = 'frxDBSaleIngredient'
+    UserName = 'frxDBDiscount'
     CloseDataSource = False
     FieldAliases.Strings = (
       'id_discount=id_discount'
@@ -8462,7 +8505,7 @@ object DM: TDM
     Top = 272
   end
   object frxDBSaleIngredient: TfrxDBDataset
-    UserName = 'frxDBDiscount'
+    UserName = 'frxDBSaleIngredient'
     CloseDataSource = False
     FieldAliases.Strings = (
       'name_food=name_food'
@@ -8472,7 +8515,7 @@ object DM: TDM
       'SaleFood=SaleFood')
     DataSet = TReportIngredient
     BCDToCurrency = False
-    Left = 432
+    Left = 438
     Top = 328
   end
   object frxDBScoreFood: TfrxDBDataset
@@ -8483,7 +8526,7 @@ object DM: TDM
       'CountSale=CountSale')
     DataSet = TReportFood
     BCDToCurrency = False
-    Left = 432
+    Left = 430
     Top = 384
   end
   object frxDBScorePersonal: TfrxDBDataset
@@ -8496,7 +8539,7 @@ object DM: TDM
       'PaymentDiscount=PaymentDiscount')
     DataSet = TReportPersonal
     BCDToCurrency = False
-    Left = 432
+    Left = 430
     Top = 448
   end
   object frxDBShowOrder: TfrxDBDataset
@@ -8517,7 +8560,7 @@ object DM: TDM
       'RealPayment=RealPayment')
     DataSet = OTOpenOrder
     BCDToCurrency = False
-    Left = 432
+    Left = 430
     Top = 504
   end
   object DSReport: TDataSource

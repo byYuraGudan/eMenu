@@ -57,3 +57,7 @@ AND OBJECT_ID=OBJECT_ID('test');
 SELECT        OBJECT_NAME(object_id) AS DatabaseName, last_user_update
 FROM            sys.dm_db_index_usage_stats
 WHERE        (database_id = DB_ID('eMenu'))
+
+
+WHERE date_open_order >= '"+DateToStr(DateFirst->Date)+" "+TimeToStr(TimeFirst->Time)+"'  \
+	and date_open_order <= '"+DateToStr(DateSecond->Date)+" "+TimeToStr(TimeSecond->Time)+"'

@@ -4206,9 +4206,10 @@ object FAdmin: TFAdmin
     ExplicitLeft = -2
     ExplicitTop = -1
     object CPStatistic: TCategoryPanel
-      Top = 487
-      Height = 152
+      Top = 186
+      Height = 31
       Caption = #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072
+      Collapsed = True
       CollapsedHotImageIndex = 9
       CollapsedImageIndex = 9
       CollapsedPressedImageIndex = 9
@@ -4216,6 +4217,7 @@ object FAdmin: TFAdmin
       ExpandedImageIndex = 9
       ExpandedPressedImageIndex = 9
       TabOrder = 0
+      ExpandedHeight = 152
       object btnShowOrder: TButton
         AlignWithMargins = True
         Left = 0
@@ -4237,9 +4239,10 @@ object FAdmin: TFAdmin
         Width = 198
         Height = 25
         Align = alTop
-        Caption = #1056#1077#1081#1090#1080#1085#1075' '#1087#1077#1088#1089#1086#1085#1072#1083#1091
+        Caption = #1056#1077#1081#1090#1080#1085#1075' '#1082#1083#1110#1108#1085#1090#1110#1074
         TabOrder = 1
         OnClick = btnScoreDiscountClick
+        ExplicitTop = 56
       end
       object btnScorePersonal: TButton
         Left = 0
@@ -4247,8 +4250,9 @@ object FAdmin: TFAdmin
         Width = 198
         Height = 25
         Align = alTop
-        Caption = #1056#1077#1081#1090#1080#1085#1075' '#1082#1083#1110#1108#1085#1090#1110#1074
+        Caption = #1056#1077#1081#1090#1080#1085#1075' '#1087#1077#1088#1089#1086#1085#1072#1083#1091
         TabOrder = 2
+        OnClick = btnScorePersonalClick
         ExplicitTop = 68
       end
       object btnScoreFood: TButton
@@ -4259,6 +4263,7 @@ object FAdmin: TFAdmin
         Align = alTop
         Caption = #1056#1077#1081#1090#1080#1085#1075' '#1089#1090#1088#1072#1074' '#1090#1072' '#1085#1072#1087#1086#1111#1074
         TabOrder = 3
+        OnClick = btnScoreFoodClick
       end
       object btnSaleIngredient: TButton
         Left = 0
@@ -4268,13 +4273,15 @@ object FAdmin: TFAdmin
         Align = alTop
         Caption = #1042#1080#1090#1088#1072#1090#1080' '#1110#1085#1075#1088#1077#1076#1110#1108#1085#1090#1110#1074
         TabOrder = 4
+        OnClick = btnSaleIngredientClick
         ExplicitTop = 106
       end
     end
     object CategoryPanel1: TCategoryPanel
-      Top = 410
-      Height = 77
+      Top = 155
+      Height = 31
       Caption = #1057#1090#1086#1083#1080
+      Collapsed = True
       CollapsedHotImageIndex = 12
       CollapsedImageIndex = 12
       CollapsedPressedImageIndex = 12
@@ -4282,6 +4289,7 @@ object FAdmin: TFAdmin
       ExpandedImageIndex = 12
       ExpandedPressedImageIndex = 12
       TabOrder = 1
+      ExpandedHeight = 77
       object ButtonViewTable: TButton
         AlignWithMargins = True
         Left = 0
@@ -4314,9 +4322,10 @@ object FAdmin: TFAdmin
       end
     end
     object CPDiscounts: TCategoryPanel
-      Top = 333
-      Height = 77
+      Top = 124
+      Height = 31
       Caption = #1047#1085#1080#1078#1082#1080
+      Collapsed = True
       CollapsedHotImageIndex = 8
       CollapsedImageIndex = 8
       CollapsedPressedImageIndex = 8
@@ -4330,6 +4339,7 @@ object FAdmin: TFAdmin
       Font.Style = []
       ParentFont = False
       TabOrder = 2
+      ExpandedHeight = 77
       object Button2: TButton
         AlignWithMargins = True
         Left = 0
@@ -4362,15 +4372,17 @@ object FAdmin: TFAdmin
       end
     end
     object CPOrderMenu: TCategoryPanel
-      Top = 231
-      Height = 102
+      Top = 93
+      Height = 31
       Caption = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103
+      Collapsed = True
       CollapsedHotImageIndex = 7
       CollapsedImageIndex = 7
       CollapsedPressedImageIndex = 7
       ExpandedHotImageIndex = 7
       ExpandedImageIndex = 7
       TabOrder = 3
+      ExpandedHeight = 102
       object buttonViewOrderMenu: TButton
         AlignWithMargins = True
         Left = 0
@@ -4418,15 +4430,17 @@ object FAdmin: TFAdmin
       end
     end
     object CPFood: TCategoryPanel
-      Top = 154
-      Height = 77
+      Top = 62
+      Height = 31
       Caption = #1052#1077#1085#1102
+      Collapsed = True
       CollapsedHotImageIndex = 4
       CollapsedImageIndex = 4
       CollapsedPressedImageIndex = 4
       ExpandedHotImageIndex = 4
       ExpandedImageIndex = 4
       TabOrder = 4
+      ExpandedHeight = 77
       object buttonViewFood: TButton
         AlignWithMargins = True
         Left = 0
@@ -4459,10 +4473,11 @@ object FAdmin: TFAdmin
       end
     end
     object CPCategory: TCategoryPanel
-      Top = 77
-      Height = 77
+      Top = 31
+      Height = 31
       BiDiMode = bdLeftToRight
       Caption = #1050#1072#1090#1077#1075#1086#1088#1110#1111' '#1084#1077#1085#1102
+      Collapsed = True
       CollapsedHotImageIndex = 6
       CollapsedImageIndex = 6
       CollapsedPressedImageIndex = 6
@@ -4472,6 +4487,7 @@ object FAdmin: TFAdmin
       ParentBackground = True
       ParentColor = True
       TabOrder = 5
+      ExpandedHeight = 77
       object buttonViewCategory: TButton
         AlignWithMargins = True
         Left = 0
@@ -4505,14 +4521,16 @@ object FAdmin: TFAdmin
     end
     object CPPersonal: TCategoryPanel
       Top = 0
-      Height = 77
+      Height = 31
       Caption = #1050#1086#1088#1080#1089#1090#1091#1074#1072#1095#1110
+      Collapsed = True
       CollapsedHotImageIndex = 3
       CollapsedImageIndex = 3
       CollapsedPressedImageIndex = 3
       ExpandedHotImageIndex = 3
       ExpandedImageIndex = 3
       TabOrder = 6
+      ExpandedHeight = 77
       object buttonViewPersonal: TButton
         AlignWithMargins = True
         Left = 0
@@ -5093,21 +5111,25 @@ object FAdmin: TFAdmin
         TabOrder = 3
         OnChange = TimeSecondChange
       end
-      object RadioButton1: TRadioButton
+      object RBall: TRadioButton
         Left = 54
         Top = 21
         Width = 129
         Height = 17
         Caption = #1055#1086#1074#1085#1080#1081' '#1087#1077#1088#1110#1086#1076
+        Checked = True
         TabOrder = 4
+        TabStop = True
+        OnClick = RBallClick
       end
-      object RadioButton2: TRadioButton
+      object RBperiod: TRadioButton
         Left = 54
         Top = 44
         Width = 158
         Height = 17
         Caption = #1042#1080#1073#1088#1072#1085#1080#1081' '#1087#1077#1088#1110#1086#1076' -'
         TabOrder = 5
+        OnClick = RBperiodClick
       end
     end
     object DBGridReport: TDBGrid
@@ -5133,19 +5155,21 @@ object FAdmin: TFAdmin
       Align = alBottom
       Caption = #1047#1074#1110#1090#1085#1110#1089#1090#1100
       TabOrder = 2
-      ExplicitTop = 640
+      OnClick = btnReportClick
+      ExplicitLeft = 4
+      ExplicitTop = 633
     end
   end
   object LookPanel: TPanel
     Left = 208
-    Top = 530
+    Top = 522
     Width = 185
     Height = 41
     TabOrder = 8
   end
   object MenuAdministrator: TMainMenu
-    Left = 944
-    Top = 8
+    Left = 952
+    Top = 24
     object N1: TMenuItem
       Caption = #1060#1072#1081#1083
       object N7: TMenuItem

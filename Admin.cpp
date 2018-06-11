@@ -474,49 +474,80 @@ void __fastcall TFAdmin::TimeSecondChange(TObject *Sender)
 
 void __fastcall TFAdmin::btnSaleIngredientClick(TObject *Sender)
 {
-	DM->DoSQL(DM->TReportIngredient,"SELECT name_food,name_ingredient, sum(ListOrderMenu.counts * ListIngredientFood.counts)\
-	AsCountSaleIngredient,unit,sum(ListIngredientFood.price * ListOrderMenu.counts) AS SaleFood \
-	FROM ((OrderMenu INNER JOIN ListOrderMenu ON id_order = kod_order) INNER JOIN Food ON id_food = ListOrderMenu.kod_food )\
-	INNER JOIN ListIngredientFood ON ListIngredientFood.kod_food = id_food WHERE date_open_order >= '"+DateToStr(DateFirst->Date)+" "+TimeToStr(TimeFirst->Time)+"'  \
-	and date_open_order <= '"+DateToStr(DateSecond->Date)+" "+TimeToStr(TimeSecond->Time)+"' GROUP BY name_food,name_ingredient,unit");
-    DM->DSReport->DataSet = DM->TReportIngredient;
-	DM->frxSaleIngredient->ShowReport();
+	this->HidePanel(Sender);
+	DM->DSReport->DataSet = DM->TReportIngredient;
+	DM->OpenReport();
+	PanelReport->Show();
+
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TFAdmin::btnScoreDiscountClick(TObject *Sender)
 {
-	DM->DoSQL(DM->TReportDiscount,"SELECT id_discount,pib_client,count(id_order) AS CountBuyOrder,sum(payment - (payment*discount/100))\
-	 AS PaymentAll FROM Discounts INNER JOIN OrderMenu ON kod_discount = id_discount \
-	WHERE date_open_order >= '"+DateToStr(DateFirst->Date)+" "+TimeToStr(TimeFirst->Time)+"'  \
-	and date_open_order <= '"+DateToStr(DateSecond->Date)+" "+TimeToStr(TimeSecond->Time)+"' GROUP BY id_discount,pib_client");
-	DM->frxScoreDiscount->ShowReport();
+	this->HidePanel(Sender);
 	DM->DSReport->DataSet = DM->TReportDiscount;
+	DM->OpenReport();
+	PanelReport->Show();
+
 
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TFAdmin::btnScorePersonalClick(TObject *Sender)
 {
-
-    DM->DSReport->DataSet = DM->TReportPersonal;
-	DM->frxScorePersonal->ShowReport();
+	this->HidePanel(Sender);
+	DM->DSReport->DataSet = DM->TReportPersonal;
+	DM->OpenReport();
+	PanelReport->Show();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TFAdmin::btnShowOrderClick(TObject *Sender)
 {
-   	this->HidePanel(Sender);
+	this->HidePanel(Sender);
 	PanelReport->Show();
 	DM->DSReport->DataSet = DM->TReportOrder;
-	DM->frxShowOrder->ShowReport();
+	DM->OpenReport();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TFAdmin::btnScoreFoodClick(TObject *Sender)
 {
-    DM->DSReport->DataSet = DM->TReportFood;
-	DM->frxScoreFood->ShowReport();
+	this->HidePanel(Sender);
+	DM->DSReport->DataSet = DM->TReportFood;
+    DM->OpenReport();
+	PanelReport->Show();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::btnReportClick(TObject *Sender)
+{
+	String str = DM->DSReport->DataSet->Name;
+	if (str == "TReportDiscount") { DM->frxScoreDiscount->ShowReport();}
+	if (str == "TReportFood") { DM->frxScoreFood->ShowReport(); }
+	if (str == "TReportIngredient"){ DM->frxSaleIngredient->ShowReport();}
+	if (str == "TReportPersonal") { DM->frxScorePersonal->ShowReport();}
+	if (str == "TReportOrder") {DM->frxShowOrder->ShowReport();}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::RBallClick(TObject *Sender)
+{
+	DM->TReportDiscount->Filtered = false;
+	DM->TReportFood->Filtered = false;
+	DM->TReportPersonal->Filtered = false;
+	DM->TReportIngredient->Filtered = false;
+	DM->TReportOrder->Filtered = false;		
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::RBperiodClick(TObject *Sender)
+{
+	DM->TReportDiscount->Filtered = false;
+	DM->TReportFood->Filtered = false;
+	DM->TReportPersonal->Filtered = false;
+	DM->TReportIngredient->Filtered = false;
+	DM->TReportOrder->Filtered = false;		
 }
 //---------------------------------------------------------------------------
 

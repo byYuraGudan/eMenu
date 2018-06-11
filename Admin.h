@@ -122,8 +122,8 @@ __published:	// IDE-managed Components
 	TDateTimePicker *TimeSecond;
 	TButton *btnShowOrder;
 	TDBGrid *DBGridReport;
-	TRadioButton *RadioButton1;
-	TRadioButton *RadioButton2;
+	TRadioButton *RBall;
+	TRadioButton *RBperiod;
 	TButton *btnScoreDiscount;
 	TButton *btnScorePersonal;
 	TButton *btnScoreFood;
@@ -177,6 +177,9 @@ __published:	// IDE-managed Components
 	void __fastcall btnScorePersonalClick(TObject *Sender);
 	void __fastcall btnShowOrderClick(TObject *Sender);
 	void __fastcall btnScoreFoodClick(TObject *Sender);
+	void __fastcall btnReportClick(TObject *Sender);
+	void __fastcall RBallClick(TObject *Sender);
+	void __fastcall RBperiodClick(TObject *Sender);
 
 
 private:	// User declarations

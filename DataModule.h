@@ -242,6 +242,7 @@ public:		// User declarations
 	void OpenDB();
 	void OpenDBOficiant();
 	void OpenDBMain();
+    void OpenReport();
 	TIniFile *ini;
 	bool auth;
 	bool admin;

@@ -4205,7 +4205,7 @@ object FAdmin: TFAdmin
     Touch.TabletOptions = [toPressAndHold]
     object CPStatistic: TCategoryPanel
       Top = 487
-      Height = 53
+      Height = 108
       Caption = #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072
       CollapsedHotImageIndex = 9
       CollapsedImageIndex = 9
@@ -4987,27 +4987,27 @@ object FAdmin: TFAdmin
       Left = 1
       Top = 1
       Width = 796
-      Height = 60
+      Height = 71
       Align = alTop
       Caption = #1042#1080#1073#1077#1088#1110#1090#1100' '#1087#1077#1088#1110#1086#1076
       TabOrder = 0
       object Labelasd: TLabel
-        Left = 121
-        Top = 26
+        Left = 184
+        Top = 23
         Width = 16
         Height = 16
         Caption = #1047':'
       end
       object Labeldqwe: TLabel
-        Left = 424
-        Top = 26
+        Left = 438
+        Top = 23
         Width = 24
         Height = 16
         Caption = #1055#1086':'
       end
       object DateFirst: TDateTimePicker
-        Left = 142
-        Top = 22
+        Left = 205
+        Top = 18
         Width = 123
         Height = 24
         Date = 43261.000000000000000000
@@ -5016,8 +5016,8 @@ object FAdmin: TFAdmin
         OnChange = DateFirstChange
       end
       object TimeFirst: TDateTimePicker
-        Left = 271
-        Top = 22
+        Left = 334
+        Top = 18
         Width = 91
         Height = 24
         Date = 43261.000000000000000000
@@ -5027,8 +5027,8 @@ object FAdmin: TFAdmin
         OnChange = TimeFirstChange
       end
       object DateSecond: TDateTimePicker
-        Left = 450
-        Top = 22
+        Left = 464
+        Top = 17
         Width = 125
         Height = 24
         Date = 43261.979590393520000000
@@ -5037,9 +5037,9 @@ object FAdmin: TFAdmin
         OnChange = DateSecondChange
       end
       object TimeSecond: TDateTimePicker
-        Left = 581
-        Top = 22
-        Width = 94
+        Left = 595
+        Top = 17
+        Width = 91
         Height = 24
         Date = 43261.999988425920000000
         Time = 43261.999988425920000000
@@ -5047,13 +5047,29 @@ object FAdmin: TFAdmin
         TabOrder = 3
         OnChange = TimeSecondChange
       end
+      object RadioButton1: TRadioButton
+        Left = 21
+        Top = 47
+        Width = 129
+        Height = 17
+        Caption = #1055#1086#1074#1085#1080#1081' '#1087#1077#1088#1110#1086#1076
+        TabOrder = 4
+      end
+      object RadioButton2: TRadioButton
+        Left = 21
+        Top = 24
+        Width = 143
+        Height = 17
+        Caption = #1042#1080#1073#1088#1072#1085#1080#1081' '#1087#1077#1088#1110#1086#1076
+        TabOrder = 5
+      end
     end
     object GridPanel1: TGridPanel
       Left = 1
-      Top = 61
+      Top = 399
       Width = 796
       Height = 200
-      Align = alTop
+      Align = alBottom
       Caption = 'GridPanel1'
       ColumnCollection = <
         item
@@ -5100,6 +5116,7 @@ object FAdmin: TFAdmin
           Value = 33.206179644633760000
         end>
       TabOrder = 1
+      ExplicitTop = 61
       object btnShowOrder: TButton
         Left = 1
         Top = 132
@@ -5133,10 +5150,8 @@ object FAdmin: TFAdmin
         Caption = #1056#1077#1081#1090#1080#1085#1075' '#1089#1090#1088#1072#1074' '#1090#1072' '#1085#1072#1087#1086#1111#1074' '#1084#1077#1085#1102
         TabOrder = 2
         OnClick = btnScoreFoodClick
-        ExplicitLeft = 404
-        ExplicitTop = 89
-        ExplicitWidth = 397
-        ExplicitHeight = 47
+        ExplicitLeft = 0
+        ExplicitTop = 73
       end
       object btnScoreDiscount: TButton
         Left = 1
@@ -5166,9 +5181,9 @@ object FAdmin: TFAdmin
     object DBGridReport: TDBGrid
       AlignWithMargins = True
       Left = 4
-      Top = 264
+      Top = 75
       Width = 790
-      Height = 332
+      Height = 321
       Align = alClient
       DataSource = DM.DSReport
       TabOrder = 2

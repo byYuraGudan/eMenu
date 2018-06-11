@@ -20,6 +20,7 @@
 #pragma package(smart_init)
 #pragma classgroup "Vcl.Controls.TControl"
 #pragma link "frxClass"
+#pragma link "frxDBSet"
 #pragma resource "*.dfm"
 TDM *DM;
 //---------------------------------------------------------------------------
@@ -27,29 +28,32 @@ __fastcall TDM::TDM(TComponent* Owner)
 	: TDataModule(Owner)
 {
 	 this->ini = new TIniFile(GetCurrentDir()+"\\options.ini");
-	 try {
+//	 try {
 			ConnectionToDB->Connected = false;
 			ConnectionToDB->ConnectionString = ini->ReadString("SQL Server","ConnectionString","ConnectionString=Provider=SQLOLEDB.1;Password=1;Persist Security Info=True;User ID=sa;Initial Catalog=eMenu;Data Source=127.0.0.1;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=YURAHUDAN-ПК;Use Encryption for Data=False;Tag with column collation when possible=False");
 			ConnectionToDB->Connected = true;
 			OpenDB();
-		}
-		catch(...) {
-			ShowMessage("Не вдалось підлючитись до БД!");
-		}
+//		}
+//		catch(...) {
+//			ShowMessage("Не вдалось підлючитись до БД!");
+//		}
 }
+
+
 
 void TDM::DoSQL(TADOQuery *Query,AnsiString str){
 	Query->Close();
 	Query->SQL->Clear();
 	Query->SQL->Add(str);
 	Query->ExecSQL();
+
 	Query->Open();
 }
 void TDM::DoSQLExec(TADOQuery *Query,AnsiString str){
 	Query->Close();
 	Query->SQL->Clear();
 	Query->SQL->Add(str);
-	//ShowMessage(DM->TSQL->SQL->GetText());
+
 	Query->ExecSQL();
 }
 void TDM::RefreshADO(TADOTable *Table){
@@ -72,22 +76,25 @@ void TDM::RefreshADO(TADOQuery *Query){
 	}else{
 	    Query->Close();
 		Query->Open();
-    }
+	}
 }
 
 void TDM::OpenDB(){
 	///try{
     	RefreshADO(ATPersonal);
     	RefreshADO(ATCategory);
-    	RefreshADO(ATFood);
+		RefreshADO(ATFood);
     	RefreshADO(ATDiscount);
     	RefreshADO(ATFoodIngredient);
     	RefreshADO(ATListTable);
-    	RefreshADO(ATOrderMenu);
+		RefreshADO(ATOrderMenu);
     	RefreshADO(ATListOrderMenu);
     	this->OpenDBMain();
 		this->OpenDBOficiant();
 	//}catch(...){}
+}
+void TDM::OpenReport(){
+	RefreshADO(TReportDiscount);
 }
 
 void TDM::OpenDBMain(){
@@ -95,14 +102,9 @@ void TDM::OpenDBMain(){
 	RefreshADO(MTShowFood);
 }
 void TDM::OpenDBOficiant(){
-
 	RefreshADO(OTNotOcupTable);
-	for (int i = 0; i < OTNotOcupTable->RecordCount; i++) {
-	   FEditOrderMenu->CB_table->Items->Add(DM->OTNotOcupTable->FieldByName("name_table")->AsString);
-	   FEditOrderMenu->CB_table_id->Items->Add(DM->OTNotOcupTable->FieldByName("id_table")->AsString);
-       DM->OTNotOcupTable->Next();
-	}
-	try {RefreshADO(OTOpenOrder);
+	try {
+		RefreshADO(OTOpenOrder);
 	}
 	catch(...){ShowMessage("this");}
 	RefreshADO(OTListOpenOrder);
@@ -225,4 +227,5 @@ void __fastcall TDM::N17Click(TObject *Sender)
 	FEditOrderMenu->Show();
 }
 //---------------------------------------------------------------------------
+
 

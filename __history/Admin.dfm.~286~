@@ -5050,10 +5050,10 @@ object FAdmin: TFAdmin
     end
     object GridPanel1: TGridPanel
       Left = 1
-      Top = 61
+      Top = 399
       Width = 796
       Height = 200
-      Align = alTop
+      Align = alBottom
       Caption = 'GridPanel1'
       ColumnCollection = <
         item
@@ -5100,6 +5100,7 @@ object FAdmin: TFAdmin
           Value = 33.206179644633760000
         end>
       TabOrder = 1
+      ExplicitTop = 61
       object btnShowOrder: TButton
         Left = 1
         Top = 132
@@ -5133,10 +5134,8 @@ object FAdmin: TFAdmin
         Caption = #1056#1077#1081#1090#1080#1085#1075' '#1089#1090#1088#1072#1074' '#1090#1072' '#1085#1072#1087#1086#1111#1074' '#1084#1077#1085#1102
         TabOrder = 2
         OnClick = btnScoreFoodClick
-        ExplicitLeft = 404
-        ExplicitTop = 89
-        ExplicitWidth = 397
-        ExplicitHeight = 47
+        ExplicitLeft = 0
+        ExplicitTop = 73
       end
       object btnScoreDiscount: TButton
         Left = 1
@@ -5164,10 +5163,11 @@ object FAdmin: TFAdmin
       end
     end
     object DBGridReport: TDBGrid
-      Left = 1
-      Top = 261
-      Width = 796
-      Height = 338
+      AlignWithMargins = True
+      Left = 4
+      Top = 64
+      Width = 790
+      Height = 332
       Align = alClient
       DataSource = DM.DSReport
       TabOrder = 2

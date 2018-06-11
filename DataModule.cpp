@@ -39,6 +39,8 @@ __fastcall TDM::TDM(TComponent* Owner)
 //		}
 }
 
+
+
 void TDM::DoSQL(TADOQuery *Query,AnsiString str){
 	Query->Close();
 	Query->SQL->Clear();
@@ -86,10 +88,18 @@ void TDM::OpenDB(){
     	RefreshADO(ATFoodIngredient);
     	RefreshADO(ATListTable);
 		RefreshADO(ATOrderMenu);
-    	RefreshADO(ATListOrderMenu);
+		RefreshADO(ATListOrderMenu);
+        this->OpenReport();
     	this->OpenDBMain();
 		this->OpenDBOficiant();
 	//}catch(...){}
+}
+void TDM::OpenReport(){
+	RefreshADO(TReportDiscount);
+	RefreshADO(TReportIngredient);
+	RefreshADO(TReportFood);
+	RefreshADO(TReportPersonal);
+	RefreshADO(TReportOrder);
 }
 
 void TDM::OpenDBMain(){

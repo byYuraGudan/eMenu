@@ -486,17 +486,42 @@ void __fastcall TFAdmin::btnSaleIngredientClick(TObject *Sender)
 	FROM ((OrderMenu INNER JOIN ListOrderMenu ON id_order = kod_order) INNER JOIN Food ON id_food = ListOrderMenu.kod_food )\
 	INNER JOIN ListIngredientFood ON ListIngredientFood.kod_food = id_food WHERE date_open_order >= '"+DateToStr(DateFirst->Date)+" "+TimeToStr(TimeFirst->Time)+"'  \
 	and date_open_order <= '"+DateToStr(DateSecond->Date)+" "+TimeToStr(TimeSecond->Time)+"' GROUP BY name_food,name_ingredient,unit");
+    DM->DSReport->DataSet = DM->TReportIngredient;
 	DM->frxSaleIngredient->ShowReport();
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TFAdmin::btnScoreDiscountClick(TObject *Sender)
 {
-	DM->DoSQL(DM->TSQLReport,"SELECT id_discount,pib_client,count(id_order) AS CountBuyOrder,sum(payment - (payment*discount/100))\
+	DM->DoSQL(DM->TReportDiscount,"SELECT id_discount,pib_client,count(id_order) AS CountBuyOrder,sum(payment - (payment*discount/100))\
 	 AS PaymentAll FROM Discounts INNER JOIN OrderMenu ON kod_discount = id_discount \
 	WHERE date_open_order >= '"+DateToStr(DateFirst->Date)+" "+TimeToStr(TimeFirst->Time)+"'  \
 	and date_open_order <= '"+DateToStr(DateSecond->Date)+" "+TimeToStr(TimeSecond->Time)+"' GROUP BY id_discount,pib_client");
 	DM->frxScoreDiscount->ShowReport();
+	DM->DSReport->DataSet = DM->TReportDiscount;
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::btnScorePersonalClick(TObject *Sender)
+{
+
+    DM->DSReport->DataSet = DM->TReportPersonal;
+	DM->frxScorePersonal->ShowReport();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::btnShowOrderClick(TObject *Sender)
+{
+    DM->DSReport->DataSet = DM->TReportOrder;
+	DM->frxShowOrder->ShowReport();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::btnScoreFoodClick(TObject *Sender)
+{
+    DM->DSReport->DataSet = DM->TReportFood;
+	DM->frxScoreFood->ShowReport();
 }
 //---------------------------------------------------------------------------
 

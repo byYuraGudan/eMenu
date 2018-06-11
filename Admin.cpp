@@ -436,13 +436,6 @@ void __fastcall TFAdmin::buttonViewListOrderMenuClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TFAdmin::Button6Click(TObject *Sender)
-{
-	this->HidePanel(Sender);
-	PanelReport->Show();
-
-}
-//---------------------------------------------------------------------------
 
 
 void __fastcall TFAdmin::FormShow(TObject *Sender)
@@ -513,7 +506,9 @@ void __fastcall TFAdmin::btnScorePersonalClick(TObject *Sender)
 
 void __fastcall TFAdmin::btnShowOrderClick(TObject *Sender)
 {
-    DM->DSReport->DataSet = DM->TReportOrder;
+   	this->HidePanel(Sender);
+	PanelReport->Show();
+	DM->DSReport->DataSet = DM->TReportOrder;
 	DM->frxShowOrder->ShowReport();
 }
 //---------------------------------------------------------------------------

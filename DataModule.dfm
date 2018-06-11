@@ -8069,7 +8069,7 @@ object DM: TDM
       'begin'
       ''
       'end.')
-    Left = 349
+    Left = 344
     Top = 328
     Datasets = <
       item
@@ -8472,7 +8472,7 @@ object DM: TDM
       'SaleFood=SaleFood')
     DataSet = TReportIngredient
     BCDToCurrency = False
-    Left = 432
+    Left = 430
     Top = 328
   end
   object frxDBScoreFood: TfrxDBDataset
@@ -8483,7 +8483,7 @@ object DM: TDM
       'CountSale=CountSale')
     DataSet = TReportFood
     BCDToCurrency = False
-    Left = 432
+    Left = 430
     Top = 384
   end
   object frxDBScorePersonal: TfrxDBDataset
@@ -8496,7 +8496,7 @@ object DM: TDM
       'PaymentDiscount=PaymentDiscount')
     DataSet = TReportPersonal
     BCDToCurrency = False
-    Left = 432
+    Left = 430
     Top = 448
   end
   object frxDBShowOrder: TfrxDBDataset
@@ -8517,7 +8517,7 @@ object DM: TDM
       'RealPayment=RealPayment')
     DataSet = OTOpenOrder
     BCDToCurrency = False
-    Left = 432
+    Left = 430
     Top = 504
   end
   object DSReport: TDataSource
@@ -8526,6 +8526,7 @@ object DM: TDM
     Top = 384
   end
   object TReportIngredient: TADOQuery
+    Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
     Parameters = <>
@@ -8614,9 +8615,6 @@ object DM: TDM
         'S Payment, sum(payment-(payment*discount/100)) AS PaymentDiscoun' +
         't FROM (Personal INNER JOIN OrderMenu ON id_personal = kod_perso' +
         'nal) INNER JOIN Discounts ON kod_discount = id_discount'
-      
-        'WHERE date_open_order >= '#39'10.06.2018 14:41:13'#39' and date_open_ord' +
-        'er <= '#39'11.06.2018 08:39:28'#39
       'GROUP BY pib_personal')
     Left = 256
     Top = 448
@@ -8661,9 +8659,6 @@ object DM: TDM
         'FROM ((OrderMenu INNER JOIN Personal ON id_personal = kod_person' +
         'al) INNER JOIN Discounts ON id_discount = kod_discount) INNER JO' +
         'IN ListTable ON id_table = kod_table'
-      
-        'WHERE date_open_order >= '#39'10.06.2018 14:41:13'#39' and date_open_ord' +
-        'er <= '#39'11.06.2018 08:39:28'#39
       
         'GROUP BY id_order,date_open_order,pib_personal,pib_client,paymen' +
         't,discount')

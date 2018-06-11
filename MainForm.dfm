@@ -78,10 +78,9 @@ object FMainForm: TFMainForm
         object DBText3: TDBText
           AlignWithMargins = True
           Left = 243
-          Top = 10
+          Top = 3
           Width = 35
-          Height = 14
-          Margins.Top = 10
+          Height = 21
           Margins.Bottom = 7
           Align = alRight
           Alignment = taCenter
@@ -97,6 +96,7 @@ object FMainForm: TFMainForm
           ParentFont = False
           WordWrap = True
           ExplicitLeft = 240
+          ExplicitTop = 10
           ExplicitHeight = 26
         end
       end

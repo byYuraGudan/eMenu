@@ -11607,7 +11607,13 @@ object FEditOrderMenu: TFEditOrderMenu
       Top = 27
       Width = 100
       Height = 22
+      ItemIndex = 2
       TabOrder = 0
+      Text = '39'
+      Items.Strings = (
+        '35'
+        '38'
+        '39')
     end
     object btnCloseOrder: TButton
       AlignWithMargins = True
@@ -11802,7 +11808,7 @@ object FEditOrderMenu: TFEditOrderMenu
         AlignWithMargins = True
         Left = 7
         Top = 21
-        Width = 273
+        Width = 301
         Height = 168
         Margins.Left = 5
         Margins.Top = 5
@@ -11818,7 +11824,6 @@ object FEditOrderMenu: TFEditOrderMenu
         Color = clBtnFace
         ParentColor = False
         WordWrap = True
-        ExplicitWidth = 301
       end
       object DBdateopen: TDBText
         Left = 68
@@ -11874,7 +11879,7 @@ object FEditOrderMenu: TFEditOrderMenu
         AlignWithMargins = True
         Left = 7
         Top = 191
-        Width = 273
+        Width = 84
         Height = 22
         Margins.Left = 5
         Margins.Top = 0
@@ -11890,7 +11895,6 @@ object FEditOrderMenu: TFEditOrderMenu
         ParentColor = False
         ParentFont = False
         StyleElements = []
-        ExplicitWidth = 84
       end
       object DBdiscount: TDBText
         Left = 85

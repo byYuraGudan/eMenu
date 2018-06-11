@@ -135,7 +135,7 @@ void __fastcall TFMainForm::ButtonViewOrderClick(TObject *Sender)
 
 void __fastcall TFMainForm::Image1Click(TObject *Sender)
 {
-	try{
+//	try{
 		String count;
 		if(DM->OTOpenOrder->RecordCount == 0)
 		MessageBox(NULL, L"Створіть замовлення!", L"Відмова!",  MB_OK | MB_ICONWARNING);
@@ -152,9 +152,9 @@ void __fastcall TFMainForm::Image1Click(TObject *Sender)
 				DM->OpenDBOficiant();
 			}
 	}
-	catch(...){
-		MessageBox(NULL, L"Перевірьте правильність даних!", L"Відмова!",  MB_OK | MB_ICONWARNING);
-	}
+//	catch(...){
+//		MessageBox(NULL, L"Перевірьте правильність даних!", L"Відмова!",  MB_OK | MB_ICONWARNING);
+//	}
 }
 //---------------------------------------------------------------------------
 

@@ -150,9 +150,6 @@ Coordinates=36,555,125,33
 [AddToOrder]
 Coordinates=778,1297,74,51
 
-[DM.ADOQuery1]
-Coordinates=778,421,91,51
-
 [DM.MDSShowCategory]
 Coordinates=433,891,128,33
 
@@ -185,4 +182,7 @@ Coordinates=274,269,93,177
 
 [DM.ODSListOpenOrder]
 Coordinates=611,335,101,33
+
+[DM.TSQLCheck]
+Coordinates=778,421,91,51
 

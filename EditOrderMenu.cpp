@@ -43,7 +43,7 @@ void TOrderMenu::UpdatePayment(){
 	DM->DoSQL(DM->TSQL,"SELECT sum(counts) as cnt,sum(counts*price_food) as price_all\
 	FROM dbo.ListOrderMenu INNER JOIN dbo.Food ON id_food = kod_food WHERE kod_order = "+IntToStr(this->id_order));
 	float val = DM->TSQL->FieldByName("price_all")->AsFloat;
-	int count = DM->TSQL->FieldByName("cnt")->AsInteger;
+	float count = DM->TSQL->FieldByName("cnt")->AsFloat;
 	if(DM->TSQL->RecordCount!=0){
 		DM->TSQL->SQL->Clear();
 		DM->TSQL->SQL->Add("UPDATE eMenu.dbo.OrderMenu SET payment = :pay WHERE id_order = :id");
@@ -53,7 +53,6 @@ void TOrderMenu::UpdatePayment(){
 
 	}	else{
 	DM->DoSQLExec(DM->TSQL,"UPDATE eMenu.dbo.OrderMenu SET payment = 0 WHERE id_order ="+IntToStr(this->id_order));
-
 	}
 
 }

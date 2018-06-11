@@ -209,7 +209,7 @@ void __fastcall TFEditOrderMenu::btnOpenOrderClick(TObject *Sender)
 void __fastcall TFEditOrderMenu::btnCloseOrderClick(TObject *Sender)
 {
 
-//	try{
+	try{
 		if (!CB_id_order->Text.IsEmpty()){
 
 			int id = DM->OTOpenOrder->FieldByName("id_order")->AsInteger;
@@ -226,7 +226,7 @@ void __fastcall TFEditOrderMenu::btnCloseOrderClick(TObject *Sender)
 				MessageBox(NULL, L"Виберіть замовлення!", L"Відмова!",  MB_OK |MB_ICONWARNING);
                 DM->OpenDB();
 		}
-//		} catch(...){ ShowMessage("tut");}
+		} catch(...){MessageBox(NULL, L"Перевірьте правильність даних!", L"Відмова!",  MB_OK |MB_ICONWARNING);}
 }
 //---------------------------------------------------------------------------
 
@@ -238,4 +238,18 @@ void __fastcall TFEditOrderMenu::Button1Click(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
+
+void __fastcall TFEditOrderMenu::btnPrintClick(TObject *Sender)
+{
+	DM->TSQLCheck->Close();
+	DM->TSQLCheck->Open();
+	DM->TSQLCheck->Filtered = false;
+	if (DM->OTOpenOrder->RecordCount !=0) {
+	DM->TSQLCheck->Filter = "id_order ="+DM->OTOpenOrder->FieldByName("id_order")->AsString;
+	DM->TSQLCheck->Filtered = true;
+    DM->frxCheck->ShowReport();
+	} else MessageBox(NULL, L"Виберіть замовлення!", L"Відмова!",  MB_OK |MB_ICONWARNING);
+
+}
+//---------------------------------------------------------------------------
 

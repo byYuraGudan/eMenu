@@ -11587,7 +11587,6 @@ object FEditOrderMenu: TFEditOrderMenu
     Height = 52
     Align = alTop
     TabOrder = 0
-    ExplicitTop = -3
     object Label1: TLabel
       Left = 567
       Top = 10
@@ -11768,6 +11767,7 @@ object FEditOrderMenu: TFEditOrderMenu
         Images = DM.ImageBtn
         TabOrder = 2
         WordWrap = True
+        OnClick = btnPrintClick
       end
       object btnDiscount: TButton
         Left = 143
@@ -11808,7 +11808,7 @@ object FEditOrderMenu: TFEditOrderMenu
         AlignWithMargins = True
         Left = 7
         Top = 21
-        Width = 301
+        Width = 273
         Height = 168
         Margins.Left = 5
         Margins.Top = 5
@@ -11824,6 +11824,7 @@ object FEditOrderMenu: TFEditOrderMenu
         Color = clBtnFace
         ParentColor = False
         WordWrap = True
+        ExplicitWidth = 301
       end
       object DBdateopen: TDBText
         Left = 68
@@ -11879,7 +11880,7 @@ object FEditOrderMenu: TFEditOrderMenu
         AlignWithMargins = True
         Left = 7
         Top = 191
-        Width = 84
+        Width = 273
         Height = 22
         Margins.Left = 5
         Margins.Top = 0
@@ -11895,6 +11896,7 @@ object FEditOrderMenu: TFEditOrderMenu
         ParentColor = False
         ParentFont = False
         StyleElements = []
+        ExplicitWidth = 84
       end
       object DBdiscount: TDBText
         Left = 85

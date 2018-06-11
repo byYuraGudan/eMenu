@@ -62,6 +62,7 @@ __published:	// IDE-managed Components
 	void __fastcall btnOpenOrderClick(TObject *Sender);
 	void __fastcall btnCloseOrderClick(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall btnPrintClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFEditOrderMenu(TComponent* Owner);

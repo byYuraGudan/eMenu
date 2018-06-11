@@ -537,11 +537,22 @@ void __fastcall TFAdmin::btnReportClick(TObject *Sender)
 
 void __fastcall TFAdmin::RBallClick(TObject *Sender)
 {
-	DM->TReportDiscount->Filtered = false;
-	DM->TReportFood->Filtered = false;
-	DM->TReportPersonal->Filtered = false;
-	DM->TReportIngredient->Filtered = false;
-	DM->TReportOrder->Filtered = false;		
+	String str = DM->DSReport->DataSet->Name;
+	if (str == "TReportDiscount") {
+	DM->DoSQL(DM->TReportDiscount,"SELECT id_discount,pib_client,count(id_order) AS CountBuyOrder,sum(payment - (payment*discount/100)) AS PaymentAll FROM Discounts INNER JOIN OrderMenu ON kod_discount = id_discount GROUP BY id_discount,pib_client");
+	}
+	if (str == "TReportFood") {
+	DM->DoSQL(DM->TReportFood,"SELECT name_food,count(counts) AS CountSale FROM (Food INNER JOIN ListOrderMenu ON kod_food = id_food) INNER JOIN OrderMenu ON id_order = kod_order GROUP BY name_food ORDER BY CountSale desc");
+	}
+	if (str == "TReportIngredient");{
+	DM->DoSQL(DM->TReportIngredient,"SELECT name_food,name_ingredient,price, sum(ListOrderMenu.counts * ListIngredientFood.counts) AsCountSaleIngredient,unit,sum(ListIngredientFood.price * ListOrderMenu.counts) AS SaleFood FROM ((OrderMenu INNER JOIN ListOrderMenu ON id_order = kod_order) INNER JOIN Food ON id_food = ListOrderMenu.kod_food )INNER JOIN ListIngredientFood ON ListIngredientFood.kod_food = id_food GROUP BY name_food,name_ingredient,unit,price");
+	}
+	if (str == "TReportPersonal") {
+	DM->DoSQL(DM->TReportPersonal,"SELECT pib_personal,count(id_order) AS CountOrder,sum(payment) AS Payment, sum(payment-(payment*discount/100)) AS PaymentDiscount FROM (Personal INNER JOIN OrderMenu ON id_personal = kod_personal) INNER JOIN Discounts ON kod_discount = id_discount  GROUP BY pib_personal ORDER BY CountOrder desc");
+	}
+	if (str == "TReportOrder") {
+	DM->DoSQL(DM->TReportOrder,"SELECT id_order,date_open_order,pib_personal,pib_client,payment,discount,sum(payment-(payment*discount/100)) AS PaymentDiscount FROM ((OrderMenu INNER JOIN Personal ON id_personal = kod_personal) INNER JOIN Discounts ON id_discount = kod_discount) INNER JOIN ListTable ON id_table = kod_table GROUP BY id_order,date_open_order,pib_personal,pib_client,payment,discount");
+	}
 }
 //---------------------------------------------------------------------------
 

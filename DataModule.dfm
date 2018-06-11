@@ -8020,6 +8020,9 @@ object DM: TDM
     Active = True
     Connection = ConnectionToDB
     CursorType = ctStatic
+    Filter = 
+      'date_open_order >= '#39'10.06.2018 0:00:00'#39' and date_open_order <= '#39 +
+      '11:06:2018 23:59:59'#39
     Parameters = <>
     SQL.Strings = (
       
@@ -8063,7 +8066,7 @@ object DM: TDM
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 43262.891801412000000000
-    ReportOptions.LastChange = 43262.893927731480000000
+    ReportOptions.LastChange = 43262.894228657410000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
@@ -8444,18 +8447,80 @@ object DM: TDM
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 43262.594274062500000000
-    ReportOptions.LastChange = 43262.594274062500000000
+    ReportOptions.CreateDate = 43262.894545960600000000
+    ReportOptions.LastChange = 43262.895512222230000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
+      ''
       'begin'
       ''
       'end.')
     Left = 344
     Top = 384
-    Datasets = <>
+    Datasets = <
+      item
+        DataSet = frxDBScoreFood
+        DataSetName = 'frxDBScoreFood'
+      end>
     Variables = <>
-    Style = <>
+    Style = <
+      item
+        Name = 'Title'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Fill.BackColor = clGray
+      end
+      item
+        Name = 'Header'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+      end
+      item
+        Name = 'Group header'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Fill.BackColor = 16053492
+      end
+      item
+        Name = 'Data'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = []
+      end
+      item
+        Name = 'Group footer'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+      end
+      item
+        Name = 'Header line'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = [ftBottom]
+        Frame.Width = 2.000000000000000000
+      end>
     object Data: TfrxDataPage
       Height = 1000.000000000000000000
       Width = 1000.000000000000000000
@@ -8469,6 +8534,157 @@ object DM: TDM
       TopMargin = 10.000000000000000000
       BottomMargin = 10.000000000000000000
       Frame.Typ = []
+      object ReportTitle1: TfrxReportTitle
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 26.456710000000000000
+        Top = 18.897650000000000000
+        Width = 718.110700000000000000
+        object Memo1: TfrxMemoView
+          Align = baWidth
+          Width = 718.110700000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Fill.BackColor = clGray
+          HAlign = haCenter
+          Memo.UTF8W = (
+            #1056#1077#1081#1090#1080#1085#1075' '#1089#1090#1088#1072#1074' '#1090#1072' '#1085#1072#1087#1086#1111#1074)
+          ParentFont = False
+          Style = 'Title'
+          VAlign = vaCenter
+        end
+      end
+      object PageHeader1: TfrxPageHeader
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 22.677180000000000000
+        Top = 68.031540000000000000
+        Width = 718.110700000000000000
+        object Memo2: TfrxMemoView
+          Width = 718.110236220472000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftBottom]
+          Frame.Width = 2.000000000000000000
+          ParentFont = False
+          Style = 'Header line'
+        end
+        object Memo3: TfrxMemoView
+          Width = 531.141930000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            #1053#1072#1081#1084#1077#1085#1091#1074#1072#1085#1085#1103':')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo4: TfrxMemoView
+          Left = 531.141930000000000000
+          Width = 188.795300000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            #1050#1110#1083#1100#1082#1110#1089#1090#1100' '#1087#1088#1086#1076#1072#1078':')
+          ParentFont = False
+          Style = 'Header'
+        end
+      end
+      object MasterData1: TfrxMasterData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 18.897650000000000000
+        Top = 151.181200000000000000
+        Width = 718.110700000000000000
+        DataSet = frxDBScoreFood
+        DataSetName = 'frxDBScoreFood'
+        RowCount = 0
+        object Memo5: TfrxMemoView
+          Width = 531.141930000000000000
+          Height = 18.897650000000000000
+          DataField = 'name_food'
+          DataSet = frxDBScoreFood
+          DataSetName = 'frxDBScoreFood'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBScoreFood."name_food"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+        object Memo6: TfrxMemoView
+          Left = 531.141930000000000000
+          Width = 188.795300000000000000
+          Height = 18.897650000000000000
+          DataField = 'CountSale'
+          DataSet = frxDBScoreFood
+          DataSetName = 'frxDBScoreFood'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBScoreFood."CountSale"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+      end
+      object PageFooter1: TfrxPageFooter
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 26.456710000000000000
+        Top = 230.551330000000000000
+        Width = 718.110700000000000000
+        object Memo7: TfrxMemoView
+          Align = baWidth
+          Width = 718.110700000000000000
+          Frame.Typ = [ftTop]
+          Frame.Width = 2.000000000000000000
+        end
+        object Memo8: TfrxMemoView
+          Top = 1.000000000000000000
+          Height = 22.677180000000000000
+          AutoWidth = True
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[Date] [Time]')
+        end
+        object Memo9: TfrxMemoView
+          Align = baRight
+          Left = 642.520100000000000000
+          Top = 1.000000000000000000
+          Width = 75.590600000000000000
+          Height = 22.677180000000000000
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Page [Page#]')
+        end
+      end
     end
   end
   object frxScorePersonal: TfrxReport
@@ -8479,18 +8695,80 @@ object DM: TDM
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 43262.594338680550000000
-    ReportOptions.LastChange = 43262.594338680550000000
+    ReportOptions.CreateDate = 43262.895805625000000000
+    ReportOptions.LastChange = 43262.897177824100000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
+      ''
       'begin'
       ''
       'end.')
     Left = 344
     Top = 448
-    Datasets = <>
+    Datasets = <
+      item
+        DataSet = frxDBScorePersonal
+        DataSetName = 'frxDBScorePersonal'
+      end>
     Variables = <>
-    Style = <>
+    Style = <
+      item
+        Name = 'Title'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -16
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Fill.BackColor = clGray
+      end
+      item
+        Name = 'Header'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+      end
+      item
+        Name = 'Group header'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMaroon
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+        Fill.BackColor = 16053492
+      end
+      item
+        Name = 'Data'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = []
+      end
+      item
+        Name = 'Group footer'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Frame.Typ = []
+      end
+      item
+        Name = 'Header line'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = []
+        Frame.Typ = [ftBottom]
+        Frame.Width = 2.000000000000000000
+      end>
     object Data: TfrxDataPage
       Height = 1000.000000000000000000
       Width = 1000.000000000000000000
@@ -8504,6 +8782,211 @@ object DM: TDM
       TopMargin = 10.000000000000000000
       BottomMargin = 10.000000000000000000
       Frame.Typ = []
+      object ReportTitle1: TfrxReportTitle
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 26.456710000000000000
+        Top = 18.897650000000000000
+        Width = 718.110700000000000000
+        object Memo1: TfrxMemoView
+          Align = baWidth
+          Width = 718.110700000000000000
+          Height = 22.677180000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Fill.BackColor = clGray
+          HAlign = haCenter
+          Memo.UTF8W = (
+            #1056#1077#1081#1090#1080#1085#1075' '#1087#1088#1072#1094#1110#1074#1085#1080#1082#1110#1074)
+          ParentFont = False
+          Style = 'Title'
+          VAlign = vaCenter
+        end
+      end
+      object MasterData1: TfrxMasterData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 94.488250000000000000
+        Top = 105.826840000000000000
+        Width = 718.110700000000000000
+        DataSet = frxDBScorePersonal
+        DataSetName = 'frxDBScorePersonal'
+        RowCount = 0
+        object Memo2: TfrxMemoView
+          Width = 172.692950000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            #1055#1088#1110#1079#1074#1080#1097#1077' '#1110#1085#1110#1094#1110#1072#1083#1080':')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo3: TfrxMemoView
+          Left = 172.692950000000000000
+          Width = 546.260050000000000000
+          Height = 18.897650000000000000
+          DataField = 'pib_personal'
+          DataSet = frxDBScorePersonal
+          DataSetName = 'frxDBScorePersonal'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBScorePersonal."pib_personal"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+        object Memo4: TfrxMemoView
+          Top = 18.897650000000000000
+          Width = 172.692950000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            #1054#1092#1086#1088#1084#1083#1077#1085#1086' '#1079#1072#1084#1086#1074#1083#1077#1085#1100':')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo5: TfrxMemoView
+          Left = 172.692950000000000000
+          Top = 18.897650000000000000
+          Width = 546.661720000000000000
+          Height = 18.897650000000000000
+          DataField = 'CountOrder'
+          DataSet = frxDBScorePersonal
+          DataSetName = 'frxDBScorePersonal'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBScorePersonal."CountOrder"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+        object Memo6: TfrxMemoView
+          Top = 37.795300000000000000
+          Width = 172.692950000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            #1057#1091#1084#1072' '#1086#1087#1083#1072#1090#1072' '#1073#1077#1079' '#1079#1085#1080#1078#1082#1080':')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo7: TfrxMemoView
+          Left = 172.692950000000000000
+          Top = 37.795300000000000000
+          Width = 544.228510000000000000
+          Height = 18.897650000000000000
+          DataField = 'Payment'
+          DataSet = frxDBScorePersonal
+          DataSetName = 'frxDBScorePersonal'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBScorePersonal."Payment"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+        object Memo8: TfrxMemoView
+          Top = 56.692950000000000000
+          Width = 172.692950000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clMaroon
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            #1057#1091#1084#1072' '#1086#1087#1083#1072#1090#1080' '#1073#1077#1079' '#1079#1085#1080#1078#1082#1080':')
+          ParentFont = False
+          Style = 'Header'
+        end
+        object Memo9: TfrxMemoView
+          Left = 172.692950000000000000
+          Top = 56.692950000000000000
+          Width = 544.228510000000000000
+          Height = 18.897650000000000000
+          DataField = 'PaymentDiscount'
+          DataSet = frxDBScorePersonal
+          DataSetName = 'frxDBScorePersonal'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBScorePersonal."PaymentDiscount"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+      end
+      object PageFooter1: TfrxPageFooter
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 26.456710000000000000
+        Top = 260.787570000000000000
+        Width = 718.110700000000000000
+        object Memo10: TfrxMemoView
+          Align = baWidth
+          Width = 718.110700000000000000
+          Frame.Typ = [ftTop]
+          Frame.Width = 2.000000000000000000
+        end
+        object Memo11: TfrxMemoView
+          Top = 1.000000000000000000
+          Height = 22.677180000000000000
+          AutoWidth = True
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[Date] [Time]')
+        end
+        object Memo12: TfrxMemoView
+          Align = baRight
+          Left = 642.520100000000000000
+          Top = 1.000000000000000000
+          Width = 75.590600000000000000
+          Height = 22.677180000000000000
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Page [Page#]')
+        end
+      end
     end
   end
   object frxShowOrder: TfrxReport
@@ -8514,10 +8997,11 @@ object DM: TDM
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 43262.594479745370000000
-    ReportOptions.LastChange = 43262.594479745370000000
+    ReportOptions.CreateDate = 43262.913165983790000000
+    ReportOptions.LastChange = 43262.913165983790000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
+      ''
       'begin'
       ''
       'end.')
@@ -8616,7 +9100,7 @@ object DM: TDM
   end
   object DSReport: TDataSource
     DataSet = TReportDiscount
-    Left = 176
+    Left = 192
     Top = 384
   end
   object TReportIngredient: TADOQuery
@@ -8716,7 +9200,8 @@ object DM: TDM
         'S Payment, sum(payment-(payment*discount/100)) AS PaymentDiscoun' +
         't FROM (Personal INNER JOIN OrderMenu ON id_personal = kod_perso' +
         'nal) INNER JOIN Discounts ON kod_discount = id_discount'
-      'GROUP BY pib_personal')
+      'GROUP BY pib_personal'
+      'ORDER BY CountOrder desc')
     Left = 256
     Top = 448
     object TReportPersonalpib_personal: TStringField
@@ -8765,5 +9250,34 @@ object DM: TDM
         't,discount')
     Left = 256
     Top = 504
+    object TReportOrderid_order: TAutoIncField
+      FieldName = 'id_order'
+      ReadOnly = True
+    end
+    object TReportOrderdate_open_order: TDateTimeField
+      FieldName = 'date_open_order'
+    end
+    object TReportOrderpib_personal: TStringField
+      FieldName = 'pib_personal'
+      Size = 50
+    end
+    object TReportOrderpib_client: TStringField
+      FieldName = 'pib_client'
+      Size = 50
+    end
+    object TReportOrderpayment: TBCDField
+      FieldName = 'payment'
+      Precision = 10
+      Size = 2
+    end
+    object TReportOrderdiscount: TIntegerField
+      FieldName = 'discount'
+    end
+    object TReportOrderPaymentDiscount: TFMTBCDField
+      FieldName = 'PaymentDiscount'
+      ReadOnly = True
+      Precision = 38
+      Size = 6
+    end
   end
 end

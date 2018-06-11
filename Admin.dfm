@@ -4203,8 +4203,6 @@ object FAdmin: TFAdmin
     TabOrder = 0
     Touch.ParentTabletOptions = False
     Touch.TabletOptions = [toPressAndHold]
-    ExplicitLeft = -2
-    ExplicitTop = -1
     object CPStatistic: TCategoryPanel
       Top = 186
       Height = 31
@@ -4242,7 +4240,6 @@ object FAdmin: TFAdmin
         Caption = #1056#1077#1081#1090#1080#1085#1075' '#1082#1083#1110#1108#1085#1090#1110#1074
         TabOrder = 1
         OnClick = btnScoreDiscountClick
-        ExplicitTop = 56
       end
       object btnScorePersonal: TButton
         Left = 0
@@ -4253,7 +4250,6 @@ object FAdmin: TFAdmin
         Caption = #1056#1077#1081#1090#1080#1085#1075' '#1087#1077#1088#1089#1086#1085#1072#1083#1091
         TabOrder = 2
         OnClick = btnScorePersonalClick
-        ExplicitTop = 68
       end
       object btnScoreFood: TButton
         Left = 0
@@ -4274,7 +4270,6 @@ object FAdmin: TFAdmin
         Caption = #1042#1080#1090#1088#1072#1090#1080' '#1110#1085#1075#1088#1077#1076#1110#1108#1085#1090#1110#1074
         TabOrder = 4
         OnClick = btnSaleIngredientClick
-        ExplicitTop = 106
       end
     end
     object CategoryPanel1: TCategoryPanel
@@ -5040,9 +5035,6 @@ object FAdmin: TFAdmin
     Height = 681
     Align = alClient
     TabOrder = 7
-    ExplicitLeft = 203
-    ExplicitTop = 8
-    ExplicitHeight = 600
     object GroupBox1: TGroupBox
       AlignWithMargins = True
       Left = 4
@@ -5052,9 +5044,6 @@ object FAdmin: TFAdmin
       Align = alTop
       Caption = #1042#1080#1073#1110#1088' '#1087#1077#1088#1110#1086#1076' '#1076#1083#1103' '#1087#1077#1088#1077#1075#1083#1103#1076#1091' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1111
       TabOrder = 0
-      ExplicitLeft = 1
-      ExplicitTop = 1
-      ExplicitWidth = 796
       object Labelasd: TLabel
         Left = 215
         Top = 44
@@ -5156,8 +5145,6 @@ object FAdmin: TFAdmin
       Caption = #1047#1074#1110#1090#1085#1110#1089#1090#1100
       TabOrder = 2
       OnClick = btnReportClick
-      ExplicitLeft = 4
-      ExplicitTop = 633
     end
   end
   object LookPanel: TPanel

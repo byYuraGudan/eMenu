@@ -2,7 +2,7 @@ object FMainForm: TFMainForm
   Left = 0
   Top = 0
   Caption = 'eMenu'
-  ClientHeight = 600
+  ClientHeight = 560
   ClientWidth = 1024
   Color = clGradientInactiveCaption
   Font.Charset = DEFAULT_CHARSET
@@ -20,7 +20,7 @@ object FMainForm: TFMainForm
     Left = 0
     Top = 0
     Width = 300
-    Height = 600
+    Height = 560
     Align = alLeft
     Alignment = taLeftJustify
     BevelOuter = bvNone
@@ -29,14 +29,14 @@ object FMainForm: TFMainForm
       Left = 0
       Top = 0
       Width = 300
-      Height = 296
+      Height = 256
       Align = alClient
       TabOrder = 0
       object DBGridCategory: TDBCtrlGrid
         Left = 1
         Top = 35
         Width = 298
-        Height = 260
+        Height = 220
         Align = alClient
         AllowDelete = False
         AllowInsert = False
@@ -48,7 +48,7 @@ object FMainForm: TFMainForm
         Font.Name = 'Courier New'
         Font.Style = []
         PanelBorder = gbNone
-        PanelHeight = 37
+        PanelHeight = 31
         PanelWidth = 281
         ParentColor = False
         ParentFont = False
@@ -59,7 +59,7 @@ object FMainForm: TFMainForm
           Left = 3
           Top = 3
           Width = 234
-          Height = 31
+          Height = 25
           Align = alClient
           Color = clBtnFace
           DataField = 'name_category'
@@ -80,7 +80,7 @@ object FMainForm: TFMainForm
           Left = 243
           Top = 10
           Width = 35
-          Height = 20
+          Height = 14
           Margins.Top = 10
           Margins.Bottom = 7
           Align = alRight
@@ -124,7 +124,7 @@ object FMainForm: TFMainForm
     end
     object PanelOrderMenu: TPanel
       Left = 0
-      Top = 296
+      Top = 256
       Width = 300
       Height = 304
       Align = alBottom
@@ -292,7 +292,7 @@ object FMainForm: TFMainForm
     Left = 300
     Top = 0
     Width = 724
-    Height = 600
+    Height = 560
     Align = alClient
     Caption = 'Panel2'
     TabOrder = 1
@@ -300,7 +300,7 @@ object FMainForm: TFMainForm
       Left = 1
       Top = 1
       Width = 722
-      Height = 598
+      Height = 558
       Align = alClient
       AllowDelete = False
       AllowInsert = False
@@ -308,7 +308,7 @@ object FMainForm: TFMainForm
       Color = clBtnFace
       DataSource = DM.MDSShowFood
       PanelBorder = gbNone
-      PanelHeight = 199
+      PanelHeight = 186
       PanelWidth = 235
       ParentColor = False
       TabOrder = 0
@@ -318,14 +318,14 @@ object FMainForm: TFMainForm
         Left = 3
         Top = 3
         Width = 229
-        Height = 193
+        Height = 180
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
         object DBInformation: TDBText
           AlignWithMargins = True
           Left = 3
-          Top = 118
+          Top = 105
           Width = 223
           Height = 45
           Margins.Top = 0
@@ -343,7 +343,7 @@ object FMainForm: TFMainForm
           Left = 3
           Top = 3
           Width = 223
-          Height = 112
+          Height = 99
           Align = alClient
           DataField = 'picture'
           DataSource = DM.MDSShowFood
@@ -352,7 +352,7 @@ object FMainForm: TFMainForm
         end
         object Panel4: TPanel
           Left = 0
-          Top = 163
+          Top = 150
           Width = 229
           Height = 30
           Margins.Top = 0

@@ -218,6 +218,13 @@ __published:	// IDE-managed Components
 	TFMTBCDField *TReportPersonalPayment;
 	TFMTBCDField *TReportPersonalPaymentDiscount;
 	TBCDField *TReportIngredientprice;
+	TAutoIncField *TReportOrderid_order;
+	TDateTimeField *TReportOrderdate_open_order;
+	TStringField *TReportOrderpib_personal;
+	TStringField *TReportOrderpib_client;
+	TBCDField *TReportOrderpayment;
+	TIntegerField *TReportOrderdiscount;
+	TFMTBCDField *TReportOrderPaymentDiscount;
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall DataModuleDestroy(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);

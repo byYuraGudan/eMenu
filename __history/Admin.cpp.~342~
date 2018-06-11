@@ -523,11 +523,46 @@ void __fastcall TFAdmin::btnScoreFoodClick(TObject *Sender)
 void __fastcall TFAdmin::btnReportClick(TObject *Sender)
 {
 	String str = DM->DSReport->DataSet->Name;
-	if (srt == "TReportDiscount") { ShowMessage("Discount");}
-	if (str == "TReportFood") {ShowMessage("Food"); }
-	if (str == "TReportIngredient"){ShowMessage("Ingredient");}
-	if (str == "TReportPersonal") {ShowMessage("Personal");}
-	if (str == "TReportOrder") {ShowMessage("Order");}
+	if (str == "TReportDiscount") { DM->frxScoreDiscount->ShowReport();}
+	if (str == "TReportFood") { DM->frxScoreFood->ShowReport(); }
+	if (str == "TReportIngredient"){ DM->frxSaleIngredient->ShowReport();}
+	if (str == "TReportPersonal") { DM->frxScorePersonal->ShowReport();}
+	if (str == "TReportOrder") {DM->frxShowOrder->ShowReport();}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::RBallClick(TObject *Sender)
+{
+	DM->TReportDiscount->Filtered = false;
+	DM->TReportFood->Filtered = false;
+	DM->TReportPersonal->Filtered = false;
+	DM->TReportIngredient->Filtered = false;
+	DM->TReportOrder->Filtered = false;		
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::RBperiodClick(TObject *Sender)
+{
+	String str = DM->DSReport->DataSet->Name;
+	String dt = "WHERE date_open_order >= '"+DateToStr(DateFirst->Date)+" "+TimeToStr(TimeFirst->Time)+"'  \
+	and date_open_order <= '"+DateToStr(DateSecond->Date)+" "+TimeToStr(TimeSecond->Time)+"'";
+	ShowMessage(dt);
+	if (str == "TReportDiscount") {
+	DM->DoSQL(DM->TReportDiscount,"SELECT id_discount,pib_client,count(id_order) AS CountBuyOrder,sum(payment - (payment*discount/100)) AS PaymentAll FROM Discounts INNER JOIN OrderMenu ON kod_discount = id_discount\
+	"+dt+" 	GROUP BY id_discount,pib_client");
+	}
+//	if (str == "TReportFood") {
+//	DM->DoSQL(DM->TReportFood,"");
+//	}
+//	if (str == "TReportIngredient");{
+//	DM->DoSQL(DM->TReportIngredient,"");
+//	}
+//	if (str == "TReportPersonal") {
+//	DM->DoSQL(DM->TReportPersonal," ");
+//	}
+//	if (str == "TReportOrder") {
+//	DM->DoSQL(DM->TReportOrder," ");
+//	}
 }
 //---------------------------------------------------------------------------
 

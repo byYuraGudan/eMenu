@@ -20,6 +20,7 @@
 #pragma package(smart_init)
 #pragma classgroup "Vcl.Controls.TControl"
 #pragma link "frxClass"
+#pragma link "frxDBSet"
 #pragma resource "*.dfm"
 TDM *DM;
 //---------------------------------------------------------------------------
@@ -38,18 +39,21 @@ __fastcall TDM::TDM(TComponent* Owner)
 //		}
 }
 
+
+
 void TDM::DoSQL(TADOQuery *Query,AnsiString str){
 	Query->Close();
 	Query->SQL->Clear();
 	Query->SQL->Add(str);
 	Query->ExecSQL();
+
 	Query->Open();
 }
 void TDM::DoSQLExec(TADOQuery *Query,AnsiString str){
 	Query->Close();
 	Query->SQL->Clear();
 	Query->SQL->Add(str);
-	//ShowMessage(DM->TSQL->SQL->GetText());
+
 	Query->ExecSQL();
 }
 void TDM::RefreshADO(TADOTable *Table){
@@ -72,7 +76,7 @@ void TDM::RefreshADO(TADOQuery *Query){
 	}else{
 	    Query->Close();
 		Query->Open();
-    }
+	}
 }
 
 void TDM::OpenDB(){
@@ -83,11 +87,19 @@ void TDM::OpenDB(){
     	RefreshADO(ATDiscount);
     	RefreshADO(ATFoodIngredient);
     	RefreshADO(ATListTable);
-    	RefreshADO(ATOrderMenu);
-    	RefreshADO(ATListOrderMenu);
+		RefreshADO(ATOrderMenu);
+		RefreshADO(ATListOrderMenu);
+        this->OpenReport();
     	this->OpenDBMain();
 		this->OpenDBOficiant();
 	//}catch(...){}
+}
+void TDM::OpenReport(){
+	RefreshADO(TReportDiscount);
+	RefreshADO(TReportIngredient);
+	RefreshADO(TReportFood);
+	RefreshADO(TReportPersonal);
+	RefreshADO(TReportOrder);
 }
 
 void TDM::OpenDBMain(){
@@ -95,19 +107,12 @@ void TDM::OpenDBMain(){
 	RefreshADO(MTShowFood);
 }
 void TDM::OpenDBOficiant(){
-
-//	FEditOrderMenu->CB_table_name->Clear();
-//	FEditOrderMenu->CB_table_id->Clear();
 	RefreshADO(OTNotOcupTable);
-	for (int i = 0; i < OTNotOcupTable->RecordCount; i++) {
-	   FEditOrderMenu->CB_table_name->Items->Add(DM->OTNotOcupTable->FieldByName("name_table")->AsString);
-	   FEditOrderMenu->CB_table_id->Items->Add(DM->OTNotOcupTable->FieldByName("id_table")->AsString);
-	   DM->OTNotOcupTable->Next();
-	}
-	try {
-		RefreshADO(OTOpenOrder);
-	}
-	catch(...){ShowMessage("this");}
+	//try {
+	OTOpenOrder->Close();
+    OTOpenOrder->Open();
+	/}
+	//catch(...){ShowMessage("this order");}
 	RefreshADO(OTListOpenOrder);
 
 
@@ -203,16 +208,16 @@ void __fastcall TDM::N22Click(TObject *Sender)
 
 void __fastcall TDM::TimerUpdateTimer(TObject *Sender)
 {
- DM->DoSQL(DM->ADOQuery1,"SELECT        OBJECT_NAME(object_id) AS DatabaseName, last_user_update FROM            sys.dm_db_index_usage_stats WHERE        (database_id = DB_ID('eMenu'))");
- DM->ADOQuery1->First();
- DM->MonitorServer->First();
- bool f = false;
- for (int i = 0; i < DM->ADOQuery1->RecordCount; i++) {
-	if (DM->MonitorServer->FieldByName("last_user_update")->AsString != DM->ADOQuery1->FieldByName("last_user_update")->AsString) f = true;
-	DM->ADOQuery1->Next();
-	DM->MonitorServer->Next();
- }
-    if(f)DM->OpenDB();
+// DM->DoSQL(DM->ADOQuery1,"SELECT        OBJECT_NAME(object_id) AS DatabaseName, last_user_update FROM            sys.dm_db_index_usage_stats WHERE        (database_id = DB_ID('eMenu'))");
+// DM->ADOQuery1->First();
+// DM->MonitorServer->First();
+// bool f = false;
+// for (int i = 0; i < DM->ADOQuery1->RecordCount; i++) {
+//	if (DM->MonitorServer->FieldByName("last_user_update")->AsString != DM->ADOQuery1->FieldByName("last_user_update")->AsString) f = true;
+//	DM->ADOQuery1->Next();
+//	DM->MonitorServer->Next();
+// }
+//    if(f)DM->OpenDB();
 }
 //---------------------------------------------------------------------------
 
@@ -228,4 +233,5 @@ void __fastcall TDM::N17Click(TObject *Sender)
 	FEditOrderMenu->Show();
 }
 //---------------------------------------------------------------------------
+
 

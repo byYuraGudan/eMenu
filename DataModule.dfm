@@ -1049,18 +1049,13 @@ object DM: TDM
     object N1: TMenuItem
       Caption = #1060#1072#1081#1083
       ImageIndex = 10
-      object N14: TMenuItem
-        Caption = '-'
-      end
       object N2: TMenuItem
         Caption = #1054#1085#1086#1074#1083#1077#1085#1085#1103
+        ShortCut = 116
         OnClick = N2Click
       end
       object N3: TMenuItem
         Caption = '-'
-      end
-      object N6: TMenuItem
-        Caption = #1055#1088#1086' '#1087#1088#1086#1075#1088#1072#1084#1091
       end
       object N4: TMenuItem
         Caption = #1042#1080#1093#1110#1076
@@ -1092,6 +1087,7 @@ object DM: TDM
       object N8: TMenuItem
         Caption = #1054#1085#1086#1074#1083#1077#1085#1085#1103
         ShortCut = 116
+        OnClick = N8Click
       end
       object N9: TMenuItem
         Caption = '-'
@@ -7979,6 +7975,7 @@ object DM: TDM
     Top = 136
     object OTListOpenOrderid_listordermenu: TIntegerField
       FieldName = 'id_listordermenu'
+      Visible = False
     end
     object OTListOpenOrderkod_order: TIntegerField
       FieldName = 'kod_order'

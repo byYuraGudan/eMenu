@@ -62,7 +62,6 @@ __published:	// IDE-managed Components
 	TDBText *DBpayment;
 	TDBText *DBdiscount;
 	TDBText *DBrealpayment;
-	void __fastcall FormShow(TObject *Sender);
 	void __fastcall EditMainSearchFoodChange(TObject *Sender);
 	void __fastcall AddToOrderMouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift,
           int X, int Y);

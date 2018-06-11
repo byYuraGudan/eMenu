@@ -7,9 +7,6 @@ Coordinates=175,503,101,105
 [MTShowFood]
 Coordinates=463,10,81,231
 
-[N14]
-Coordinates=30,751,40,33
-
 [ATDiscount]
 Coordinates=10,503,72,159
 
@@ -241,9 +238,6 @@ Coordinates=157,1356,116,33
 [ATFoodIngredientcounts]
 Coordinates=880,833,136,33
 
-[N6]
-Coordinates=108,1356,40,33
-
 [MQShowFood]
 Coordinates=370,10,83,231
 
@@ -420,4 +414,7 @@ Coordinates=529,573,153,33
 
 [TSQLCheck]
 Coordinates=518,503,72,51
+
+[]
+Coordinates=30,751,40,33
 

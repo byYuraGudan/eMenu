@@ -118,7 +118,7 @@ __published:	// IDE-managed Components
 	TStringField *MTShowFoodunit_food;
 	TStringField *MTShowFoodweight_unit;
 	TTimer *TimerUpdate;
-	TADOQuery *ADOQuery1;
+	TADOQuery *TSQLCheck;
 	TStringField *MQShowFoodunit_food;
 	TStringField *MQShowFoodweight_unit;
 	TADOTable *ATFoodIngredient;
@@ -187,7 +187,7 @@ __published:	// IDE-managed Components
 	TBCDField *OTListOpenOrdercounts;
 	TBCDField *OTListOpenOrderprice_food;
 	TFMTBCDField *OTListOpenOrderSuma;
-	TADOQuery *TSQLReport;
+	TADOQuery *TReportDiscount;
 	TfrxReport *frxSaleIngredient;
 	TfrxReport *frxScoreFood;
 	TfrxReport *frxScorePersonal;
@@ -198,6 +198,35 @@ __published:	// IDE-managed Components
 	TfrxDBDataset *frxDBScorePersonal;
 	TfrxDBDataset *frxDBShowOrder;
 	TDataSource *DSReport;
+	TADOQuery *TReportIngredient;
+	TADOQuery *TReportFood;
+	TADOQuery *TReportPersonal;
+	TADOQuery *TReportOrder;
+	TIntegerField *TReportDiscountid_discount;
+	TStringField *TReportDiscountpib_client;
+	TIntegerField *TReportDiscountCountBuyOrder;
+	TFMTBCDField *TReportDiscountPaymentAll;
+	TStringField *TReportFoodname_food;
+	TIntegerField *TReportFoodCountSale;
+	TStringField *TReportIngredientname_food;
+	TStringField *TReportIngredientname_ingredient;
+	TFMTBCDField *TReportIngredientAsCountSaleIngredient;
+	TStringField *TReportIngredientunit;
+	TFMTBCDField *TReportIngredientSaleFood;
+	TStringField *TReportPersonalpib_personal;
+	TIntegerField *TReportPersonalCountOrder;
+	TFMTBCDField *TReportPersonalPayment;
+	TFMTBCDField *TReportPersonalPaymentDiscount;
+	TBCDField *TReportIngredientprice;
+	TAutoIncField *TReportOrderid_order;
+	TDateTimeField *TReportOrderdate_open_order;
+	TStringField *TReportOrderpib_personal;
+	TStringField *TReportOrderpib_client;
+	TBCDField *TReportOrderpayment;
+	TIntegerField *TReportOrderdiscount;
+	TFMTBCDField *TReportOrderPaymentDiscount;
+	TfrxReport *frxCheck;
+	TfrxDBDataset *frxDBCheck;
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall DataModuleDestroy(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);
@@ -213,6 +242,7 @@ __published:	// IDE-managed Components
 	void __fastcall TimerUpdateTimer(TObject *Sender);
 	void __fastcall N13Click(TObject *Sender);
 	void __fastcall N17Click(TObject *Sender);
+	void __fastcall N8Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDM(TComponent* Owner);
@@ -223,6 +253,7 @@ public:		// User declarations
 	void OpenDB();
 	void OpenDBOficiant();
 	void OpenDBMain();
+    void OpenReport();
 	TIniFile *ini;
 	bool auth;
 	bool admin;

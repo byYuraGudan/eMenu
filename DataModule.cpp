@@ -80,7 +80,7 @@ void TDM::RefreshADO(TADOQuery *Query){
 }
 
 void TDM::OpenDB(){
-	///try{
+	try{
     	RefreshADO(ATPersonal);
     	RefreshADO(ATCategory);
 		RefreshADO(ATFood);
@@ -92,7 +92,7 @@ void TDM::OpenDB(){
         this->OpenReport();
     	this->OpenDBMain();
 		this->OpenDBOficiant();
-	//}catch(...){}
+	}catch(...){}
 }
 void TDM::OpenReport(){
 	RefreshADO(TReportDiscount);
@@ -107,13 +107,12 @@ void TDM::OpenDBMain(){
 	RefreshADO(MTShowFood);
 }
 void TDM::OpenDBOficiant(){
-	RefreshADO(OTNotOcupTable);
-	try {
-		RefreshADO(OTOpenOrder);
-	}
-	catch(...){ShowMessage("this");}
-	RefreshADO(OTListOpenOrder);
-
+	OTNotOcupTable->Close();
+	OTNotOcupTable->Open();
+	OTOpenOrder->Close();
+	OTOpenOrder->Open();
+	OTListOpenOrder->Close();
+    OTListOpenOrder->Open();
 
 }
 //---------------------------------------------------------------------------
@@ -233,4 +232,10 @@ void __fastcall TDM::N17Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TDM::N8Click(TObject *Sender)
+{
+    DM->OpenDB();
+}
+//---------------------------------------------------------------------------
 

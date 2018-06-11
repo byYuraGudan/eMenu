@@ -35,25 +35,22 @@ void TOrderMenu::setDateOrder(TDateTime open,TDateTime close) {
 void TOrderMenu::setCloseOrder(bool b){ this->close_order = b;}
 void TOrderMenu::setPayment(float f){ this->payment = f;}
 
-void TOrderMenu::CloseOrderMenu(){
+	void TOrderMenu::CloseOrderMenu(){
 	DM->DoSQLExec(DM->TSQL,"UPDATE eMenu.dbo.OrderMenu SET date_close_order = GETDATE(), close_order = 1 WHERE id_order = "+IntToStr(this->getIdOrder()));
 }
 void TOrderMenu::UpdatePayment(){
 
-	DM->DoSQL(DM->TSQL,"SELECT sum(counts) as cnt,sum(counts*price_food) as price_all\
+	DM->DoSQL(DM->TSQL,"SELECT sum(counts*price_food) as price_all\
 	FROM dbo.ListOrderMenu INNER JOIN dbo.Food ON id_food = kod_food WHERE kod_order = "+IntToStr(this->id_order));
 	float val = DM->TSQL->FieldByName("price_all")->AsFloat;
-	int count = DM->TSQL->FieldByName("cnt")->AsInteger;
 	if(DM->TSQL->RecordCount!=0){
 		DM->TSQL->SQL->Clear();
 		DM->TSQL->SQL->Add("UPDATE eMenu.dbo.OrderMenu SET payment = :pay WHERE id_order = :id");
 		DM->TSQL->Parameters->ParamByName("pay")->Value = val;
 		DM->TSQL->Parameters->ParamByName("id")->Value = this->id_order;
 		DM->TSQL->ExecSQL();
-
 	}	else{
 	DM->DoSQLExec(DM->TSQL,"UPDATE eMenu.dbo.OrderMenu SET payment = 0 WHERE id_order ="+IntToStr(this->id_order));
-
 	}
 
 }
@@ -198,8 +195,6 @@ void __fastcall TFEditOrderMenu::btnOpenOrderClick(TObject *Sender)
 		order.InsertDBOrderMenu();
 		DM->OpenDB();
 		DM->OTOpenOrder->Last();
-		CB_id_orderChange(Sender);
-
 	}
 	else       {
 		MessageBox(NULL, L"Íåìàº â³ëüíèõ ì³ñöü!", L"Â³äìîâà!",  MB_OK | MB_ICONWARNING);
@@ -233,5 +228,13 @@ void __fastcall TFEditOrderMenu::btnCloseOrderClick(TObject *Sender)
 //		} catch(...){ ShowMessage("tut");}
 }
 //---------------------------------------------------------------------------
+
+
+void __fastcall TFEditOrderMenu::Button1Click(TObject *Sender)
+{
+	ShowMessage(DM->OTNotOcupTable->FieldByName("id_table")->AsString) ;
+}
+//---------------------------------------------------------------------------
+
 
 

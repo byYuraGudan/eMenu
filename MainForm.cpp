@@ -34,11 +34,6 @@ __fastcall TFMainForm::TFMainForm(TComponent* Owner)
 
 
 
-void __fastcall TFMainForm::FormShow(TObject *Sender)
-{
-	FAdmin->Show();
-}
-//---------------------------------------------------------------------------
 void TFMainForm::HideOficiant(){
 	this->DBGridCategory->RowCount = 15;
 	this->PanelOrderMenu->Hide();
@@ -147,11 +142,11 @@ void __fastcall TFMainForm::Image1Click(TObject *Sender)
 	       		list.setIdOrder(DM->OTOpenOrder->FieldByName("id_order")->AsInteger);
 	       		list.setListCounts(StrToFloat(count));
 	       		list.InsertDBListOrder();
-	       		DM->OpenDBOficiant();
-	       		list.UpdatePayment();
+				DM->OpenDBOficiant();
+				list.UpdatePayment();
 				DM->OpenDBOficiant();
 			}
-	}
+//	}
 //	catch(...){
 //		MessageBox(NULL, L"Перевірьте правильність даних!", L"Відмова!",  MB_OK | MB_ICONWARNING);
 //	}

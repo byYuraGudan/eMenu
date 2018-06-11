@@ -99,9 +99,7 @@ __published:	// IDE-managed Components
 	TMenuItem *N11;
 	TMenuItem *N12;
 	TMenuItem *N13;
-	TMenuItem *N14;
 	TMenuItem *N15;
-	TMenuItem *N6;
 	TMenuItem *N16;
 	TMenuItem *N17;
 	TMenuItem *N18;
@@ -242,6 +240,7 @@ __published:	// IDE-managed Components
 	void __fastcall TimerUpdateTimer(TObject *Sender);
 	void __fastcall N13Click(TObject *Sender);
 	void __fastcall N17Click(TObject *Sender);
+	void __fastcall N8Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDM(TComponent* Owner);

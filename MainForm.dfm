@@ -13,7 +13,6 @@ object FMainForm: TFMainForm
   Menu = DM.MMain
   OldCreateOrder = False
   Position = poScreenCenter
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 15
   object Panel1: TPanel

@@ -88,13 +88,18 @@ void TDM::OpenDB(){
     	RefreshADO(ATFoodIngredient);
     	RefreshADO(ATListTable);
 		RefreshADO(ATOrderMenu);
-    	RefreshADO(ATListOrderMenu);
+		RefreshADO(ATListOrderMenu);
+        this->OpenReport();
     	this->OpenDBMain();
 		this->OpenDBOficiant();
 	//}catch(...){}
 }
 void TDM::OpenReport(){
 	RefreshADO(TReportDiscount);
+	RefreshADO(TReportIngredient);
+	RefreshADO(TReportFood);
+	RefreshADO(TReportPersonal);
+	RefreshADO(TReportOrder);
 }
 
 void TDM::OpenDBMain(){
@@ -102,12 +107,16 @@ void TDM::OpenDBMain(){
 	RefreshADO(MTShowFood);
 }
 void TDM::OpenDBOficiant(){
-	RefreshADO(OTNotOcupTable);
-	try {
-		RefreshADO(OTOpenOrder);
-	}
-	catch(...){ShowMessage("this");}
-	RefreshADO(OTListOpenOrder);
+	//RefreshADO(OTNotOcupTable);
+	OTNotOcupTable->Close();
+	OTNotOcupTable->Open();
+	//try {
+	OTOpenOrder->Close();
+	OTOpenOrder->Open();
+	//}
+	//catch(...){ShowMessage("this order");}
+	OTListOpenOrder->Close();
+    OTListOpenOrder->Open();
 
 
 }
@@ -202,16 +211,16 @@ void __fastcall TDM::N22Click(TObject *Sender)
 
 void __fastcall TDM::TimerUpdateTimer(TObject *Sender)
 {
- DM->DoSQL(DM->ADOQuery1,"SELECT        OBJECT_NAME(object_id) AS DatabaseName, last_user_update FROM            sys.dm_db_index_usage_stats WHERE        (database_id = DB_ID('eMenu'))");
- DM->ADOQuery1->First();
- DM->MonitorServer->First();
- bool f = false;
- for (int i = 0; i < DM->ADOQuery1->RecordCount; i++) {
-	if (DM->MonitorServer->FieldByName("last_user_update")->AsString != DM->ADOQuery1->FieldByName("last_user_update")->AsString) f = true;
-	DM->ADOQuery1->Next();
-	DM->MonitorServer->Next();
- }
-    if(f)DM->OpenDB();
+// DM->DoSQL(DM->ADOQuery1,"SELECT        OBJECT_NAME(object_id) AS DatabaseName, last_user_update FROM            sys.dm_db_index_usage_stats WHERE        (database_id = DB_ID('eMenu'))");
+// DM->ADOQuery1->First();
+// DM->MonitorServer->First();
+// bool f = false;
+// for (int i = 0; i < DM->ADOQuery1->RecordCount; i++) {
+//	if (DM->MonitorServer->FieldByName("last_user_update")->AsString != DM->ADOQuery1->FieldByName("last_user_update")->AsString) f = true;
+//	DM->ADOQuery1->Next();
+//	DM->MonitorServer->Next();
+// }
+//    if(f)DM->OpenDB();
 }
 //---------------------------------------------------------------------------
 
@@ -228,4 +237,10 @@ void __fastcall TDM::N17Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TDM::N8Click(TObject *Sender)
+{
+    DM->OpenDB();
+}
+//---------------------------------------------------------------------------
 

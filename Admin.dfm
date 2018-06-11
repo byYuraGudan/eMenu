@@ -4203,7 +4203,7 @@ object FAdmin: TFAdmin
     TabOrder = 0
     Touch.ParentTabletOptions = False
     Touch.TabletOptions = [toPressAndHold]
-    ExplicitHeight = 620
+    ExplicitHeight = 202
     object CPStatistic: TCategoryPanel
       Top = 487
       Height = 53
@@ -4215,7 +4215,6 @@ object FAdmin: TFAdmin
       ExpandedImageIndex = 9
       ExpandedPressedImageIndex = 9
       TabOrder = 0
-      ExplicitTop = 186
       object Button6: TButton
         AlignWithMargins = True
         Left = 0
@@ -4244,7 +4243,6 @@ object FAdmin: TFAdmin
       ExpandedImageIndex = 12
       ExpandedPressedImageIndex = 12
       TabOrder = 1
-      ExplicitTop = 155
       object ButtonViewTable: TButton
         AlignWithMargins = True
         Left = 0
@@ -4293,7 +4291,6 @@ object FAdmin: TFAdmin
       Font.Style = []
       ParentFont = False
       TabOrder = 2
-      ExplicitTop = 124
       object Button2: TButton
         AlignWithMargins = True
         Left = 0
@@ -4335,7 +4332,6 @@ object FAdmin: TFAdmin
       ExpandedHotImageIndex = 7
       ExpandedImageIndex = 7
       TabOrder = 3
-      ExplicitTop = 93
       object buttonViewOrderMenu: TButton
         AlignWithMargins = True
         Left = 0
@@ -4392,7 +4388,6 @@ object FAdmin: TFAdmin
       ExpandedHotImageIndex = 4
       ExpandedImageIndex = 4
       TabOrder = 4
-      ExplicitTop = 62
       object buttonViewFood: TButton
         AlignWithMargins = True
         Left = 0
@@ -4438,7 +4433,6 @@ object FAdmin: TFAdmin
       ParentBackground = True
       ParentColor = True
       TabOrder = 5
-      ExplicitTop = 31
       object buttonViewCategory: TButton
         AlignWithMargins = True
         Left = 0

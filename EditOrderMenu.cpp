@@ -220,8 +220,14 @@ void __fastcall TFEditOrderMenu::btnOpenOrderClick(TObject *Sender)
 		order.InsertDBOrderMenu();
 		DM->OpenDB();
 		DM->OTOpenOrder->Last();
-        CB_id_orderChange(Sender);
-	} else MessageBox(NULL, L"Немає вільних місць!", L"Відмова!",  MB_OK | MB_ICONWARNING);
+		CB_id_orderChange(Sender);
+
+	}
+	else       {
+		MessageBox(NULL, L"Немає вільних місць!", L"Відмова!",  MB_OK | MB_ICONWARNING);
+	 	DM->OpenDB();
+	}
+
 
 }
 //---------------------------------------------------------------------------
@@ -229,7 +235,7 @@ void __fastcall TFEditOrderMenu::btnOpenOrderClick(TObject *Sender)
 void __fastcall TFEditOrderMenu::btnCloseOrderClick(TObject *Sender)
 {
 
-	try{
+//	try{
 		if (!CB_id_order->Text.IsEmpty()){
 
 			int id = DM->OTOpenOrder->FieldByName("id_order")->AsInteger;
@@ -237,17 +243,16 @@ void __fastcall TFEditOrderMenu::btnCloseOrderClick(TObject *Sender)
 			order.setIdOrder(id);
 			order.setId_table(DM->OTOpenOrder->FieldByName("kod_table")->AsInteger);
 			order.setOccupListTable(false);
-            order.UpdateOccupation();
+			order.UpdateOccupation();
 			order.CloseOrderMenu();
 			ShowMessage("Замовлення №"+IntToStr(id)+" закрито");
-			DM->OTListOrder->Close();
-			DM->OpenDBOficiant();
+			DM->OpenDB();
 		} else
 		{
 				MessageBox(NULL, L"Виберіть замовлення!", L"Відмова!",  MB_OK |MB_ICONWARNING);
-				DM->OTListOrder->Close();
+                DM->OpenDB();
 		}
-		} catch(...){}
+//		} catch(...){ ShowMessage("tut");}
 }
 //---------------------------------------------------------------------------
 

@@ -37,7 +37,6 @@ void TOrderMenu::setPayment(float f){ this->payment = f;}
 
 void TOrderMenu::CloseOrderMenu(){
 	DM->DoSQLExec(DM->TSQL,"UPDATE eMenu.dbo.OrderMenu SET date_close_order = GETDATE(), close_order = 1 WHERE id_order = "+IntToStr(this->getIdOrder()));
-	this->UpdateOccupation();
 }
 void TOrderMenu::UpdatePayment(){
 
@@ -101,11 +100,12 @@ void TListOrder::InsertDBListOrder(){
 }
 
 void TListOrder::DeleteDBListOrder(){
-   //	try{
+   	try{
 	DM->DoSQLExec(DM->TSQL,\
 	"DELETE FROM eMenu.dbo.ListOrderMenu where id_listordermenu ="+IntToStr(this->id_listingrfood));
-    FEditOrderMenu->CB_id_orderChange(Sender);
-   //	} catch(...){MessageBox(NULL, L"Не вдалося видалити!", L"Відмова!",  MB_OK | MB_ICONERROR); }
+	TObject *Sender;
+	FEditOrderMenu->CB_id_orderChange(Sender);
+	} catch(...){MessageBox(NULL, L"Не вдалося видалити!", L"Відмова!",  MB_OK | MB_ICONERROR); }
 }
 
 
@@ -218,10 +218,13 @@ void __fastcall TFEditOrderMenu::btnOpenOrderClick(TObject *Sender)
 		order.setId_table(DM->OTNotOcupTable->FieldByName("id_table")->AsInteger);
 		order.UpdateInverseOccupation();
 		order.InsertDBOrderMenu();
-		DM->OpenDB();
-		DM->OTOpenOrder->Last();
-        CB_id_orderChange(Sender);
-	} else MessageBox(NULL, L"Немає вільних місць!", L"Відмова!",  MB_OK | MB_ICONWARNING);
+
+	}
+	else
+	MessageBox(NULL, L"Немає вільних місць!", L"Відмова!",  MB_OK | MB_ICONWARNING);
+	DM->OpenDB();
+	DM->OTOpenOrder->Last();
+	CB_id_orderChange(Sender);
 
 }
 //---------------------------------------------------------------------------
@@ -229,7 +232,7 @@ void __fastcall TFEditOrderMenu::btnOpenOrderClick(TObject *Sender)
 void __fastcall TFEditOrderMenu::btnCloseOrderClick(TObject *Sender)
 {
 
-	try{
+//	try{
 		if (!CB_id_order->Text.IsEmpty()){
 
 			int id = DM->OTOpenOrder->FieldByName("id_order")->AsInteger;
@@ -237,16 +240,16 @@ void __fastcall TFEditOrderMenu::btnCloseOrderClick(TObject *Sender)
 			order.setIdOrder(id);
 			order.setId_table(DM->OTOpenOrder->FieldByName("kod_table")->AsInteger);
 			order.setOccupListTable(false);
+			order.UpdateOccupation();
 			order.CloseOrderMenu();
 			ShowMessage("Замовлення №"+IntToStr(id)+" закрито");
-			DM->OTListOrder->Close();
 			DM->OpenDBOficiant();
+
 		} else
 		{
 				MessageBox(NULL, L"Виберіть замовлення!", L"Відмова!",  MB_OK |MB_ICONWARNING);
-				DM->OTListOrder->Close();
-        }
-		} catch(...){}
+		}
+//		} catch(...){ ShowMessage("tut");}
 }
 //---------------------------------------------------------------------------
 

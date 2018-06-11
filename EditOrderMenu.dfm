@@ -11624,6 +11624,7 @@ object FEditOrderMenu: TFEditOrderMenu
       TabOrder = 1
       WordWrap = True
       OnClick = btnCloseOrderClick
+      ExplicitTop = 5
     end
     object btnOpenOrder: TButton
       AlignWithMargins = True

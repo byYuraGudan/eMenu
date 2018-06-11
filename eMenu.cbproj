@@ -58,7 +58,7 @@
         <ProjectType>CppVCLApplication</ProjectType>
         <PackageImports>CloudService;DataSnapFireDAC;emsclient;emsclientfiredac;FireDAC;FireDACCommon;FireDACCommonDriver;FireDACIBDriver;FireDACSqliteDriver;inet;RESTBackendComponents;RESTComponents;soapmidas;soaprtl;soapserver;$(PackageImports)</PackageImports>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <AllPackageLibs>rtl.lib;vcl.lib;dbrtl.lib;adortl.lib;vclwinx.lib;vclimg.lib;vcldb.lib;bindengine.lib;bindcomp.lib;bindcompvcl.lib;vclx.lib;TeeDB.lib;TeeUI.lib;Tee.lib;vcltouch.lib;xmlrtl.lib;dsnap.lib;dbexpress.lib;DbxCommonDriver.lib;DBXMySQLDriver.lib;DataSnapProviderClient.lib;DataSnapCommon.lib;DbxClientDriver.lib;CustomIPTransport.lib</AllPackageLibs>
+        <AllPackageLibs>rtl.lib;vcl.lib;dbrtl.lib;adortl.lib;vclwinx.lib;vclimg.lib;vcldb.lib;bindengine.lib;bindcomp.lib;bindcompvcl.lib;vclx.lib;TeeDB.lib;TeeUI.lib;Tee.lib;vcltouch.lib;xmlrtl.lib;dsnap.lib;dbexpress.lib;DbxCommonDriver.lib;DBXMySQLDriver.lib;DataSnapProviderClient.lib;DataSnapCommon.lib;DbxClientDriver.lib;CustomIPTransport.lib;frx25.lib;fs25.lib</AllPackageLibs>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <Multithreaded>true</Multithreaded>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
@@ -111,7 +111,7 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>eMenu_Icon.ico</Icon_MainIcon>
-        <LinkPackageImports>rtl.bpi;vcl.bpi;dbrtl.bpi;adortl.bpi;vclwinx.bpi;vclimg.bpi;vcldb.bpi;bindengine.bpi;bindcomp.bpi;bindcompvcl.bpi;vclx.bpi;TeeDB.bpi;TeeUI.bpi;Tee.bpi;vcltouch.bpi;xmlrtl.bpi;dsnap.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DBXMySQLDriver.bpi;DataSnapProviderClient.bpi;DataSnapCommon.bpi;DbxClientDriver.bpi;CustomIPTransport.bpi</LinkPackageImports>
+        <LinkPackageImports>rtl.bpi;vcl.bpi;dbrtl.bpi;adortl.bpi;vclwinx.bpi;vclimg.bpi;vcldb.bpi;bindengine.bpi;bindcomp.bpi;bindcompvcl.bpi;vclx.bpi;TeeDB.bpi;TeeUI.bpi;Tee.bpi;vcltouch.bpi;xmlrtl.bpi;dsnap.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DBXMySQLDriver.bpi;DataSnapProviderClient.bpi;DataSnapCommon.bpi;DbxClientDriver.bpi;CustomIPTransport.bpi;frx25.bpi;fs25.bpi</LinkPackageImports>
         <UWP_CppLogo44>Win32\Debug\Picture\Icon\logo32x32.png</UWP_CppLogo44>
         <UWP_CppLogo150>Win32\Debug\Picture\Icon\logo128x128.png</UWP_CppLogo150>
     </PropertyGroup>
@@ -205,18 +205,18 @@
             <DependentOn>MainForm.h</DependentOn>
             <BuildOrder>2</BuildOrder>
         </CppCompile>
-        <FormResources Include="EditTabel.dfm"/>
         <FormResources Include="EditPersonal.dfm"/>
         <FormResources Include="EditOrderMenu.dfm"/>
-        <FormResources Include="MainForm.dfm"/>
         <FormResources Include="EditIngredient.dfm"/>
+        <FormResources Include="EditTabel.dfm"/>
+        <FormResources Include="MainForm.dfm"/>
         <FormResources Include="DataModule.dfm"/>
         <FormResources Include="Authorization.dfm"/>
         <FormResources Include="Admin.dfm"/>
+        <FormResources Include="DataModuleReporting.dfm"/>
         <FormResources Include="EditFood.dfm"/>
         <FormResources Include="EditDiscount.dfm"/>
         <FormResources Include="EditCategory.dfm"/>
-        <FormResources Include="DataModuleReporting.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

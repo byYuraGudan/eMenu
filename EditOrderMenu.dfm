@@ -3,7 +3,7 @@ object FEditOrderMenu: TFEditOrderMenu
   Top = 0
   Caption = #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103
   ClientHeight = 580
-  ClientWidth = 880
+  ClientWidth = 851
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11583,10 +11583,11 @@ object FEditOrderMenu: TFEditOrderMenu
   object PanelOrderMenu: TPanel
     Left = 0
     Top = 0
-    Width = 880
+    Width = 851
     Height = 52
     Align = alTop
     TabOrder = 0
+    ExplicitWidth = 880
     object Label1: TLabel
       Left = 567
       Top = 10
@@ -11606,13 +11607,7 @@ object FEditOrderMenu: TFEditOrderMenu
       Top = 27
       Width = 100
       Height = 22
-      ItemIndex = 2
       TabOrder = 0
-      Text = '39'
-      Items.Strings = (
-        '35'
-        '38'
-        '39')
     end
     object btnCloseOrder: TButton
       AlignWithMargins = True
@@ -11659,7 +11654,7 @@ object FEditOrderMenu: TFEditOrderMenu
     AlignWithMargins = True
     Left = 292
     Top = 55
-    Width = 585
+    Width = 556
     Height = 522
     Align = alClient
     DataSource = DM.ODSListOpenOrder
@@ -11939,13 +11934,13 @@ object FEditOrderMenu: TFEditOrderMenu
   object BindSourceDB1: TBindSourceDB
     DataSet = DM.OTOpenOrder
     ScopeMappings = <>
-    Left = 832
+    Left = 928
     Top = 8
   end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 780
+    Left = 924
     Top = 5
     object LinkListControlToField1: TLinkListControlToField
       Category = 'Quick Bindings'

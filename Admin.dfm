@@ -2,10 +2,11 @@ object FAdmin: TFAdmin
   Left = 0
   Top = 0
   Caption = #1040#1076#1084#1110#1085#1110#1089#1090#1088#1072#1090#1086#1088
-  ClientHeight = 681
+  ClientHeight = 542
   ClientWidth = 1000
   Color = clBtnFace
-  Constraints.MinHeight = 658
+  Constraints.MaxHeight = 600
+  Constraints.MinHeight = 600
   Constraints.MinWidth = 1016
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -4186,7 +4187,7 @@ object FAdmin: TFAdmin
     Left = 0
     Top = 0
     Width = 202
-    Height = 681
+    Height = 542
     VertScrollBar.Tracking = True
     BevelInner = bvNone
     BevelOuter = bvNone
@@ -4203,6 +4204,7 @@ object FAdmin: TFAdmin
     TabOrder = 0
     Touch.ParentTabletOptions = False
     Touch.TabletOptions = [toPressAndHold]
+    ExplicitHeight = 681
     object CPStatistic: TCategoryPanel
       Top = 186
       Height = 31
@@ -5029,21 +5031,21 @@ object FAdmin: TFAdmin
     end
   end
   object PanelReport: TPanel
-    Left = 202
-    Top = 0
-    Width = 798
-    Height = 681
-    Align = alClient
+    Left = 434
+    Top = 397
+    Width = 345
+    Height = 195
     TabOrder = 7
     object GroupBox1: TGroupBox
       AlignWithMargins = True
       Left = 4
       Top = 4
-      Width = 790
+      Width = 337
       Height = 71
       Align = alTop
       Caption = #1042#1080#1073#1110#1088' '#1087#1077#1088#1110#1086#1076' '#1076#1083#1103' '#1087#1077#1088#1077#1075#1083#1103#1076#1091' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1111
       TabOrder = 0
+      ExplicitWidth = 790
       object Labelasd: TLabel
         Left = 215
         Top = 44
@@ -5125,8 +5127,8 @@ object FAdmin: TFAdmin
       AlignWithMargins = True
       Left = 4
       Top = 81
-      Width = 790
-      Height = 546
+      Width = 337
+      Height = 63
       Align = alClient
       DataSource = DM.DSReport
       TabOrder = 1
@@ -5138,21 +5140,28 @@ object FAdmin: TFAdmin
     end
     object btnReport: TButton
       Left = 1
-      Top = 630
-      Width = 796
-      Height = 50
+      Top = 147
+      Width = 343
+      Height = 47
       Align = alBottom
       Caption = #1047#1074#1110#1090#1085#1110#1089#1090#1100
       TabOrder = 2
       OnClick = btnReportClick
+      ExplicitTop = 552
+      ExplicitWidth = 796
     end
   end
   object LookPanel: TPanel
-    Left = 208
-    Top = 522
-    Width = 185
-    Height = 41
+    Left = 202
+    Top = 0
+    Width = 798
+    Height = 542
+    Align = alClient
     TabOrder = 8
+    ExplicitLeft = 208
+    ExplicitTop = 522
+    ExplicitWidth = 185
+    ExplicitHeight = 41
   end
   object MenuAdministrator: TMainMenu
     Left = 952

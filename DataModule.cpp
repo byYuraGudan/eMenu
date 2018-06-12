@@ -28,15 +28,15 @@ __fastcall TDM::TDM(TComponent* Owner)
 	: TDataModule(Owner)
 {
 	 this->ini = new TIniFile(GetCurrentDir()+"\\options.ini");
-//	 try {
+	 try {
 			ConnectionToDB->Connected = false;
 			ConnectionToDB->ConnectionString = ini->ReadString("SQL Server","ConnectionString","ConnectionString=Provider=SQLOLEDB.1;Password=1;Persist Security Info=True;User ID=sa;Initial Catalog=eMenu;Data Source=127.0.0.1;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=4096;Workstation ID=YURAHUDAN-ПК;Use Encryption for Data=False;Tag with column collation when possible=False");
 			ConnectionToDB->Connected = true;
 			OpenDB();
-//		}
-//		catch(...) {
-//			ShowMessage("Не вдалось підлючитись до БД!");
-//		}
+		}
+		catch(...) {
+			ShowMessage("Не вдалось підлючитись до БД!");
+		}
 }
 
 
@@ -238,4 +238,5 @@ void __fastcall TDM::N8Click(TObject *Sender)
     DM->OpenDB();
 }
 //---------------------------------------------------------------------------
+
 

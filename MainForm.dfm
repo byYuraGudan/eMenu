@@ -2,9 +2,11 @@ object FMainForm: TFMainForm
   Left = 0
   Top = 0
   Caption = 'eMenu'
-  ClientHeight = 540
+  ClientHeight = 662
   ClientWidth = 1024
   Color = clGradientInactiveCaption
+  Constraints.MinHeight = 720
+  Constraints.MinWidth = 1024
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
@@ -2134,23 +2136,25 @@ object FMainForm: TFMainForm
     Left = 0
     Top = 0
     Width = 300
-    Height = 540
+    Height = 662
     Align = alLeft
     Alignment = taLeftJustify
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitHeight = 520
     object PanelCategory: TPanel
       Left = 0
       Top = 0
       Width = 300
-      Height = 236
+      Height = 358
       Align = alClient
       TabOrder = 0
+      ExplicitHeight = 216
       object DBGridCategory: TDBCtrlGrid
         Left = 1
         Top = 35
         Width = 298
-        Height = 200
+        Height = 322
         Align = alClient
         AllowDelete = False
         AllowInsert = False
@@ -2162,18 +2166,19 @@ object FMainForm: TFMainForm
         Font.Name = 'Courier New'
         Font.Style = []
         PanelBorder = gbNone
-        PanelHeight = 28
+        PanelHeight = 46
         PanelWidth = 281
         ParentColor = False
         ParentFont = False
         TabOrder = 0
         RowCount = 7
+        ExplicitHeight = 180
         object DBCategory: TDBText
           AlignWithMargins = True
           Left = 3
           Top = 3
           Width = 234
-          Height = 22
+          Height = 40
           Align = alClient
           Color = clBtnFace
           DataField = 'name_category'
@@ -2194,7 +2199,7 @@ object FMainForm: TFMainForm
           Left = 243
           Top = 3
           Width = 35
-          Height = 18
+          Height = 36
           Margins.Bottom = 7
           Align = alRight
           Alignment = taCenter
@@ -2238,11 +2243,12 @@ object FMainForm: TFMainForm
     end
     object PanelOrderMenu: TPanel
       Left = 0
-      Top = 236
+      Top = 358
       Width = 300
       Height = 304
       Align = alBottom
       TabOrder = 1
+      ExplicitTop = 216
       object Label1: TLabel
         AlignWithMargins = True
         Left = 6
@@ -2406,15 +2412,16 @@ object FMainForm: TFMainForm
     Left = 300
     Top = 0
     Width = 724
-    Height = 540
+    Height = 662
     Align = alClient
     Caption = 'Panel2'
     TabOrder = 1
+    ExplicitHeight = 520
     object DBCGShowFood: TDBCtrlGrid
       Left = 1
       Top = 1
       Width = 722
-      Height = 538
+      Height = 660
       Align = alClient
       AllowDelete = False
       AllowInsert = False
@@ -2422,24 +2429,27 @@ object FMainForm: TFMainForm
       Color = clBtnFace
       DataSource = DM.MDSShowFood
       PanelBorder = gbNone
-      PanelHeight = 179
+      PanelHeight = 330
       PanelWidth = 235
       ParentColor = False
       TabOrder = 0
       TabStop = False
+      RowCount = 2
+      ExplicitHeight = 440
       object PanelElementShowFood: TPanel
         AlignWithMargins = True
         Left = 3
         Top = 3
         Width = 229
-        Height = 173
+        Height = 324
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
+        ExplicitHeight = 166
         object DBInformation: TDBText
           AlignWithMargins = True
           Left = 3
-          Top = 98
+          Top = 249
           Width = 223
           Height = 45
           Margins.Top = 0
@@ -2457,16 +2467,17 @@ object FMainForm: TFMainForm
           Left = 3
           Top = 3
           Width = 223
-          Height = 92
+          Height = 243
           Align = alClient
           DataField = 'picture'
           DataSource = DM.MDSShowFood
           Stretch = True
           TabOrder = 0
+          ExplicitHeight = 85
         end
         object Panel4: TPanel
           Left = 0
-          Top = 143
+          Top = 294
           Width = 229
           Height = 30
           Margins.Top = 0
@@ -2475,6 +2486,7 @@ object FMainForm: TFMainForm
           Anchors = [akTop]
           BevelOuter = bvNone
           TabOrder = 1
+          ExplicitTop = 136
           object DBPrice: TDBText
             AlignWithMargins = True
             Left = 65

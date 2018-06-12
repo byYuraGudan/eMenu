@@ -111,9 +111,11 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>eMenu_Icon.ico</Icon_MainIcon>
-        <LinkPackageImports>rtl.bpi;vcl.bpi;dbrtl.bpi;adortl.bpi;vclwinx.bpi;vclimg.bpi;vcldb.bpi;bindengine.bpi;bindcomp.bpi;bindcompvcl.bpi;vclx.bpi;TeeDB.bpi;TeeUI.bpi;Tee.bpi;vcltouch.bpi;xmlrtl.bpi;dsnap.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DBXMySQLDriver.bpi;DataSnapProviderClient.bpi;DataSnapCommon.bpi;DbxClientDriver.bpi;CustomIPTransport.bpi;frx25.bpi;fs25.bpi;frxDB25.bpi;fsDB25.bpi</LinkPackageImports>
         <UWP_CppLogo44>Win32\Debug\Picture\Icon\logo32x32.png</UWP_CppLogo44>
         <UWP_CppLogo150>Win32\Debug\Picture\Icon\logo128x128.png</UWP_CppLogo150>
+        <DynamicRTL>false</DynamicRTL>
+        <UsePackages>false</UsePackages>
+        <LinkPackageStatics>rtl.lib;vcl.lib;dbrtl.lib;adortl.lib;vclwinx.lib;vclimg.lib;vcldb.lib;bindengine.lib;bindcomp.lib;bindcompvcl.lib;vclx.lib;TeeDB.lib;TeeUI.lib;Tee.lib;vcltouch.lib;xmlrtl.lib;dsnap.lib;dbexpress.lib;DbxCommonDriver.lib;DBXMySQLDriver.lib;DataSnapProviderClient.lib;DataSnapCommon.lib;DbxClientDriver.lib;CustomIPTransport.lib;frx25.lib;fs25.lib;frxDB25.lib;fsDB25.lib</LinkPackageStatics>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <Defines>NDEBUG;$(Defines)</Defines>
@@ -122,6 +124,7 @@
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppEnableHighDPI>true</AppEnableHighDPI>
+        <LinkPackageImports>rtl.bpi;vcl.bpi;dbrtl.bpi;adortl.bpi;vclwinx.bpi;vclimg.bpi;vcldb.bpi;bindengine.bpi;bindcomp.bpi;bindcompvcl.bpi;vclx.bpi;TeeDB.bpi;TeeUI.bpi;Tee.bpi;vcltouch.bpi;xmlrtl.bpi;dsnap.bpi;dbexpress.bpi;DbxCommonDriver.bpi;DBXMySQLDriver.bpi;DataSnapProviderClient.bpi;DataSnapCommon.bpi;DbxClientDriver.bpi;CustomIPTransport.bpi;frx25.bpi;fs25.bpi;frxDB25.bpi;fsDB25.bpi</LinkPackageImports>
     </PropertyGroup>
     <ItemGroup>
         <CppCompile Include="Admin.cpp">
@@ -249,6 +252,8 @@
                     <Excluded_Packages Name="C:\Program Files (x86)\FastReport 6 VCL Trial\LibD25\dclfrxcs25.bpl">FastReport 6.0 Client/Server Components</Excluded_Packages>
                     <Excluded_Packages Name="C:\Program Files (x86)\FastReport 6 VCL Trial\LibD25\dclfrxBDE25.bpl">File C:\Program Files (x86)\FastReport 6 VCL Trial\LibD25\dclfrxBDE25.bpl not found</Excluded_Packages>
                     <Excluded_Packages Name="C:\Program Files (x86)\FastReport 6 VCL Trial\LibD25\dclfsBDE25.bpl">File C:\Program Files (x86)\FastReport 6 VCL Trial\LibD25\dclfsBDE25.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\FastReport 6 VCL Trial\LibD25\dclfrxIBX25.bpl">FastReport 6.0 IBX Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\FastReport 6 VCL Trial\LibD25\dclfsIBX25.bpl">FastScript 1.9 IBX Components</Excluded_Packages>
                 </Excluded_Packages>
             </CPlusPlusBuilder.Personality>
             <Deployment Version="3">

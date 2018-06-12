@@ -6,18 +6,17 @@
 //---------------------------------------------------------------------------
 #include <Vcl.Styles.hpp>
 #include <Vcl.Themes.hpp>
-USEFORM("EditTabel.cpp", FEditTable);
 USEFORM("EditPersonal.cpp", FEditPersonal);
 USEFORM("EditOrderMenu.cpp", FEditOrderMenu);
-USEFORM("MainForm.cpp", FMainForm);
 USEFORM("EditIngredient.cpp", FEditIngredient);
+USEFORM("EditTabel.cpp", FEditTable);
+USEFORM("MainForm.cpp", FMainForm);
 USEFORM("DataModule.cpp", DM); /* TDataModule: File Type */
 USEFORM("Authorization.cpp", FAuth);
 USEFORM("Admin.cpp", FAdmin);
 USEFORM("EditFood.cpp", FEditFood);
 USEFORM("EditDiscount.cpp", FEditDiscount);
 USEFORM("EditCategory.cpp", FEditCategory);
-USEFORM("DataModuleReporting.cpp", DMReporting); /* TDataModule: File Type */
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -37,7 +36,6 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(TFEditIngredient), &FEditIngredient);
 		Application->CreateForm(__classid(TFEditTable), &FEditTable);
 		Application->CreateForm(__classid(TFEditOrderMenu), &FEditOrderMenu);
-		Application->CreateForm(__classid(TDMReporting), &DMReporting);
 		Application->Run();
 	}
 	catch (Exception &exception)

@@ -2141,7 +2141,6 @@ object FMainForm: TFMainForm
     Alignment = taLeftJustify
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitHeight = 520
     object PanelCategory: TPanel
       Left = 0
       Top = 0
@@ -2149,7 +2148,6 @@ object FMainForm: TFMainForm
       Height = 358
       Align = alClient
       TabOrder = 0
-      ExplicitHeight = 216
       object DBGridCategory: TDBCtrlGrid
         Left = 1
         Top = 35
@@ -2172,7 +2170,6 @@ object FMainForm: TFMainForm
         ParentFont = False
         TabOrder = 0
         RowCount = 7
-        ExplicitHeight = 180
         object DBCategory: TDBText
           AlignWithMargins = True
           Left = 3
@@ -2248,7 +2245,6 @@ object FMainForm: TFMainForm
       Height = 304
       Align = alBottom
       TabOrder = 1
-      ExplicitTop = 216
       object Label1: TLabel
         AlignWithMargins = True
         Left = 6
@@ -2416,7 +2412,6 @@ object FMainForm: TFMainForm
     Align = alClient
     Caption = 'Panel2'
     TabOrder = 1
-    ExplicitHeight = 520
     object DBCGShowFood: TDBCtrlGrid
       Left = 1
       Top = 1
@@ -2435,7 +2430,6 @@ object FMainForm: TFMainForm
       TabOrder = 0
       TabStop = False
       RowCount = 2
-      ExplicitHeight = 440
       object PanelElementShowFood: TPanel
         AlignWithMargins = True
         Left = 3
@@ -2445,7 +2439,6 @@ object FMainForm: TFMainForm
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitHeight = 166
         object DBInformation: TDBText
           AlignWithMargins = True
           Left = 3
@@ -2473,7 +2466,6 @@ object FMainForm: TFMainForm
           DataSource = DM.MDSShowFood
           Stretch = True
           TabOrder = 0
-          ExplicitHeight = 85
         end
         object Panel4: TPanel
           Left = 0
@@ -2486,7 +2478,6 @@ object FMainForm: TFMainForm
           Anchors = [akTop]
           BevelOuter = bvNone
           TabOrder = 1
-          ExplicitTop = 136
           object DBPrice: TDBText
             AlignWithMargins = True
             Left = 65

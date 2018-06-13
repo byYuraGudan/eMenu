@@ -5029,20 +5029,21 @@ object FAdmin: TFAdmin
     end
   end
   object PanelReport: TPanel
-    Left = 434
-    Top = 397
-    Width = 345
-    Height = 195
+    Left = 384
+    Top = 332
+    Width = 395
+    Height = 204
     TabOrder = 7
     object GroupBox1: TGroupBox
       AlignWithMargins = True
       Left = 4
       Top = 4
-      Width = 337
+      Width = 387
       Height = 71
       Align = alTop
       Caption = #1042#1080#1073#1110#1088' '#1087#1077#1088#1110#1086#1076' '#1076#1083#1103' '#1087#1077#1088#1077#1075#1083#1103#1076#1091' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1111
       TabOrder = 0
+      ExplicitWidth = 337
       object Labelasd: TLabel
         Left = 215
         Top = 44
@@ -5124,8 +5125,8 @@ object FAdmin: TFAdmin
       AlignWithMargins = True
       Left = 4
       Top = 81
-      Width = 337
-      Height = 63
+      Width = 387
+      Height = 72
       Align = alClient
       DataSource = DM.DSReport
       TabOrder = 1
@@ -5137,21 +5138,22 @@ object FAdmin: TFAdmin
     end
     object btnReport: TButton
       Left = 1
-      Top = 147
-      Width = 343
+      Top = 156
+      Width = 393
       Height = 47
       Align = alBottom
       Caption = #1047#1074#1110#1090#1085#1110#1089#1090#1100
       TabOrder = 2
       OnClick = btnReportClick
+      ExplicitTop = 147
+      ExplicitWidth = 343
     end
   end
   object LookPanel: TPanel
-    Left = 202
-    Top = 0
-    Width = 798
-    Height = 542
-    Align = alClient
+    Left = 760
+    Top = 294
+    Width = 232
+    Height = 120
     TabOrder = 8
   end
   object MenuAdministrator: TMainMenu

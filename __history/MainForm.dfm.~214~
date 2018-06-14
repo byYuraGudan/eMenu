@@ -2170,8 +2170,6 @@ object FMainForm: TFMainForm
         ParentFont = False
         TabOrder = 0
         RowCount = 7
-        ExplicitLeft = 3
-        ExplicitTop = 38
         object DBCategory: TDBText
           AlignWithMargins = True
           Left = 3

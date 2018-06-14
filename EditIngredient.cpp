@@ -22,20 +22,6 @@ __fastcall TFEditIngredient::TFEditIngredient(TComponent* Owner)
 	: TForm(Owner)
 {
 }
-//---------------------------------------------------------------------------
-//private:
-//	int id_ingredient;
-//	AnsiString name_ingredient,unit;
-//	float price,count_unit;
-//
-//public:
-//	void setId_ingredient(int);
-//	void setInfoIngredient(AnsiString,AnsiString,float,float);
-//	int getId_ingredient();
-//	void InsertDBIngredient();
-//	void UpdateDBIngredient();
-//	void DeleteDBIngredient();
-
 void TIngredient::setId_ingredient(int a ){ this->id_ingredient = a;}
 int TIngredient::getId_ingredient(){ return this->id_ingredient;}
 

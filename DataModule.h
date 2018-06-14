@@ -204,8 +204,6 @@ __published:	// IDE-managed Components
 	TStringField *TReportDiscountpib_client;
 	TIntegerField *TReportDiscountCountBuyOrder;
 	TFMTBCDField *TReportDiscountPaymentAll;
-	TStringField *TReportFoodname_food;
-	TIntegerField *TReportFoodCountSale;
 	TStringField *TReportIngredientname_food;
 	TStringField *TReportIngredientname_ingredient;
 	TFMTBCDField *TReportIngredientAsCountSaleIngredient;
@@ -225,6 +223,14 @@ __published:	// IDE-managed Components
 	TFMTBCDField *TReportOrderPaymentDiscount;
 	TfrxReport *frxCheck;
 	TfrxDBDataset *frxDBCheck;
+	TStringField *TReportFoodname_food;
+	TFMTBCDField *TReportFoodCountSale;
+	TBCDField *TReportFoodprice_food;
+	TIntegerField *TReportFoodmark_up;
+	TBCDField *TReportFoodcost_price_food;
+	TFMTBCDField *TReportFoodSaleNotMarkUP;
+	TFMTBCDField *TReportFoodSaleMarkUP;
+	TFMTBCDField *TReportFoodDifference;
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall DataModuleDestroy(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);

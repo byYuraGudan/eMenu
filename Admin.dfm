@@ -4205,8 +4205,9 @@ object FAdmin: TFAdmin
     Touch.TabletOptions = [toPressAndHold]
     object CPStatistic: TCategoryPanel
       Top = 186
-      Height = 152
+      Height = 31
       Caption = #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072
+      Collapsed = True
       CollapsedHotImageIndex = 9
       CollapsedImageIndex = 9
       CollapsedPressedImageIndex = 9
@@ -4214,6 +4215,7 @@ object FAdmin: TFAdmin
       ExpandedImageIndex = 9
       ExpandedPressedImageIndex = 9
       TabOrder = 0
+      ExpandedHeight = 152
       object btnShowOrder: TButton
         AlignWithMargins = True
         Left = 0

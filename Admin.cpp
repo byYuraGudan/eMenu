@@ -542,7 +542,7 @@ void __fastcall TFAdmin::RBallClick(TObject *Sender)
 	DM->DoSQL(DM->TReportDiscount,"SELECT id_discount,pib_client,count(id_order) AS CountBuyOrder,sum(payment - (payment*discount/100)) AS PaymentAll FROM Discounts INNER JOIN OrderMenu ON kod_discount = id_discount GROUP BY id_discount,pib_client");
 	}
 	if (str == "TReportFood") {
-	DM->DoSQL(DM->TReportFood,"SELECT name_food,count(counts) AS CountSale FROM (Food INNER JOIN ListOrderMenu ON kod_food = id_food) INNER JOIN OrderMenu ON id_order = kod_order GROUP BY name_food ORDER BY CountSale desc");
+	DM->DoSQL(DM->TReportFood,"SELECT name_food, sum(ListOrderMenu.counts) AS CountSale,price_food,mark_up,cost_price_food,sum(ListOrderMenu.counts)*cost_price_food as SaleNotMarkUP,sum(ListOrderMenu.counts)*price_food as SaleMarkUP, (sum(ListOrderMenu.counts)*price_food)-(sum(ListOrderMenu.counts)*cost_price_food) AS Difference FROM (OrderMenu INNER JOIN ListOrderMenu ON id_order = kod_order) INNER JOIN Food ON id_food = ListOrderMenu.kod_food GROUP BY name_food,price_food,cost_price_food,mark_up ORDER BY CountSale desc");
 	}
 	if (str == "TReportIngredient");{
 	DM->DoSQL(DM->TReportIngredient,"SELECT name_food,name_ingredient,price, sum(ListOrderMenu.counts * ListIngredientFood.counts) AsCountSaleIngredient,unit,sum(ListIngredientFood.price * ListOrderMenu.counts) AS SaleFood FROM ((OrderMenu INNER JOIN ListOrderMenu ON id_order = kod_order) INNER JOIN Food ON id_food = ListOrderMenu.kod_food )INNER JOIN ListIngredientFood ON ListIngredientFood.kod_food = id_food GROUP BY name_food,name_ingredient,unit,price");
@@ -566,8 +566,8 @@ void __fastcall TFAdmin::RBperiodClick(TObject *Sender)
 	"+dt+" 	GROUP BY id_discount,pib_client");
 	}
 	if (str == "TReportFood") {
-	DM->DoSQL(DM->TReportFood,"SELECT name_food,count(counts) AS CountSale FROM (Food INNER JOIN ListOrderMenu ON kod_food = id_food) INNER JOIN OrderMenu ON id_order = kod_order \
-	"+dt+" GROUP BY name_food ORDER BY CountSale desc");
+	DM->DoSQL(DM->TReportFood, "SELECT name_food, sum(ListOrderMenu.counts) AS CountSale,price_food,mark_up,cost_price_food,sum(ListOrderMenu.counts)*cost_price_food as SaleNotMarkUP,sum(ListOrderMenu.counts)*price_food as SaleMarkUP, (sum(ListOrderMenu.counts)*price_food)-(sum(ListOrderMenu.counts)*cost_price_food) AS Difference FROM (OrderMenu INNER JOIN ListOrderMenu ON id_order = kod_order) INNER JOIN Food ON id_food = ListOrderMenu.kod_food \
+	"+dt+" GROUP BY name_food,price_food,cost_price_food,mark_up ORDER BY CountSale desc");
 	}
 	if (str == "TReportIngredient");{
 	DM->DoSQL(DM->TReportIngredient,"SELECT name_food,name_ingredient,price, sum(ListOrderMenu.counts * ListIngredientFood.counts) AsCountSaleIngredient,unit,sum(ListIngredientFood.price * ListOrderMenu.counts) AS SaleFood FROM ((OrderMenu INNER JOIN ListOrderMenu ON id_order = kod_order) INNER JOIN Food ON id_food = ListOrderMenu.kod_food )INNER JOIN ListIngredientFood ON ListIngredientFood.kod_food = id_food \

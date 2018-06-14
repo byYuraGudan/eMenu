@@ -201,11 +201,11 @@
             <DependentOn>MainForm.h</DependentOn>
             <BuildOrder>2</BuildOrder>
         </CppCompile>
+        <FormResources Include="EditTabel.dfm"/>
         <FormResources Include="EditPersonal.dfm"/>
         <FormResources Include="EditOrderMenu.dfm"/>
-        <FormResources Include="EditIngredient.dfm"/>
-        <FormResources Include="EditTabel.dfm"/>
         <FormResources Include="MainForm.dfm"/>
+        <FormResources Include="EditIngredient.dfm"/>
         <FormResources Include="DataModule.dfm"/>
         <FormResources Include="Authorization.dfm"/>
         <FormResources Include="Admin.dfm"/>

@@ -11587,7 +11587,6 @@ object FEditOrderMenu: TFEditOrderMenu
     Height = 52
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 880
     object Label1: TLabel
       Left = 567
       Top = 10
@@ -11607,7 +11606,11 @@ object FEditOrderMenu: TFEditOrderMenu
       Top = 27
       Width = 100
       Height = 22
+      ItemIndex = 0
       TabOrder = 0
+      Text = '77'
+      Items.Strings = (
+        '77')
     end
     object btnCloseOrder: TButton
       AlignWithMargins = True

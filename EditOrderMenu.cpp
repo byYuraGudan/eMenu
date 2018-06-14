@@ -219,8 +219,14 @@ void __fastcall TFEditOrderMenu::btnCloseOrderClick(TObject *Sender)
 			order.setOccupListTable(false);
 			order.UpdateOccupation();
 			order.CloseOrderMenu();
-			ShowMessage("Замовлення №"+IntToStr(id)+" закрито");
 			DM->OpenDB();
+			DM->TSQLCheck->Close();
+			DM->TSQLCheck->Open();
+			DM->TSQLCheck->Filtered = false;
+			DM->TSQLCheck->Filter = "id_order = "+IntToStr(id);
+			DM->TSQLCheck->Filtered = true;
+			DM->frxCheck->ShowReport();
+			ShowMessage("Замовлення №"+IntToStr(id)+" закрито");
 		} else
 		{
 				MessageBox(NULL, L"Виберіть замовлення!", L"Відмова!",  MB_OK |MB_ICONWARNING);

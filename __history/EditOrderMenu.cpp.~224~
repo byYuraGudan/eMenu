@@ -219,14 +219,20 @@ void __fastcall TFEditOrderMenu::btnCloseOrderClick(TObject *Sender)
 			order.setOccupListTable(false);
 			order.UpdateOccupation();
 			order.CloseOrderMenu();
-			ShowMessage("Замовлення №"+IntToStr(id)+" закрито");
 			DM->OpenDB();
+			ShowMessage("Замовлення №"+IntToStr(id)+" закрито");
+			DM->TSQLCheck->Close();
+			DM->TSQLCheck->Open();
+			DM->TSQLCheck->Filtered = false;
+			DM->TSQLCheck->Filter = "[id_order] = "+IntToStr(id);
+			DM->TSQLCheck->Filtered = true;
+			DM->frxCheck->ShowReport();
 		} else
 		{
 				MessageBox(NULL, L"Виберіть замовлення!", L"Відмова!",  MB_OK |MB_ICONWARNING);
                 DM->OpenDB();
 		}
-//		} catch(...){ ShowMessage("tut");}
+//		} catch(...){MessageBox(NULL, L"Перевірьте правильність даних!", L"Відмова!",  MB_OK |MB_ICONWARNING);}
 }
 //---------------------------------------------------------------------------
 
@@ -245,10 +251,10 @@ void __fastcall TFEditOrderMenu::btnPrintClick(TObject *Sender)
 	DM->TSQLCheck->Open();
 	DM->TSQLCheck->Filtered = false;
 	if (DM->OTOpenOrder->RecordCount !=0) {
-	DM->TSQLCheck->Filtered = "id_order ="+DM->OTOpenOrder->FieldByName("id_order")->AsString;
-    DM->TSQLCheck->Filter = true;
+	DM->TSQLCheck->Filter = "id_order ="+DM->OTOpenOrder->FieldByName("id_order")->AsString;
+	DM->TSQLCheck->Filtered = true;
     DM->frxCheck->ShowReport();
-	}
+	} else MessageBox(NULL, L"Виберіть замовлення!", L"Відмова!",  MB_OK |MB_ICONWARNING);
 
 }
 //---------------------------------------------------------------------------

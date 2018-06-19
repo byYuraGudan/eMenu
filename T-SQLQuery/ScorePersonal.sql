@@ -20,12 +20,8 @@
 --WHERE date_open_order >= '10.06.2018 14:41:13' and date_open_order <= '11.06.2018 08:39:28'
 --GROUP BY id_discount,pib_client
 
---SELECT name_food,name_ingredient, sum(ListOrderMenu.counts * ListIngredientFood.counts) AsCountSaleIngredient,unit,sum(ListIngredientFood.price * ListOrderMenu.counts) AS SaleFood FROM ((OrderMenu INNER JOIN ListOrderMenu ON id_order = kod_order) INNER JOIN Food ON id_food = ListOrderMenu.kod_food )INNER JOIN ListIngredientFood ON ListIngredientFood.kod_food = id_food
---WHERE date_open_order >= '10.06.2018 14:41:13' and date_open_order <= '14.06.2018 08:39:28'
---GROUP BY name_food,name_ingredient,unit
 
---SELECT name_food, sum(ListOrderMenu.counts) AS CountSaleFood,price_food,mark_up,cost_price_food,sum(ListOrderMenu.counts)*cost_price_food as SaleNotMarkUP,sum(ListOrderMenu.counts)*price_food as SaleMarkUP, (sum(ListOrderMenu.counts)*price_food)-(sum(ListOrderMenu.counts)*cost_price_food) AS Difference
---FROM (OrderMenu INNER JOIN ListOrderMenu ON id_order = kod_order) INNER JOIN Food ON id_food = ListOrderMenu.kod_food
---WHERE date_open_order >= '10.06.2018 14:41:13' and date_open_order <= '14.06.2018 08:39:28'
---GROUP BY name_food,price_food,cost_price_food,mark_up
---ORDER BY Difference desc
+SELECT name_food, sum(ListOrderMenu.counts) AS CountSale,price_food,mark_up,cost_price_food,sum(ListOrderMenu.counts)*cost_price_food as SaleNotMarkUP,sum(ListOrderMenu.counts)*price_food as SaleMarkUP, (sum(ListOrderMenu.counts)*price_food)-(sum(ListOrderMenu.counts)*cost_price_food) AS Difference
+FROM (OrderMenu INNER JOIN ListOrderMenu ON id_order = kod_order) INNER JOIN Food ON id_food = ListOrderMenu.kod_food
+GROUP BY name_food,price_food,cost_price_food,mark_up
+ORDER BY CountSale desc

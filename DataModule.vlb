@@ -148,9 +148,6 @@ Coordinates=880,209,168,33
 [MTShowFoodkod_category]
 Coordinates=880,261,148,33
 
-[ATPersonalrelease_date]
-Coordinates=702,1041,133,33
-
 [MQShowFoodweight_unit]
 Coordinates=553,1074,140,33
 
@@ -416,5 +413,5 @@ Coordinates=529,573,153,33
 Coordinates=518,503,72,51
 
 []
-Coordinates=30,751,40,33
+Coordinates=702,1041,133,33
 

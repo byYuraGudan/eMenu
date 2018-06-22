@@ -4206,7 +4206,7 @@ object FAdmin: TFAdmin
     object CPStatistic: TCategoryPanel
       Top = 186
       Height = 31
-      Caption = #1057#1090#1072#1090#1080#1089#1090#1080#1082#1072
+      Caption = #1047#1074#1110#1090#1085#1110#1089#1090#1100
       Collapsed = True
       CollapsedHotImageIndex = 9
       CollapsedImageIndex = 9
@@ -4648,7 +4648,8 @@ object FAdmin: TFAdmin
       Height = 24
       Align = alTop
       TabOrder = 0
-      Text = 'EditSearchOrderMenu'
+      TextHint = #1055#1086#1096#1091#1082' '#1087#1086' '#1085#1086#1084#1077#1088#1091' '#1079#1072#1084#1086#1074#1083#1077#1085#1085#1103
+      OnChange = EditSearchOrderMenuChange
     end
     object DBGridListOrder: TDBGrid
       AlignWithMargins = True
@@ -4725,7 +4726,8 @@ object FAdmin: TFAdmin
       Height = 24
       Align = alTop
       TabOrder = 0
-      TextHint = #1055#1086#1096#1091#1082
+      TextHint = #1055#1086#1096#1091#1082' '#1087#1086' '#1079#1085#1080#1078#1094#1110' '#1090#1072' '#1085#1086#1084#1077#1088#1091' '#1082#1072#1088#1090#1082#1080
+      OnChange = EditSearchDiscountChange
     end
     object DBGridDiscount: TDBGrid
       AlignWithMargins = True

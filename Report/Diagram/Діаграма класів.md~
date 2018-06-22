@@ -1,0 +1,1419 @@
+
+(object Petal
+    version    	50
+    _written   	"Rose 2006.0.0.060314"
+    charSet    	204)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"5B22203F02FB"
+    enforceClosureAutoLoad 	FALSE
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	0
+	gridY      	0
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    charSet    	204
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	3
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"5B22203F02FD"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"5B22203F0306"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"5B22203F02FC"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"5B22203F02FE"
+	logical_models 	(list unit_reference_list
+	    (object Class "TPersonal"
+		quid       	"5B22207F0310"
+		used_nodes 	(list uses_relationship_list
+		    (object Uses_Relationship
+			quid       	"5B22210F01FC"
+			supplier   	"Logical View::TOrderMenu"
+			quidu      	"5B2220E80143"))
+		operations 	(list Operations
+		    (object Operation "TPersonal"
+			quid       	"5B2222440211"
+			result     	"void"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setId_personal"
+			quid       	"5B2222630167"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setAccess"
+			quid       	"5B2222780284"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setActivity"
+			quid       	"5B22227D0086"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setLoginPassword"
+			quid       	"5B222286036C"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setInformationPersonal"
+			quid       	"5B22228B03B2"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setDateWork"
+			quid       	"5B22229D01FA"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setDateRelease"
+			quid       	"5B2222A20394"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getId_personal"
+			quid       	"5B2222A8013C"
+			result     	"Integer"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getLogin"
+			quid       	"5B2222B40358"
+			result     	"String"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getPassword"
+			quid       	"5B2222C1002E"
+			result     	"String"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getActivity"
+			quid       	"5B2222C703D8"
+			result     	"Boolean"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getAccess"
+			quid       	"5B2222CD007C"
+			result     	"Boolean"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "InsertDBPersonal"
+			quid       	"5B2222E70388"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "UpdateDBPersonal"
+			quid       	"5B2222FA02F7"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "UpdateDBPersonalRelease"
+			quid       	"5B222307009F"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "DeleteDBPersonal"
+			quid       	"5B22230C00CC"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "id_personal"
+			quid       	"5B22217E00CB"
+			type       	"Integer")
+		    (object ClassAttribute "date_open_order"
+			quid       	"5B222185028D"
+			type       	"Date")
+		    (object ClassAttribute "date_close_order"
+			quid       	"5B2221B10347"
+			type       	"Date")
+		    (object ClassAttribute "login"
+			quid       	"5B2221B900F9"
+			type       	"String")
+		    (object ClassAttribute "password"
+			quid       	"5B2221C60042"
+			type       	"String")
+		    (object ClassAttribute "pib_personal"
+			quid       	"5B2221CC029A"
+			type       	"String")
+		    (object ClassAttribute "telefon"
+			quid       	"5B2221D00394"
+			type       	"String")
+		    (object ClassAttribute "adress"
+			quid       	"5B2221D400BA"
+			type       	"String")
+		    (object ClassAttribute "date_release"
+			quid       	"5B222206027C"
+			type       	"Date")
+		    (object ClassAttribute "access"
+			quid       	"5B22223103D8"
+			type       	"Boolean")
+		    (object ClassAttribute "activity"
+			quid       	"5B222237036A"
+			type       	"Boolean")))
+	    (object Class "TListTable"
+		quid       	"5B2220C0039E"
+		operations 	(list Operations
+		    (object Operation "setId_table"
+			quid       	"5B222346004D"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getId_table"
+			quid       	"5B2223510359"
+			result     	"Integer"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setNameListTable"
+			quid       	"5B22235901D3"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setOccupListTable"
+			quid       	"5B22235F01FB"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "InsertDBListTable"
+			quid       	"5B2223680345"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "UpdateInverseOccupation"
+			quid       	"5B22236E0176"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "UpdateOccupation"
+			quid       	"5B2223760176"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "DeleteDBListTable"
+			quid       	"5B22237B0194"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "id_table"
+			quid       	"5B2223270360"
+			type       	"Integer")
+		    (object ClassAttribute "name"
+			quid       	"5B22233300E3"
+			type       	"String")
+		    (object ClassAttribute "occupation"
+			quid       	"5B2223380309"
+			type       	"Boolean")))
+	    (object Class "TDiscount"
+		quid       	"5B2220CE00D8"
+		operations 	(list Operations
+		    (object Operation "setId_discount"
+			quid       	"5B2224410329"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setInfoDiscount"
+			quid       	"5B222446017B"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getId_discount"
+			quid       	"5B22244A0293"
+			result     	"Integer"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "InsertDBDiscount"
+			quid       	"5B2224520239"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "UpdateDBDiscount"
+			quid       	"5B222456022F"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "DeleteDBDiscount"
+			quid       	"5B22245B0216"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "id_discount"
+			quid       	"5B2223930365"
+			type       	"Integer")
+		    (object ClassAttribute "dicount"
+			quid       	"5B2223A10315"
+			type       	"Double")
+		    (object ClassAttribute "pib_client"
+			quid       	"5B22241500A4"
+			type       	"String")
+		    (object ClassAttribute "adress"
+			quid       	"5B222418028E"
+			type       	"String")
+		    (object ClassAttribute "telefon"
+			quid       	"5B22241B01B2"
+			type       	"String")
+		    (object ClassAttribute "birthday"
+			quid       	"5B22241F0004"
+			type       	"Date")))
+	    (object Class "TCategory"
+		quid       	"5B2220D3010A"
+		operations 	(list Operations
+		    (object Operation "setId_category"
+			quid       	"5B22249C011F"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setName_category"
+			quid       	"5B2224AC0395"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getId_category"
+			quid       	"5B2224B3004D"
+			result     	"Integer"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getName_category"
+			quid       	"5B2224BA029B"
+			result     	"String"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "InsertDBCategory"
+			quid       	"5B2224C10217"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "UpdateDBCategory"
+			quid       	"5B2224C900FF"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "DeleteDBCategory"
+			quid       	"5B2224CD02FD"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "id_category"
+			quid       	"5B2224800136"
+			type       	"Integer")
+		    (object ClassAttribute "name_category"
+			quid       	"5B222492036D"
+			type       	"String")))
+	    (object Class "TFood"
+		quid       	"5B2220DD007B"
+		operations 	(list Operations
+		    (object Operation "setIdFodd"
+			quid       	"5B22254B0057"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setWeight_Food"
+			quid       	"5B22254E039F"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setInfoFood"
+			quid       	"5B2225550179"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setCostFood"
+			quid       	"5B222559020F"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setPicture"
+			quid       	"5B22255C03C7"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setVisible"
+			quid       	"5B222563022B"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getIdFood"
+			quid       	"5B22256601D1"
+			result     	"Integer"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "InsertDBFood"
+			quid       	"5B22256B034D"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "UpdateDBFood"
+			quid       	"5B222572022B"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "UpdateFotoDBFood"
+			quid       	"5B22257503E3"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "DeleteDBFood"
+			quid       	"5B22257B02D5"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "id_food"
+			quid       	"5B2224E303AC"
+			type       	"Integer")
+		    (object ClassAttribute "name_food"
+			quid       	"5B2224EC033E"
+			type       	"String")
+		    (object ClassAttribute "data_food"
+			quid       	"5B2224F3021C"
+			type       	"String")
+		    (object ClassAttribute "unit_food"
+			quid       	"5B2224FB008C"
+			type       	"String")
+		    (object ClassAttribute "weight_food"
+			quid       	"5B222504037F"
+			type       	"Double")
+		    (object ClassAttribute "cost_price"
+			quid       	"5B22250B03B1"
+			type       	"Double")
+		    (object ClassAttribute "mark_up"
+			quid       	"5B22251F0037"
+			type       	"Double")
+		    (object ClassAttribute "price_food"
+			quid       	"5B22252B011F"
+			type       	"Double")
+		    (object ClassAttribute "picture"
+			quid       	"5B222535025F"
+			type       	"MemoryStream")
+		    (object ClassAttribute "visible"
+			quid       	"5B22253D01D3"
+			type       	"Boolean")))
+	    (object Class "TIngredient"
+		quid       	"5B2220E30139"
+		operations 	(list Operations
+		    (object Operation "setId_ingredient"
+			quid       	"5B2226070387"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setInfoIngredient"
+			quid       	"5B22260E02B0"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getId_ingredient"
+			quid       	"5B222613004E"
+			result     	"Integer"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "InsertDBIngredient"
+			quid       	"5B22261A009E"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "UpdateDBIngredient"
+			quid       	"5B22261F01CA"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "DeleteDBIngredient"
+			quid       	"5B22262303A0"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "id_ingredient"
+			quid       	"5B22259700AA"
+			type       	"Integer")
+		    (object ClassAttribute "name_ingredient"
+			quid       	"5B2225A20398"
+			type       	"String")
+		    (object ClassAttribute "unit"
+			quid       	"5B2225A900EB"
+			type       	"String")
+		    (object ClassAttribute "price"
+			quid       	"5B2225AC03D9"
+			type       	"Double")
+		    (object ClassAttribute "count_unit"
+			quid       	"5B2225B20109"
+			type       	"Double")))
+	    (object Class "TOrderMenu"
+		quid       	"5B2220E80143"
+		operations 	(list Operations
+		    (object Operation "setIdOrder"
+			quid       	"5B2226B5032A"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getIdOrder"
+			quid       	"5B2226B90244"
+			result     	"Integer"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setDateOrder"
+			quid       	"5B2226BE019A"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setCloseOrder"
+			quid       	"5B2226C4028A"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "InsertDBOrderMenu"
+			quid       	"5B2226D10064"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "UpdateDBOrderMenu"
+			quid       	"5B2226D70050"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "CloseOrderMenu"
+			quid       	"5B2226DC0062"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "DeleteDBOrderMenu"
+			quid       	"5B2226E201E8"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "UpdatePayment"
+			quid       	"5B2226F200DA"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "UpdateDiscount"
+			quid       	"5B2226F80058"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "id_order"
+			quid       	"5B22266F0172"
+			type       	"Integer")
+		    (object ClassAttribute "date_open_order"
+			quid       	"5B2226750091"
+			type       	"Date")
+		    (object ClassAttribute "date_close_order"
+			quid       	"5B2226840249"
+			type       	"Date")
+		    (object ClassAttribute "close_order"
+			quid       	"5B2226A102F8"
+			type       	"Boolean")
+		    (object ClassAttribute "payment"
+			quid       	"5B2226A50366"
+			type       	"Double")))
+	    (object Class "TListOrdermenu"
+		quid       	"5B2220F6030F"
+		operations 	(list Operations
+		    (object Operation "setIdListingrfood"
+			quid       	"5B222722011B"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "setListCounts"
+			quid       	"5B22272B01D9"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "getIdListingrfood"
+			quid       	"5B22273002E7"
+			result     	"Integer"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "InsertDBListOrder"
+			quid       	"5B22273B0373"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "DeleteDBListOrder"
+			quid       	"5B22275802A9"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "id_listingrfood"
+			quid       	"5B22270B039B"
+			type       	"int")
+		    (object ClassAttribute "counts"
+			quid       	"5B22271300F3"
+			type       	"Double")))
+	    (object Association "$UNNAMED$0"
+		quid       	"5B222117036E"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$1"
+			quid       	"5B2221180120"
+			supplier   	"Logical View::TOrderMenu"
+			quidu      	"5B2220E80143"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$2"
+			quid       	"5B222118012A"
+			supplier   	"Logical View::TListTable"
+			quidu      	"5B2220C0039E")))
+	    (object Association "$UNNAMED$3"
+		quid       	"5B22211B0094"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$4"
+			quid       	"5B22211B0323"
+			supplier   	"Logical View::TOrderMenu"
+			quidu      	"5B2220E80143"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$5"
+			quid       	"5B22211B032D"
+			supplier   	"Logical View::TPersonal"
+			quidu      	"5B22207F0310")))
+	    (object Association "$UNNAMED$6"
+		quid       	"5B22212C0229"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$7"
+			quid       	"5B22212C037D"
+			supplier   	"Logical View::TListOrdermenu"
+			quidu      	"5B2220F6030F"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$8"
+			quid       	"5B22212C037F"
+			supplier   	"Logical View::TFood"
+			quidu      	"5B2220DD007B")))
+	    (object Association "$UNNAMED$9"
+		quid       	"5B22212E0201"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$10"
+			quid       	"5B22212E02F1"
+			supplier   	"Logical View::TFood"
+			quidu      	"5B2220DD007B"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$11"
+			quid       	"5B22212E02FB"
+			supplier   	"Logical View::TCategory"
+			quidu      	"5B2220D3010A")))
+	    (object Association "$UNNAMED$12"
+		quid       	"5B222134016B"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$13"
+			quid       	"5B2221360053"
+			supplier   	"Logical View::TFood"
+			quidu      	"5B2220DD007B"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$14"
+			quid       	"5B222136005D"
+			supplier   	"Logical View::TIngredient"
+			quidu      	"5B2220E30139")))
+	    (object Association "$UNNAMED$15"
+		quid       	"5B22213D0060"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$16"
+			quid       	"5B22213D016E"
+			supplier   	"Logical View::TIngredient"
+			quidu      	"5B2220E30139"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$17"
+			quid       	"5B22213D0178"
+			supplier   	"Logical View::TFood"
+			quidu      	"5B2220DD007B")))
+	    (object Association "$UNNAMED$18"
+		quid       	"5B2221420330"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$19"
+			quid       	"5B222143002E"
+			supplier   	"Logical View::TOrderMenu"
+			quidu      	"5B2220E80143"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$20"
+			quid       	"5B2221430038"
+			supplier   	"Logical View::TDiscount"
+			quidu      	"5B2220CE00D8")))
+	    (object Association "$UNNAMED$21"
+		quid       	"5B22214701D2"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$22"
+			quid       	"5B22214703DA"
+			supplier   	"Logical View::TListOrdermenu"
+			quidu      	"5B2220F6030F"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$23"
+			quid       	"5B22214703E4"
+			supplier   	"Logical View::TOrderMenu"
+			quidu      	"5B2220E80143")))
+	    (object Association "$UNNAMED$24"
+		quid       	"5B2227C2009E"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$25"
+			quid       	"5B2227C300EE"
+			supplier   	"Logical View::TListOrdermenu"
+			quidu      	"5B2220F6030F"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$26"
+			quid       	"5B2227C300F8"
+			supplier   	"Logical View::TFood"
+			quidu      	"5B2220DD007B"))))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"5B22203F0302"
+		title      	"Main"
+		zoom       	65
+		max_height 	28350
+		max_width  	21600
+		origin_x   	1512
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object ClassView "Class" "Logical View::TListTable" @1
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(2893, 500)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@1
+			    location   	(2625, 169)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	536
+			    justify    	0
+			    label      	"TListTable")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5B2220C0039E"
+			compartment 	(object Compartment
+			    Parent_View 	@1
+			    location   	(2625, 228)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	12
+			    max_width  	614
+			    justify    	1)
+			width      	554
+			height     	686
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::TPersonal" @2
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(993, 1024)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@2
+			    location   	(711, 268)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	564
+			    justify    	0
+			    label      	"TPersonal")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5B22207F0310"
+			compartment 	(object Compartment
+			    Parent_View 	@2
+			    location   	(711, 327)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	29
+			    max_width  	658
+			    justify    	1)
+			width      	582
+			height     	1536
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::TCategory" @3
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(3650, 480)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@3
+			    location   	(3414, 199)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	472
+			    justify    	0
+			    label      	"TCategory")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5B2220D3010A"
+			compartment 	(object Compartment
+			    Parent_View 	@3
+			    location   	(3414, 258)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	10
+			    max_width  	526
+			    justify    	1)
+			width      	490
+			height     	586
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::TIngredient" @4
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(3685, 1641)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@4
+			    location   	(3440, 1310)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	490
+			    justify    	0
+			    label      	"TIngredient")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5B2220E30139"
+			compartment 	(object Compartment
+			    Parent_View 	@4
+			    location   	(3440, 1369)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	12
+			    max_width  	559
+			    justify    	1)
+			width      	508
+			height     	686
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::TDiscount" @5
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1606, 497)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@5
+			    location   	(1397, 141)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	418
+			    justify    	0
+			    label      	"TDiscount")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5B2220CE00D8"
+			compartment 	(object Compartment
+			    Parent_View 	@5
+			    location   	(1397, 200)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	13
+			    max_width  	482
+			    justify    	1)
+			width      	436
+			height     	736
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::TOrderMenu" @6
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(2203, 495)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@6
+			    location   	(1963, 64)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	480
+			    justify    	0
+			    label      	"TOrderMenu")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5B2220E80143"
+			compartment 	(object Compartment
+			    Parent_View 	@6
+			    location   	(1963, 123)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	16
+			    max_width  	548
+			    justify    	1)
+			width      	498
+			height     	886
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$0" @7
+			location   	(2533, 496)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5B222117036E"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$1" @8
+				Parent_View 	@7
+				location   	(1463, 306)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5B2221180120"
+				client     	@7
+				supplier   	@6
+				vertices   	(list Points
+				    (2533, 496)
+				    (2452, 496))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$2" @9
+				Parent_View 	@7
+				location   	(1463, 306)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5B222118012A"
+				client     	@7
+				supplier   	@1
+				vertices   	(list Points
+				    (2533, 496)
+				    (2615, 497))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$3" @10
+			location   	(1688, 1024)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5B22211B0094"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$4" @11
+				Parent_View 	@10
+				location   	(1535, 834)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5B22211B0323"
+				client     	@10
+				supplier   	@6
+				vertices   	(list Points
+				    (1688, 1024)
+				    (2001, 1024)
+				    (2032, 938))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$5" @12
+				Parent_View 	@10
+				location   	(1535, 834)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5B22211B032D"
+				client     	@10
+				supplier   	@2
+				vertices   	(list Points
+				    (1688, 1024)
+				    (1284, 1024))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$18" @13
+			location   	(1888, 495)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5B2221420330"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$19" @14
+				Parent_View 	@13
+				location   	(1649, -123)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5B222143002E"
+				client     	@13
+				supplier   	@6
+				vertices   	(list Points
+				    (1888, 495)
+				    (1953, 495))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$20" @15
+				Parent_View 	@13
+				location   	(1649, -123)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5B2221430038"
+				client     	@13
+				supplier   	@5
+				vertices   	(list Points
+				    (1888, 495)
+				    (1824, 496))
+				line_style 	0)))
+		    (object ClassView "Class" "Logical View::TFood" @16
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(2867, 1463)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@16
+			    location   	(2624, 882)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	486
+			    justify    	0
+			    label      	"TFood")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5B2220DD007B"
+			compartment 	(object Compartment
+			    Parent_View 	@16
+			    location   	(2624, 941)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	22
+			    max_width  	534
+			    justify    	1)
+			width      	504
+			height     	1186
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$9" @17
+			location   	(3515, 1134)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5B22212E0201"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$10" @18
+				Parent_View 	@17
+				location   	(2262, 331)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5B22212E02F1"
+				client     	@17
+				supplier   	@16
+				vertices   	(list Points
+				    (3515, 1134)
+				    (3119, 1333))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$11" @19
+				Parent_View 	@17
+				location   	(2262, 331)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5B22212E02FB"
+				client     	@17
+				supplier   	@3
+				vertices   	(list Points
+				    (3515, 1134)
+				    (3648, 1067)
+				    (3649, 773))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$15" @20
+			location   	(3274, 1551)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5B22213D0060"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$16" @21
+				Parent_View 	@20
+				location   	(2221, 830)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5B22213D016E"
+				client     	@20
+				supplier   	@4
+				vertices   	(list Points
+				    (3274, 1551)
+				    (3430, 1585))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$17" @22
+				Parent_View 	@20
+				location   	(2221, 830)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5B22213D0178"
+				client     	@20
+				supplier   	@16
+				vertices   	(list Points
+				    (3274, 1551)
+				    (3119, 1517))
+				line_style 	0)))
+		    (object ClassView "Class" "Logical View::TListOrdermenu" @23
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(2207, 1463)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@23
+			    location   	(2001, 1232)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	412
+			    justify    	0
+			    label      	"TListOrdermenu")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5B2220F6030F"
+			compartment 	(object Compartment
+			    Parent_View 	@23
+			    location   	(2001, 1291)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	204
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	8
+			    max_width  	474
+			    justify    	1)
+			width      	430
+			height     	486
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$21" @24
+			location   	(2204, 1078)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5B22214701D2"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$22" @25
+				Parent_View 	@24
+				location   	(1570, 488)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5B22214703DA"
+				client     	@24
+				supplier   	@23
+				vertices   	(list Points
+				    (2204, 1078)
+				    (2205, 1219))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$23" @26
+				Parent_View 	@24
+				location   	(1570, 488)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5B22214703E4"
+				client     	@24
+				supplier   	@6
+				vertices   	(list Points
+				    (2204, 1078)
+				    (2204, 938))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$24" @27
+			location   	(2518, 1463)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5B2227C2009E"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$25" @28
+				Parent_View 	@27
+				location   	(-355, -44)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5B2227C300EE"
+				client     	@27
+				supplier   	@23
+				vertices   	(list Points
+				    (2518, 1463)
+				    (2422, 1463))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$26" @29
+				Parent_View 	@27
+				location   	(-355, -44)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5B2227C300F8"
+				client     	@27
+				supplier   	@16
+				vertices   	(list Points
+				    (2518, 1463)
+				    (2614, 1463))
+				line_style 	0)))))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"5B22203F02FE"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"5B22203F0305"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list)))
+	category   	"Logical View"
+	quidu      	"5B22203F02FC")
+    process_structure 	(object Processes
+	quid       	"5B22203F02FF"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"5B22203F0301"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	quid       	"5B22203F0300"))

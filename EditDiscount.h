@@ -20,11 +20,10 @@ __published:	// IDE-managed Components
 	TButton *ButtonAccept;
 	TButton *ButtonCancel;
 	TLabeledEdit *edit_adress;
-	TLabeledEdit *edit_telefon;
 	TGroupBox *GroupBox;
 	TButton *Button1;
-	TLabel *Label1;
 	TDateTimePicker *date_birthday;
+	TLabeledEdit *edit_telefon;
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall ButtonAcceptClick(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);

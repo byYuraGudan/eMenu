@@ -3520,10 +3520,6 @@ object FEditPersonal: TFEditPersonal
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = #1054#1089#1085#1086#1074#1085#1072' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1103
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object PersonalActivity: TCheckBox
         Left = 64
         Top = 110
@@ -3601,35 +3597,10 @@ object FEditPersonal: TFEditPersonal
     object TabSheet2: TTabSheet
       Caption = #1055#1077#1088#1089#1086#1085#1072#1083#1100#1085#1072' '#1110#1085#1092#1086#1088#1084#1072#1094#1110#1103
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
-      object Label1: TLabel
-        Left = 16
-        Top = 47
-        Width = 120
-        Height = 16
-        Caption = #1044#1072#1090#1072' '#1085#1072#1088#1086#1076#1078#1077#1085#1085#1103
-      end
-      object Label2: TLabel
-        Left = 15
-        Top = 141
-        Width = 88
-        Height = 16
-        Caption = #1044#1072#1090#1072' '#1086#1073#1083#1110#1082#1091
-      end
-      object Label3: TLabel
-        Left = 203
-        Top = 141
-        Width = 120
-        Height = 16
-        Caption = #1044#1072#1090#1072' '#1079#1074#1110#1083#1100#1085#1077#1085#1085#1103
-      end
       object edit_date_release: TMaskEdit
-        Left = 203
-        Top = 161
-        Width = 150
+        Left = 359
+        Top = 300
+        Width = 22
         Height = 24
         Hint = #1060#1086#1088#1084#1072#1090': "'#1056#1056#1056#1056'-'#1052#1052'-'#1044#1044'" '#1055#1088#1080#1082#1083#1072#1076': "1970-12-31"'
         ParentShowHint = False
@@ -3649,9 +3620,9 @@ object FEditPersonal: TFEditPersonal
         TabOrder = 1
       end
       object edit_telefon: TLabeledEdit
-        Left = 203
+        Left = 16
         Top = 69
-        Width = 150
+        Width = 337
         Height = 24
         EditLabel.Width = 56
         EditLabel.Height = 16
@@ -3659,38 +3630,38 @@ object FEditPersonal: TFEditPersonal
         TabOrder = 2
       end
       object date_birthday: TDateTimePicker
-        Left = 15
-        Top = 69
-        Width = 149
+        Left = 360
+        Top = 300
+        Width = 25
         Height = 24
         Date = 43249.014797928240000000
         Time = 43249.014797928240000000
         TabOrder = 3
       end
       object date_work: TDateTimePicker
-        Left = 15
-        Top = 163
-        Width = 149
+        Left = 359
+        Top = 300
+        Width = 26
         Height = 24
         Date = 43242.014915509260000000
         Time = 43242.014915509260000000
         TabOrder = 4
       end
       object edit_adress: TLabeledEdit
-        Left = 15
-        Top = 114
-        Width = 338
+        Left = 359
+        Top = 300
+        Width = 18
         Height = 24
-        EditLabel.Width = 136
+        EditLabel.Width = 88
         EditLabel.Height = 16
-        EditLabel.Caption = #1040#1076#1088#1077#1089#1072' '#1087#1088#1086#1078#1080#1074#1072#1085#1085#1103
+        EditLabel.Caption = 'edit_adress'
         TabOrder = 5
       end
       object ButtonRelease: TButton
-        Left = 219
-        Top = 193
-        Width = 120
-        Height = 30
+        Left = 359
+        Top = 300
+        Width = 33
+        Height = 13
         Caption = #1055#1110#1076#1074#1077#1088#1076#1080#1090#1080' '#1076#1072#1090#1091' '#1079#1074#1110#1083#1100#1085#1077#1085#1085#1103
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText

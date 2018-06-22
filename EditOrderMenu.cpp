@@ -164,7 +164,9 @@ void __fastcall TFEditOrderMenu::btnDiscountClick(TObject *Sender)
     		order.setIdOrder(DM->OTOpenOrder->FieldByName("id_order")->AsInteger);
     		order.setId_discount(StrToInt(str));
 			order.UpdateDiscount();
+			int id = DM->OTOpenOrder->RecNo;
 			DM->OpenDBOficiant();
+            DM->OTOpenOrder->RecNo = id;
 		}
 	} catch(...){
 	   MessageBox(NULL, L"Перевірьте правильність даних!", L"Відмова!",  MB_OK | MB_ICONWARNING);

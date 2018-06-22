@@ -23,10 +23,7 @@ __published:	// IDE-managed Components
 	TLabeledEdit *edit_password;
 	TMaskEdit *edit_date_release;
 	TCheckBox *PersonalActivity;
-	TLabel *Label1;
 	TLabeledEdit *edit_telefon;
-	TLabel *Label2;
-	TLabel *Label3;
 	TPageControl *PageControl1;
 	TTabSheet *TabSheet1;
 	TTabSheet *TabSheet2;

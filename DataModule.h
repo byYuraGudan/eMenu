@@ -79,7 +79,6 @@ __published:	// IDE-managed Components
 	TMenuItem *N3;
 	TMenuItem *N4;
 	TDateTimeField *ATPersonaldata_of_work;
-	TDateTimeField *ATPersonalrelease_date;
 	TIntegerField *ATDiscountid_discount;
 	TStringField *ATDiscountpib_client;
 	TStringField *ATDiscountadress;

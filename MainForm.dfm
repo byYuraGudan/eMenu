@@ -2170,8 +2170,6 @@ object FMainForm: TFMainForm
         ParentFont = False
         TabOrder = 0
         RowCount = 7
-        ExplicitLeft = 3
-        ExplicitTop = 38
         object DBCategory: TDBText
           AlignWithMargins = True
           Left = 3
@@ -2262,9 +2260,9 @@ object FMainForm: TFMainForm
           #1047#1072#1084#1086#1074#1083#1077#1085#1085#1103' '#8470': ------------------------------------------ '#1057#1090#1110#1083' '#8470':' +
           ' ----------------------------------------- '#1044#1072#1090#1072'/'#1095#1072#1089':  ----------' +
           '-------------------------------- '#1054#1092#1110#1094#1110#1072#1085#1090':  --------------------' +
-          '----------------------- '#1050#1083#1110#1108#1085#1090': --------------------------------' +
-          '----------- '#1041#1077#1079' '#1079#1085#1080#1078#1082#1080':                                   '#1047#1085#1080#1078#1082#1072 +
-          ':'
+          '----------------------- '#1044#1080#1089#1082#1086#1085#1090#1085#1072' '#1082#1072#1088#1090#1082#1072' '#8470': --------------------' +
+          '----------------------- '#1041#1077#1079' '#1079#1085#1080#1078#1082#1080':                             ' +
+          '      '#1047#1085#1080#1078#1082#1072':'
         Color = clBtnFace
         ParentColor = False
         WordWrap = True
@@ -2332,11 +2330,11 @@ object FMainForm: TFMainForm
         WordWrap = True
       end
       object DBClient: TDBText
-        Left = 55
+        Left = 139
         Top = 126
-        Width = 243
+        Width = 159
         Height = 20
-        DataField = 'pib_client'
+        DataField = 'kod_discount'
         DataSource = DM.ODSOpenOrder
         StyleElements = [seClient, seBorder]
         WordWrap = True

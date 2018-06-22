@@ -205,7 +205,6 @@ void __fastcall TFAdmin::EditPersonalClick(TObject *Sender)
 	FEditPersonal->add = false;
 	FEditPersonal->ButtonRelease->Show();
 	FEditPersonal->edit_date_release->Show();
-	FEditPersonal->Label3->Show();
 	FEditPersonal->EditID->Text = DM->ATPersonal->FieldByName("id_personal")->AsAnsiString;
 	FEditPersonal->edit_login->Text = DM->ATPersonal->FieldByName("logins")->AsAnsiString;
 	FEditPersonal->edit_password->Text = DM->ATPersonal->FieldByName("passwords")->AsAnsiString;
@@ -345,7 +344,7 @@ void __fastcall TFAdmin::EditSearchTableChange(TObject *Sender)
 	DM->ATListTable->Filtered = false;
 	if (tmp.Length()!=0){
 		DM->ATListTable->Filter = "name_table like '%"+tmp+"%'";
-        DM->ATListTable->Filtered = true;
+		DM->ATListTable->Filtered = true;
 	}
 }
 //---------------------------------------------------------------------------
@@ -580,6 +579,37 @@ void __fastcall TFAdmin::RBperiodClick(TObject *Sender)
 	if (str == "TReportOrder") {
 	DM->DoSQL(DM->TReportOrder,"SELECT id_order,date_open_order,pib_personal,pib_client,payment,discount,sum(payment-(payment*discount/100)) AS PaymentDiscount FROM ((OrderMenu INNER JOIN Personal ON id_personal = kod_personal) INNER JOIN Discounts ON id_discount = kod_discount) INNER JOIN ListTable ON id_table = kod_table \
 	"+dt+" GROUP BY id_order,date_open_order,pib_personal,pib_client,payment,discount");
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::EditSearchOrderMenuChange(TObject *Sender)
+{
+	try{
+	AnsiString tmp = EditSearchOrderMenu->Text;
+	DM->ATOrderMenu->Filtered = false;
+	if (tmp.Length()!=0){
+		DM->ATOrderMenu->Filter = "id_order =" + tmp;
+		DM->ATOrderMenu->Filtered = true;
+	  }
+	}
+		catch(...){
+		MessageBox(NULL, L"Для пошуку введіть число!", L"Відмова!",  MB_OK |MB_ICONWARNING);
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFAdmin::EditSearchDiscountChange(TObject *Sender)
+{
+	try{
+	AnsiString tmp = EditSearchDiscount->Text;
+	DM->ATDiscount->Filtered = false;
+	if (tmp.Length()!=0){
+		DM->ATDiscount->Filter = "id_discount =" + tmp+" or discount ="+tmp;
+		DM->ATDiscount->Filtered = true;
+	}   }
+	catch(...){
+			MessageBox(NULL, L"Для пошуку введіть число!", L"Відмова!",  MB_OK |MB_ICONWARNING);
 	}
 }
 //---------------------------------------------------------------------------

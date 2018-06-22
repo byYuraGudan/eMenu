@@ -51,7 +51,6 @@ void __fastcall TFEditPersonal::FormShow(TObject *Sender)
 	PersonalActivity->Checked = true;
 	ButtonRelease->Hide();
 	edit_date_release->Hide();
-    Label3->Hide();
 }
 //---------------------------------------------------------------------------
 
@@ -109,7 +108,7 @@ void TPersonal::InsertDBPersonal(){
 	DM->TSQL->Parameters->ParamByName("tel")->Value = this->telefon;
 	DM->TSQL->Parameters->ParamByName("adr")->Value = this->adress;
 	DM->TSQL->Parameters->ParamByName("birt")->Value = this->birthday;
-	DM->TSQL->Parameters->ParamByName("datework")->Value = this->date_work;
+	DM->TSQL->Parameters->ParamByName("datework")->Value = Date()+Time();
 	DM->TSQL->ExecSQL();
 }
 
@@ -117,8 +116,7 @@ void TPersonal::UpdateDBPersonal(){
 	DM->TSQL->SQL->Clear();
 	DM->TSQL->SQL->Add("UPDATE eMenu.dbo.Personal SET \
 	logins = :log,passwords = :pass,access = :acs,activity = :act,\
-	pib_personal = :pib,telefon = :tel,adress = :adr,birthday = :birt,\
-	data_of_work = :datework");
+	pib_personal = :pib,telefon = :tel,adress = :adr,birthday = :birt");
 	DM->TSQL->SQL->Add("WHERE id_personal = :id");
 	DM->TSQL->Parameters->ParamByName("id")->Value = this->id_personal;
 	DM->TSQL->Parameters->ParamByName("log")->Value = this->login;
@@ -129,7 +127,6 @@ void TPersonal::UpdateDBPersonal(){
 	DM->TSQL->Parameters->ParamByName("tel")->Value = this->telefon;
 	DM->TSQL->Parameters->ParamByName("adr")->Value = this->adress;
 	DM->TSQL->Parameters->ParamByName("birt")->Value = this->birthday;
-	DM->TSQL->Parameters->ParamByName("datework")->Value = this->date_work;
 	DM->TSQL->ExecSQL();
 }
 void TPersonal::DeleteDBPersonal(){

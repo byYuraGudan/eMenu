@@ -180,6 +180,8 @@ __published:	// IDE-managed Components
 	void __fastcall btnReportClick(TObject *Sender);
 	void __fastcall RBallClick(TObject *Sender);
 	void __fastcall RBperiodClick(TObject *Sender);
+	void __fastcall EditSearchOrderMenuChange(TObject *Sender);
+	void __fastcall EditSearchDiscountChange(TObject *Sender);
 
 
 private:	// User declarations

@@ -11782,8 +11782,6 @@ object FEditOrderMenu: TFEditOrderMenu
         TabOrder = 3
         WordWrap = True
         OnClick = btnDiscountClick
-        ExplicitLeft = 142
-        ExplicitTop = 47
       end
       object btnReportDay: TButton
         Left = 1

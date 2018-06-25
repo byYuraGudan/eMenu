@@ -141,10 +141,12 @@ void __fastcall TFMainForm::Image1Click(TObject *Sender)
 	       		list.setIdFood(DM->MTShowFood->FieldByName("id_food")->AsInteger);
 	       		list.setIdOrder(DM->OTOpenOrder->FieldByName("id_order")->AsInteger);
 	       		list.setListCounts(StrToFloat(count));
-	       		list.InsertDBListOrder();
+				list.InsertDBListOrder();
+                int id = DM->OTOpenOrder->RecNo;
 				DM->OpenDBOficiant();
 				list.UpdatePayment();
 				DM->OpenDBOficiant();
+				DM->OTOpenOrder->RecNo = id;
 			}
 	}
 	catch(...){

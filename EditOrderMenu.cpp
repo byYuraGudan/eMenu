@@ -130,7 +130,9 @@ void __fastcall TFEditOrderMenu::btnRemovClick(TObject *Sender)
 			list.setIdOrder(DM->OTListOpenOrder->FieldByName("kod_order")->AsInteger);
 			list.DeleteDBListOrder();
 			list.UpdatePayment();
+			int id = DM->OTOpenOrder->RecNo;
 			DM->OpenDBOficiant();
+            DM->OTOpenOrder->RecNo = id;
 		}
 	}
 	catch(...){
